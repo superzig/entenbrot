@@ -3,7 +3,6 @@ import "~/styles/globals.css";
 import { Inter } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
-import MaxWidthWrapper from "~/app/_components/src/components/MaxWidthWrapper";
 import { cn } from "~/lib/utils"
 
 const inter = Inter({

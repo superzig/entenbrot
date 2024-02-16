@@ -1,0 +1,218 @@
+[
+    {
+        "Nr": "1",
+        "Unternehmen": "Zentis",
+        "Fachrichtung": "Industriekaufleute",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "2",
+        "Unternehmen": "Babor Kosmetik ",
+        "Fachrichtung": "Industriekaufleute",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "3",
+        "Unternehmen": "EVA (Stawag, RegioIt, Aseag..)",
+        "Fachrichtung": "Industriekaufleute",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "4",
+        "Unternehmen": "Grünenthal",
+        "Fachrichtung": "Industriekaufleute, BWL Plus (Industriekfm. Plus BWL-Studium), Kaufleute für Büromanagement                                  ",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "5",
+        "Unternehmen": "RWTH Aachen",
+        "Fachrichtung": "Kaufleute für Büromanagement",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "6",
+        "Unternehmen": "Aldi ",
+        "Fachrichtung": "Einzelhandelskaufleute",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "7",
+        "Unternehmen": "Bauhaus",
+        "Fachrichtung": "Einzelhandelskaufleute, Handelsfachwirte, Duales Studium",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "8",
+        "Unternehmen": "Sparkasse Aachen ",
+        "Fachrichtung": "Bankkaufleute",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "9",
+        "Unternehmen": "Aachener Bank ",
+        "Fachrichtung": "Bankkaufleute",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "10",
+        "Unternehmen": "Debeka",
+        "Fachrichtung": "Kaufleute für Versicherungen und Finanzen ",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "11",
+        "Unternehmen": "Steuerberaterkammer Köln ",
+        "Fachrichtung": "Steuerfachangestellte",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "12",
+        "Unternehmen": "Rechtsanwaltberufe",
+        "Fachrichtung": "Rechtsanwaltsfachangestellte",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "13",
+        "Unternehmen": "Notarberufe",
+        "Fachrichtung": "Notarfachangestellte",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "14",
+        "Unternehmen": "Spedition Hammer",
+        "Fachrichtung": "Kaufleute für Spedition und Lagerlogistik, Kaufleute für Büromanagement                         ",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "15",
+        "Unternehmen": "Inform",
+        "Fachrichtung": "Kaufmann/-frau für Büromanagement ",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "16",
+        "Unternehmen": "Inform",
+        "Fachrichtung": "Duales Studium Wirtschaftsinformatik ",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "17",
+        "Unternehmen": "StädteRegion Aachen ",
+        "Fachrichtung": "Verwaltungsfachangestellte und Duales Studium Bachelor of Laws/Arts",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "18",
+        "Unternehmen": "Finanzamt",
+        "Fachrichtung": "duales Studium Dipl. Finanzwirt/-in ",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "19",
+        "Unternehmen": "Finanzamt ",
+        "Fachrichtung": "Ausbildung Finanzwirt/-in ",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "20",
+        "Unternehmen": "Justizvollzugsanstalt",
+        "Fachrichtung": "Beamter im allgemeinen Vollzugsdienst, Dipl-Verwaltungswirt (FH)",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "21",
+        "Unternehmen": "Zoll Aachen",
+        "Fachrichtung": "Beamter im mittleren und gehobenen Dienst ",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "22",
+        "Unternehmen": "Polizei",
+        "Fachrichtung": "Polizeikommisar*in ",
+        "Max. Teilnehmer": "25",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "23",
+        "Unternehmen": "FH Aachen - Studienberatung",
+        "Fachrichtung": "",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "24",
+        "Unternehmen": "RWTH Aachen - Studienberatung",
+        "Fachrichtung": "Hinweis: Studium hier nur mit Abitur möglich",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "25",
+        "Unternehmen": "Wirtschaftsrecht FH-Aachen",
+        "Fachrichtung": "",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "26",
+        "Unternehmen": "Soziale Arbeit ",
+        "Fachrichtung": "",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    },
+    {
+        "Nr": "27",
+        "Unternehmen": "Lehramt Berufskolleg",
+        "Fachrichtung": "",
+        "Max. Teilnehmer": "20",
+        "Max. Veranstaltungen": "5",
+        "Frühester Zeitpunkt": "A"
+    }
+]

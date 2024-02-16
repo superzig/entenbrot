@@ -31,13 +31,11 @@ export default async function Home() {
                         $Nein$ ermöglicht die einfache Zuordnung von Schülern zu Veranstaltungen. Dokumente hochladen und direkt starten.
                     </p>
 
-
-                    <InputFile>12321</InputFile>
                     <Link className={buttonVariants({
                         size: 'lg',
                         className: "mt-5"
-                    })} href="/dashboard" target="_blank">
-                        Leg started <ArrowRight className="ml-2 h-5 w-5"/>
+                    })} href="/upload" target="_blank">
+                        Los geht`s <ArrowRight className="ml-2 h-5 w-5"/>
                     </Link>
                 </div>
             </MaxWidthWrapper>

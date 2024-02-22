@@ -66,12 +66,6 @@ class ValidateController extends BaseController
         dd($ts1, $ts2, $ts3, $ts4, $ts5);
         $json = json_decode(json: $contents, associative: true);
 
-        $data = [
-            1,
-            2,
-            3,
-        ];
-
         return $this->validateToJson($data);
     }
 

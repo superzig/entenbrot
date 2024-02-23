@@ -2,14 +2,14 @@
 import MaxWidthWrapper from "~/app/_components/ui/MaxWidthWrapper";
 import {InputFile} from "~/app/_components/ui/fileInput";
 import {useState} from "react";
-
+import {uploadStudents} from "~/actions";
+import {Button} from "~/app/_components/ui/button";
 
 export default function Page() {
 
     const [students, setStudents] = useState<[]| null>(null);
     console.log(students)
     const onUpload = (file: File) => {
-        setStudents(["asd"])
     }
     return (
         <>
@@ -29,7 +29,10 @@ export default function Page() {
                         vordefiniert sein.
                     </p>
                 </div>
-                <InputFile onUpload={onUpload}></InputFile>
+                <form action={uploadStudents}>
+                    <InputFile onUpload={onUpload}></InputFile>
+                    <Button type="submit">Submit</Button>
+                </form>
             </MaxWidthWrapper>
         <MaxWidthWrapper>
             12321

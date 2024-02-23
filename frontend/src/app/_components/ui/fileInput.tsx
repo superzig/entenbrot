@@ -17,6 +17,7 @@ export function InputFile({onUpload}: Props) {
             setError('Es konnte keine Datei gefunden werden')
             return;
         }
+
         setFile(file);
         const fileName = file.name;
 
@@ -44,7 +45,7 @@ export function InputFile({onUpload}: Props) {
                 </svg>
                 {(file?.name) ? file.name : 'Datei hochladen' }
                 {error && <p className="text-red-600 text-xs">{error}</p>}
-                <input type="file" id='uploadFile1' className="hidden" onChange={handleFileChange}/>
+                <input type="file" id='uploadFile1' className="hidden" onChange={handleFileChange} name="file"/>
                 <p className="text-xs text-gray-400 mt-2">Nur Excel-Dateien sind erlaubt.</p>
             </label>
         </div>

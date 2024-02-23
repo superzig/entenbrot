@@ -27,7 +27,7 @@ export default async function Home() {
                     <Link className={buttonVariants({
                         size: 'lg',
                         className: "mt-5"
-                    })} href="/upload">
+                    })} href="/upload/students">
                         Los geht&#96;s <ArrowRight className="ml-2 h-5 w-5"/>
                     </Link>
                 </div>

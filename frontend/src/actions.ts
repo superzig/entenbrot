@@ -1,8 +1,8 @@
 "use server"
 
 import {z} from "zod";
-import * as XLSX from 'xlsx';
-
+import {promises as fs} from "fs";
+import {type StudentsType, studentsSchema} from "~/defintions/students";
 
 const allowedExtensions = ['xls', 'xlsx', 'xlsm'];
 
@@ -27,4 +27,9 @@ export async function uploadStudents(formData: FormData) {
 
     const result = await response.json();
     console.log(result);
+}
+
+export async function readStudentsTestData(): Promise<StudentsType> {
+    const file = await fs.readFile(process.cwd() + '/public/data/students.json', 'utf8');
+    return JSON.parse(file) as StudentsType;
 }

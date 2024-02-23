@@ -2,15 +2,29 @@
 import MaxWidthWrapper from "~/app/_components/ui/MaxWidthWrapper";
 import {InputFile} from "~/app/_components/ui/fileInput";
 import {useState} from "react";
-import {uploadStudents} from "~/actions";
+import {readStudentsTestData} from "~/actions";
+import {type StudentsType, studentsSchema} from "~/defintions/students";
+import {z} from "zod";
 import {Button} from "~/app/_components/ui/button";
+
 
 export default function Page() {
 
-    const [students, setStudents] = useState<[]| null>(null);
-    console.log(students)
-    const onUpload = (file: File) => {
+    const [students, setStudents] = useState<StudentsType>([]);
+
+    const onUpload = async () => {
+        const data = await readStudentsTestData();
+        console.log(data)
+        const validatedData =  studentsSchema.safeParse(data);
+
+        if (!validatedData.success) {
+            console.log("not validate data", validatedData.error.flatten())
+            return;
+        }
+        console.log("validated students")
+        setStudents(validatedData.data);
     }
+
     return (
         <>
             <MaxWidthWrapper className="mb-12 mt-28 flex flex-col">
@@ -29,13 +43,13 @@ export default function Page() {
                         vordefiniert sein.
                     </p>
                 </div>
-                <form action={uploadStudents}>
-                    <InputFile onUpload={onUpload}></InputFile>
-                    <Button type="submit">Submit</Button>
-                </form>
+                <InputFile onUpload={onUpload}></InputFile>
             </MaxWidthWrapper>
         <MaxWidthWrapper>
             12321
+            {students?.map((student,index) => (
+                <p key={index}>{student.Klasse}</p>
+            ))}
         </MaxWidthWrapper>
         </>
     );

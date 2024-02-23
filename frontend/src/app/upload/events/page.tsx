@@ -2,27 +2,27 @@
 import MaxWidthWrapper from "~/app/_components/ui/MaxWidthWrapper";
 import {InputFile} from "~/app/_components/ui/fileInput";
 import {useState} from "react";
-import {readStudentsTestData} from "~/actions";
-import {type StudentsType, studentsSchema} from "~/definitions";
+import {readEventsTestData} from "~/actions";
+import {eventsSchema, EventsType} from "~/definitions";
 import {Button} from "~/app/_components/ui/button";
-import StudentsTable from "~/app/_components/ui/StudentsTable";
+import EventsTable from "~/app/_components/ui/EventsTable";
 
 
 export default function Page() {
 
-    const [students, setStudents] = useState<StudentsType>([]);
+    const [events, setEvents] = useState<EventsType>([]);
 
     const onUpload = async () => {
-        const data = await readStudentsTestData();
+        const data = await readEventsTestData();
         console.log(data)
-        const validatedData = studentsSchema.safeParse(data);
+        const validatedData = eventsSchema.safeParse(data);
 
         if (!validatedData.success) {
             console.log("not validate data", validatedData.error.flatten())
             return;
         }
-        console.log("validated students")
-        setStudents(validatedData.data);
+        console.log("validated events")
+        setEvents(validatedData.data);
     }
 
     return (
@@ -35,21 +35,20 @@ export default function Page() {
                             Import
                         </p>
                     </div>
-                    <h1 className="text-5xl font-bold md:text-6xl lg:text-7xl"><span className="text-blue-500">
-                        Schülerliste</span> hochladen
+                    <h1 className="text-4xl font-bold md:text-6xl lg:text-7xl"><span className="text-blue-500">
+                        Veranstaltungsliste</span> hochladen
                     </h1>
-                    <p className="mt-5 max-w-prose text-zinc-700 sm:text-lg">
-                        Bitte laden Sie die Datei mit den Informationen zur Schülern hoch. Es können bereits Wünsche
-                        vordefiniert sein.
+                    <p className="mt-5 md:max-w-prose text-zinc-700 sm:text-lg">
+                        Bitte laden Sie die Datei mit den Informationen zu den Veranstaltungen der Unternehmen hoch.
                     </p>
                 </div>
                 <InputFile onUpload={onUpload}></InputFile>
             </MaxWidthWrapper>
             <MaxWidthWrapper>
                 <div className="flex justify-end align-bottom text-center mb-12">
-                    <Button variant="default" disabled={students.length == 0 || !students}>Nächster Schritt</Button>
+                    <Button variant="default" disabled={events.length == 0 || !events}>Nächster Schritt</Button>
                 </div>
-                <StudentsTable students={students}/>
+                <EventsTable events={events}/>
             </MaxWidthWrapper>
         </>
     );

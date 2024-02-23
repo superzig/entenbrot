@@ -2,7 +2,7 @@
 
 import {z} from "zod";
 import {promises as fs} from "fs";
-import {type StudentsType, studentsSchema} from "~/defintions/students";
+import {type StudentsType, studentsSchema} from "~/definitions";
 
 const allowedExtensions = ['xls', 'xlsx', 'xlsm'];
 
@@ -31,5 +31,10 @@ export async function uploadStudents(formData: FormData) {
 
 export async function readStudentsTestData(): Promise<StudentsType> {
     const file = await fs.readFile(process.cwd() + '/public/data/students.json', 'utf8');
+    return JSON.parse(file) as StudentsType;
+}
+
+export async function readEventsTestData(): Promise<StudentsType> {
+    const file = await fs.readFile(process.cwd() + '/public/data/events.json', 'utf8');
     return JSON.parse(file) as StudentsType;
 }

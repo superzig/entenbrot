@@ -1,13 +1,20 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {cn} from "~/lib/utils";
 
 interface Props {
     onUpload: (file: File) => void;
+    errorMessage?: string|null;
 }
 
-export function InputFile({onUpload}: Props) {
+export function InputFile({onUpload, errorMessage = null}: Props) {
 
-    const [error, setError] = useState<string | null>(null);
+    const [error, setError] = useState<string | null>(errorMessage ?? null);
+
+    useEffect(() => {
+        setError(errorMessage);
+    }, [errorMessage]);
+
+
     const [file, setFile] = useState<File | null>(null);
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,6 +38,7 @@ export function InputFile({onUpload}: Props) {
 
         setError('Die hochgeladene Datei ist keine Excel-Datei.')
     }
+    console.log("file input error: ", errorMessage)
     return (
         <div className="flex-col w-full">
             <label htmlFor="uploadFile1"

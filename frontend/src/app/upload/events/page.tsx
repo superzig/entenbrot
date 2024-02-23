@@ -8,21 +8,27 @@ import {Button} from "~/app/_components/ui/button";
 import EventsTable from "~/app/_components/ui/EventsTable";
 
 
+interface EventsData {
+    events: EventsType;
+    error: string | null;
+}
 export default function Page() {
 
-    const [events, setEvents] = useState<EventsType>([]);
+    const [data, setData] = useState<EventsData>({events: [], error: null});
+    const {events, error} = data;
 
     const onUpload = async () => {
-        const data = await readEventsTestData();
+        const data = await readEventsTestData(); // TODO: replace with API CALL which returns JSON
         console.log(data)
         const validatedData = eventsSchema.safeParse(data);
 
         if (!validatedData.success) {
+            setData({events: [], error: 'Das Format der Excel-Datei entspricht nicht den Vorgaben.'});
             console.log("not validate data", validatedData.error.flatten())
             return;
         }
         console.log("validated events")
-        setEvents(validatedData.data);
+        setData({events: validatedData.data, error: null});
     }
 
     return (
@@ -42,7 +48,7 @@ export default function Page() {
                         Bitte laden Sie die Datei mit den Informationen zu den Veranstaltungen der Unternehmen hoch.
                     </p>
                 </div>
-                <InputFile onUpload={onUpload}></InputFile>
+                <InputFile onUpload={onUpload} errorMessage={error}></InputFile>
             </MaxWidthWrapper>
             <MaxWidthWrapper>
                 <div className="flex justify-end align-bottom text-center mb-12">

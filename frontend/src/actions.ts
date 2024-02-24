@@ -2,7 +2,7 @@
 
 import { z } from 'zod';
 import { promises as fs } from 'fs';
-import { type StudentsType, studentsSchema, RoomsType } from '~/definitions';
+import { type StudentsType, studentsSchema, type RoomsType } from '~/definitions';
 
 const allowedExtensions = ['xls', 'xlsx', 'xlsm'];
 
@@ -21,16 +21,6 @@ const fileSchema = z.object({
       }
     ),
 });
-
-export async function uploadStudents(formData: FormData) {
-  const response = await fetch('localhost:80/api/validate/upload1', {
-    method: 'POST',
-    body: formData,
-  });
-
-  const result = await response.json();
-  console.log(result);
-}
 
 export async function readStudentsTestData(): Promise<StudentsType> {
   const file = await fs.readFile(

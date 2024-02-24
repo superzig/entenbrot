@@ -6,6 +6,7 @@ import { readEventsTestData } from '~/actions';
 import { eventsSchema, EventsType } from '~/definitions';
 import { Button } from '~/app/_components/ui/button';
 import EventsTable from '~/app/_components/ui/EventsTable';
+import {useRouter} from "next/navigation";
 
 interface EventsData {
   events: EventsType;
@@ -14,6 +15,7 @@ interface EventsData {
 export default function Page() {
   const [data, setData] = useState<EventsData>({ events: [], error: null });
   const { events, error } = data;
+  const router = useRouter();
 
   const onUpload = async () => {
     const data = await readEventsTestData(); // TODO: replace with API CALL which returns JSON
@@ -31,6 +33,12 @@ export default function Page() {
     console.log('validated events');
     setData({ events: validatedData.data, error: null });
   };
+
+  const handleNavigation = () => {
+    if (events.length > 0 && events) {
+      router.push('/upload/students');
+    }
+  }
 
   return (
     <>
@@ -50,8 +58,8 @@ export default function Page() {
         <InputFile onUpload={onUpload} errorMessage={error}></InputFile>
       </div>
       <div>
-        <div className='mb-12 flex justify-end text-center align-bottom'>
-          <Button variant='default' disabled={events.length == 0 || !events}>
+        <div className='mb-12 flex justify-end text-center align-bottom mt-4'>
+          <Button variant='default' disabled={events.length == 0 || !events} onClick={handleNavigation}>
             Nächster Schritt
           </Button>
         </div>

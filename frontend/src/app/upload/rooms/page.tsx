@@ -4,8 +4,11 @@ import { InputFile } from '~/app/_components/ui/fileInput';
 import { useState } from 'react';
 import { readRoomsTestData } from '~/actions';
 import { roomsSchema, type RoomsType } from '~/definitions';
-import { Button } from '~/app/_components/ui/button';
+import {Button, buttonVariants} from '~/app/_components/ui/button';
 import RoomsTable from '~/app/_components/ui/RoomsTable';
+import {ArrowRight} from "lucide-react";
+import Link from "next/link";
+import {useRouter} from "next/navigation";
 
 interface roomsData {
   rooms: RoomsType;
@@ -15,6 +18,7 @@ interface roomsData {
 export default function Page() {
   const [data, setData] = useState<roomsData>({ rooms: [], error: null });
   const { rooms, error } = data;
+  const router = useRouter();
 
   const onUpload = async () => {
     const data = await readRoomsTestData(); // TODO: replace with API CALL which returns JSON
@@ -32,6 +36,12 @@ export default function Page() {
     console.log('validated events');
     setData({ rooms: validatedData.data, error: null });
   };
+
+  const handleNavigation = () => {
+    if (rooms.length > 0 && rooms) {
+      router.push('/upload/events');
+    }
+  }
 
   return (
     <>
@@ -51,8 +61,8 @@ export default function Page() {
         <InputFile onUpload={onUpload} errorMessage={error}></InputFile>
       </div>
       <div>
-        <div className='mb-12 flex justify-end text-center align-bottom'>
-          <Button variant='default' disabled={rooms.length == 0 || !rooms}>
+        <div className='mb-12 flex justify-end text-center align-bottom mt-4'>
+          <Button variant='default' disabled={rooms.length == 0 || !rooms} onClick={handleNavigation}>
             Nächster Schritt
           </Button>
         </div>

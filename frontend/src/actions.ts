@@ -2,7 +2,11 @@
 
 import { z } from 'zod';
 import { promises as fs } from 'fs';
-import { type StudentsType, studentsSchema, type RoomsType } from '~/definitions';
+import {
+  type StudentsType,
+  studentsSchema,
+  type RoomsType,
+} from '~/definitions';
 
 const allowedExtensions = ['xls', 'xlsx', 'xlsm'];
 

@@ -6,7 +6,7 @@ import { readEventsTestData } from '~/actions';
 import { eventsSchema, EventsType } from '~/definitions';
 import { Button } from '~/app/_components/ui/button';
 import EventsTable from '~/app/_components/ui/EventsTable';
-import {useRouter} from "next/navigation";
+import { useRouter } from 'next/navigation';
 
 interface EventsData {
   events: EventsType;
@@ -38,7 +38,7 @@ export default function Page() {
     if (events.length > 0 && events) {
       router.push('/upload/students');
     }
-  }
+  };
 
   return (
     <>
@@ -58,8 +58,12 @@ export default function Page() {
         <InputFile onUpload={onUpload} errorMessage={error}></InputFile>
       </div>
       <div>
-        <div className='mb-12 flex justify-end text-center align-bottom mt-4'>
-          <Button variant='default' disabled={events.length == 0 || !events} onClick={handleNavigation}>
+        <div className='mb-12 mt-4 flex justify-end text-center align-bottom'>
+          <Button
+            variant='default'
+            disabled={events.length == 0 || !events}
+            onClick={handleNavigation}
+          >
             Nächster Schritt
           </Button>
         </div>

@@ -1,11 +1,11 @@
 'use client';
-import {InputFile} from '~/app/_components/ui/fileInput';
-import {useState} from 'react';
-import {readStudentsTestData} from '~/actions';
-import {studentsSchema, type StudentsType} from '~/definitions';
-import {Button} from '~/app/_components/ui/button';
+import { InputFile } from '~/app/_components/ui/fileInput';
+import { useState } from 'react';
+import { readStudentsTestData } from '~/actions';
+import { studentsSchema, type StudentsType } from '~/definitions';
+import { Button } from '~/app/_components/ui/button';
 import StudentsTable from '~/app/_components/ui/StudentsTable';
-import {useRouter} from "next/navigation";
+import { useRouter } from 'next/navigation';
 
 interface StudentsData {
   students: StudentsType;
@@ -36,9 +36,9 @@ export default function Page() {
 
   const handleNavigation = () => {
     if (students.length > 0 && students) {
-      alert("finished steps")
+      alert('finished steps');
     }
-  }
+  };
 
   return (
     <>
@@ -58,7 +58,7 @@ export default function Page() {
         <InputFile onUpload={onUpload} errorMessage={error}></InputFile>
       </div>
       <div>
-        <div className='mb-12 flex justify-end text-center align-bottom mt-4'>
+        <div className='mb-12 mt-4 flex justify-end text-center align-bottom'>
           <Button
             variant='default'
             disabled={students.length == 0 || !students}

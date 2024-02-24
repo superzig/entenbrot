@@ -4,11 +4,11 @@ import { InputFile } from '~/app/_components/ui/fileInput';
 import { useState } from 'react';
 import { readRoomsTestData } from '~/actions';
 import { roomsSchema, type RoomsType } from '~/definitions';
-import {Button, buttonVariants} from '~/app/_components/ui/button';
+import { Button, buttonVariants } from '~/app/_components/ui/button';
 import RoomsTable from '~/app/_components/ui/RoomsTable';
-import {ArrowRight} from "lucide-react";
-import Link from "next/link";
-import {useRouter} from "next/navigation";
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 interface roomsData {
   rooms: RoomsType;
@@ -41,7 +41,7 @@ export default function Page() {
     if (rooms.length > 0 && rooms) {
       router.push('/upload/events');
     }
-  }
+  };
 
   return (
     <>
@@ -61,8 +61,12 @@ export default function Page() {
         <InputFile onUpload={onUpload} errorMessage={error}></InputFile>
       </div>
       <div>
-        <div className='mb-12 flex justify-end text-center align-bottom mt-4'>
-          <Button variant='default' disabled={rooms.length == 0 || !rooms} onClick={handleNavigation}>
+        <div className='mb-12 mt-4 flex justify-end text-center align-bottom'>
+          <Button
+            variant='default'
+            disabled={rooms.length == 0 || !rooms}
+            onClick={handleNavigation}
+          >
             Nächster Schritt
           </Button>
         </div>

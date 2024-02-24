@@ -2,8 +2,8 @@ import MaxWidthWrapper from '~/app/_components/ui/MaxWidthWrapper';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { buttonVariants } from '~/app/_components/ui/button';
-import eventsImage from "../../public/landing-page-hero-event.png";
-import Image from "next/image";
+import eventsImage from '../../public/landing-page-hero-event.png';
+import Image from 'next/image';
 
 export default async function Home() {
   return (
@@ -11,15 +11,15 @@ export default async function Home() {
       <MaxWidthWrapper className='mb-12 mt-10 flex flex-col sm:mt-40'>
         <div className='relative'>
           <Image
-              alt="Events Image"
-              src={eventsImage}
-              quality={100}
-              sizes="100vw"
-              style={{
-                height: "600px",
-                width: "600px",
-              }}
-              className="bg-right absolute right-0 bg-contain hidden md:block pointer-events-none"
+            alt='Events Image'
+            src={eventsImage}
+            quality={100}
+            sizes='100vw'
+            style={{
+              height: '600px',
+              width: '600px',
+            }}
+            className='pointer-events-none absolute right-0 hidden bg-contain bg-right md:block'
           />
           <div className='mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-gray-200 bg-white px-7 py-2 shadow-md backdrop-blur transition-all hover:border-gray-300 hover:bg-white/50'>
             <p className='text-sm font-semibold text-gray-700'>

@@ -2,7 +2,7 @@
 
 import { z } from 'zod';
 import { promises as fs } from 'fs';
-import { type StudentsType, studentsSchema } from '~/definitions';
+import { type StudentsType, studentsSchema, RoomsType } from '~/definitions';
 
 const allowedExtensions = ['xls', 'xlsx', 'xlsm'];
 
@@ -46,4 +46,12 @@ export async function readEventsTestData(): Promise<StudentsType> {
     'utf8'
   );
   return JSON.parse(file) as StudentsType;
+}
+
+export async function readRoomsTestData(): Promise<RoomsType> {
+  const file = await fs.readFile(
+    process.cwd() + '/public/data/rooms.json',
+    'utf8'
+  );
+  return JSON.parse(file) as RoomsType;
 }

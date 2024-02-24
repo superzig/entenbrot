@@ -1,5 +1,10 @@
 import { z } from 'zod';
 
+/*
+ ############################
+ ##     Students
+ ############################
+ */
 const studentSchema = z.object({
   Klasse: z.string(),
   Name: z.string(),
@@ -15,6 +20,11 @@ const studentSchema = z.object({
 export const studentsSchema = z.array(studentSchema);
 export type StudentsType = z.infer<typeof studentsSchema>;
 
+/*
+ ############################
+ ##     Events
+ ############################
+ */
 const eventSchema = z.object({
   'Nr. ': z.number(),
   Unternehmen: z.string(),
@@ -27,3 +37,16 @@ const eventSchema = z.object({
 
 export const eventsSchema = z.array(eventSchema);
 export type EventsType = z.infer<typeof eventsSchema>;
+
+/*
+ ############################
+ ##     Rooms
+ ############################
+ */
+const roomSchema = z.object({
+  name: z.string(),
+  capacity: z.number().optional().default(20),
+});
+
+export const roomsSchema = z.array(roomSchema);
+export type RoomsType = z.infer<typeof roomsSchema>;

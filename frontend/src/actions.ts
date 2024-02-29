@@ -49,3 +49,18 @@ export async function readRoomsTestData(): Promise<RoomsType> {
   );
   return JSON.parse(file) as RoomsType;
 }
+
+export async function getTransformedEvents(formData: FormData)
+{
+  const response = await fetch('http://localhost:8000/api/returnCompanies', {
+    method: 'POST',
+    body: formData,
+    headers: {
+      contentType: "multipart/form-data"
+    }
+  })
+
+  if (response.ok) {
+    return response.json();
+  }
+}

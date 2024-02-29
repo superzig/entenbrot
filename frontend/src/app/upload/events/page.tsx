@@ -1,7 +1,7 @@
 'use client';
 import { InputFile } from '~/app/_components/ui/fileInput';
 import { useState } from 'react';
-import { readEventsTestData } from '~/actions';
+import {getTransformedEvents, readEventsTestData} from '~/actions';
 import { eventsSchema, type EventsType } from '~/definitions';
 import { Button } from '~/app/_components/ui/button';
 import EventsTable from '~/app/_components/ui/EventsTable';
@@ -40,7 +40,10 @@ export default function Page() {
   };
 
   return (
-    <>
+    <form action={async (formData: FormData) => {
+      const data = await getTransformedEvents(formData);
+      console.log(data);
+    }}>
       <div className='flex flex-col'>
         <div className='mb-4'>
           <div className='mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-gray-200 bg-white px-7 py-2 shadow-md backdrop-blur transition-all hover:border-gray-300 hover:bg-white/50'>
@@ -56,6 +59,7 @@ export default function Page() {
         </div>
         <InputFile onUpload={onUpload} errorMessage={error}></InputFile>
       </div>
+      <button type="submit">Submit</button>
       <div>
         <div className='mb-12 mt-4 flex justify-end text-center align-bottom'>
           <Button
@@ -68,6 +72,6 @@ export default function Page() {
         </div>
         <EventsTable events={events} />
       </div>
-    </>
+    </form>
   );
 }

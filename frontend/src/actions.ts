@@ -1,7 +1,6 @@
 "use server"
 
 import {z} from "zod";
-import * as XLSX from 'xlsx';
 
 
 const allowedExtensions = ['xls', 'xlsx', 'xlsm'];

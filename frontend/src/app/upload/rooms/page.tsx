@@ -1,14 +1,11 @@
 'use client';
-import MaxWidthWrapper from '~/app/_components/ui/MaxWidthWrapper';
-import { InputFile } from '~/app/_components/ui/fileInput';
-import { useState } from 'react';
-import { readRoomsTestData } from '~/actions';
-import { roomsSchema, type RoomsType } from '~/definitions';
-import { Button, buttonVariants } from '~/app/_components/ui/button';
+import {InputFile} from '~/app/_components/ui/fileInput';
+import {useState} from 'react';
+import {readRoomsTestData} from '~/actions';
+import {roomsSchema, type RoomsType} from '~/definitions';
+import {Button} from '~/app/_components/ui/button';
 import RoomsTable from '~/app/_components/ui/RoomsTable';
-import { ArrowRight } from 'lucide-react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import {useRouter} from 'next/navigation';
 
 interface roomsData {
   rooms: RoomsType;

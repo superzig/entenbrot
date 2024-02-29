@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useState } from 'react';
-import { cn } from '~/lib/utils';
-import Dropzone, { FileRejection, useDropzone } from 'react-dropzone';
+import {useEffect, useState} from 'react';
+import {cn} from '~/lib/utils';
+import Dropzone, {type FileError, type FileRejection} from 'react-dropzone';
 
 interface Props {
   onUpload: (file: File) => void;
@@ -37,7 +37,7 @@ export function InputFile({ onUpload, errorMessage = null }: Props) {
   const [fileData, setFileData] = useState<FileDataType>({} as FileDataType);
 
   useEffect(() => {
-    setFileData({ ...fileData, error: errorMessage });
+    setFileData((prevFileData) => ({ ...prevFileData, error: errorMessage }));
   }, [errorMessage]);
 
   const { file, error } = fileData;
@@ -48,7 +48,7 @@ export function InputFile({ onUpload, errorMessage = null }: Props) {
       onUpload(file);
     });
     fileRejections.forEach((fileRejection) => {
-      fileRejection.errors.forEach((error) => {
+      fileRejection.errors.forEach((error: FileError) => {
         setFileData({
           file: fileRejection.file,
           error: getErrorMessage(error.code),

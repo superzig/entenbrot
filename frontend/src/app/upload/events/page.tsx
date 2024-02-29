@@ -2,7 +2,7 @@
 import {InputFile} from '~/app/_components/ui/fileInput';
 import {useState} from 'react';
 import {readEventsTestData} from '~/actions';
-import {eventsSchema, EventsType} from '~/definitions';
+import {eventsSchema, type EventsType} from '~/definitions';
 import {Button} from '~/app/_components/ui/button';
 import EventsTable from '~/app/_components/ui/EventsTable';
 import {useRouter} from 'next/navigation';

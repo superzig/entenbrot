@@ -1,11 +1,10 @@
 'use client';
-import { InputFile } from '~/app/_components/ui/fileInput';
-import { useState } from 'react';
-import { readStudentsTestData } from '~/actions';
-import { studentsSchema, type StudentsType } from '~/definitions';
-import { Button } from '~/app/_components/ui/button';
+import {InputFile} from '~/app/_components/ui/fileInput';
+import {useState} from 'react';
+import {readStudentsTestData} from '~/actions';
+import {studentsSchema, type StudentsType} from '~/definitions';
+import {Button} from '~/app/_components/ui/button';
 import StudentsTable from '~/app/_components/ui/StudentsTable';
-import { useRouter } from 'next/navigation';
 
 interface StudentsData {
   students: StudentsType;
@@ -15,7 +14,6 @@ interface StudentsData {
 export default function Page() {
   const [data, setData] = useState<StudentsData>({ students: [], error: null });
   const { students, error } = data;
-  const router = useRouter();
 
   const onUpload = async () => {
     const data = await readStudentsTestData(); // TODO: replace with API CALL which returns JSON

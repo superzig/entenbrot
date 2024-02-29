@@ -1,13 +1,9 @@
 'use server';
 
-import { z } from 'zod';
-import { promises as fs } from 'fs';
-import {
-  type StudentsType,
-  type EventsType,
-  type RoomsType,
-} from '~/definitions';
+import {promises as fs} from 'fs';
+import {type EventsType, type RoomsType, type StudentsType,} from '~/definitions';
 
+/*
 const allowedExtensions = ['xls', 'xlsx', 'xlsm'];
 
 // Custom validation for the file object
@@ -25,7 +21,7 @@ const fileSchema = z.object({
       }
     ),
 });
-
+*/
 export async function readStudentsTestData(): Promise<StudentsType> {
   const file = await fs.readFile(
     process.cwd() + '/public/data/students.json',

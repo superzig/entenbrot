@@ -1,9 +1,9 @@
 'use client';
-import {InputFile} from '~/app/_components/ui/fileInput';
-import {useState} from 'react';
-import {readStudentsTestData} from '~/actions';
-import {studentsSchema, type StudentsType} from '~/definitions';
-import {Button} from '~/app/_components/ui/button';
+import { InputFile } from '~/app/_components/ui/fileInput';
+import { useState } from 'react';
+import { readStudentsTestData } from '~/actions';
+import { studentsSchema, type StudentsType } from '~/definitions';
+import { Button } from '~/app/_components/ui/button';
 import StudentsTable from '~/app/_components/ui/StudentsTable';
 
 interface StudentsData {

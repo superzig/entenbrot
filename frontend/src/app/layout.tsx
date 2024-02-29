@@ -1,9 +1,9 @@
 import '~/styles/globals.css';
 
-import {Inter} from 'next/font/google';
+import { Inter } from 'next/font/google';
 
-import {TRPCReactProvider} from '~/trpc/react';
-import {cn} from '~/lib/utils';
+import { TRPCReactProvider } from '~/trpc/react';
+import { cn } from '~/lib/utils';
 import Navbar from '~/app/_components/ui/Navbar';
 
 const inter = Inter({

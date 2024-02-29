@@ -1,6 +1,6 @@
-import {useEffect, useState} from 'react';
-import {cn} from '~/lib/utils';
-import Dropzone, {type FileError, type FileRejection} from 'react-dropzone';
+import { useEffect, useState } from 'react';
+import { cn } from '~/lib/utils';
+import Dropzone, { type FileError, type FileRejection } from 'react-dropzone';
 
 interface Props {
   onUpload: (file: File) => void;

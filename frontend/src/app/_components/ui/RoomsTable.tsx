@@ -1,5 +1,13 @@
-import {Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow,} from '~/app/_components/ui/table';
-import {type RoomsType} from '~/definitions';
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '~/app/_components/ui/table';
+import { type RoomsType } from '~/definitions';
 
 interface Props {
   rooms: RoomsType;

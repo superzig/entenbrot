@@ -1,5 +1,13 @@
-import {Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow,} from '~/app/_components/ui/table';
-import {type StudentsType} from '~/definitions';
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '~/app/_components/ui/table';
+import { type StudentsType } from '~/definitions';
 
 interface Props {
   students: StudentsType;

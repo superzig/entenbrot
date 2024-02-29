@@ -1,7 +1,11 @@
 'use server';
 
-import {promises as fs} from 'fs';
-import {type EventsType, type RoomsType, type StudentsType,} from '~/definitions';
+import { promises as fs } from 'fs';
+import {
+  type EventsType,
+  type RoomsType,
+  type StudentsType,
+} from '~/definitions';
 
 /*
 const allowedExtensions = ['xls', 'xlsx', 'xlsm'];

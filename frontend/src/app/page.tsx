@@ -1,7 +1,7 @@
 import MaxWidthWrapper from '~/app/_components/ui/MaxWidthWrapper';
 import Link from 'next/link';
-import {ArrowRight} from 'lucide-react';
-import {buttonVariants} from '~/app/_components/ui/button';
+import { ArrowRight } from 'lucide-react';
+import { buttonVariants } from '~/app/_components/ui/button';
 import eventsImage from '../../public/landing-page-hero-event.png';
 import Image from 'next/image';
 

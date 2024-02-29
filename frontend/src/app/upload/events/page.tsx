@@ -1,7 +1,7 @@
 'use client';
 import { InputFile } from '~/app/_components/ui/fileInput';
-import { useState } from 'react';
-import {getTransformedEvents, readEventsTestData} from '~/actions';
+import {FormEvent, useState} from 'react';
+import {readEventsTestData} from '~/actions';
 import { eventsSchema, type EventsType } from '~/definitions';
 import { Button } from '~/app/_components/ui/button';
 import EventsTable from '~/app/_components/ui/EventsTable';
@@ -39,11 +39,26 @@ export default function Page() {
     }
   };
 
+  async function onSubmitEventUpload(event: FormEvent<HTMLFormElement>)
+  {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    console.log(formData)
+    const response = await fetch('http://localhost:8000/api/returnCompanies', {
+      method: 'POST',
+      body: formData
+    });
+
+    if (response.ok) {
+      console.log("Laravel data: ", response.json());
+    } else {
+      // It's good practice to handle the case where the response is not ok
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+  }
+
   return (
-    <form action={async (formData: FormData) => {
-      const data = await getTransformedEvents(formData);
-      console.log(data);
-    }}>
+    <form onSubmit={onSubmitEventUpload}>
       <div className='flex flex-col'>
         <div className='mb-4'>
           <div className='mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-gray-200 bg-white px-7 py-2 shadow-md backdrop-blur transition-all hover:border-gray-300 hover:bg-white/50'>

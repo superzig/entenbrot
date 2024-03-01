@@ -70,7 +70,7 @@ class ValidateController extends BaseController
         $data = [];
         for ($row = 1; $row <= $lastRow; $row++) {
             $data[] = [
-                'name' => $worksheet->getCell('A' . $row)->getValue(),
+                'name' => strval($worksheet->getCell('A' . $row)->getValue()),
                 'capacity' => $worksheet->getCell('B' . $row)->getValue(),
             ];
         }

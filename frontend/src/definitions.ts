@@ -1,20 +1,27 @@
 import { z } from 'zod';
 
+export type EntityType = 'Companies' | 'Students' | 'Rooms';
+export interface DataResponse<T> {
+  data: T;
+  error: string | null;
+}
+
+
 /*
  ############################
  ##     Students
  ############################
  */
 const studentSchema = z.object({
-  Klasse: z.string(),
-  Name: z.string(),
-  Vorname: z.string(),
-  'Wahl 1': z.number().nullable(),
-  'Wahl 2': z.number().nullable(),
-  'Wahl 3': z.number().nullable(),
-  'Wahl 4': z.number().nullable(),
-  'Wahl 5': z.number().nullable(),
-  'Wahl 6': z.number().nullable(),
+  class: z.string(),
+  firstname: z.string(),
+  lastname: z.string(),
+  choose1: z.number().nullable(),
+  choose2: z.number().nullable(),
+  choose3: z.number().nullable(),
+  choose4: z.number().nullable(),
+  choose5: z.number().nullable(),
+  choose6: z.number().nullable(),
 });
 
 export const studentsSchema = z.array(studentSchema);
@@ -31,10 +38,9 @@ const eventSchema = z.object({
   specialty: z.string().nullable(),
   participants: z.number(),
   eventMax: z.number(),
-  earliestDate: z.number(),
+  earliestDate: z.string(),
   // Add any additional fields here if necessary
 });
-
 export const eventsSchema = z.array(eventSchema);
 export type EventsType = z.infer<typeof eventsSchema>;
 

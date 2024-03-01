@@ -1,37 +1,22 @@
 'use client';
-import { InputFile } from '~/app/_components/ui/fileInput';
-import { useState } from 'react';
-import { readRoomsTestData } from '~/actions';
-import { roomsSchema, type RoomsType } from '~/definitions';
-import { Button } from '~/app/_components/ui/button';
+import {InputFile} from '~/app/_components/ui/fileInput';
+import {useState} from 'react';
+import {transformEntities} from '~/actions';
+import {type DataResponse, type RoomsType} from '~/definitions';
+import {Button} from '~/app/_components/ui/button';
 import RoomsTable from '~/app/_components/ui/RoomsTable';
-import { useRouter } from 'next/navigation';
-
-interface roomsData {
-  rooms: RoomsType;
-  error: string | null;
-}
+import {useRouter} from 'next/navigation';
 
 export default function Page() {
-  const [data, setData] = useState<roomsData>({ rooms: [], error: null });
-  const { rooms, error } = data;
+  const [data, setData] = useState<DataResponse<RoomsType>>({ data: [], error: null });
+  const { data: rooms, error } = data;
   const router = useRouter();
 
-  const onUpload = async () => {
-    const data = await readRoomsTestData(); // TODO: replace with API CALL which returns JSON
-    console.log(data);
-    const validatedData = roomsSchema.safeParse(data);
-
-    if (!validatedData.success) {
-      setData({
-        rooms: [],
-        error: 'Das Format der Excel-Datei entspricht nicht den Vorgaben.',
-      });
-      console.log('not validate data', validatedData.error.flatten());
-      return;
-    }
-    console.log('validated events');
-    setData({ rooms: validatedData.data, error: null });
+  const onUpload = async (file: File) => {
+    const formData = new FormData();
+    formData.append('file', file, file.name);
+    const data = await transformEntities<RoomsType>('Rooms', formData);
+    setData(data);
   };
 
   const handleNavigation = () => {

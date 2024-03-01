@@ -1,49 +1,22 @@
 'use client';
-import { InputFile } from '~/app/_components/ui/fileInput';
-import { useState } from 'react';
-import { readEventsTestData } from '~/actions';
-import { eventsSchema, type EventsType } from '~/definitions';
-import { Button } from '~/app/_components/ui/button';
+import {InputFile} from '~/app/_components/ui/fileInput';
+import {useState} from 'react';
+import {type DataResponse, type EventsType} from '~/definitions';
+import {Button} from '~/app/_components/ui/button';
 import EventsTable from '~/app/_components/ui/EventsTable';
-import { useRouter } from 'next/navigation';
+import {useRouter} from 'next/navigation';
+import {transformEntities} from "~/actions";
 
-interface EventsData {
-  events: EventsType;
-  error: string | null;
-}
 export default function Page() {
-  const [data, setData] = useState<EventsData>({ events: [], error: null });
-  const { events, error } = data;
+  const [data, setData] = useState<DataResponse<EventsType>>({ data: [], error: null });
+  const { data: events, error } = data;
   const router = useRouter();
 
   const onUpload = async (file: File) => {
-
     const formData = new FormData();
     formData.append('file', file, file.name);
-    const response = await fetch('http://localhost:8000/api/validate/returnCompanies', {
-      method: 'POST',
-      body: formData
-    });
-
-    if (response.ok) {
-      const validatedData = eventsSchema.safeParse(await response.json());
-
-      if (!validatedData.success) {
-        setData({
-          events: [],
-          error: 'Das Format der Excel-Datei entspricht nicht den Vorgaben.',
-        });
-        console.log('not validate data', validatedData.error.flatten());
-        return;
-      }
-      console.log('validated events');
-      setData({ events: validatedData.data, error: null });
-    } else {
-      setData({
-        events: [],
-        error: 'Die Excel-Datei konnte nicht validiert werden.',
-      });
-    }
+    const data = await transformEntities<EventsType>('Companies', formData);
+    setData(data);
   };
 
   const handleNavigation = () => {

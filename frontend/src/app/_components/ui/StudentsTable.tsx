@@ -34,15 +34,15 @@ const StudentsTable = ({ students }: Props) => {
       <TableBody>
         {students.map((student, index) => (
           <TableRow key={index}>
-            <TableCell className='font-medium'>{student.Klasse}</TableCell>
-            <TableCell>{student.Vorname}</TableCell>
-            <TableCell>{student.Name}</TableCell>
-            <TableCell className='text-right'>{student['Wahl 1']}</TableCell>
-            <TableCell className='text-right'>{student['Wahl 2']}</TableCell>
-            <TableCell className='text-right'>{student['Wahl 3']}</TableCell>
-            <TableCell className='text-right'>{student['Wahl 4']}</TableCell>
-            <TableCell className='text-right'>{student['Wahl 5']}</TableCell>
-            <TableCell className='text-right'>{student['Wahl 6']}</TableCell>
+            <TableCell className='font-medium'>{student.class}</TableCell>
+            <TableCell>{student.firstname}</TableCell>
+            <TableCell>{student.lastname}</TableCell>
+            <TableCell className='text-right'>{student.choose1}</TableCell>
+            <TableCell className='text-right'>{student.choose2}</TableCell>
+            <TableCell className='text-right'>{student.choose3}</TableCell>
+            <TableCell className='text-right'>{student.choose4}</TableCell>
+            <TableCell className='text-right'>{student.choose5}</TableCell>
+            <TableCell className='text-right'>{student.choose6}</TableCell>
           </TableRow>
         ))}
       </TableBody>

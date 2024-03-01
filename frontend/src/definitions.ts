@@ -16,12 +16,12 @@ const studentSchema = z.object({
   class: z.string(),
   firstname: z.string(),
   lastname: z.string(),
-  choose1: z.number().nullable(),
-  choose2: z.number().nullable(),
-  choose3: z.number().nullable(),
-  choose4: z.number().nullable(),
-  choose5: z.number().nullable(),
-  choose6: z.number().nullable(),
+  choice1: z.number().optional().nullable(),
+  choice2: z.number().optional().nullable(),
+  choice3: z.number().optional().nullable(),
+  choice4: z.number().optional().nullable(),
+  choice5: z.number().optional().nullable(),
+  choice6: z.number().optional().nullable(),
 });
 
 export const studentsSchema = z.array(studentSchema);
@@ -51,7 +51,7 @@ export type EventsType = z.infer<typeof eventsSchema>;
  */
 const roomSchema = z.object({
   name: z.string(),
-  capacity: z.number().optional().default(20),
+  capacity: z.number().nullable().transform((val: number|null) => val ?? 20),
 });
 
 export const roomsSchema = z.array(roomSchema);

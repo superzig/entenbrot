@@ -56,13 +56,13 @@ export async function transformEntities<T>(entityType: EntityType, formData: For
         const validatedData = schema.safeParse(data);
 
         if (!validatedData.success) {
-            console.log("Failed validating:", data, endpoint);
+            console.log("Failed validating:", data, endpoint, validatedData.error.flatten());
             return {
                 data: [] as T,
                 error: `Das Format der Excel-Datei entspricht nicht den Vorgaben für ${entityType}.`,
             };
         }
-
+        console.log("succesfully validated", data)
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         return { data: validatedData.data, error: null };
     } catch (error) {

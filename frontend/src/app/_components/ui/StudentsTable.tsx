@@ -37,12 +37,12 @@ const StudentsTable = ({ students }: Props) => {
             <TableCell className='font-medium'>{student.class}</TableCell>
             <TableCell>{student.firstname}</TableCell>
             <TableCell>{student.lastname}</TableCell>
-            <TableCell className='text-right'>{student.choose1}</TableCell>
-            <TableCell className='text-right'>{student.choose2}</TableCell>
-            <TableCell className='text-right'>{student.choose3}</TableCell>
-            <TableCell className='text-right'>{student.choose4}</TableCell>
-            <TableCell className='text-right'>{student.choose5}</TableCell>
-            <TableCell className='text-right'>{student.choose6}</TableCell>
+            <TableCell className='text-right'>{student.choice1}</TableCell>
+            <TableCell className='text-right'>{student.choice2}</TableCell>
+            <TableCell className='text-right'>{student.choice3}</TableCell>
+            <TableCell className='text-right'>{student.choice4}</TableCell>
+            <TableCell className='text-right'>{student.choice5}</TableCell>
+            <TableCell className='text-right'>{student.choice6}</TableCell>
           </TableRow>
         ))}
       </TableBody>

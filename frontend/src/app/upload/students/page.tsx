@@ -1,35 +1,21 @@
 'use client';
-import { InputFile } from '~/app/_components/ui/fileInput';
-import { useState } from 'react';
-import { readStudentsTestData } from '~/actions';
-import { studentsSchema, type StudentsType } from '~/definitions';
-import { Button } from '~/app/_components/ui/button';
+import {InputFile} from '~/app/_components/ui/fileInput';
+import {useState} from 'react';
+import {transformEntities} from '~/actions';
+import {type DataResponse, type StudentsType} from '~/definitions';
+import {Button} from '~/app/_components/ui/button';
 import StudentsTable from '~/app/_components/ui/StudentsTable';
 
-interface StudentsData {
-  students: StudentsType;
-  error: string | null;
-}
 
 export default function Page() {
-  const [data, setData] = useState<StudentsData>({ students: [], error: null });
-  const { students, error } = data;
+  const [data, setData] = useState<DataResponse<StudentsType>>({ data: [], error: null });
+  const { data: students, error } = data;
 
-  const onUpload = async () => {
-    const data = await readStudentsTestData(); // TODO: replace with API CALL which returns JSON
-    console.log(data);
-    const validatedData = studentsSchema.safeParse(data);
-
-    if (!validatedData.success) {
-      setData({
-        students: [],
-        error: 'Das Format der Excel-Datei entspricht nicht den Vorgaben.',
-      });
-      console.log('not validate data', validatedData.error.flatten());
-      return;
-    }
-    console.log('validated events');
-    setData({ students: validatedData.data, error: null });
+  const onUpload = async (file: File) => {
+    const formData = new FormData();
+    formData.append('file', file, file.name);
+    const data = await transformEntities<StudentsType>('Students', formData);
+    setData(data);
   };
 
   const handleNavigation = () => {

@@ -16,21 +16,34 @@ export default function Page() {
   const { events, error } = data;
   const router = useRouter();
 
-  const onUpload = async () => {
-    const data = await readEventsTestData(); // TODO: replace with API CALL which returns JSON
-    console.log(data);
-    const validatedData = eventsSchema.safeParse(data);
+  const onUpload = async (file: File) => {
 
-    if (!validatedData.success) {
+    const formData = new FormData();
+    formData.append('file', file, file.name);
+    const response = await fetch('http://localhost:8000/api/validate/returnCompanies', {
+      method: 'POST',
+      body: formData
+    });
+
+    if (response.ok) {
+      const validatedData = eventsSchema.safeParse(await response.json());
+
+      if (!validatedData.success) {
+        setData({
+          events: [],
+          error: 'Das Format der Excel-Datei entspricht nicht den Vorgaben.',
+        });
+        console.log('not validate data', validatedData.error.flatten());
+        return;
+      }
+      console.log('validated events');
+      setData({ events: validatedData.data, error: null });
+    } else {
       setData({
         events: [],
-        error: 'Das Format der Excel-Datei entspricht nicht den Vorgaben.',
+        error: 'Die Excel-Datei konnte nicht validiert werden.',
       });
-      console.log('not validate data', validatedData.error.flatten());
-      return;
     }
-    console.log('validated events');
-    setData({ events: validatedData.data, error: null });
   };
 
   const handleNavigation = () => {

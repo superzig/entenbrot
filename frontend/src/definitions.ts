@@ -26,12 +26,12 @@ export type StudentsType = z.infer<typeof studentsSchema>;
  ############################
  */
 const eventSchema = z.object({
-  'Nr. ': z.number(),
-  Unternehmen: z.string(),
-  Fachrichtung: z.string().nullable(),
-  'Max. Teilnehmer': z.number(),
-  'Max. Veranstaltungen': z.number(),
-  'Frühester Zeitpunkt': z.string(),
+  number: z.number(),
+  company: z.string(),
+  specialty: z.string().nullable(),
+  participants: z.number(),
+  eventMax: z.number(),
+  earliestDate: z.number(),
   // Add any additional fields here if necessary
 });
 

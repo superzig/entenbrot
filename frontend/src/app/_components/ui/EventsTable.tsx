@@ -31,17 +31,17 @@ const EventsTable = ({ events }: Props) => {
       <TableBody>
         {events.map((event, index) => (
           <TableRow key={index}>
-            <TableCell className='font-medium'>{event['Nr. ']}</TableCell>
-            <TableCell>{event.Unternehmen}</TableCell>
-            <TableCell>{event.Fachrichtung}</TableCell>
+            <TableCell className='font-medium'>{event.number}</TableCell>
+            <TableCell>{event.company}</TableCell>
+            <TableCell>{event.specialty}</TableCell>
             <TableCell className='text-right'>
-              {event['Max. Teilnehmer']}
+              {event.participants}
             </TableCell>
             <TableCell className='text-right'>
-              {event['Max. Veranstaltungen']}
+              {event.eventMax}
             </TableCell>
             <TableCell className='text-right'>
-              {event['Frühester Zeitpunkt']}
+              {event.earliestDate}
             </TableCell>
           </TableRow>
         ))}

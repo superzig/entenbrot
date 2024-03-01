@@ -90,7 +90,7 @@ class ValidateController extends BaseController
         }
         array_shift($data);
 
-        return new JsonResponse(json_encode($data));
+        return new JsonResponse($data);
     }
     public function returnStudents(): JsonResponse
     {
@@ -112,7 +112,7 @@ class ValidateController extends BaseController
         }
         array_shift($data);
 
-        return new JsonResponse(json_encode($data));
+        return new JsonResponse($data);
     }
     public function returnRooms(): JsonResponse
     {
@@ -134,7 +134,7 @@ class ValidateController extends BaseController
         }
         array_shift($data);
 
-        return new JsonResponse(json_encode($data));
+        return new JsonResponse($data);
     }
 
     public function model(array $row)

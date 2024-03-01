@@ -4,7 +4,7 @@ import Stepper from '~/app/_components/ui/Stepper';
 
 export const metadata = {
   title: 'Upload files',
-  description: 'The official Pathway software.',
+  description: 'The official Entenbrot software.',
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

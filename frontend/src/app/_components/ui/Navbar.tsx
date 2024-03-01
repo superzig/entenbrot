@@ -7,7 +7,7 @@ const Navbar = () => {
       <MaxWidthWrapper>
         <div className='flex h-14 items-center justify-between border-b border-zinc-200'>
           <Link href='/' className='z-40 flex font-semibold'>
-            <span>Pathway.</span>
+            <span>Entenbrot.</span>
           </Link>
 
           <div className='hidden items-center space-x-4 sm:flex'>

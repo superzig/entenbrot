@@ -13,10 +13,10 @@ const inter = Inter({
 
 export const metadata = {
   title: {
-    template: '%s | Pathway',
-    default: 'Pathway',
+    template: '%s | Entenbrot',
+    default: 'Entenbrot',
   },
-  description: 'The official Pathway software.',
+  description: 'The official Entenbrot software.',
   icons: [{ rel: 'icon', url: '/favicon.ico' }],
 };
 

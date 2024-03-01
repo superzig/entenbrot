@@ -1,4 +1,4 @@
-<form action="{{ route('validate.update.x') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('validate.returnStudents') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="col-lg-12">
         <div class="form-floating mb-4">

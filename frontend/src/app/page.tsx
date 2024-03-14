@@ -26,11 +26,13 @@ export default async function Home() {
               Entenbrot ist jetzt öffentlich!
             </p>
           </div>
-          <h1 className='max-w-4xl text-4xl font-bold md:text-6xl lg:text-7xl'>
-            Zuweisung von Schülern zu den geeigneten{' '}
-            <span className='text-blue-500'>Veranstaltungen</span>.
+          <h1 className='max-w-4xl text-4xl font-bold md:text-6xl'>
+            Schülerzuweisung?{' '}
           </h1>
-          <p className='mt-5 max-w-prose text-zinc-700 sm:text-lg'>
+          <h1 className='max-w-4xl text-4xl font-bold md:text-6xl'>
+            Ein <span className='text-blue-500'>Algorithmus</span>, der passt!
+          </h1>
+          <p className='mt-7 max-w-prose text-gray-700 sm:text-lg'>
             Entenbrot ermöglicht die einfache Zuordnung von Schülern zu
             Veranstaltungen. Dokumente hochladen und direkt starten.
           </p>

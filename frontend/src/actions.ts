@@ -52,7 +52,7 @@ export async function transformEntities<T>(entityType: EntityType, formData: For
 
         // Determine the correct schema based on the entity type
         const schema = schemaMap[entityType];
-        const data = await response.json();
+        const data = await response.json() as T;
         const validatedData = schema.safeParse(data);
 
         if (!validatedData.success) {

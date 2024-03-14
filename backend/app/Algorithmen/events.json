@@ -1,0 +1,218 @@
+[
+  {
+    "number": 1,
+    "company": "Zentis",
+    "specialty": "Industriekaufleute",
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "A"
+  },
+  {
+    "number": 2,
+    "company": "Babor Kosmetik ",
+    "specialty": "Industriekaufleute",
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "A"
+  },
+  {
+    "number": 3,
+    "company": "EVA (Stawag, RegioIt, Aseag..)",
+    "specialty": "Industriekaufleute",
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "A"
+  },
+  {
+    "number": 4,
+    "company": "Grünenthal",
+    "specialty": "Industriekaufleute, BWL Plus (Industriekfm. Plus BWL-Studium), Kaufleute für Büromanagement                                  ",
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "A"
+  },
+  {
+    "number": 5,
+    "company": "RWTH Aachen",
+    "specialty": "Kaufleute für Büromanagement",
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "A"
+  },
+  {
+    "number": 6,
+    "company": "Aldi ",
+    "specialty": "Einzelhandelskaufleute",
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "A"
+  },
+  {
+    "number": 7,
+    "company": "Bauhaus",
+    "specialty": "Einzelhandelskaufleute, Handelsfachwirte, Duales Studium",
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "A"
+  },
+  {
+    "number": 8,
+    "company": "Sparkasse Aachen ",
+    "specialty": "Bankkaufleute",
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "A"
+  },
+  {
+    "number": 9,
+    "company": "Aachener Bank ",
+    "specialty": "Bankkaufleute",
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "A"
+  },
+  {
+    "number": 10,
+    "company": "Debeka",
+    "specialty": "Kaufleute für Versicherungen und Finanzen ",
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "B"
+  },
+  {
+    "number": 11,
+    "company": "Steuerberaterkammer Köln ",
+    "specialty": "Steuerfachangestellte",
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "A"
+  },
+  {
+    "number": 12,
+    "company": "Rechtsanwaltberufe",
+    "specialty": "Rechtsanwaltsfachangestellte",
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "A"
+  },
+  {
+    "number": 13,
+    "company": "Notarberufe",
+    "specialty": "Notarfachangestellte",
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "B"
+  },
+  {
+    "number": 14,
+    "company": "Spedition Hammer",
+    "specialty": "Kaufleute für Spedition und Lagerlogistik, Kaufleute für Büromanagement                         ",
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "A"
+  },
+  {
+    "number": 15,
+    "company": "Inform",
+    "specialty": "Kaufmann/-frau für Büromanagement ",
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "A"
+  },
+  {
+    "number": 16,
+    "company": "Inform",
+    "specialty": "Duales Studium Wirtschaftsinformatik ",
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "A"
+  },
+  {
+    "number": 17,
+    "company": "StädteRegion Aachen ",
+    "specialty": "Verwaltungsfachangestellte und Duales Studium Bachelor of Laws/Arts",
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "A"
+  },
+  {
+    "number": 18,
+    "company": "Finanzamt",
+    "specialty": "duales Studium Dipl. Finanzwirt/-in ",
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "A"
+  },
+  {
+    "number": 19,
+    "company": "Finanzamt ",
+    "specialty": "Ausbildung Finanzwirt/-in ",
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "C"
+  },
+  {
+    "number": 20,
+    "company": "Justizvollzugsanstalt",
+    "specialty": "Beamter im allgemeinen Vollzugsdienst, Dipl-Verwaltungswirt (FH)",
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "A"
+  },
+  {
+    "number": 21,
+    "company": "Zoll Aachen",
+    "specialty": "Beamter im mittleren und gehobenen Dienst ",
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "A"
+  },
+  {
+    "number": 22,
+    "company": "Polizei",
+    "specialty": "Polizeikommisar*in ",
+    "participants": 25,
+    "eventMax": 5,
+    "earliestDate": "A"
+  },
+  {
+    "number": 23,
+    "company": "FH Aachen - Studienberatung",
+    "specialty": null,
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "A"
+  },
+  {
+    "number": 24,
+    "company": "RWTH Aachen - Studienberatung",
+    "specialty": "Hinweis: Studium hier nur mit Abitur möglich",
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "A"
+  },
+  {
+    "number": 25,
+    "company": "Wirtschaftsrecht FH-Aachen",
+    "specialty": null,
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "A"
+  },
+  {
+    "number": 26,
+    "company": "Soziale Arbeit ",
+    "specialty": null,
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "B"
+  },
+  {
+    "number": 27,
+    "company": "Lehramt Berufskolleg",
+    "specialty": null,
+    "participants": 20,
+    "eventMax": 5,
+    "earliestDate": "C"
+  }
+]

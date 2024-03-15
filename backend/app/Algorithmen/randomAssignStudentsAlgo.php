@@ -5,6 +5,7 @@ $roomsWithEvents = json_decode(file_get_contents('results/updated_roomsWithEvent
 
 $foundPossibleRoom = [];
 $timeSlots = range('A', 'E');
+
 foreach ($students as &$student) {
     foreach ($roomsWithEvents as $eventIndex => &$roomsData) {
         $assignedRooms = $student['assignedRoom'];
@@ -21,6 +22,10 @@ foreach ($students as &$student) {
         $rooms = &$roomsData['rooms'];
 
         $availableRooms = array_filter($rooms, function ($room) use ($freeTimeSlots, $eventIndex, $usedEvents) {
+            if ($room['name'] == '008-E') {
+                echo "currentCap: ". $room['currentCapacity'] . "\n";
+                echo "is avaible room: " . ($room['currentCapacity'] > 0 && in_array(substr($room['name'], -1), $freeTimeSlots) && !in_array($eventIndex, $usedEvents)) . "\n";
+            };
             return $room['currentCapacity'] > 0 && in_array(substr($room['name'], -1), $freeTimeSlots) && !in_array($eventIndex, $usedEvents) ;
         });
 
@@ -30,7 +35,11 @@ foreach ($students as &$student) {
             $student['assignedRoom'][$eventIndex] = $room['name'];
 
             $roomIndex = array_search($room, $rooms);
-            $roomsData['rooms'][$roomIndex]['currentCapacity'] = $room['currentCapacity'] - 1;
+            $referencedRoom = &$roomsData['rooms'][$roomIndex];
+            $referencedRoom['currentCapacity'] = $referencedRoom['currentCapacity'] - 1;
+            echo "assigned room: " . $room['name'] . " for student " . $student['firstname'] . " " . $student['lastname'] . "\n";
+            echo "current capacity: " . $referencedRoom['currentCapacity'] . "\n";
+            continue;
         }
 
         if (count($student['assignedRoom']) === 5) {

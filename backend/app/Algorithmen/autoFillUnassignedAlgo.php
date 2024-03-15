@@ -1,7 +1,8 @@
 <?php
 $students = json_decode(file_get_contents('results/updated_students2.json'), true);
-$roomsWithEvents = json_decode(file_get_contents('results/roomsWithEvents.json'), true);
+$roomsWithEvents = json_decode(file_get_contents('results/updated_roomsWithEvents.json'), true);
 $foundPossibleRoom = [];
+
 foreach ($students as &$student) {
 
     if (!isset($student['unAssignedRoom'])) {

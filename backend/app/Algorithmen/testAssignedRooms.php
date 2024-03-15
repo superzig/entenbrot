@@ -1,6 +1,7 @@
 <?php
 
 $students = json_decode(file_get_contents('results/updated_students4.json'), true);
+$rooms = json_decode(file_get_contents('data/rooms.json'), true);
 
 $assignedRooms = [];
 foreach ($students as $student) {
@@ -28,6 +29,13 @@ foreach ($students as $student) {
             'firstname' => $student['firstname'],
             'lastname' => $student['lastname'],
         ];
+    }
+}
+
+// check if the assignedRooms count is not greater than the "capacity" in the $rooms array based on the "name" key
+foreach ($assignedRooms as $room => $students) {
+    if (count($students) > $rooms[array_search($room, array_column($rooms, 'name'))]['capacity']) {
+        echo "Room " . $room . " has more students than its capacity \n";
     }
 }
 

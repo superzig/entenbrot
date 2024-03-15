@@ -39,7 +39,6 @@ foreach ($students as $student) {
     foreach ($choices as $choiceNumber => $eventChoice) {
 
         if (array_key_exists($eventChoice, $assignedRooms)) {
-            $count++;
             $score += $scorePoints[$choiceNumber+1];
             $grantedChoices[$eventChoice] = $scorePoints[$choiceNumber+1];
         } else {

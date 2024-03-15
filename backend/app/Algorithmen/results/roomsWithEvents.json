@@ -100,7 +100,7 @@
         "rooms": [
             {
                 "name": "102-B",
-                "currentCapacity": 6,
+                "currentCapacity": 5,
                 "maxCapacity": 20
             }
         ],
@@ -186,7 +186,7 @@
             },
             {
                 "name": "106-B",
-                "currentCapacity": 8,
+                "currentCapacity": 9,
                 "maxCapacity": 20
             }
         ],
@@ -202,7 +202,7 @@
             },
             {
                 "name": "106-D",
-                "currentCapacity": 8,
+                "currentCapacity": 9,
                 "maxCapacity": 20
             }
         ],
@@ -234,7 +234,7 @@
             },
             {
                 "name": "107-C",
-                "currentCapacity": 12,
+                "currentCapacity": 13,
                 "maxCapacity": 20
             }
         ],
@@ -276,7 +276,7 @@
             },
             {
                 "name": "108-D",
-                "currentCapacity": 10,
+                "currentCapacity": 9,
                 "maxCapacity": 20
             }
         ],
@@ -298,7 +298,7 @@
         "rooms": [
             {
                 "name": "109-A",
-                "currentCapacity": 13,
+                "currentCapacity": 12,
                 "maxCapacity": 20
             }
         ],
@@ -325,7 +325,7 @@
         "rooms": [
             {
                 "name": "109-D",
-                "currentCapacity": 8,
+                "currentCapacity": 7,
                 "maxCapacity": 20
             }
         ],
@@ -347,7 +347,7 @@
         "rooms": [
             {
                 "name": "110-A",
-                "currentCapacity": 14,
+                "currentCapacity": 15,
                 "maxCapacity": 20
             }
         ],
@@ -363,7 +363,7 @@
             },
             {
                 "name": "110-C",
-                "currentCapacity": 12,
+                "currentCapacity": 11,
                 "maxCapacity": 20
             }
         ],
@@ -374,7 +374,7 @@
         "rooms": [
             {
                 "name": "110-D",
-                "currentCapacity": 14,
+                "currentCapacity": 15,
                 "maxCapacity": 20
             }
         ],

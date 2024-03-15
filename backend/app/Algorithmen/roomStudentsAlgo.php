@@ -1,8 +1,8 @@
 <?php
 
 // Load and decode JSON data
-$studentsJson = file_get_contents('students2.json');
-$roomsJson = file_get_contents('roomsWithEvents.json');
+$studentsJson = file_get_contents('results/students2.json');
+$roomsJson = file_get_contents('results/roomsWithEvents.json');
 
 $students = json_decode($studentsJson, true)['students'];
 $roomsWithEvents = json_decode($roomsJson, true);
@@ -42,4 +42,5 @@ foreach ($students as &$student) {
 }
 
 // Output the result
-file_put_contents('updated_students2.json', json_encode($students));
+file_put_contents('results/updated_roomsWithEvents.json', json_encode($roomsWithEvents, JSON_PRETTY_PRINT));
+file_put_contents('results/updated_students2.json', json_encode($students, JSON_PRETTY_PRINT));

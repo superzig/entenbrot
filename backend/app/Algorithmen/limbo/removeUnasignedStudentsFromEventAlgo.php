@@ -1,9 +1,9 @@
 <?php
 
-$roomsWithEventsJson = file_get_contents('roomsWithEvents.json');
+$roomsWithEventsJson = file_get_contents('results/roomsWithEvents.json');
 $roomsWithEvents = json_decode($roomsWithEventsJson, true);
 
-$updatedStudentsJson = file_get_contents('updated_students.json');
+$updatedStudentsJson = file_get_contents('results/updated_students2.json');
 $updatedStudents = json_decode($updatedStudentsJson, true);
 
 foreach ($updatedStudents as $student) {
@@ -22,5 +22,5 @@ foreach ($updatedStudents as $student) {
 }
 
 // Output the updated JSON
-file_put_contents('updated_roomsWithEvents.json', json_encode($roomsWithEvents, JSON_PRETTY_PRINT));
+file_put_contents('results/updated_roomsWithEvents.json', json_encode($roomsWithEvents, JSON_PRETTY_PRINT));
 ?>

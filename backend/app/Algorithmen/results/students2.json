@@ -39,7 +39,7 @@
             ]
         },
         {
-            "firstname": "Görgen",
+            "firstname": "G\u00f6rgen",
             "lastname": "Smilla Marie",
             "assignedEvents": [
                 20,
@@ -99,11 +99,11 @@
             "firstname": "Kavak",
             "lastname": "Hazal",
             "assignedEvents": [
-                8,
-                26,
-                11,
-                18,
-                13
+                10,
+                27,
+                2,
+                1,
+                17
             ],
             "choices": [
                 null,
@@ -248,7 +248,7 @@
             ]
         },
         {
-            "firstname": "Sengöz",
+            "firstname": "Seng\u00f6z",
             "lastname": "Aleyna",
             "assignedEvents": [
                 1,
@@ -324,7 +324,7 @@
             ]
         },
         {
-            "firstname": "Bücken",
+            "firstname": "B\u00fccken",
             "lastname": "Connor Luca",
             "assignedEvents": [
                 19,
@@ -419,7 +419,7 @@
             ]
         },
         {
-            "firstname": "Gaßn",
+            "firstname": "Ga\u00dfn",
             "lastname": "Jean-Michel",
             "assignedEvents": [
                 18,
@@ -464,7 +464,7 @@
                 19,
                 10,
                 3,
-                27
+                1
             ],
             "choices": [
                 9,
@@ -476,7 +476,7 @@
             ]
         },
         {
-            "firstname": "Kaußn",
+            "firstname": "Kau\u00dfn",
             "lastname": "Maximilian",
             "assignedEvents": [
                 14,
@@ -555,10 +555,10 @@
             "firstname": "luwawu",
             "lastname": "Espoir",
             "assignedEvents": [
-                3,
+                2,
+                8,
+                24,
                 11,
-                7,
-                17,
                 18
             ],
             "choices": [
@@ -913,7 +913,7 @@
             ]
         },
         {
-            "firstname": "Jöpgen",
+            "firstname": "J\u00f6pgen",
             "lastname": "Joel-Luis",
             "assignedEvents": [
                 18,
@@ -1046,7 +1046,7 @@
             ]
         },
         {
-            "firstname": "Sarigü",
+            "firstname": "Sarig\u00fc",
             "lastname": "Nehir Zehra",
             "assignedEvents": [
                 18,
@@ -1198,7 +1198,7 @@
             ]
         },
         {
-            "firstname": "Aygün",
+            "firstname": "Ayg\u00fcn",
             "lastname": "Zanya",
             "assignedEvents": [
                 10,
@@ -1350,7 +1350,7 @@
             ]
         },
         {
-            "firstname": "GÖcesin",
+            "firstname": "G\u00d6cesin",
             "lastname": "Ela Nur",
             "assignedEvents": [
                 9,
@@ -1673,7 +1673,7 @@
             ]
         },
         {
-            "firstname": "Gümez",
+            "firstname": "G\u00fcmez",
             "lastname": "Koray",
             "assignedEvents": [
                 8,
@@ -1977,7 +1977,7 @@
             ]
         },
         {
-            "firstname": "Groß",
+            "firstname": "Gro\u00df",
             "lastname": "Emily",
             "assignedEvents": [
                 9,
@@ -2129,7 +2129,7 @@
             ]
         },
         {
-            "firstname": "Schmücker",
+            "firstname": "Schm\u00fccker",
             "lastname": "Paul",
             "assignedEvents": [
                 19,
@@ -2357,7 +2357,7 @@
             ]
         },
         {
-            "firstname": "Grübler",
+            "firstname": "Gr\u00fcbler",
             "lastname": "Jonathan",
             "assignedEvents": [
                 15,
@@ -2376,7 +2376,7 @@
             ]
         },
         {
-            "firstname": "Günaydin",
+            "firstname": "G\u00fcnaydin",
             "lastname": "Viyan",
             "assignedEvents": [
                 23,
@@ -2471,7 +2471,7 @@
             ]
         },
         {
-            "firstname": "Meiß",
+            "firstname": "Mei\u00df",
             "lastname": "Timo",
             "assignedEvents": [
                 26,

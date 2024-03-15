@@ -1,7 +1,7 @@
 <?php
 
-$students = json_decode(file_get_contents('updated_students2.json'), true);
-
+$students = json_decode(file_get_contents('results/updated_students2.json'), true);
+$roomsWithEvents = json_decode(file_get_contents('results/roomsWithEvents.json'), true);
 
 $assignedRooms = [];
 
@@ -21,4 +21,4 @@ foreach ($students as $student) {
 
 }
 
-file_put_contents('assignedRooms.json', json_encode($assignedRooms, JSON_PRETTY_PRINT));
+file_put_contents('results/assignedRooms.json', json_encode($assignedRooms, JSON_PRETTY_PRINT));

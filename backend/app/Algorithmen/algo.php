@@ -6,7 +6,6 @@ $eventsJson = file_get_contents('events.json');
 $students = json_decode($studentsJson, true);
 $originalEvents = json_decode($eventsJson, true);
 
-// Erweitere Events basierend auf ihrer maximalen Kapazität
 $expandedEvents = [];
 foreach ($originalEvents as $event) {
     $event['assignedStudents'] = [];
@@ -16,6 +15,7 @@ foreach ($originalEvents as $event) {
 
 foreach ($students as &$student) {
     $student['assignedEvents'] = [];
+
     $assignStudentToEvent = function (&$student, &$event) {
         if (count($event['assignedStudents']) < $event['totalCapacity']) {
             $event['assignedStudents'][] = $student['firstname'] . ' ' . $student['lastname'];
@@ -25,9 +25,7 @@ foreach ($students as &$student) {
         return false;
     };
 
-    $choices = ['choice1', 'choice2', 'choice3', 'choice4', 'choice5', 'choice6'];
-
-    foreach ($choices as $choiceIndex => $choice) {
+    foreach (['choice1', 'choice2', 'choice3', 'choice4', 'choice5', 'choice6'] as $choice) {
         if (!empty($student[$choice])) {
             foreach ($expandedEvents as &$event) {
                 if ($event['number'] == $student[$choice] && $assignStudentToEvent($student, $event)) {
@@ -36,13 +34,11 @@ foreach ($students as &$student) {
             }
         }
 
-        // Überprüfe, ob der Schüler bereits fünf Events hat
         if (count($student['assignedEvents']) == 5) {
             break;
         }
     }
 
-    // Füge zufällige Events hinzu, wenn der Schüler noch keine 5 hat
     while (count($student['assignedEvents']) < 5) {
         $availableEvents = array_filter($expandedEvents, function ($event) use ($student) {
             return count($event['assignedStudents']) < $event['totalCapacity'] && !in_array($event['number'], $student['assignedEvents']);
@@ -63,28 +59,35 @@ $studentsEvents = array_map(function ($student) {
         'lastname' => $student['lastname'],
         'assignedEvents' => $student['assignedEvents'],
         'choices' => [
-            isset($student['choice1']) ? $student['choice1'] : null,
-            isset($student['choice2']) ? $student['choice2'] : null,
-            isset($student['choice3']) ? $student['choice3'] : null,
-            isset($student['choice4']) ? $student['choice4'] : null,
-            isset($student['choice5']) ? $student['choice5'] : null,
-            isset($student['choice6']) ? $student['choice6'] : null,
+            $student['choice1'],
+            $student['choice2'],
+            $student['choice3'],
+            $student['choice4'],
+            $student['choice5'],
+            $student['choice6'],
         ]
     ];
 }, $students);
 
-$eventsWithStudentCount = array_map(function ($event) {
+$eventsWithRoomCount = array_map(function ($event) {
+    $roomsNeeded = ceil(count($event['assignedStudents']) / 20);
     return [
         'eventId' => $event['number'],
         'studentCount' => count($event['assignedStudents']),
-        'totalCapacity' => $event['totalCapacity']
+        'totalCapacity' => $event['totalCapacity'],
+        'roomsNeeded' => $roomsNeeded
     ];
 }, $expandedEvents);
 
-// Ausgabe der Studenten- und Eventlisten
-echo json_encode([
-    'students' => $studentsEvents,
-    'events' => $eventsWithStudentCount
-]);
+// Berechnen der Gesamtsumme der benötigten Räume
+$totalRoomsNeeded = array_sum(array_column($eventsWithRoomCount, 'roomsNeeded'));
 
-?>
+// Ausgabe der Studenten- und Eventlisten und der Gesamtzahl der benötigten Räume
+file_put_contents('students2.json', json_encode([
+    'students' => $studentsEvents,
+]));
+
+file_put_contents('events2.json', json_encode([
+    'events' => $eventsWithRoomCount,
+]));
+

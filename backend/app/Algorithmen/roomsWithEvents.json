@@ -1,0 +1,296 @@
+{
+    "1": {
+      "rooms": [
+        {
+          "name": "008-A"
+        }
+      ],
+      "totalStudents": 15,
+      "totalCapacity": 15
+    },
+    "2": {
+      "rooms": [
+        {
+          "name": "008-B"
+        },
+        {
+          "name": "008-C"
+        }
+      ],
+      "totalStudents": 21,
+      "totalCapacity": 30
+    },
+    "3": {
+      "rooms": [
+        {
+          "name": "008-D"
+        },
+        {
+          "name": "008-E"
+        }
+      ],
+      "totalStudents": 35,
+      "totalCapacity": 30
+    },
+    "4": {
+      "rooms": [
+        {
+          "name": "101-A"
+        }
+      ],
+      "totalStudents": 20,
+      "totalCapacity": 20
+    },
+    "5": {
+      "rooms": [
+        {
+          "name": "101-B"
+        }
+      ],
+      "totalStudents": 11,
+      "totalCapacity": 20
+    },
+    "6": {
+      "rooms": [
+        {
+          "name": "101-C"
+        },
+        {
+          "name": "101-D"
+        },
+        {
+          "name": "101-E"
+        }
+      ],
+      "totalStudents": 45,
+      "totalCapacity": 60
+    },
+    "7": {
+      "rooms": [
+        {
+          "name": "102-A"
+        }
+      ],
+      "totalStudents": 13,
+      "totalCapacity": 20
+    },
+    "8": {
+      "rooms": [
+        {
+          "name": "102-B"
+        }
+      ],
+      "totalStudents": 17,
+      "totalCapacity": 20
+    },
+    "9": {
+      "rooms": [
+        {
+          "name": "102-C"
+        },
+        {
+          "name": "102-D"
+        }
+      ],
+      "totalStudents": 30,
+      "totalCapacity": 40
+    },
+    "10": {
+      "rooms": [
+        {
+          "name": "102-E"
+        },
+        {
+          "name": "103-A"
+        }
+      ],
+      "totalStudents": 35,
+      "totalCapacity": 40
+    },
+    "11": {
+      "rooms": [
+        {
+          "name": "103-B"
+        }
+      ],
+      "totalStudents": 12,
+      "totalCapacity": 20
+    },
+    "12": {
+      "rooms": [
+        {
+          "name": "103-C"
+        }
+      ],
+      "totalStudents": 15,
+      "totalCapacity": 20
+    },
+    "13": {
+      "rooms": [
+        {
+          "name": "103-D"
+        },
+        {
+          "name": "103-E"
+        }
+      ],
+      "totalStudents": 34,
+      "totalCapacity": 40
+    },
+    "14": {
+      "rooms": [
+        {
+          "name": "106-A"
+        },
+        {
+          "name": "106-B"
+        }
+      ],
+      "totalStudents": 38,
+      "totalCapacity": 40
+    },
+    "15": {
+      "rooms": [
+        {
+          "name": "106-C"
+        },
+        {
+          "name": "106-D"
+        }
+      ],
+      "totalStudents": 23,
+      "totalCapacity": 40
+    },
+    "16": {
+      "rooms": [
+        {
+          "name": "106-E"
+        },
+        {
+          "name": "107-A"
+        }
+      ],
+      "totalStudents": 27,
+      "totalCapacity": 40
+    },
+    "17": {
+      "rooms": [
+        {
+          "name": "107-B"
+        },
+        {
+          "name": "107-C"
+        }
+      ],
+      "totalStudents": 26,
+      "totalCapacity": 40
+    },
+    "18": {
+      "rooms": [
+        {
+          "name": "107-D"
+        },
+        {
+          "name": "107-E"
+        },
+        {
+          "name": "108-A"
+        }
+      ],
+      "totalStudents": 56,
+      "totalCapacity": 60
+    },
+    "19": {
+      "rooms": [
+        {
+          "name": "108-B"
+        },
+        {
+          "name": "108-C"
+        },
+        {
+          "name": "108-D"
+        }
+      ],
+      "totalStudents": 60,
+      "totalCapacity": 60
+    },
+    "20": {
+      "rooms": [
+        {
+          "name": "108-E"
+        }
+      ],
+      "totalStudents": 18,
+      "totalCapacity": 20
+    },
+    "21": {
+      "rooms": [
+        {
+          "name": "109-A"
+        }
+      ],
+      "totalStudents": 14,
+      "totalCapacity": 20
+    },
+    "22": {
+      "rooms": [
+        {
+          "name": "109-B"
+        },
+        {
+          "name": "109-C"
+        }
+      ],
+      "totalStudents": 22,
+      "totalCapacity": 40
+    },
+    "23": {
+      "rooms": [
+        {
+          "name": "109-D"
+        }
+      ],
+      "totalStudents": 17,
+      "totalCapacity": 20
+    },
+    "24": {
+      "rooms": [
+        {
+          "name": "109-E"
+        }
+      ],
+      "totalStudents": 7,
+      "totalCapacity": 20
+    },
+    "25": {
+      "rooms": [
+        {
+          "name": "110-A"
+        }
+      ],
+      "totalStudents": 7,
+      "totalCapacity": 20
+    },
+    "26": {
+      "rooms": [
+        {
+          "name": "110-B"
+        },
+        {
+          "name": "110-C"
+        }
+      ],
+      "totalStudents": 36,
+      "totalCapacity": 40
+    },
+    "27": {
+      "rooms": [
+        {
+          "name": "110-D"
+        }
+      ],
+      "totalStudents": 10,
+      "totalCapacity": 20
+    }
+  }

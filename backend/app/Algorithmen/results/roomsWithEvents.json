@@ -3,7 +3,7 @@
         "rooms": [
             {
                 "name": "008-A",
-                "currentCapacity": 15,
+                "currentCapacity": 0,
                 "maxCapacity": 15
             }
         ],
@@ -14,12 +14,12 @@
         "rooms": [
             {
                 "name": "008-B",
-                "currentCapacity": 15,
+                "currentCapacity": 0,
                 "maxCapacity": 15
             },
             {
                 "name": "008-C",
-                "currentCapacity": 15,
+                "currentCapacity": 0,
                 "maxCapacity": 15
             }
         ],
@@ -30,12 +30,12 @@
         "rooms": [
             {
                 "name": "008-D",
-                "currentCapacity": 15,
+                "currentCapacity": 0,
                 "maxCapacity": 15
             },
             {
                 "name": "008-E",
-                "currentCapacity": 15,
+                "currentCapacity": 0,
                 "maxCapacity": 15
             }
         ],
@@ -46,7 +46,7 @@
         "rooms": [
             {
                 "name": "101-A",
-                "currentCapacity": 20,
+                "currentCapacity": 0,
                 "maxCapacity": 20
             }
         ],
@@ -57,7 +57,7 @@
         "rooms": [
             {
                 "name": "101-B",
-                "currentCapacity": 20,
+                "currentCapacity": 0,
                 "maxCapacity": 20
             }
         ],
@@ -68,17 +68,17 @@
         "rooms": [
             {
                 "name": "101-C",
-                "currentCapacity": 20,
+                "currentCapacity": 0,
                 "maxCapacity": 20
             },
             {
                 "name": "101-D",
-                "currentCapacity": 20,
+                "currentCapacity": 0,
                 "maxCapacity": 20
             },
             {
                 "name": "101-E",
-                "currentCapacity": 20,
+                "currentCapacity": 0,
                 "maxCapacity": 20
             }
         ],
@@ -89,7 +89,7 @@
         "rooms": [
             {
                 "name": "102-A",
-                "currentCapacity": 20,
+                "currentCapacity": 0,
                 "maxCapacity": 20
             }
         ],
@@ -100,7 +100,7 @@
         "rooms": [
             {
                 "name": "102-B",
-                "currentCapacity": 20,
+                "currentCapacity": 6,
                 "maxCapacity": 20
             }
         ],
@@ -111,12 +111,12 @@
         "rooms": [
             {
                 "name": "102-C",
-                "currentCapacity": 20,
+                "currentCapacity": 0,
                 "maxCapacity": 20
             },
             {
                 "name": "102-D",
-                "currentCapacity": 20,
+                "currentCapacity": 0,
                 "maxCapacity": 20
             }
         ],
@@ -127,12 +127,12 @@
         "rooms": [
             {
                 "name": "102-E",
-                "currentCapacity": 20,
+                "currentCapacity": 0,
                 "maxCapacity": 20
             },
             {
                 "name": "103-A",
-                "currentCapacity": 20,
+                "currentCapacity": 0,
                 "maxCapacity": 20
             }
         ],
@@ -143,7 +143,7 @@
         "rooms": [
             {
                 "name": "103-B",
-                "currentCapacity": 20,
+                "currentCapacity": 9,
                 "maxCapacity": 20
             }
         ],
@@ -154,7 +154,7 @@
         "rooms": [
             {
                 "name": "103-C",
-                "currentCapacity": 20,
+                "currentCapacity": 0,
                 "maxCapacity": 20
             }
         ],
@@ -165,12 +165,12 @@
         "rooms": [
             {
                 "name": "103-D",
-                "currentCapacity": 20,
+                "currentCapacity": 0,
                 "maxCapacity": 20
             },
             {
                 "name": "103-E",
-                "currentCapacity": 20,
+                "currentCapacity": 0,
                 "maxCapacity": 20
             }
         ],
@@ -181,12 +181,12 @@
         "rooms": [
             {
                 "name": "106-A",
-                "currentCapacity": 20,
+                "currentCapacity": 0,
                 "maxCapacity": 20
             },
             {
                 "name": "106-B",
-                "currentCapacity": 20,
+                "currentCapacity": 8,
                 "maxCapacity": 20
             }
         ],
@@ -197,12 +197,12 @@
         "rooms": [
             {
                 "name": "106-C",
-                "currentCapacity": 20,
+                "currentCapacity": 0,
                 "maxCapacity": 20
             },
             {
                 "name": "106-D",
-                "currentCapacity": 20,
+                "currentCapacity": 8,
                 "maxCapacity": 20
             }
         ],
@@ -213,12 +213,12 @@
         "rooms": [
             {
                 "name": "106-E",
-                "currentCapacity": 20,
+                "currentCapacity": 0,
                 "maxCapacity": 20
             },
             {
                 "name": "107-A",
-                "currentCapacity": 20,
+                "currentCapacity": 5,
                 "maxCapacity": 20
             }
         ],
@@ -229,12 +229,12 @@
         "rooms": [
             {
                 "name": "107-B",
-                "currentCapacity": 20,
+                "currentCapacity": 8,
                 "maxCapacity": 20
             },
             {
                 "name": "107-C",
-                "currentCapacity": 20,
+                "currentCapacity": 12,
                 "maxCapacity": 20
             }
         ],
@@ -245,17 +245,17 @@
         "rooms": [
             {
                 "name": "107-D",
-                "currentCapacity": 20,
+                "currentCapacity": 0,
                 "maxCapacity": 20
             },
             {
                 "name": "107-E",
-                "currentCapacity": 20,
+                "currentCapacity": 0,
                 "maxCapacity": 20
             },
             {
                 "name": "108-A",
-                "currentCapacity": 20,
+                "currentCapacity": 8,
                 "maxCapacity": 20
             }
         ],
@@ -266,17 +266,17 @@
         "rooms": [
             {
                 "name": "108-B",
-                "currentCapacity": 20,
+                "currentCapacity": 0,
                 "maxCapacity": 20
             },
             {
                 "name": "108-C",
-                "currentCapacity": 20,
+                "currentCapacity": 0,
                 "maxCapacity": 20
             },
             {
                 "name": "108-D",
-                "currentCapacity": 20,
+                "currentCapacity": 10,
                 "maxCapacity": 20
             }
         ],
@@ -287,7 +287,7 @@
         "rooms": [
             {
                 "name": "108-E",
-                "currentCapacity": 20,
+                "currentCapacity": 3,
                 "maxCapacity": 20
             }
         ],
@@ -298,7 +298,7 @@
         "rooms": [
             {
                 "name": "109-A",
-                "currentCapacity": 20,
+                "currentCapacity": 13,
                 "maxCapacity": 20
             }
         ],
@@ -309,12 +309,12 @@
         "rooms": [
             {
                 "name": "109-B",
-                "currentCapacity": 20,
+                "currentCapacity": 9,
                 "maxCapacity": 20
             },
             {
                 "name": "109-C",
-                "currentCapacity": 20,
+                "currentCapacity": 16,
                 "maxCapacity": 20
             }
         ],
@@ -325,7 +325,7 @@
         "rooms": [
             {
                 "name": "109-D",
-                "currentCapacity": 20,
+                "currentCapacity": 8,
                 "maxCapacity": 20
             }
         ],
@@ -336,7 +336,7 @@
         "rooms": [
             {
                 "name": "109-E",
-                "currentCapacity": 20,
+                "currentCapacity": 17,
                 "maxCapacity": 20
             }
         ],
@@ -347,7 +347,7 @@
         "rooms": [
             {
                 "name": "110-A",
-                "currentCapacity": 20,
+                "currentCapacity": 14,
                 "maxCapacity": 20
             }
         ],
@@ -358,12 +358,12 @@
         "rooms": [
             {
                 "name": "110-B",
-                "currentCapacity": 20,
+                "currentCapacity": 0,
                 "maxCapacity": 20
             },
             {
                 "name": "110-C",
-                "currentCapacity": 20,
+                "currentCapacity": 12,
                 "maxCapacity": 20
             }
         ],
@@ -374,7 +374,7 @@
         "rooms": [
             {
                 "name": "110-D",
-                "currentCapacity": 20,
+                "currentCapacity": 14,
                 "maxCapacity": 20
             }
         ],

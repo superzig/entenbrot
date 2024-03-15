@@ -83,17 +83,17 @@ $eventsWithRoomCount = array_map(function ($event) {
 $totalRoomsNeeded = array_sum(array_column($eventsWithRoomCount, 'roomsNeeded'));
 
 // Ausgabe der Studenten- und Eventlisten und der Gesamtzahl der benötigten Räume
-file_put_contents('results/students2.json', json_encode([
+file_put_contents('results/students.json', json_encode([
     'students' => $studentsEvents,
 ], JSON_PRETTY_PRINT));
 
-file_put_contents('results/events2.json', json_encode([
+file_put_contents('results/events.json', json_encode([
     'events' => $eventsWithRoomCount,
 ], JSON_PRETTY_PRINT));
 
 // Daten aus JSON-Dateien einlesen
 $roomsJson = file_get_contents('data/rooms.json');
-$eventsJson = file_get_contents('results/events2.json');
+$eventsJson = file_get_contents('results/events.json');
 
 // In PHP-Arrays umwandeln
 $rooms = json_decode($roomsJson, true);
@@ -133,7 +133,7 @@ foreach ($events as $event) {
 file_put_contents('results/roomsWithEvents.json', json_encode($eventRoomAssignments, JSON_PRETTY_PRINT));
 
 // Load and decode JSON data
-$studentsJson = file_get_contents('results/students2.json');
+$studentsJson = file_get_contents('results/students.json');
 $roomsJson = file_get_contents('results/roomsWithEvents.json');
 
 $students = json_decode($studentsJson, true)['students'];
@@ -174,26 +174,12 @@ foreach ($students as &$student) {
 }
 
 // Output the result
-file_put_contents('results/updated_roomsWithEvents.json', json_encode($roomsWithEvents, JSON_PRETTY_PRINT));
-file_put_contents('results/updated_students2.json', json_encode($students, JSON_PRETTY_PRINT));
+file_put_contents('results/roomsWithEvents.json', json_encode($roomsWithEvents, JSON_PRETTY_PRINT));
+file_put_contents('results/students.json', json_encode($students, JSON_PRETTY_PRINT));
 
-$students = json_decode(file_get_contents('results/updated_students2.json'), true);
-$roomsWithEvents = json_decode(file_get_contents('results/updated_roomsWithEvents.json'), true);
+$students = json_decode(file_get_contents('results/students.json'), true);
+$roomsWithEvents = json_decode(file_get_contents('results/roomsWithEvents.json'), true);
 $foundPossibleRoom = [];
-
-// get me the room with the "name" of 101-C in "rooms" key
-
-//foreach ($roomsWithEvents as $roomsWithEvent) {
-//    foreach ($roomsWithEvent['rooms'] as $room) {
-//        if ($room['name'] == '101-C') {
-//            echo "found room 101-C \n";
-//            echo "current capacity: " . $room['currentCapacity'] . "\n";
-//        }
-//    }
-//
-//}
-//return;
-
 
 foreach ($students as &$student) {
 
@@ -242,11 +228,11 @@ foreach ($students as &$student) {
     }
 }
 
-file_put_contents('results/updated_roomsWithEvents3.json', json_encode($roomsWithEvents, JSON_PRETTY_PRINT));
-file_put_contents('results/updated_students3.json', json_encode($students, JSON_PRETTY_PRINT));
+file_put_contents('results/roomsWithEvents.json', json_encode($roomsWithEvents, JSON_PRETTY_PRINT));
+file_put_contents('results/students.json', json_encode($students, JSON_PRETTY_PRINT));
 
-$students = json_decode(file_get_contents('results/updated_students3.json'), true);
-$roomsWithEvents = json_decode(file_get_contents('results/updated_roomsWithEvents3.json'), true);
+$students = json_decode(file_get_contents('results/students.json'), true);
+$roomsWithEvents = json_decode(file_get_contents('results/roomsWithEvents.json'), true);
 
 $foundPossibleRoom = [];
 $timeSlots = range('A', 'E');
@@ -293,10 +279,10 @@ foreach ($students as &$student) {
     }
 }
 
-file_put_contents('results/updated_roomsWithEvents4.json', json_encode($roomsWithEvents, JSON_PRETTY_PRINT));
-file_put_contents('results/updated_students4.json', json_encode($students, JSON_PRETTY_PRINT));
+file_put_contents('results/roomsWithEvents.json', json_encode($roomsWithEvents, JSON_PRETTY_PRINT));
+file_put_contents('results/students.json', json_encode($students, JSON_PRETTY_PRINT));
 
-$roomsWithEvents = json_decode(file_get_contents('results/updated_roomsWithEvents4.json'), true);
+$roomsWithEvents = json_decode(file_get_contents('results/roomsWithEvents.json'), true);
 
 foreach ($roomsWithEvents as &$roomsWithEvent) {
     $rooms = &$roomsWithEvent['rooms'];
@@ -306,10 +292,54 @@ foreach ($roomsWithEvents as &$roomsWithEvent) {
     });
 }
 
-file_put_contents('results/updated_roomsWithEvents5.json', json_encode($roomsWithEvents, JSON_PRETTY_PRINT));
+file_put_contents('results/roomsWithEvents.json', json_encode($roomsWithEvents, JSON_PRETTY_PRINT));
 
 $endTime = microtime(true);
 
 $difference =  $endTime - $startTime;
 
 echo "The script took " . $difference . " seconds to run";
+
+echo "Testing results of algorithm... \n";
+
+
+$studentsTest =  json_decode(file_get_contents('results/students.json'), true);
+$rooms = json_decode(file_get_contents('data/rooms.json'), true);
+$assignedRooms = [];
+foreach ($studentsTest as $studentTest) {
+
+    if (count($studentTest['assignedRoom']) < 5) {
+        echo "Student " . $studentTest['firstname'] . " " . $studentTest['lastname'] . " has not been assigned to 5 rooms \n";
+    }
+
+    // check if each time slot of the student assignedRooms is unique
+    $timeSlots = array_map(static function ($room) {
+        return substr($room, -1);
+    }, $studentTest['assignedRoom']);
+
+    if (count($timeSlots) !== count(array_unique($timeSlots))) {
+        echo "Student " . $studentTest['firstname'] . " " . $studentTest['lastname'] . " has duplicate time slots \n";
+    }
+
+    foreach ($studentTest['assignedRoom'] as $event => $room) {
+        if (!isset($assignedRooms[$room]['count'])) {
+            $assignedRooms[$room]['count'] = 0;
+        }
+        $assignedRooms[$room]['count'] = $assignedRooms[$room]['count'] + 1;
+
+        $assignedRooms[$room][] = [
+            'firstname' => $studentTest['firstname'],
+            'lastname' => $studentTest['lastname'],
+        ];
+    }
+}
+
+// check if the assignedRooms count is not greater than the "capacity" in the $rooms array based on the "name" key
+foreach ($assignedRooms as $room => $data) {
+    $maxCapacity = $rooms[array_search($room, array_column($rooms, 'name'))]['capacity'];
+    if ($data['count'] > $maxCapacity) {
+        echo "Room " . $room . " has " . $data['count'] . " students but the capacity is $maxCapacity \n";
+    }
+}
+
+file_put_contents("results/test_assignedRooms.json", json_encode($assignedRooms, JSON_PRETTY_PRINT));

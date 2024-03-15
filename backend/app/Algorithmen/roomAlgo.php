@@ -28,6 +28,8 @@ foreach ($events as $event) {
         // Raum dem Event zuweisen und aus der Liste verfügbarer Räume entfernen
         $eventRoomAssignments[$event['eventId']]['rooms'][] = [
             'name' => $room['name'],
+            'currentCapacity' => $room['capacity'],
+            'maxCapacity' => $room['capacity']
         ];
         $eventRoomAssignments[$event['eventId']]['totalCapacity'] += $room['capacity'];
 
@@ -37,5 +39,4 @@ foreach ($events as $event) {
 }
 
 // Ergebnis als JSON ausgeben
-header('Content-Type: application/json');
 file_put_contents('roomsWithEvents.json', json_encode($eventRoomAssignments));

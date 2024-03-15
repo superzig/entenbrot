@@ -13,15 +13,20 @@ foreach ($students as &$student) {
 
     // Iterate over assigned events for each student
     foreach ($student['assignedEvents'] as $event) {
-        foreach ($roomsWithEvents as $eventKey => $roomEvent) {
+        foreach ($roomsWithEvents as $eventKey => &$roomEvent) {
             if ($eventKey == $event) {
                 // Find a suitable room based on the last letter
-                foreach ($roomEvent['rooms'] as $room) {
+                foreach ($roomEvent['rooms'] as &$room) {
+                    if ($room['currentCapacity'] == 0) {
+                        echo "The current room is full. \n";
+                        continue;
+                    }
                     $lastLetter = substr($room['name'], -1);
 
                     // Check if the letter has not been used and assign the room
                     if (!in_array($lastLetter, $usedLetters)) {
                         $student['assignedRoom'][$event] = $room['name'];
+                        $room['currentCapacity'] -= 1;
                         $usedLetters[] = $lastLetter;
                         break;
                     }

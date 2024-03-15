@@ -3,6 +3,20 @@ $students = json_decode(file_get_contents('results/updated_students2.json'), tru
 $roomsWithEvents = json_decode(file_get_contents('results/updated_roomsWithEvents.json'), true);
 $foundPossibleRoom = [];
 
+// get me the room with the "name" of 101-C in "rooms" key
+
+//foreach ($roomsWithEvents as $roomsWithEvent) {
+//    foreach ($roomsWithEvent['rooms'] as $room) {
+//        if ($room['name'] == '101-C') {
+//            echo "found room 101-C \n";
+//            echo "current capacity: " . $room['currentCapacity'] . "\n";
+//        }
+//    }
+//
+//}
+//return;
+
+
 foreach ($students as &$student) {
 
     if (!isset($student['unAssignedRoom'])) {
@@ -24,14 +38,8 @@ foreach ($students as &$student) {
                     foreach ($student['assignedRoom'] as $assignedRoomValue) {
                         $assignedUsedTimeSlot = substr($assignedRoomValue, -1);
 
-                        if ($eventAvailableTimeSlot !== $assignedUsedTimeSlot) {
-                            if ($student['firstname'] == 'Sari') {
-                                echo "found possible room for " . $student['firstname'] . " for event " . $eventIndex . "\n";
-                                echo "eventAvailableTimeSlot: " . $eventAvailableTimeSlot . "\n";
-                                echo "assignedUsedTimeSlot: " . $assignedUsedTimeSlot . "\n";
-                            }
+                        if ($eventAvailableTimeSlot !== $assignedUsedTimeSlot && $room['currentCapacity'] > 0) {
                             $foundPossibleRoom = [$eventAvailableTimeSlot, $eventRoomValue];
-
                         } else {
                             $foundPossibleRoom = [];
                             break;

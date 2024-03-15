@@ -1,0 +1,3909 @@
+[
+    {
+        "firstname": "Bigay",
+        "lastname": "Ali Eren",
+        "assignedEvents": [
+            6,
+            18,
+            19,
+            4,
+            14
+        ],
+        "choices": [
+            6,
+            18,
+            19,
+            4,
+            14,
+            22
+        ],
+        "assignedRoom": {
+            "6": "101-C",
+            "18": "107-D",
+            "19": "108-B",
+            "4": "101-A",
+            "13": "103-E"
+        },
+        "unAssignedRoom": {
+            "14": "106-A"
+        }
+    },
+    {
+        "firstname": "Graf",
+        "lastname": "Lena",
+        "assignedEvents": [
+            16,
+            17,
+            9,
+            18,
+            19
+        ],
+        "choices": [
+            16,
+            17,
+            9,
+            18,
+            19,
+            15
+        ],
+        "assignedRoom": {
+            "16": "106-E",
+            "17": "107-B",
+            "9": "102-C",
+            "18": "107-D",
+            "1": "008-A"
+        },
+        "unAssignedRoom": {
+            "19": "108-B"
+        }
+    },
+    {
+        "firstname": "G\u00f6rgen",
+        "lastname": "Smilla Marie",
+        "assignedEvents": [
+            20,
+            25,
+            1,
+            15,
+            26
+        ],
+        "choices": [
+            20,
+            25,
+            1,
+            15,
+            26,
+            11
+        ],
+        "assignedRoom": {
+            "20": "108-E",
+            "25": "110-A",
+            "15": "106-C",
+            "26": "110-B",
+            "6": "101-D"
+        },
+        "unAssignedRoom": {
+            "1": "008-A"
+        }
+    },
+    {
+        "firstname": "Iskender",
+        "lastname": "Iclal Ece",
+        "assignedEvents": [
+            10,
+            2,
+            6,
+            16,
+            18
+        ],
+        "choices": [
+            10,
+            2,
+            6,
+            16,
+            18,
+            15
+        ],
+        "assignedRoom": {
+            "10": "102-E",
+            "2": "008-B",
+            "6": "101-C",
+            "18": "107-D",
+            "16": "107-A"
+        },
+        "unAssignedRoom": []
+    },
+    {
+        "firstname": "Karakas",
+        "lastname": "Berfin",
+        "assignedEvents": [
+            2,
+            26,
+            13,
+            15,
+            22
+        ],
+        "choices": [
+            2,
+            26,
+            13,
+            15,
+            22,
+            23
+        ],
+        "assignedRoom": {
+            "2": "008-B",
+            "13": "103-D",
+            "15": "106-C",
+            "1": "008-A",
+            "6": "101-E"
+        },
+        "unAssignedRoom": {
+            "26": "110-B",
+            "22": "109-B"
+        }
+    },
+    {
+        "firstname": "Kavak",
+        "lastname": "Hazal",
+        "assignedEvents": [
+            27,
+            26,
+            11,
+            16,
+            13
+        ],
+        "choices": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "assignedRoom": {
+            "27": "110-D",
+            "26": "110-B",
+            "16": "106-E",
+            "1": "008-A",
+            "2": "008-C"
+        },
+        "unAssignedRoom": {
+            "11": "103-B",
+            "13": "103-D"
+        }
+    },
+    {
+        "firstname": "Martins",
+        "lastname": "Ayo",
+        "assignedEvents": [
+            6,
+            16,
+            18,
+            23,
+            24
+        ],
+        "choices": [
+            6,
+            16,
+            18,
+            23,
+            24,
+            25
+        ],
+        "assignedRoom": {
+            "6": "101-C",
+            "16": "106-E",
+            "18": "107-D",
+            "1": "008-A",
+            "5": "101-B"
+        },
+        "unAssignedRoom": {
+            "23": "109-D",
+            "24": "109-E"
+        }
+    },
+    {
+        "firstname": "Mohammed",
+        "lastname": "Zakariah",
+        "assignedEvents": [
+            7,
+            13,
+            14,
+            16,
+            18
+        ],
+        "choices": [
+            7,
+            13,
+            14,
+            16,
+            18,
+            26
+        ],
+        "assignedRoom": {
+            "7": "102-A",
+            "13": "103-D",
+            "16": "106-E",
+            "14": "106-B",
+            "2": "008-C"
+        },
+        "unAssignedRoom": {
+            "18": "107-D"
+        }
+    },
+    {
+        "firstname": "Nguyen",
+        "lastname": "Hai Nam",
+        "assignedEvents": [
+            3,
+            6,
+            14,
+            26,
+            19
+        ],
+        "choices": [
+            3,
+            6,
+            14,
+            26,
+            19,
+            22
+        ],
+        "assignedRoom": {
+            "3": "008-D",
+            "6": "101-C",
+            "14": "106-A",
+            "26": "110-B",
+            "13": "103-E"
+        },
+        "unAssignedRoom": {
+            "19": "108-B"
+        }
+    },
+    {
+        "firstname": "Ntumba Tshikala",
+        "lastname": "Ruth",
+        "assignedEvents": [
+            3,
+            18,
+            23,
+            4,
+            15
+        ],
+        "choices": [
+            3,
+            18,
+            23,
+            4,
+            15,
+            16
+        ],
+        "assignedRoom": {
+            "3": "008-D",
+            "4": "101-A",
+            "15": "106-C",
+            "5": "101-B",
+            "6": "101-E"
+        },
+        "unAssignedRoom": {
+            "18": "107-D",
+            "23": "109-D"
+        }
+    },
+    {
+        "firstname": "Rausch",
+        "lastname": "Erik",
+        "assignedEvents": [
+            3,
+            10,
+            16,
+            17,
+            11
+        ],
+        "choices": [
+            3,
+            10,
+            16,
+            17,
+            11,
+            9
+        ],
+        "assignedRoom": {
+            "3": "008-D",
+            "10": "102-E",
+            "17": "107-B",
+            "16": "107-A",
+            "2": "008-C"
+        },
+        "unAssignedRoom": {
+            "11": "103-B"
+        }
+    },
+    {
+        "firstname": "Saltan",
+        "lastname": "Mustafa",
+        "assignedEvents": [
+            6,
+            18,
+            19,
+            4,
+            14
+        ],
+        "choices": [
+            6,
+            18,
+            19,
+            4,
+            14,
+            22
+        ],
+        "assignedRoom": {
+            "6": "101-C",
+            "18": "107-D",
+            "19": "108-B",
+            "4": "101-A",
+            "13": "103-E"
+        },
+        "unAssignedRoom": {
+            "14": "106-A"
+        }
+    },
+    {
+        "firstname": "Schott",
+        "lastname": "Isabell",
+        "assignedEvents": [
+            15,
+            17,
+            3,
+            18,
+            8
+        ],
+        "choices": [
+            15,
+            17,
+            3,
+            18,
+            8,
+            16
+        ],
+        "assignedRoom": {
+            "15": "106-C",
+            "17": "107-B",
+            "3": "008-D",
+            "18": "108-A",
+            "6": "101-E"
+        },
+        "unAssignedRoom": {
+            "8": "102-B"
+        }
+    },
+    {
+        "firstname": "Seng\u00f6z",
+        "lastname": "Aleyna",
+        "assignedEvents": [
+            1,
+            2,
+            6,
+            16,
+            23
+        ],
+        "choices": [
+            1,
+            2,
+            6,
+            16,
+            23,
+            26
+        ],
+        "assignedRoom": {
+            "1": "008-A",
+            "2": "008-B",
+            "6": "101-C",
+            "16": "106-E",
+            "23": "109-D"
+        }
+    },
+    {
+        "firstname": "Alikahn",
+        "lastname": "Malak",
+        "assignedEvents": [
+            10,
+            19,
+            16,
+            9,
+            6
+        ],
+        "choices": [
+            10,
+            19,
+            16,
+            9,
+            6,
+            18
+        ],
+        "assignedRoom": {
+            "10": "102-E",
+            "19": "108-B",
+            "9": "102-C",
+            "16": "107-A",
+            "6": "101-D"
+        },
+        "unAssignedRoom": []
+    },
+    {
+        "firstname": "Almuhandez",
+        "lastname": "Muhieb",
+        "assignedEvents": [
+            9,
+            6,
+            17,
+            8,
+            13
+        ],
+        "choices": [
+            9,
+            6,
+            17,
+            8,
+            13,
+            10
+        ],
+        "assignedRoom": {
+            "9": "102-C",
+            "17": "107-B",
+            "13": "103-D",
+            "6": "101-E",
+            "4": "101-A"
+        },
+        "unAssignedRoom": {
+            "8": "102-B"
+        }
+    },
+    {
+        "firstname": "Bendels",
+        "lastname": "Lea",
+        "assignedEvents": [
+            19,
+            18,
+            20,
+            10,
+            2
+        ],
+        "choices": [
+            19,
+            18,
+            20,
+            10,
+            2,
+            11
+        ],
+        "assignedRoom": {
+            "19": "108-B",
+            "18": "107-D",
+            "20": "108-E",
+            "10": "103-A",
+            "2": "008-C"
+        },
+        "unAssignedRoom": []
+    },
+    {
+        "firstname": "B\u00fccken",
+        "lastname": "Connor Luca",
+        "assignedEvents": [
+            19,
+            21,
+            5,
+            18,
+            10
+        ],
+        "choices": [
+            19,
+            21,
+            5,
+            18,
+            10,
+            6
+        ],
+        "assignedRoom": {
+            "19": "108-B",
+            "21": "109-A",
+            "18": "107-D",
+            "10": "102-E",
+            "2": "008-C"
+        },
+        "unAssignedRoom": {
+            "5": "101-B"
+        }
+    },
+    {
+        "firstname": "Dah",
+        "lastname": "Mariama",
+        "assignedEvents": [
+            18,
+            18,
+            21,
+            27,
+            4
+        ],
+        "choices": [
+            18,
+            18,
+            21,
+            27,
+            4,
+            13
+        ],
+        "assignedRoom": {
+            "18": "107-D",
+            "21": "109-A",
+            "2": "008-C",
+            "5": "101-B",
+            "6": "101-E"
+        },
+        "unAssignedRoom": {
+            "18": "107-D",
+            "27": "110-D",
+            "4": "101-A"
+        }
+    },
+    {
+        "firstname": "Daher",
+        "lastname": "Haschem",
+        "assignedEvents": [
+            18,
+            3,
+            14,
+            20,
+            13
+        ],
+        "choices": [
+            18,
+            3,
+            14,
+            20,
+            13,
+            19
+        ],
+        "assignedRoom": {
+            "18": "107-D",
+            "14": "106-A",
+            "20": "108-E",
+            "2": "008-C",
+            "5": "101-B"
+        },
+        "unAssignedRoom": {
+            "3": "008-D",
+            "13": "103-D"
+        }
+    },
+    {
+        "firstname": "Demir",
+        "lastname": "Rojin",
+        "assignedEvents": [
+            19,
+            18,
+            17,
+            20,
+            2
+        ],
+        "choices": [
+            19,
+            18,
+            17,
+            20,
+            2,
+            25
+        ],
+        "assignedRoom": {
+            "19": "108-B",
+            "18": "107-D",
+            "20": "108-E",
+            "17": "107-C",
+            "4": "101-A"
+        },
+        "unAssignedRoom": {
+            "2": "008-B"
+        }
+    },
+    {
+        "firstname": "Dindar",
+        "lastname": "Tolga",
+        "assignedEvents": [
+            19,
+            16,
+            18,
+            26,
+            9
+        ],
+        "choices": [
+            19,
+            16,
+            18,
+            26,
+            9,
+            16
+        ],
+        "assignedRoom": {
+            "19": "108-B",
+            "16": "106-E",
+            "18": "107-D",
+            "9": "102-C",
+            "4": "101-A"
+        },
+        "unAssignedRoom": {
+            "26": "110-B"
+        }
+    },
+    {
+        "firstname": "Ga\u00dfn",
+        "lastname": "Jean-Michel",
+        "assignedEvents": [
+            18,
+            3,
+            14,
+            13,
+            4
+        ],
+        "choices": [
+            18,
+            3,
+            14,
+            13,
+            4,
+            19
+        ],
+        "assignedRoom": {
+            "18": "107-D",
+            "14": "106-A",
+            "3": "008-E",
+            "2": "008-C",
+            "5": "101-B"
+        },
+        "unAssignedRoom": {
+            "13": "103-D",
+            "4": "101-A"
+        }
+    },
+    {
+        "firstname": "Hasanic",
+        "lastname": "Asmir",
+        "assignedEvents": [
+            10,
+            11,
+            15,
+            26,
+            18
+        ],
+        "choices": [
+            10,
+            11,
+            15,
+            26,
+            18,
+            9
+        ],
+        "assignedRoom": {
+            "10": "102-E",
+            "11": "103-B",
+            "15": "106-C",
+            "18": "107-D",
+            "4": "101-A"
+        },
+        "unAssignedRoom": {
+            "26": "110-B"
+        }
+    },
+    {
+        "firstname": "Karanlik",
+        "lastname": "Iskender",
+        "assignedEvents": [
+            9,
+            19,
+            10,
+            3,
+            6
+        ],
+        "choices": [
+            9,
+            19,
+            10,
+            3,
+            null,
+            null
+        ],
+        "assignedRoom": {
+            "9": "102-C",
+            "19": "108-B",
+            "10": "102-E",
+            "3": "008-D",
+            "4": "101-A"
+        },
+        "unAssignedRoom": {
+            "6": "101-C"
+        }
+    },
+    {
+        "firstname": "Kau\u00dfn",
+        "lastname": "Maximilian",
+        "assignedEvents": [
+            14,
+            6,
+            15,
+            3,
+            4
+        ],
+        "choices": [
+            14,
+            6,
+            15,
+            3,
+            4,
+            1
+        ],
+        "assignedRoom": {
+            "14": "106-A",
+            "6": "101-C",
+            "3": "008-D",
+            "5": "101-B",
+            "13": "103-E"
+        },
+        "unAssignedRoom": {
+            "15": "106-C",
+            "4": "101-A"
+        }
+    },
+    {
+        "firstname": "Kaya",
+        "lastname": "Baris",
+        "assignedEvents": [
+            3,
+            5,
+            7,
+            12,
+            14
+        ],
+        "choices": [
+            3,
+            5,
+            7,
+            12,
+            14,
+            13
+        ],
+        "assignedRoom": {
+            "3": "008-D",
+            "5": "101-B",
+            "7": "102-A",
+            "12": "103-C",
+            "6": "101-E"
+        },
+        "unAssignedRoom": {
+            "14": "106-A"
+        }
+    },
+    {
+        "firstname": "Kaya",
+        "lastname": "Suat",
+        "assignedEvents": [
+            22,
+            10,
+            16,
+            9,
+            26
+        ],
+        "choices": [
+            22,
+            10,
+            16,
+            9,
+            26,
+            6
+        ],
+        "assignedRoom": {
+            "22": "109-B",
+            "10": "102-E",
+            "9": "102-C",
+            "16": "107-A",
+            "6": "101-D"
+        },
+        "unAssignedRoom": {
+            "26": "110-B"
+        }
+    },
+    {
+        "firstname": "Krilcic",
+        "lastname": "Marijana",
+        "assignedEvents": [
+            16,
+            24,
+            18,
+            23,
+            15
+        ],
+        "choices": [
+            16,
+            24,
+            18,
+            23,
+            15,
+            11
+        ],
+        "assignedRoom": {
+            "16": "106-E",
+            "18": "107-D",
+            "15": "106-C",
+            "4": "101-A",
+            "5": "101-B"
+        },
+        "unAssignedRoom": {
+            "24": "109-E",
+            "23": "109-D"
+        }
+    },
+    {
+        "firstname": "luwawu",
+        "lastname": "Espoir",
+        "assignedEvents": [
+            17,
+            25,
+            18,
+            3,
+            7
+        ],
+        "choices": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        "assignedRoom": {
+            "17": "107-B",
+            "25": "110-A",
+            "18": "107-D",
+            "3": "008-E",
+            "2": "008-C"
+        },
+        "unAssignedRoom": {
+            "7": "102-A"
+        }
+    },
+    {
+        "firstname": "Moustahfid",
+        "lastname": "Miranda",
+        "assignedEvents": [
+            19,
+            18,
+            17,
+            6,
+            20
+        ],
+        "choices": [
+            19,
+            18,
+            17,
+            6,
+            20,
+            22
+        ],
+        "assignedRoom": {
+            "19": "108-B",
+            "18": "107-D",
+            "6": "101-C",
+            "20": "108-E",
+            "4": "101-A"
+        },
+        "unAssignedRoom": {
+            "17": "107-B"
+        }
+    },
+    {
+        "firstname": "Musi",
+        "lastname": "Chloe",
+        "assignedEvents": [
+            1,
+            3,
+            6,
+            17,
+            19
+        ],
+        "choices": [
+            1,
+            3,
+            6,
+            17,
+            19,
+            9
+        ],
+        "assignedRoom": {
+            "1": "008-A",
+            "3": "008-D",
+            "6": "101-C",
+            "17": "107-B",
+            "13": "103-E"
+        },
+        "unAssignedRoom": {
+            "19": "108-B"
+        }
+    },
+    {
+        "firstname": "Siebert",
+        "lastname": "Tutku Cansin",
+        "assignedEvents": [
+            19,
+            18,
+            17,
+            6,
+            15
+        ],
+        "choices": [
+            19,
+            18,
+            17,
+            6,
+            15,
+            9
+        ],
+        "assignedRoom": {
+            "19": "108-B",
+            "18": "107-D",
+            "6": "101-C",
+            "4": "101-A",
+            "13": "103-E"
+        },
+        "unAssignedRoom": {
+            "17": "107-B",
+            "15": "106-C"
+        }
+    },
+    {
+        "firstname": "Sylshabanaj",
+        "lastname": "Klitjan",
+        "assignedEvents": [
+            6,
+            26,
+            18,
+            9,
+            16
+        ],
+        "choices": [
+            6,
+            26,
+            18,
+            9,
+            16,
+            10
+        ],
+        "assignedRoom": {
+            "6": "101-C",
+            "26": "110-B",
+            "18": "107-D",
+            "16": "106-E",
+            "7": "102-A"
+        },
+        "unAssignedRoom": {
+            "9": "102-C"
+        }
+    },
+    {
+        "firstname": "Tchacoura",
+        "lastname": "Said",
+        "assignedEvents": [
+            19,
+            9,
+            21,
+            6,
+            16
+        ],
+        "choices": [
+            19,
+            9,
+            21,
+            6,
+            16,
+            10
+        ],
+        "assignedRoom": {
+            "19": "108-B",
+            "9": "102-C",
+            "21": "109-A",
+            "16": "106-E",
+            "6": "101-D"
+        },
+        "unAssignedRoom": []
+    },
+    {
+        "firstname": "Tuncer",
+        "lastname": "Metehan",
+        "assignedEvents": [
+            9,
+            19,
+            16,
+            6,
+            17
+        ],
+        "choices": [
+            9,
+            19,
+            16,
+            6,
+            17,
+            25
+        ],
+        "assignedRoom": {
+            "9": "102-C",
+            "19": "108-B",
+            "16": "106-E",
+            "6": "101-D",
+            "7": "102-A"
+        },
+        "unAssignedRoom": {
+            "17": "107-B"
+        }
+    },
+    {
+        "firstname": "Vancronenburg",
+        "lastname": "Anna Elena",
+        "assignedEvents": [
+            27,
+            5,
+            8,
+            13,
+            18
+        ],
+        "choices": [
+            27,
+            5,
+            8,
+            13,
+            18,
+            22
+        ],
+        "assignedRoom": {
+            "27": "110-D",
+            "5": "101-B",
+            "13": "103-E",
+            "18": "108-A",
+            "2": "008-C"
+        },
+        "unAssignedRoom": {
+            "8": "102-B"
+        }
+    },
+    {
+        "firstname": "Vukelic",
+        "lastname": "Valentina",
+        "assignedEvents": [
+            19,
+            10,
+            22,
+            20,
+            21
+        ],
+        "choices": [
+            19,
+            10,
+            22,
+            20,
+            21,
+            16
+        ],
+        "assignedRoom": {
+            "19": "108-B",
+            "10": "102-E",
+            "21": "109-A",
+            "22": "109-C",
+            "6": "101-D"
+        },
+        "unAssignedRoom": {
+            "20": "108-E"
+        }
+    },
+    {
+        "firstname": "Yildirim",
+        "lastname": "Zilan",
+        "assignedEvents": [
+            19,
+            18,
+            21,
+            17,
+            16
+        ],
+        "choices": [
+            19,
+            18,
+            21,
+            17,
+            16,
+            15
+        ],
+        "assignedRoom": {
+            "19": "108-B",
+            "18": "107-D",
+            "21": "109-A",
+            "16": "106-E",
+            "17": "107-C"
+        },
+        "unAssignedRoom": []
+    },
+    {
+        "firstname": "Ait Oufquir",
+        "lastname": "Samira",
+        "assignedEvents": [
+            19,
+            18,
+            6,
+            13,
+            10
+        ],
+        "choices": [
+            19,
+            18,
+            6,
+            13,
+            10,
+            14
+        ],
+        "assignedRoom": {
+            "19": "108-B",
+            "18": "107-D",
+            "6": "101-C",
+            "10": "102-E",
+            "7": "102-A"
+        },
+        "unAssignedRoom": {
+            "13": "103-D"
+        }
+    },
+    {
+        "firstname": "Arslan",
+        "lastname": "Ayse Nur",
+        "assignedEvents": [
+            22,
+            19,
+            18,
+            10,
+            1
+        ],
+        "choices": [
+            22,
+            19,
+            18,
+            10,
+            1,
+            26
+        ],
+        "assignedRoom": {
+            "22": "109-B",
+            "18": "107-E",
+            "1": "008-A",
+            "19": "108-D",
+            "2": "008-C"
+        },
+        "unAssignedRoom": {
+            "10": "102-E"
+        }
+    },
+    {
+        "firstname": "Benamar",
+        "lastname": "Rayan",
+        "assignedEvents": [
+            18,
+            10,
+            11,
+            22,
+            8
+        ],
+        "choices": [
+            18,
+            10,
+            11,
+            22,
+            8,
+            19
+        ],
+        "assignedRoom": {
+            "18": "107-E",
+            "11": "103-B",
+            "10": "103-A",
+            "22": "109-C",
+            "6": "101-D"
+        },
+        "unAssignedRoom": {
+            "8": "102-B"
+        }
+    },
+    {
+        "firstname": "Bisevac",
+        "lastname": "Melvin",
+        "assignedEvents": [
+            22,
+            19,
+            13,
+            26,
+            18
+        ],
+        "choices": [
+            22,
+            19,
+            13,
+            26,
+            18,
+            9
+        ],
+        "assignedRoom": {
+            "22": "109-B",
+            "13": "103-D",
+            "18": "107-E",
+            "26": "110-C",
+            "7": "102-A"
+        },
+        "unAssignedRoom": {
+            "19": "108-B"
+        }
+    },
+    {
+        "firstname": "Bolz",
+        "lastname": "Deniz",
+        "assignedEvents": [
+            16,
+            6,
+            24,
+            19,
+            9
+        ],
+        "choices": [
+            16,
+            6,
+            24,
+            19,
+            9,
+            11
+        ],
+        "assignedRoom": {
+            "16": "106-E",
+            "6": "101-C",
+            "19": "108-B",
+            "9": "102-D",
+            "7": "102-A"
+        },
+        "unAssignedRoom": {
+            "24": "109-E"
+        }
+    },
+    {
+        "firstname": "Brandt",
+        "lastname": "Laurin",
+        "assignedEvents": [
+            18,
+            22,
+            19,
+            26,
+            4
+        ],
+        "choices": [
+            18,
+            22,
+            19,
+            26,
+            4,
+            6
+        ],
+        "assignedRoom": {
+            "18": "107-E",
+            "22": "109-B",
+            "4": "101-A",
+            "19": "108-D",
+            "26": "110-C"
+        },
+        "unAssignedRoom": []
+    },
+    {
+        "firstname": "Haucap",
+        "lastname": "Andreas",
+        "assignedEvents": [
+            4,
+            5,
+            12,
+            13,
+            14
+        ],
+        "choices": [
+            4,
+            5,
+            12,
+            13,
+            14,
+            19
+        ],
+        "assignedRoom": {
+            "4": "101-A",
+            "5": "101-B",
+            "12": "103-C",
+            "13": "103-D",
+            "6": "101-E"
+        },
+        "unAssignedRoom": {
+            "14": "106-A"
+        }
+    },
+    {
+        "firstname": "Gryszko",
+        "lastname": "Raul",
+        "assignedEvents": [
+            4,
+            5,
+            12,
+            13,
+            14
+        ],
+        "choices": [
+            4,
+            5,
+            12,
+            13,
+            14,
+            19
+        ],
+        "assignedRoom": {
+            "4": "101-A",
+            "5": "101-B",
+            "12": "103-C",
+            "13": "103-D",
+            "6": "101-E"
+        },
+        "unAssignedRoom": {
+            "14": "106-A"
+        }
+    },
+    {
+        "firstname": "Hermanns",
+        "lastname": "Fabian",
+        "assignedEvents": [
+            6,
+            8,
+            14,
+            19,
+            26
+        ],
+        "choices": [
+            6,
+            8,
+            14,
+            19,
+            26,
+            2
+        ],
+        "assignedRoom": {
+            "6": "101-C",
+            "8": "102-B",
+            "14": "106-A",
+            "19": "108-D",
+            "13": "103-E"
+        },
+        "unAssignedRoom": {
+            "26": "110-B"
+        }
+    },
+    {
+        "firstname": "J\u00f6pgen",
+        "lastname": "Joel-Luis",
+        "assignedEvents": [
+            18,
+            6,
+            19,
+            17,
+            12
+        ],
+        "choices": [
+            18,
+            6,
+            19,
+            17,
+            12,
+            14
+        ],
+        "assignedRoom": {
+            "18": "107-E",
+            "6": "101-C",
+            "19": "108-B",
+            "7": "102-A",
+            "9": "102-D"
+        },
+        "unAssignedRoom": {
+            "17": "107-B",
+            "12": "103-C"
+        }
+    },
+    {
+        "firstname": "Khan",
+        "lastname": "Rohail-Ahmed",
+        "assignedEvents": [
+            14,
+            6,
+            15,
+            8,
+            26
+        ],
+        "choices": [
+            14,
+            6,
+            15,
+            8,
+            26,
+            1
+        ],
+        "assignedRoom": {
+            "14": "106-A",
+            "6": "101-C",
+            "8": "102-B",
+            "15": "106-D",
+            "13": "103-E"
+        },
+        "unAssignedRoom": {
+            "26": "110-B"
+        }
+    },
+    {
+        "firstname": "Koubaa",
+        "lastname": "Hicham",
+        "assignedEvents": [
+            18,
+            19,
+            8,
+            3,
+            12
+        ],
+        "choices": [
+            18,
+            19,
+            8,
+            3,
+            12,
+            27
+        ],
+        "assignedRoom": {
+            "18": "107-E",
+            "19": "108-B",
+            "3": "008-D",
+            "12": "103-C",
+            "7": "102-A"
+        },
+        "unAssignedRoom": {
+            "8": "102-B"
+        }
+    },
+    {
+        "firstname": "Meuthrath",
+        "lastname": "Shoshana",
+        "assignedEvents": [
+            20,
+            26,
+            7,
+            5,
+            15
+        ],
+        "choices": [
+            20,
+            26,
+            7,
+            5,
+            15,
+            11
+        ],
+        "assignedRoom": {
+            "20": "108-E",
+            "26": "110-B",
+            "7": "102-A",
+            "15": "106-C",
+            "6": "101-D"
+        },
+        "unAssignedRoom": {
+            "5": "101-B"
+        }
+    },
+    {
+        "firstname": "Miho",
+        "lastname": "Ezdin",
+        "assignedEvents": [
+            5,
+            12,
+            13,
+            18,
+            19
+        ],
+        "choices": [
+            5,
+            12,
+            13,
+            18,
+            19,
+            1
+        ],
+        "assignedRoom": {
+            "5": "101-B",
+            "12": "103-C",
+            "13": "103-D",
+            "18": "107-E",
+            "7": "102-A"
+        },
+        "unAssignedRoom": {
+            "19": "108-B"
+        }
+    },
+    {
+        "firstname": "Najib",
+        "lastname": "Rania Katharina",
+        "assignedEvents": [
+            19,
+            14,
+            18,
+            10,
+            16
+        ],
+        "choices": [
+            19,
+            14,
+            18,
+            10,
+            16,
+            4
+        ],
+        "assignedRoom": {
+            "19": "108-B",
+            "14": "106-A",
+            "18": "107-E",
+            "2": "008-C",
+            "6": "101-D"
+        },
+        "unAssignedRoom": {
+            "10": "102-E",
+            "16": "106-E"
+        }
+    },
+    {
+        "firstname": "Rana",
+        "lastname": "Aisha",
+        "assignedEvents": [
+            2,
+            27,
+            3,
+            8,
+            7
+        ],
+        "choices": [
+            2,
+            27,
+            3,
+            8,
+            7,
+            9
+        ],
+        "assignedRoom": {
+            "2": "008-B",
+            "27": "110-D",
+            "7": "102-A",
+            "6": "101-E",
+            "12": "103-C"
+        },
+        "unAssignedRoom": {
+            "3": "008-D",
+            "8": "102-B"
+        }
+    },
+    {
+        "firstname": "Sarig\u00fc",
+        "lastname": "Nehir Zehra",
+        "assignedEvents": [
+            18,
+            19,
+            21,
+            4,
+            20
+        ],
+        "choices": [
+            18,
+            19,
+            21,
+            4,
+            20,
+            10
+        ],
+        "assignedRoom": {
+            "18": "107-E",
+            "19": "108-B",
+            "21": "109-A",
+            "6": "101-D",
+            "12": "103-C"
+        },
+        "unAssignedRoom": {
+            "4": "101-A",
+            "20": "108-E"
+        }
+    },
+    {
+        "firstname": "Selimbasic",
+        "lastname": "Alina",
+        "assignedEvents": [
+            19,
+            18,
+            16,
+            6,
+            14
+        ],
+        "choices": [
+            19,
+            18,
+            16,
+            6,
+            14,
+            3
+        ],
+        "assignedRoom": {
+            "19": "108-C",
+            "18": "107-E",
+            "14": "106-A",
+            "6": "101-D",
+            "5": "101-B"
+        },
+        "unAssignedRoom": {
+            "16": "106-E"
+        }
+    },
+    {
+        "firstname": "Sweiti",
+        "lastname": "Taha",
+        "assignedEvents": [
+            6,
+            19,
+            20,
+            15,
+            3
+        ],
+        "choices": [
+            6,
+            19,
+            20,
+            15,
+            3,
+            14
+        ],
+        "assignedRoom": {
+            "6": "101-C",
+            "20": "108-E",
+            "3": "008-D",
+            "5": "101-B",
+            "7": "102-A"
+        },
+        "unAssignedRoom": {
+            "19": "108-C",
+            "15": "106-C"
+        }
+    },
+    {
+        "firstname": "Urbanke",
+        "lastname": "Bela Maximilian",
+        "assignedEvents": [
+            27,
+            4,
+            7,
+            12,
+            14
+        ],
+        "choices": [
+            27,
+            4,
+            7,
+            12,
+            14,
+            13
+        ],
+        "assignedRoom": {
+            "27": "110-D",
+            "4": "101-A",
+            "12": "103-C",
+            "14": "106-B",
+            "6": "101-E"
+        },
+        "unAssignedRoom": {
+            "7": "102-A"
+        }
+    },
+    {
+        "firstname": "Adeosun",
+        "lastname": "Oluwaseyi Kehinde",
+        "assignedEvents": [
+            2,
+            19,
+            24,
+            23,
+            27
+        ],
+        "choices": [
+            2,
+            19,
+            24,
+            23,
+            27,
+            1
+        ],
+        "assignedRoom": {
+            "2": "008-B",
+            "19": "108-C",
+            "24": "109-E",
+            "23": "109-D",
+            "7": "102-A"
+        },
+        "unAssignedRoom": {
+            "27": "110-D"
+        }
+    },
+    {
+        "firstname": "Adolf",
+        "lastname": "Angelina",
+        "assignedEvents": [
+            3,
+            6,
+            1,
+            10,
+            15
+        ],
+        "choices": [
+            3,
+            6,
+            1,
+            10,
+            15,
+            9
+        ],
+        "assignedRoom": {
+            "3": "008-D",
+            "6": "101-C",
+            "1": "008-A",
+            "10": "102-E",
+            "5": "101-B"
+        },
+        "unAssignedRoom": {
+            "15": "106-C"
+        }
+    },
+    {
+        "firstname": "Ali",
+        "lastname": "Lilian",
+        "assignedEvents": [
+            6,
+            10,
+            11,
+            2,
+            27
+        ],
+        "choices": [
+            6,
+            10,
+            11,
+            2,
+            27,
+            1
+        ],
+        "assignedRoom": {
+            "6": "101-C",
+            "10": "102-E",
+            "11": "103-B",
+            "27": "110-D",
+            "7": "102-A"
+        },
+        "unAssignedRoom": {
+            "2": "008-B"
+        }
+    },
+    {
+        "firstname": "Ana",
+        "lastname": "Catalin-Gabriel",
+        "assignedEvents": [
+            6,
+            3,
+            27,
+            15,
+            13
+        ],
+        "choices": [
+            6,
+            3,
+            27,
+            15,
+            13,
+            7
+        ],
+        "assignedRoom": {
+            "6": "101-C",
+            "3": "008-D",
+            "13": "103-E",
+            "5": "101-B",
+            "7": "102-A"
+        },
+        "unAssignedRoom": {
+            "27": "110-D",
+            "15": "106-C"
+        }
+    },
+    {
+        "firstname": "Ayg\u00fcn",
+        "lastname": "Zanya",
+        "assignedEvents": [
+            10,
+            11,
+            13,
+            2,
+            27
+        ],
+        "choices": [
+            10,
+            11,
+            13,
+            2,
+            27,
+            1
+        ],
+        "assignedRoom": {
+            "10": "102-E",
+            "11": "103-B",
+            "13": "103-D",
+            "2": "008-C",
+            "7": "102-A"
+        },
+        "unAssignedRoom": {
+            "27": "110-D"
+        }
+    },
+    {
+        "firstname": "Bediako",
+        "lastname": "Edlisa Gymifua",
+        "assignedEvents": [
+            10,
+            11,
+            9,
+            3,
+            13
+        ],
+        "choices": [
+            10,
+            11,
+            9,
+            3,
+            13,
+            6
+        ],
+        "assignedRoom": {
+            "10": "102-E",
+            "11": "103-B",
+            "9": "102-C",
+            "3": "008-D",
+            "16": "107-A"
+        },
+        "unAssignedRoom": {
+            "13": "103-D"
+        }
+    },
+    {
+        "firstname": "Demir",
+        "lastname": "Ahmet Hezdar",
+        "assignedEvents": [
+            10,
+            9,
+            11,
+            14,
+            7
+        ],
+        "choices": [
+            10,
+            9,
+            11,
+            14,
+            7,
+            13
+        ],
+        "assignedRoom": {
+            "10": "102-E",
+            "9": "102-C",
+            "11": "103-B",
+            "14": "106-A",
+            "6": "101-D"
+        },
+        "unAssignedRoom": {
+            "7": "102-A"
+        }
+    },
+    {
+        "firstname": "Dirki",
+        "lastname": "Khalil",
+        "assignedEvents": [
+            2,
+            4,
+            13,
+            25,
+            26
+        ],
+        "choices": [
+            2,
+            4,
+            13,
+            25,
+            26,
+            27
+        ],
+        "assignedRoom": {
+            "2": "008-B",
+            "4": "101-A",
+            "13": "103-D",
+            "26": "110-C",
+            "6": "101-E"
+        },
+        "unAssignedRoom": {
+            "25": "110-A"
+        }
+    },
+    {
+        "firstname": "Dohri",
+        "lastname": "Anouar",
+        "assignedEvents": [
+            26,
+            14,
+            19,
+            18,
+            22
+        ],
+        "choices": [
+            26,
+            14,
+            19,
+            18,
+            22,
+            8
+        ],
+        "assignedRoom": {
+            "26": "110-B",
+            "14": "106-A",
+            "19": "108-C",
+            "18": "107-E",
+            "9": "102-D"
+        },
+        "unAssignedRoom": {
+            "22": "109-B"
+        }
+    },
+    {
+        "firstname": "Ediawe Agunbiade",
+        "lastname": "Quincy",
+        "assignedEvents": [
+            19,
+            3,
+            1,
+            6,
+            7
+        ],
+        "choices": [
+            19,
+            3,
+            1,
+            6,
+            7,
+            14
+        ],
+        "assignedRoom": {
+            "19": "108-C",
+            "3": "008-D",
+            "1": "008-A",
+            "6": "101-E",
+            "8": "102-B"
+        },
+        "unAssignedRoom": {
+            "7": "102-A"
+        }
+    },
+    {
+        "firstname": "El Sayed",
+        "lastname": "Jihan",
+        "assignedEvents": [
+            25,
+            19,
+            18,
+            22,
+            21
+        ],
+        "choices": [
+            25,
+            19,
+            18,
+            22,
+            21,
+            13
+        ],
+        "assignedRoom": {
+            "25": "110-A",
+            "19": "108-C",
+            "18": "107-E",
+            "22": "109-B",
+            "9": "102-D"
+        },
+        "unAssignedRoom": {
+            "21": "109-A"
+        }
+    },
+    {
+        "firstname": "Glazkova",
+        "lastname": "Oleksandra",
+        "assignedEvents": [
+            9,
+            19,
+            18,
+            17,
+            15
+        ],
+        "choices": [
+            9,
+            19,
+            18,
+            17,
+            15,
+            4
+        ],
+        "assignedRoom": {
+            "9": "102-C",
+            "18": "107-E",
+            "17": "107-B",
+            "19": "108-D",
+            "10": "103-A"
+        },
+        "unAssignedRoom": {
+            "15": "106-C"
+        }
+    },
+    {
+        "firstname": "G\u00d6cesin",
+        "lastname": "Ela Nur",
+        "assignedEvents": [
+            9,
+            10,
+            11,
+            3,
+            13
+        ],
+        "choices": [
+            9,
+            10,
+            11,
+            3,
+            13,
+            12
+        ],
+        "assignedRoom": {
+            "9": "102-C",
+            "10": "102-E",
+            "11": "103-B",
+            "3": "008-D",
+            "16": "107-A"
+        },
+        "unAssignedRoom": {
+            "13": "103-D"
+        }
+    },
+    {
+        "firstname": "Hampeter",
+        "lastname": "Anna",
+        "assignedEvents": [
+            3,
+            1,
+            27,
+            2,
+            7
+        ],
+        "choices": [
+            3,
+            1,
+            27,
+            2,
+            7,
+            8
+        ],
+        "assignedRoom": {
+            "3": "008-E",
+            "1": "008-A",
+            "27": "110-D",
+            "2": "008-B",
+            "12": "103-C"
+        },
+        "unAssignedRoom": {
+            "7": "102-A"
+        }
+    },
+    {
+        "firstname": "Kisoglu",
+        "lastname": "Hawin",
+        "assignedEvents": [
+            1,
+            19,
+            3,
+            20,
+            27
+        ],
+        "choices": [
+            1,
+            19,
+            3,
+            20,
+            27,
+            2
+        ],
+        "assignedRoom": {
+            "1": "008-A",
+            "19": "108-C",
+            "3": "008-E",
+            "27": "110-D",
+            "8": "102-B"
+        },
+        "unAssignedRoom": {
+            "20": "108-E"
+        }
+    },
+    {
+        "firstname": "Kisoglu",
+        "lastname": "Rojin",
+        "assignedEvents": [
+            2,
+            6,
+            9,
+            10,
+            1
+        ],
+        "choices": [
+            2,
+            6,
+            9,
+            10,
+            1,
+            2
+        ],
+        "assignedRoom": {
+            "2": "008-B",
+            "6": "101-D",
+            "9": "102-C",
+            "10": "102-E",
+            "1": "008-A"
+        }
+    },
+    {
+        "firstname": "Malambu",
+        "lastname": "Bryan",
+        "assignedEvents": [
+            17,
+            18,
+            19,
+            16,
+            15
+        ],
+        "choices": [
+            17,
+            18,
+            19,
+            16,
+            15,
+            14
+        ],
+        "assignedRoom": {
+            "17": "107-B",
+            "18": "107-E",
+            "19": "108-C",
+            "16": "107-A",
+            "15": "106-D"
+        },
+        "unAssignedRoom": []
+    },
+    {
+        "firstname": "Mohren",
+        "lastname": "Tom",
+        "assignedEvents": [
+            7,
+            18,
+            14,
+            19,
+            12
+        ],
+        "choices": [
+            7,
+            18,
+            14,
+            19,
+            12,
+            13
+        ],
+        "assignedRoom": {
+            "7": "102-A",
+            "18": "107-E",
+            "19": "108-C",
+            "14": "106-B",
+            "9": "102-D"
+        },
+        "unAssignedRoom": {
+            "12": "103-C"
+        }
+    },
+    {
+        "firstname": "Rozafshan",
+        "lastname": "Arman",
+        "assignedEvents": [
+            7,
+            22,
+            25,
+            26,
+            3
+        ],
+        "choices": [
+            7,
+            22,
+            25,
+            26,
+            3,
+            20
+        ],
+        "assignedRoom": {
+            "7": "102-A",
+            "22": "109-B",
+            "3": "008-E",
+            "26": "110-C",
+            "9": "102-D"
+        },
+        "unAssignedRoom": {
+            "25": "110-A"
+        }
+    },
+    {
+        "firstname": "Rumor",
+        "lastname": "Anton Wilem",
+        "assignedEvents": [
+            17,
+            18,
+            19,
+            16,
+            15
+        ],
+        "choices": [
+            17,
+            18,
+            19,
+            16,
+            15,
+            4
+        ],
+        "assignedRoom": {
+            "17": "107-B",
+            "18": "107-E",
+            "19": "108-C",
+            "16": "107-A",
+            "15": "106-D"
+        },
+        "unAssignedRoom": []
+    },
+    {
+        "firstname": "Selim",
+        "lastname": "Omer",
+        "assignedEvents": [
+            10,
+            11,
+            25,
+            26,
+            24
+        ],
+        "choices": [
+            10,
+            11,
+            25,
+            26,
+            24,
+            null
+        ],
+        "assignedRoom": {
+            "10": "102-E",
+            "11": "103-B",
+            "25": "110-A",
+            "26": "110-C",
+            "9": "102-D"
+        },
+        "unAssignedRoom": {
+            "24": "109-E"
+        }
+    },
+    {
+        "firstname": "Tchimbalanga",
+        "lastname": "Clotilde",
+        "assignedEvents": [
+            10,
+            17,
+            18,
+            16,
+            9
+        ],
+        "choices": [
+            10,
+            17,
+            18,
+            16,
+            9,
+            11
+        ],
+        "assignedRoom": {
+            "10": "102-E",
+            "17": "107-B",
+            "9": "102-C",
+            "18": "108-A",
+            "15": "106-D"
+        },
+        "unAssignedRoom": {
+            "16": "106-E"
+        }
+    },
+    {
+        "firstname": "Tetik",
+        "lastname": "Ilyas",
+        "assignedEvents": [
+            10,
+            18,
+            14,
+            12,
+            7
+        ],
+        "choices": [
+            10,
+            18,
+            14,
+            12,
+            7,
+            6
+        ],
+        "assignedRoom": {
+            "10": "102-E",
+            "14": "106-A",
+            "12": "103-C",
+            "8": "102-B",
+            "9": "102-D"
+        },
+        "unAssignedRoom": {
+            "18": "107-E",
+            "7": "102-A"
+        }
+    },
+    {
+        "firstname": "Ademi",
+        "lastname": "Adonisa",
+        "assignedEvents": [
+            26,
+            17,
+            8,
+            13,
+            22
+        ],
+        "choices": [
+            26,
+            17,
+            8,
+            13,
+            22,
+            16
+        ],
+        "assignedRoom": {
+            "26": "110-B",
+            "13": "103-D",
+            "17": "107-C",
+            "6": "101-E",
+            "10": "103-A"
+        },
+        "unAssignedRoom": {
+            "8": "102-B",
+            "22": "109-B"
+        }
+    },
+    {
+        "firstname": "Arifi",
+        "lastname": "Annalena",
+        "assignedEvents": [
+            3,
+            6,
+            8,
+            12,
+            15
+        ],
+        "choices": [
+            3,
+            6,
+            8,
+            12,
+            15,
+            17
+        ],
+        "assignedRoom": {
+            "3": "008-E",
+            "6": "101-D",
+            "8": "102-B",
+            "12": "103-C",
+            "10": "103-A"
+        },
+        "unAssignedRoom": {
+            "15": "106-C"
+        }
+    },
+    {
+        "firstname": "Erol",
+        "lastname": "Iclal",
+        "assignedEvents": [
+            18,
+            2,
+            14,
+            17,
+            15
+        ],
+        "choices": [
+            18,
+            2,
+            14,
+            17,
+            15,
+            21
+        ],
+        "assignedRoom": {
+            "18": "107-E",
+            "2": "008-B",
+            "14": "106-A",
+            "15": "106-C",
+            "9": "102-D"
+        },
+        "unAssignedRoom": {
+            "17": "107-B"
+        }
+    },
+    {
+        "firstname": "Erten",
+        "lastname": "Volkan Burak",
+        "assignedEvents": [
+            19,
+            9,
+            13,
+            2,
+            6
+        ],
+        "choices": [
+            19,
+            9,
+            13,
+            2,
+            6,
+            18
+        ],
+        "assignedRoom": {
+            "19": "108-C",
+            "13": "103-D",
+            "2": "008-B",
+            "6": "101-E",
+            "10": "103-A"
+        },
+        "unAssignedRoom": {
+            "9": "102-C"
+        }
+    },
+    {
+        "firstname": "Ezen",
+        "lastname": "Zilan",
+        "assignedEvents": [
+            26,
+            17,
+            8,
+            13,
+            22
+        ],
+        "choices": [
+            26,
+            17,
+            8,
+            13,
+            22,
+            16
+        ],
+        "assignedRoom": {
+            "26": "110-B",
+            "13": "103-D",
+            "17": "107-C",
+            "6": "101-E",
+            "10": "103-A"
+        },
+        "unAssignedRoom": {
+            "8": "102-B",
+            "22": "109-B"
+        }
+    },
+    {
+        "firstname": "Grenz",
+        "lastname": "Andre",
+        "assignedEvents": [
+            20,
+            12,
+            13,
+            14,
+            5
+        ],
+        "choices": [
+            20,
+            12,
+            13,
+            14,
+            5,
+            4
+        ],
+        "assignedRoom": {
+            "20": "108-E",
+            "12": "103-C",
+            "13": "103-D",
+            "14": "106-A",
+            "5": "101-B"
+        }
+    },
+    {
+        "firstname": "G\u00fcmez",
+        "lastname": "Koray",
+        "assignedEvents": [
+            8,
+            14,
+            17,
+            3,
+            9
+        ],
+        "choices": [
+            8,
+            14,
+            17,
+            3,
+            9,
+            10
+        ],
+        "assignedRoom": {
+            "8": "102-B",
+            "14": "106-A",
+            "3": "008-E",
+            "9": "102-C",
+            "15": "106-D"
+        },
+        "unAssignedRoom": {
+            "17": "107-B"
+        }
+    },
+    {
+        "firstname": "Kafadar",
+        "lastname": "Canan Melek",
+        "assignedEvents": [
+            25,
+            22,
+            20,
+            21,
+            2
+        ],
+        "choices": [
+            25,
+            22,
+            20,
+            21,
+            2,
+            1
+        ],
+        "assignedRoom": {
+            "25": "110-A",
+            "22": "109-B",
+            "20": "108-E",
+            "2": "008-C",
+            "9": "102-D"
+        },
+        "unAssignedRoom": {
+            "21": "109-A"
+        }
+    },
+    {
+        "firstname": "Korkut",
+        "lastname": "Pelsin",
+        "assignedEvents": [
+            2,
+            18,
+            15,
+            3,
+            6
+        ],
+        "choices": [
+            2,
+            18,
+            15,
+            3,
+            6,
+            9
+        ],
+        "assignedRoom": {
+            "2": "008-B",
+            "18": "107-E",
+            "15": "106-C",
+            "6": "101-D",
+            "10": "103-A"
+        },
+        "unAssignedRoom": {
+            "3": "008-E"
+        }
+    },
+    {
+        "firstname": "Kosciukiewicz",
+        "lastname": "Jan",
+        "assignedEvents": [
+            22,
+            26,
+            19,
+            3,
+            14
+        ],
+        "choices": [
+            22,
+            26,
+            19,
+            3,
+            14,
+            10
+        ],
+        "assignedRoom": {
+            "22": "109-B",
+            "19": "108-C",
+            "3": "008-E",
+            "14": "106-A",
+            "9": "102-D"
+        },
+        "unAssignedRoom": {
+            "26": "110-B"
+        }
+    },
+    {
+        "firstname": "Mahrouk",
+        "lastname": "Rania",
+        "assignedEvents": [
+            26,
+            19,
+            16,
+            13,
+            10
+        ],
+        "choices": [
+            26,
+            19,
+            16,
+            13,
+            10,
+            22
+        ],
+        "assignedRoom": {
+            "26": "110-B",
+            "19": "108-C",
+            "16": "106-E",
+            "13": "103-D",
+            "10": "103-A"
+        },
+        "unAssignedRoom": []
+    },
+    {
+        "firstname": "Mambor",
+        "lastname": "Celina",
+        "assignedEvents": [
+            3,
+            19,
+            13,
+            2,
+            17
+        ],
+        "choices": [
+            3,
+            19,
+            13,
+            2,
+            17,
+            6
+        ],
+        "assignedRoom": {
+            "3": "008-E",
+            "19": "108-C",
+            "13": "103-D",
+            "2": "008-B",
+            "10": "103-A"
+        },
+        "unAssignedRoom": {
+            "17": "107-B"
+        }
+    },
+    {
+        "firstname": "Mang",
+        "lastname": "Domenik",
+        "assignedEvents": [
+            18,
+            19,
+            14,
+            11,
+            20
+        ],
+        "choices": [
+            18,
+            19,
+            14,
+            11,
+            20,
+            17
+        ],
+        "assignedRoom": {
+            "18": "107-E",
+            "19": "108-C",
+            "14": "106-A",
+            "11": "103-B",
+            "9": "102-D"
+        },
+        "unAssignedRoom": {
+            "20": "108-E"
+        }
+    },
+    {
+        "firstname": "Okur",
+        "lastname": "Ahmet Semih",
+        "assignedEvents": [
+            13,
+            1,
+            2,
+            9,
+            16
+        ],
+        "choices": [
+            13,
+            1,
+            2,
+            9,
+            16,
+            6
+        ],
+        "assignedRoom": {
+            "13": "103-D",
+            "1": "008-A",
+            "2": "008-B",
+            "9": "102-C",
+            "16": "106-E"
+        }
+    },
+    {
+        "firstname": "Omar",
+        "lastname": "Aria",
+        "assignedEvents": [
+            26,
+            16,
+            13,
+            17,
+            8
+        ],
+        "choices": [
+            26,
+            16,
+            13,
+            17,
+            8,
+            19
+        ],
+        "assignedRoom": {
+            "26": "110-B",
+            "16": "106-E",
+            "13": "103-D",
+            "17": "107-C",
+            "10": "103-A"
+        },
+        "unAssignedRoom": {
+            "8": "102-B"
+        }
+    },
+    {
+        "firstname": "Saad",
+        "lastname": "Iman",
+        "assignedEvents": [
+            9,
+            10,
+            18,
+            21,
+            16
+        ],
+        "choices": [
+            9,
+            10,
+            18,
+            21,
+            16,
+            19
+        ],
+        "assignedRoom": {
+            "9": "102-C",
+            "10": "102-E",
+            "21": "109-A",
+            "8": "102-B",
+            "15": "106-D"
+        },
+        "unAssignedRoom": {
+            "18": "107-E",
+            "16": "106-E"
+        }
+    },
+    {
+        "firstname": "Stengler",
+        "lastname": "Joel-Lucas",
+        "assignedEvents": [
+            18,
+            6,
+            10,
+            9,
+            16
+        ],
+        "choices": [
+            18,
+            6,
+            10,
+            9,
+            16,
+            3
+        ],
+        "assignedRoom": {
+            "18": "107-E",
+            "6": "101-D",
+            "10": "103-A",
+            "9": "102-C",
+            "8": "102-B"
+        },
+        "unAssignedRoom": {
+            "16": "106-E"
+        }
+    },
+    {
+        "firstname": "Talbi",
+        "lastname": "Zaid",
+        "assignedEvents": [
+            14,
+            8,
+            13,
+            6,
+            17
+        ],
+        "choices": [
+            14,
+            8,
+            13,
+            6,
+            17,
+            9
+        ],
+        "assignedRoom": {
+            "14": "106-A",
+            "8": "102-B",
+            "13": "103-D",
+            "6": "101-E",
+            "17": "107-C"
+        },
+        "unAssignedRoom": []
+    },
+    {
+        "firstname": "Tasdemir",
+        "lastname": "Furkan Emre",
+        "assignedEvents": [
+            19,
+            20,
+            6,
+            21,
+            5
+        ],
+        "choices": [
+            19,
+            20,
+            6,
+            21,
+            5,
+            14
+        ],
+        "assignedRoom": {
+            "19": "108-C",
+            "20": "108-E",
+            "6": "101-D",
+            "21": "109-A",
+            "5": "101-B"
+        }
+    },
+    {
+        "firstname": "Trac",
+        "lastname": "Ton Ly David",
+        "assignedEvents": [
+            2,
+            1,
+            13,
+            9,
+            10
+        ],
+        "choices": [
+            2,
+            1,
+            13,
+            9,
+            10,
+            3
+        ],
+        "assignedRoom": {
+            "2": "008-B",
+            "1": "008-A",
+            "13": "103-D",
+            "9": "102-C",
+            "6": "101-E"
+        },
+        "unAssignedRoom": {
+            "10": "103-A"
+        }
+    },
+    {
+        "firstname": "Brettner-Alangyima",
+        "lastname": "Ann",
+        "assignedEvents": [
+            4,
+            6,
+            7,
+            9,
+            12
+        ],
+        "choices": [
+            4,
+            6,
+            7,
+            9,
+            12,
+            20
+        ],
+        "assignedRoom": {
+            "4": "101-A",
+            "6": "101-D",
+            "9": "102-C",
+            "8": "102-B",
+            "13": "103-E"
+        },
+        "unAssignedRoom": {
+            "7": "102-A",
+            "12": "103-C"
+        }
+    },
+    {
+        "firstname": "Dawd",
+        "lastname": "Jehan Khalaf",
+        "assignedEvents": [
+            19,
+            20,
+            18,
+            14,
+            21
+        ],
+        "choices": [
+            19,
+            20,
+            18,
+            14,
+            21,
+            2
+        ],
+        "assignedRoom": {
+            "19": "108-C",
+            "20": "108-E",
+            "18": "108-A",
+            "14": "106-B",
+            "9": "102-D"
+        },
+        "unAssignedRoom": {
+            "21": "109-A"
+        }
+    },
+    {
+        "firstname": "Gro\u00df",
+        "lastname": "Emily",
+        "assignedEvents": [
+            9,
+            19,
+            8,
+            6,
+            10
+        ],
+        "choices": [
+            9,
+            19,
+            8,
+            6,
+            10,
+            24
+        ],
+        "assignedRoom": {
+            "9": "102-D",
+            "19": "108-C",
+            "8": "102-B",
+            "10": "103-A",
+            "6": "101-E"
+        },
+        "unAssignedRoom": []
+    },
+    {
+        "firstname": "Kakar",
+        "lastname": "Husna",
+        "assignedEvents": [
+            19,
+            20,
+            18,
+            14,
+            21
+        ],
+        "choices": [
+            19,
+            20,
+            18,
+            14,
+            21,
+            2
+        ],
+        "assignedRoom": {
+            "19": "108-C",
+            "20": "108-E",
+            "18": "108-A",
+            "14": "106-B",
+            "15": "106-D"
+        },
+        "unAssignedRoom": {
+            "21": "109-A"
+        }
+    },
+    {
+        "firstname": "Lauffs",
+        "lastname": "Joel",
+        "assignedEvents": [
+            23,
+            13,
+            19,
+            6,
+            22
+        ],
+        "choices": [
+            23,
+            13,
+            19,
+            6,
+            22,
+            4
+        ],
+        "assignedRoom": {
+            "23": "109-D",
+            "19": "108-C",
+            "22": "109-B",
+            "13": "103-E",
+            "10": "103-A"
+        },
+        "unAssignedRoom": {
+            "6": "101-D"
+        }
+    },
+    {
+        "firstname": "Matipa",
+        "lastname": "Plamedie",
+        "assignedEvents": [
+            14,
+            6,
+            4,
+            1,
+            5
+        ],
+        "choices": [
+            14,
+            6,
+            4,
+            1,
+            5,
+            16
+        ],
+        "assignedRoom": {
+            "14": "106-A",
+            "6": "101-D",
+            "5": "101-B",
+            "12": "103-C",
+            "13": "103-E"
+        },
+        "unAssignedRoom": {
+            "4": "101-A",
+            "1": "008-A"
+        }
+    },
+    {
+        "firstname": "Muhammadiqboli",
+        "lastname": "Shamsiddin",
+        "assignedEvents": [
+            23,
+            22,
+            14,
+            26,
+            3
+        ],
+        "choices": [
+            23,
+            22,
+            14,
+            26,
+            3,
+            7
+        ],
+        "assignedRoom": {
+            "23": "109-D",
+            "22": "109-B",
+            "14": "106-A",
+            "3": "008-E",
+            "26": "110-C"
+        },
+        "unAssignedRoom": []
+    },
+    {
+        "firstname": "Omer",
+        "lastname": "Diler",
+        "assignedEvents": [
+            23,
+            15,
+            26,
+            25,
+            22
+        ],
+        "choices": [
+            23,
+            15,
+            26,
+            25,
+            22,
+            19
+        ],
+        "assignedRoom": {
+            "23": "109-D",
+            "15": "106-C",
+            "26": "110-B",
+            "25": "110-A",
+            "6": "101-E"
+        },
+        "unAssignedRoom": {
+            "22": "109-B"
+        }
+    },
+    {
+        "firstname": "Petrov",
+        "lastname": "Vladislav",
+        "assignedEvents": [
+            23,
+            22,
+            24,
+            13,
+            3
+        ],
+        "choices": [
+            23,
+            22,
+            24,
+            13,
+            3,
+            7
+        ],
+        "assignedRoom": {
+            "23": "109-D",
+            "22": "109-B",
+            "24": "109-E",
+            "10": "103-A",
+            "12": "103-C"
+        },
+        "unAssignedRoom": {
+            "13": "103-D",
+            "3": "008-E"
+        }
+    },
+    {
+        "firstname": "Scheen",
+        "lastname": "Michelle",
+        "assignedEvents": [
+            26,
+            8,
+            9,
+            6,
+            10
+        ],
+        "choices": [
+            26,
+            8,
+            9,
+            6,
+            10,
+            16
+        ],
+        "assignedRoom": {
+            "26": "110-B",
+            "9": "102-D",
+            "10": "103-A",
+            "6": "101-E",
+            "12": "103-C"
+        },
+        "unAssignedRoom": {
+            "8": "102-B"
+        }
+    },
+    {
+        "firstname": "Schm\u00fccker",
+        "lastname": "Paul",
+        "assignedEvents": [
+            19,
+            2,
+            4,
+            26,
+            22
+        ],
+        "choices": [
+            19,
+            2,
+            4,
+            26,
+            22,
+            23
+        ],
+        "assignedRoom": {
+            "19": "108-C",
+            "2": "008-B",
+            "4": "101-A",
+            "13": "103-E",
+            "15": "106-D"
+        },
+        "unAssignedRoom": {
+            "26": "110-B",
+            "22": "109-B"
+        }
+    },
+    {
+        "firstname": "Schulz",
+        "lastname": "Leonie",
+        "assignedEvents": [
+            10,
+            11,
+            15,
+            26,
+            23
+        ],
+        "choices": [
+            10,
+            11,
+            15,
+            26,
+            23,
+            21
+        ],
+        "assignedRoom": {
+            "10": "103-A",
+            "11": "103-B",
+            "15": "106-C",
+            "23": "109-D",
+            "13": "103-E"
+        },
+        "unAssignedRoom": {
+            "26": "110-B"
+        }
+    },
+    {
+        "firstname": "Schwartz",
+        "lastname": "Tim",
+        "assignedEvents": [
+            14,
+            17,
+            10,
+            1,
+            4
+        ],
+        "choices": [
+            14,
+            17,
+            10,
+            1,
+            4,
+            3
+        ],
+        "assignedRoom": {
+            "14": "106-A",
+            "17": "107-B",
+            "12": "103-C",
+            "13": "103-E",
+            "15": "106-D"
+        },
+        "unAssignedRoom": {
+            "10": "103-A",
+            "1": "008-A",
+            "4": "101-A"
+        }
+    },
+    {
+        "firstname": "Soliman",
+        "lastname": "Ahmed",
+        "assignedEvents": [
+            14,
+            17,
+            10,
+            1,
+            4
+        ],
+        "choices": [
+            14,
+            17,
+            10,
+            1,
+            4,
+            3
+        ],
+        "assignedRoom": {
+            "14": "106-B",
+            "10": "103-A",
+            "17": "107-C",
+            "15": "106-D",
+            "16": "106-E"
+        },
+        "unAssignedRoom": {
+            "1": "008-A",
+            "4": "101-A"
+        }
+    },
+    {
+        "firstname": "Tall",
+        "lastname": "Alassane",
+        "assignedEvents": [
+            19,
+            10,
+            20,
+            21,
+            5
+        ],
+        "choices": [
+            19,
+            10,
+            20,
+            21,
+            5,
+            26
+        ],
+        "assignedRoom": {
+            "19": "108-D",
+            "10": "103-A",
+            "20": "108-E",
+            "5": "101-B",
+            "12": "103-C"
+        },
+        "unAssignedRoom": {
+            "21": "109-A"
+        }
+    },
+    {
+        "firstname": "Thier",
+        "lastname": "Clemens",
+        "assignedEvents": [
+            26,
+            19,
+            18,
+            14,
+            23
+        ],
+        "choices": [
+            26,
+            19,
+            18,
+            14,
+            23,
+            10
+        ],
+        "assignedRoom": {
+            "26": "110-B",
+            "19": "108-D",
+            "18": "108-A",
+            "12": "103-C",
+            "16": "106-E"
+        },
+        "unAssignedRoom": {
+            "14": "106-B",
+            "23": "109-D"
+        }
+    },
+    {
+        "firstname": "Tourniaire",
+        "lastname": "Serafina",
+        "assignedEvents": [
+            9,
+            2,
+            7,
+            12,
+            13
+        ],
+        "choices": [
+            9,
+            2,
+            7,
+            12,
+            13,
+            14
+        ],
+        "assignedRoom": {
+            "9": "102-D",
+            "2": "008-C",
+            "7": "102-A",
+            "13": "103-E",
+            "8": "102-B"
+        },
+        "unAssignedRoom": {
+            "12": "103-C"
+        }
+    },
+    {
+        "firstname": "Wieczorek",
+        "lastname": "Natan Daniel",
+        "assignedEvents": [
+            23,
+            16,
+            15,
+            11,
+            6
+        ],
+        "choices": [
+            23,
+            16,
+            15,
+            11,
+            6,
+            3
+        ],
+        "assignedRoom": {
+            "23": "109-D",
+            "16": "106-E",
+            "15": "106-C",
+            "11": "103-B",
+            "18": "108-A"
+        },
+        "unAssignedRoom": {
+            "6": "101-D"
+        }
+    },
+    {
+        "firstname": "Almoukayed",
+        "lastname": "Ahmad",
+        "assignedEvents": [
+            14,
+            19,
+            26,
+            22,
+            20
+        ],
+        "choices": [
+            14,
+            19,
+            26,
+            22,
+            20,
+            3
+        ],
+        "assignedRoom": {
+            "14": "106-B",
+            "19": "108-D",
+            "20": "108-E",
+            "26": "110-C",
+            "16": "107-A"
+        },
+        "unAssignedRoom": {
+            "22": "109-B"
+        }
+    },
+    {
+        "firstname": "Amann",
+        "lastname": "Julian",
+        "assignedEvents": [
+            24,
+            9,
+            13,
+            17,
+            19
+        ],
+        "choices": [
+            24,
+            9,
+            13,
+            17,
+            19,
+            6
+        ],
+        "assignedRoom": {
+            "24": "109-E",
+            "9": "102-D",
+            "17": "107-B",
+            "15": "106-C",
+            "16": "107-A"
+        },
+        "unAssignedRoom": {
+            "13": "103-D",
+            "19": "108-D"
+        }
+    },
+    {
+        "firstname": "Eich",
+        "lastname": "Dominic",
+        "assignedEvents": [
+            19,
+            18,
+            4,
+            16,
+            26
+        ],
+        "choices": [
+            19,
+            18,
+            4,
+            16,
+            26,
+            1
+        ],
+        "assignedRoom": {
+            "19": "108-D",
+            "18": "108-A",
+            "16": "106-E",
+            "26": "110-B",
+            "15": "106-C"
+        },
+        "unAssignedRoom": {
+            "4": "101-A"
+        }
+    },
+    {
+        "firstname": "Freialdenhoven",
+        "lastname": "Tim",
+        "assignedEvents": [
+            19,
+            14,
+            10,
+            21,
+            3
+        ],
+        "choices": [
+            19,
+            14,
+            10,
+            21,
+            3,
+            27
+        ],
+        "assignedRoom": {
+            "19": "108-D",
+            "14": "106-B",
+            "10": "103-A",
+            "3": "008-E",
+            "15": "106-C"
+        },
+        "unAssignedRoom": {
+            "21": "109-A"
+        }
+    },
+    {
+        "firstname": "Gr\u00fcbler",
+        "lastname": "Jonathan",
+        "assignedEvents": [
+            15,
+            17,
+            4,
+            14,
+            13
+        ],
+        "choices": [
+            15,
+            17,
+            4,
+            14,
+            13,
+            16
+        ],
+        "assignedRoom": {
+            "15": "106-C",
+            "17": "107-B",
+            "4": "101-A",
+            "13": "103-D",
+            "16": "106-E"
+        },
+        "unAssignedRoom": {
+            "14": "106-B"
+        }
+    },
+    {
+        "firstname": "G\u00fcnaydin",
+        "lastname": "Viyan",
+        "assignedEvents": [
+            23,
+            26,
+            3,
+            22,
+            18
+        ],
+        "choices": [
+            23,
+            26,
+            3,
+            22,
+            18,
+            25
+        ],
+        "assignedRoom": {
+            "23": "109-D",
+            "26": "110-B",
+            "3": "008-E",
+            "18": "108-A",
+            "22": "109-C"
+        },
+        "unAssignedRoom": []
+    },
+    {
+        "firstname": "Kober",
+        "lastname": "Jonathan Lorenz",
+        "assignedEvents": [
+            3,
+            19,
+            23,
+            14,
+            6
+        ],
+        "choices": [
+            3,
+            19,
+            23,
+            14,
+            6,
+            15
+        ],
+        "assignedRoom": {
+            "3": "008-E",
+            "19": "108-D",
+            "14": "106-B",
+            "15": "106-C",
+            "16": "107-A"
+        },
+        "unAssignedRoom": {
+            "23": "109-D",
+            "6": "101-D"
+        }
+    },
+    {
+        "firstname": "Kolokythas",
+        "lastname": "Thomas",
+        "assignedEvents": [
+            26,
+            9,
+            13,
+            3,
+            6
+        ],
+        "choices": [
+            26,
+            9,
+            13,
+            3,
+            6,
+            17
+        ],
+        "assignedRoom": {
+            "26": "110-B",
+            "9": "102-D",
+            "13": "103-E",
+            "15": "106-C",
+            "16": "107-A"
+        },
+        "unAssignedRoom": {
+            "3": "008-E",
+            "6": "101-D"
+        }
+    },
+    {
+        "firstname": "Lewandowska",
+        "lastname": "Matilda",
+        "assignedEvents": [
+            23,
+            26,
+            3,
+            22,
+            18
+        ],
+        "choices": [
+            23,
+            26,
+            3,
+            22,
+            18,
+            25
+        ],
+        "assignedRoom": {
+            "23": "109-D",
+            "26": "110-B",
+            "3": "008-E",
+            "18": "108-A",
+            "22": "109-C"
+        },
+        "unAssignedRoom": []
+    },
+    {
+        "firstname": "Maassen",
+        "lastname": "Lino Alexander",
+        "assignedEvents": [
+            19,
+            6,
+            14,
+            18,
+            3
+        ],
+        "choices": [
+            19,
+            6,
+            14,
+            18,
+            3,
+            26
+        ],
+        "assignedRoom": {
+            "19": "108-D",
+            "14": "106-B",
+            "18": "108-A",
+            "3": "008-E",
+            "15": "106-C"
+        },
+        "unAssignedRoom": {
+            "6": "101-D"
+        }
+    },
+    {
+        "firstname": "Mei\u00df",
+        "lastname": "Timo",
+        "assignedEvents": [
+            26,
+            23,
+            12,
+            13,
+            6
+        ],
+        "choices": [
+            26,
+            23,
+            12,
+            13,
+            6,
+            1
+        ],
+        "assignedRoom": {
+            "26": "110-B",
+            "23": "109-D",
+            "12": "103-C",
+            "13": "103-E",
+            "16": "107-A"
+        },
+        "unAssignedRoom": {
+            "6": "101-D"
+        }
+    },
+    {
+        "firstname": "Salha",
+        "lastname": "Mohammed",
+        "assignedEvents": [
+            9,
+            19,
+            26,
+            18,
+            10
+        ],
+        "choices": [
+            9,
+            19,
+            26,
+            18,
+            10,
+            11
+        ],
+        "assignedRoom": {
+            "9": "102-D",
+            "26": "110-B",
+            "18": "108-A",
+            "15": "106-C",
+            "20": "108-E"
+        },
+        "unAssignedRoom": {
+            "19": "108-D",
+            "10": "103-A"
+        }
+    },
+    {
+        "firstname": "Sari",
+        "lastname": "Atakhan",
+        "assignedEvents": [
+            4,
+            6,
+            19,
+            14,
+            18
+        ],
+        "choices": [
+            4,
+            6,
+            19,
+            14,
+            18,
+            26
+        ],
+        "assignedRoom": {
+            "4": "101-A",
+            "6": "101-D",
+            "14": "106-B",
+            "17": "107-C",
+            "20": "108-E"
+        },
+        "unAssignedRoom": {
+            "19": "108-D",
+            "18": "108-A"
+        }
+    },
+    {
+        "firstname": "Schneider",
+        "lastname": "Robin",
+        "assignedEvents": [
+            1,
+            26,
+            23,
+            12,
+            8
+        ],
+        "choices": [
+            1,
+            26,
+            23,
+            12,
+            8,
+            4
+        ],
+        "assignedRoom": {
+            "1": "008-A",
+            "26": "110-B",
+            "23": "109-D",
+            "12": "103-C",
+            "20": "108-E"
+        },
+        "unAssignedRoom": {
+            "8": "102-B"
+        }
+    },
+    {
+        "firstname": "Tutumlu",
+        "lastname": "Tahir",
+        "assignedEvents": [
+            26,
+            9,
+            13,
+            3,
+            6
+        ],
+        "choices": [
+            26,
+            9,
+            13,
+            3,
+            6,
+            17
+        ],
+        "assignedRoom": {
+            "26": "110-C",
+            "9": "102-D",
+            "13": "103-E",
+            "8": "102-B",
+            "16": "107-A"
+        },
+        "unAssignedRoom": {
+            "3": "008-E",
+            "6": "101-D"
+        }
+    }
+]

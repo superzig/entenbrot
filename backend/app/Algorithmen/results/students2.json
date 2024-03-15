@@ -1,0 +1,2569 @@
+{
+    "students": [
+        {
+            "firstname": "Bigay",
+            "lastname": "Ali Eren",
+            "assignedEvents": [
+                6,
+                18,
+                19,
+                4,
+                14
+            ],
+            "choices": [
+                6,
+                18,
+                19,
+                4,
+                14,
+                22
+            ]
+        },
+        {
+            "firstname": "Graf",
+            "lastname": "Lena",
+            "assignedEvents": [
+                16,
+                17,
+                9,
+                18,
+                19
+            ],
+            "choices": [
+                16,
+                17,
+                9,
+                18,
+                19,
+                15
+            ]
+        },
+        {
+            "firstname": "G\u00f6rgen",
+            "lastname": "Smilla Marie",
+            "assignedEvents": [
+                20,
+                25,
+                1,
+                15,
+                26
+            ],
+            "choices": [
+                20,
+                25,
+                1,
+                15,
+                26,
+                11
+            ]
+        },
+        {
+            "firstname": "Iskender",
+            "lastname": "Iclal Ece",
+            "assignedEvents": [
+                10,
+                2,
+                6,
+                16,
+                18
+            ],
+            "choices": [
+                10,
+                2,
+                6,
+                16,
+                18,
+                15
+            ]
+        },
+        {
+            "firstname": "Karakas",
+            "lastname": "Berfin",
+            "assignedEvents": [
+                2,
+                26,
+                13,
+                15,
+                22
+            ],
+            "choices": [
+                2,
+                26,
+                13,
+                15,
+                22,
+                23
+            ]
+        },
+        {
+            "firstname": "Kavak",
+            "lastname": "Hazal",
+            "assignedEvents": [
+                27,
+                26,
+                11,
+                16,
+                13
+            ],
+            "choices": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+            ]
+        },
+        {
+            "firstname": "Martins",
+            "lastname": "Ayo",
+            "assignedEvents": [
+                6,
+                16,
+                18,
+                23,
+                24
+            ],
+            "choices": [
+                6,
+                16,
+                18,
+                23,
+                24,
+                25
+            ]
+        },
+        {
+            "firstname": "Mohammed",
+            "lastname": "Zakariah",
+            "assignedEvents": [
+                7,
+                13,
+                14,
+                16,
+                18
+            ],
+            "choices": [
+                7,
+                13,
+                14,
+                16,
+                18,
+                26
+            ]
+        },
+        {
+            "firstname": "Nguyen",
+            "lastname": "Hai Nam",
+            "assignedEvents": [
+                3,
+                6,
+                14,
+                26,
+                19
+            ],
+            "choices": [
+                3,
+                6,
+                14,
+                26,
+                19,
+                22
+            ]
+        },
+        {
+            "firstname": "Ntumba Tshikala",
+            "lastname": "Ruth",
+            "assignedEvents": [
+                3,
+                18,
+                23,
+                4,
+                15
+            ],
+            "choices": [
+                3,
+                18,
+                23,
+                4,
+                15,
+                16
+            ]
+        },
+        {
+            "firstname": "Rausch",
+            "lastname": "Erik",
+            "assignedEvents": [
+                3,
+                10,
+                16,
+                17,
+                11
+            ],
+            "choices": [
+                3,
+                10,
+                16,
+                17,
+                11,
+                9
+            ]
+        },
+        {
+            "firstname": "Saltan",
+            "lastname": "Mustafa",
+            "assignedEvents": [
+                6,
+                18,
+                19,
+                4,
+                14
+            ],
+            "choices": [
+                6,
+                18,
+                19,
+                4,
+                14,
+                22
+            ]
+        },
+        {
+            "firstname": "Schott",
+            "lastname": "Isabell",
+            "assignedEvents": [
+                15,
+                17,
+                3,
+                18,
+                8
+            ],
+            "choices": [
+                15,
+                17,
+                3,
+                18,
+                8,
+                16
+            ]
+        },
+        {
+            "firstname": "Seng\u00f6z",
+            "lastname": "Aleyna",
+            "assignedEvents": [
+                1,
+                2,
+                6,
+                16,
+                23
+            ],
+            "choices": [
+                1,
+                2,
+                6,
+                16,
+                23,
+                26
+            ]
+        },
+        {
+            "firstname": "Alikahn",
+            "lastname": "Malak",
+            "assignedEvents": [
+                10,
+                19,
+                16,
+                9,
+                6
+            ],
+            "choices": [
+                10,
+                19,
+                16,
+                9,
+                6,
+                18
+            ]
+        },
+        {
+            "firstname": "Almuhandez",
+            "lastname": "Muhieb",
+            "assignedEvents": [
+                9,
+                6,
+                17,
+                8,
+                13
+            ],
+            "choices": [
+                9,
+                6,
+                17,
+                8,
+                13,
+                10
+            ]
+        },
+        {
+            "firstname": "Bendels",
+            "lastname": "Lea",
+            "assignedEvents": [
+                19,
+                18,
+                20,
+                10,
+                2
+            ],
+            "choices": [
+                19,
+                18,
+                20,
+                10,
+                2,
+                11
+            ]
+        },
+        {
+            "firstname": "B\u00fccken",
+            "lastname": "Connor Luca",
+            "assignedEvents": [
+                19,
+                21,
+                5,
+                18,
+                10
+            ],
+            "choices": [
+                19,
+                21,
+                5,
+                18,
+                10,
+                6
+            ]
+        },
+        {
+            "firstname": "Dah",
+            "lastname": "Mariama",
+            "assignedEvents": [
+                18,
+                18,
+                21,
+                27,
+                4
+            ],
+            "choices": [
+                18,
+                18,
+                21,
+                27,
+                4,
+                13
+            ]
+        },
+        {
+            "firstname": "Daher",
+            "lastname": "Haschem",
+            "assignedEvents": [
+                18,
+                3,
+                14,
+                20,
+                13
+            ],
+            "choices": [
+                18,
+                3,
+                14,
+                20,
+                13,
+                19
+            ]
+        },
+        {
+            "firstname": "Demir",
+            "lastname": "Rojin",
+            "assignedEvents": [
+                19,
+                18,
+                17,
+                20,
+                2
+            ],
+            "choices": [
+                19,
+                18,
+                17,
+                20,
+                2,
+                25
+            ]
+        },
+        {
+            "firstname": "Dindar",
+            "lastname": "Tolga",
+            "assignedEvents": [
+                19,
+                16,
+                18,
+                26,
+                9
+            ],
+            "choices": [
+                19,
+                16,
+                18,
+                26,
+                9,
+                16
+            ]
+        },
+        {
+            "firstname": "Ga\u00dfn",
+            "lastname": "Jean-Michel",
+            "assignedEvents": [
+                18,
+                3,
+                14,
+                13,
+                4
+            ],
+            "choices": [
+                18,
+                3,
+                14,
+                13,
+                4,
+                19
+            ]
+        },
+        {
+            "firstname": "Hasanic",
+            "lastname": "Asmir",
+            "assignedEvents": [
+                10,
+                11,
+                15,
+                26,
+                18
+            ],
+            "choices": [
+                10,
+                11,
+                15,
+                26,
+                18,
+                9
+            ]
+        },
+        {
+            "firstname": "Karanlik",
+            "lastname": "Iskender",
+            "assignedEvents": [
+                9,
+                19,
+                10,
+                3,
+                6
+            ],
+            "choices": [
+                9,
+                19,
+                10,
+                3,
+                null,
+                null
+            ]
+        },
+        {
+            "firstname": "Kau\u00dfn",
+            "lastname": "Maximilian",
+            "assignedEvents": [
+                14,
+                6,
+                15,
+                3,
+                4
+            ],
+            "choices": [
+                14,
+                6,
+                15,
+                3,
+                4,
+                1
+            ]
+        },
+        {
+            "firstname": "Kaya",
+            "lastname": "Baris",
+            "assignedEvents": [
+                3,
+                5,
+                7,
+                12,
+                14
+            ],
+            "choices": [
+                3,
+                5,
+                7,
+                12,
+                14,
+                13
+            ]
+        },
+        {
+            "firstname": "Kaya",
+            "lastname": "Suat",
+            "assignedEvents": [
+                22,
+                10,
+                16,
+                9,
+                26
+            ],
+            "choices": [
+                22,
+                10,
+                16,
+                9,
+                26,
+                6
+            ]
+        },
+        {
+            "firstname": "Krilcic",
+            "lastname": "Marijana",
+            "assignedEvents": [
+                16,
+                24,
+                18,
+                23,
+                15
+            ],
+            "choices": [
+                16,
+                24,
+                18,
+                23,
+                15,
+                11
+            ]
+        },
+        {
+            "firstname": "luwawu",
+            "lastname": "Espoir",
+            "assignedEvents": [
+                17,
+                25,
+                18,
+                3,
+                7
+            ],
+            "choices": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+            ]
+        },
+        {
+            "firstname": "Moustahfid",
+            "lastname": "Miranda",
+            "assignedEvents": [
+                19,
+                18,
+                17,
+                6,
+                20
+            ],
+            "choices": [
+                19,
+                18,
+                17,
+                6,
+                20,
+                22
+            ]
+        },
+        {
+            "firstname": "Musi",
+            "lastname": "Chloe",
+            "assignedEvents": [
+                1,
+                3,
+                6,
+                17,
+                19
+            ],
+            "choices": [
+                1,
+                3,
+                6,
+                17,
+                19,
+                9
+            ]
+        },
+        {
+            "firstname": "Siebert",
+            "lastname": "Tutku Cansin",
+            "assignedEvents": [
+                19,
+                18,
+                17,
+                6,
+                15
+            ],
+            "choices": [
+                19,
+                18,
+                17,
+                6,
+                15,
+                9
+            ]
+        },
+        {
+            "firstname": "Sylshabanaj",
+            "lastname": "Klitjan",
+            "assignedEvents": [
+                6,
+                26,
+                18,
+                9,
+                16
+            ],
+            "choices": [
+                6,
+                26,
+                18,
+                9,
+                16,
+                10
+            ]
+        },
+        {
+            "firstname": "Tchacoura",
+            "lastname": "Said",
+            "assignedEvents": [
+                19,
+                9,
+                21,
+                6,
+                16
+            ],
+            "choices": [
+                19,
+                9,
+                21,
+                6,
+                16,
+                10
+            ]
+        },
+        {
+            "firstname": "Tuncer",
+            "lastname": "Metehan",
+            "assignedEvents": [
+                9,
+                19,
+                16,
+                6,
+                17
+            ],
+            "choices": [
+                9,
+                19,
+                16,
+                6,
+                17,
+                25
+            ]
+        },
+        {
+            "firstname": "Vancronenburg",
+            "lastname": "Anna Elena",
+            "assignedEvents": [
+                27,
+                5,
+                8,
+                13,
+                18
+            ],
+            "choices": [
+                27,
+                5,
+                8,
+                13,
+                18,
+                22
+            ]
+        },
+        {
+            "firstname": "Vukelic",
+            "lastname": "Valentina",
+            "assignedEvents": [
+                19,
+                10,
+                22,
+                20,
+                21
+            ],
+            "choices": [
+                19,
+                10,
+                22,
+                20,
+                21,
+                16
+            ]
+        },
+        {
+            "firstname": "Yildirim",
+            "lastname": "Zilan",
+            "assignedEvents": [
+                19,
+                18,
+                21,
+                17,
+                16
+            ],
+            "choices": [
+                19,
+                18,
+                21,
+                17,
+                16,
+                15
+            ]
+        },
+        {
+            "firstname": "Ait Oufquir",
+            "lastname": "Samira",
+            "assignedEvents": [
+                19,
+                18,
+                6,
+                13,
+                10
+            ],
+            "choices": [
+                19,
+                18,
+                6,
+                13,
+                10,
+                14
+            ]
+        },
+        {
+            "firstname": "Arslan",
+            "lastname": "Ayse Nur",
+            "assignedEvents": [
+                22,
+                19,
+                18,
+                10,
+                1
+            ],
+            "choices": [
+                22,
+                19,
+                18,
+                10,
+                1,
+                26
+            ]
+        },
+        {
+            "firstname": "Benamar",
+            "lastname": "Rayan",
+            "assignedEvents": [
+                18,
+                10,
+                11,
+                22,
+                8
+            ],
+            "choices": [
+                18,
+                10,
+                11,
+                22,
+                8,
+                19
+            ]
+        },
+        {
+            "firstname": "Bisevac",
+            "lastname": "Melvin",
+            "assignedEvents": [
+                22,
+                19,
+                13,
+                26,
+                18
+            ],
+            "choices": [
+                22,
+                19,
+                13,
+                26,
+                18,
+                9
+            ]
+        },
+        {
+            "firstname": "Bolz",
+            "lastname": "Deniz",
+            "assignedEvents": [
+                16,
+                6,
+                24,
+                19,
+                9
+            ],
+            "choices": [
+                16,
+                6,
+                24,
+                19,
+                9,
+                11
+            ]
+        },
+        {
+            "firstname": "Brandt",
+            "lastname": "Laurin",
+            "assignedEvents": [
+                18,
+                22,
+                19,
+                26,
+                4
+            ],
+            "choices": [
+                18,
+                22,
+                19,
+                26,
+                4,
+                6
+            ]
+        },
+        {
+            "firstname": "Haucap",
+            "lastname": "Andreas",
+            "assignedEvents": [
+                4,
+                5,
+                12,
+                13,
+                14
+            ],
+            "choices": [
+                4,
+                5,
+                12,
+                13,
+                14,
+                19
+            ]
+        },
+        {
+            "firstname": "Gryszko",
+            "lastname": "Raul",
+            "assignedEvents": [
+                4,
+                5,
+                12,
+                13,
+                14
+            ],
+            "choices": [
+                4,
+                5,
+                12,
+                13,
+                14,
+                19
+            ]
+        },
+        {
+            "firstname": "Hermanns",
+            "lastname": "Fabian",
+            "assignedEvents": [
+                6,
+                8,
+                14,
+                19,
+                26
+            ],
+            "choices": [
+                6,
+                8,
+                14,
+                19,
+                26,
+                2
+            ]
+        },
+        {
+            "firstname": "J\u00f6pgen",
+            "lastname": "Joel-Luis",
+            "assignedEvents": [
+                18,
+                6,
+                19,
+                17,
+                12
+            ],
+            "choices": [
+                18,
+                6,
+                19,
+                17,
+                12,
+                14
+            ]
+        },
+        {
+            "firstname": "Khan",
+            "lastname": "Rohail-Ahmed",
+            "assignedEvents": [
+                14,
+                6,
+                15,
+                8,
+                26
+            ],
+            "choices": [
+                14,
+                6,
+                15,
+                8,
+                26,
+                1
+            ]
+        },
+        {
+            "firstname": "Koubaa",
+            "lastname": "Hicham",
+            "assignedEvents": [
+                18,
+                19,
+                8,
+                3,
+                12
+            ],
+            "choices": [
+                18,
+                19,
+                8,
+                3,
+                12,
+                27
+            ]
+        },
+        {
+            "firstname": "Meuthrath",
+            "lastname": "Shoshana",
+            "assignedEvents": [
+                20,
+                26,
+                7,
+                5,
+                15
+            ],
+            "choices": [
+                20,
+                26,
+                7,
+                5,
+                15,
+                11
+            ]
+        },
+        {
+            "firstname": "Miho",
+            "lastname": "Ezdin",
+            "assignedEvents": [
+                5,
+                12,
+                13,
+                18,
+                19
+            ],
+            "choices": [
+                5,
+                12,
+                13,
+                18,
+                19,
+                1
+            ]
+        },
+        {
+            "firstname": "Najib",
+            "lastname": "Rania Katharina",
+            "assignedEvents": [
+                19,
+                14,
+                18,
+                10,
+                16
+            ],
+            "choices": [
+                19,
+                14,
+                18,
+                10,
+                16,
+                4
+            ]
+        },
+        {
+            "firstname": "Rana",
+            "lastname": "Aisha",
+            "assignedEvents": [
+                2,
+                27,
+                3,
+                8,
+                7
+            ],
+            "choices": [
+                2,
+                27,
+                3,
+                8,
+                7,
+                9
+            ]
+        },
+        {
+            "firstname": "Sarig\u00fc",
+            "lastname": "Nehir Zehra",
+            "assignedEvents": [
+                18,
+                19,
+                21,
+                4,
+                20
+            ],
+            "choices": [
+                18,
+                19,
+                21,
+                4,
+                20,
+                10
+            ]
+        },
+        {
+            "firstname": "Selimbasic",
+            "lastname": "Alina",
+            "assignedEvents": [
+                19,
+                18,
+                16,
+                6,
+                14
+            ],
+            "choices": [
+                19,
+                18,
+                16,
+                6,
+                14,
+                3
+            ]
+        },
+        {
+            "firstname": "Sweiti",
+            "lastname": "Taha",
+            "assignedEvents": [
+                6,
+                19,
+                20,
+                15,
+                3
+            ],
+            "choices": [
+                6,
+                19,
+                20,
+                15,
+                3,
+                14
+            ]
+        },
+        {
+            "firstname": "Urbanke",
+            "lastname": "Bela Maximilian",
+            "assignedEvents": [
+                27,
+                4,
+                7,
+                12,
+                14
+            ],
+            "choices": [
+                27,
+                4,
+                7,
+                12,
+                14,
+                13
+            ]
+        },
+        {
+            "firstname": "Adeosun",
+            "lastname": "Oluwaseyi Kehinde",
+            "assignedEvents": [
+                2,
+                19,
+                24,
+                23,
+                27
+            ],
+            "choices": [
+                2,
+                19,
+                24,
+                23,
+                27,
+                1
+            ]
+        },
+        {
+            "firstname": "Adolf",
+            "lastname": "Angelina",
+            "assignedEvents": [
+                3,
+                6,
+                1,
+                10,
+                15
+            ],
+            "choices": [
+                3,
+                6,
+                1,
+                10,
+                15,
+                9
+            ]
+        },
+        {
+            "firstname": "Ali",
+            "lastname": "Lilian",
+            "assignedEvents": [
+                6,
+                10,
+                11,
+                2,
+                27
+            ],
+            "choices": [
+                6,
+                10,
+                11,
+                2,
+                27,
+                1
+            ]
+        },
+        {
+            "firstname": "Ana",
+            "lastname": "Catalin-Gabriel",
+            "assignedEvents": [
+                6,
+                3,
+                27,
+                15,
+                13
+            ],
+            "choices": [
+                6,
+                3,
+                27,
+                15,
+                13,
+                7
+            ]
+        },
+        {
+            "firstname": "Ayg\u00fcn",
+            "lastname": "Zanya",
+            "assignedEvents": [
+                10,
+                11,
+                13,
+                2,
+                27
+            ],
+            "choices": [
+                10,
+                11,
+                13,
+                2,
+                27,
+                1
+            ]
+        },
+        {
+            "firstname": "Bediako",
+            "lastname": "Edlisa Gymifua",
+            "assignedEvents": [
+                10,
+                11,
+                9,
+                3,
+                13
+            ],
+            "choices": [
+                10,
+                11,
+                9,
+                3,
+                13,
+                6
+            ]
+        },
+        {
+            "firstname": "Demir",
+            "lastname": "Ahmet Hezdar",
+            "assignedEvents": [
+                10,
+                9,
+                11,
+                14,
+                7
+            ],
+            "choices": [
+                10,
+                9,
+                11,
+                14,
+                7,
+                13
+            ]
+        },
+        {
+            "firstname": "Dirki",
+            "lastname": "Khalil",
+            "assignedEvents": [
+                2,
+                4,
+                13,
+                25,
+                26
+            ],
+            "choices": [
+                2,
+                4,
+                13,
+                25,
+                26,
+                27
+            ]
+        },
+        {
+            "firstname": "Dohri",
+            "lastname": "Anouar",
+            "assignedEvents": [
+                26,
+                14,
+                19,
+                18,
+                22
+            ],
+            "choices": [
+                26,
+                14,
+                19,
+                18,
+                22,
+                8
+            ]
+        },
+        {
+            "firstname": "Ediawe Agunbiade",
+            "lastname": "Quincy",
+            "assignedEvents": [
+                19,
+                3,
+                1,
+                6,
+                7
+            ],
+            "choices": [
+                19,
+                3,
+                1,
+                6,
+                7,
+                14
+            ]
+        },
+        {
+            "firstname": "El Sayed",
+            "lastname": "Jihan",
+            "assignedEvents": [
+                25,
+                19,
+                18,
+                22,
+                21
+            ],
+            "choices": [
+                25,
+                19,
+                18,
+                22,
+                21,
+                13
+            ]
+        },
+        {
+            "firstname": "Glazkova",
+            "lastname": "Oleksandra",
+            "assignedEvents": [
+                9,
+                19,
+                18,
+                17,
+                15
+            ],
+            "choices": [
+                9,
+                19,
+                18,
+                17,
+                15,
+                4
+            ]
+        },
+        {
+            "firstname": "G\u00d6cesin",
+            "lastname": "Ela Nur",
+            "assignedEvents": [
+                9,
+                10,
+                11,
+                3,
+                13
+            ],
+            "choices": [
+                9,
+                10,
+                11,
+                3,
+                13,
+                12
+            ]
+        },
+        {
+            "firstname": "Hampeter",
+            "lastname": "Anna",
+            "assignedEvents": [
+                3,
+                1,
+                27,
+                2,
+                7
+            ],
+            "choices": [
+                3,
+                1,
+                27,
+                2,
+                7,
+                8
+            ]
+        },
+        {
+            "firstname": "Kisoglu",
+            "lastname": "Hawin",
+            "assignedEvents": [
+                1,
+                19,
+                3,
+                20,
+                27
+            ],
+            "choices": [
+                1,
+                19,
+                3,
+                20,
+                27,
+                2
+            ]
+        },
+        {
+            "firstname": "Kisoglu",
+            "lastname": "Rojin",
+            "assignedEvents": [
+                2,
+                6,
+                9,
+                10,
+                1
+            ],
+            "choices": [
+                2,
+                6,
+                9,
+                10,
+                1,
+                2
+            ]
+        },
+        {
+            "firstname": "Malambu",
+            "lastname": "Bryan",
+            "assignedEvents": [
+                17,
+                18,
+                19,
+                16,
+                15
+            ],
+            "choices": [
+                17,
+                18,
+                19,
+                16,
+                15,
+                14
+            ]
+        },
+        {
+            "firstname": "Mohren",
+            "lastname": "Tom",
+            "assignedEvents": [
+                7,
+                18,
+                14,
+                19,
+                12
+            ],
+            "choices": [
+                7,
+                18,
+                14,
+                19,
+                12,
+                13
+            ]
+        },
+        {
+            "firstname": "Rozafshan",
+            "lastname": "Arman",
+            "assignedEvents": [
+                7,
+                22,
+                25,
+                26,
+                3
+            ],
+            "choices": [
+                7,
+                22,
+                25,
+                26,
+                3,
+                20
+            ]
+        },
+        {
+            "firstname": "Rumor",
+            "lastname": "Anton Wilem",
+            "assignedEvents": [
+                17,
+                18,
+                19,
+                16,
+                15
+            ],
+            "choices": [
+                17,
+                18,
+                19,
+                16,
+                15,
+                4
+            ]
+        },
+        {
+            "firstname": "Selim",
+            "lastname": "Omer",
+            "assignedEvents": [
+                10,
+                11,
+                25,
+                26,
+                24
+            ],
+            "choices": [
+                10,
+                11,
+                25,
+                26,
+                24,
+                null
+            ]
+        },
+        {
+            "firstname": "Tchimbalanga",
+            "lastname": "Clotilde",
+            "assignedEvents": [
+                10,
+                17,
+                18,
+                16,
+                9
+            ],
+            "choices": [
+                10,
+                17,
+                18,
+                16,
+                9,
+                11
+            ]
+        },
+        {
+            "firstname": "Tetik",
+            "lastname": "Ilyas",
+            "assignedEvents": [
+                10,
+                18,
+                14,
+                12,
+                7
+            ],
+            "choices": [
+                10,
+                18,
+                14,
+                12,
+                7,
+                6
+            ]
+        },
+        {
+            "firstname": "Ademi",
+            "lastname": "Adonisa",
+            "assignedEvents": [
+                26,
+                17,
+                8,
+                13,
+                22
+            ],
+            "choices": [
+                26,
+                17,
+                8,
+                13,
+                22,
+                16
+            ]
+        },
+        {
+            "firstname": "Arifi",
+            "lastname": "Annalena",
+            "assignedEvents": [
+                3,
+                6,
+                8,
+                12,
+                15
+            ],
+            "choices": [
+                3,
+                6,
+                8,
+                12,
+                15,
+                17
+            ]
+        },
+        {
+            "firstname": "Erol",
+            "lastname": "Iclal",
+            "assignedEvents": [
+                18,
+                2,
+                14,
+                17,
+                15
+            ],
+            "choices": [
+                18,
+                2,
+                14,
+                17,
+                15,
+                21
+            ]
+        },
+        {
+            "firstname": "Erten",
+            "lastname": "Volkan Burak",
+            "assignedEvents": [
+                19,
+                9,
+                13,
+                2,
+                6
+            ],
+            "choices": [
+                19,
+                9,
+                13,
+                2,
+                6,
+                18
+            ]
+        },
+        {
+            "firstname": "Ezen",
+            "lastname": "Zilan",
+            "assignedEvents": [
+                26,
+                17,
+                8,
+                13,
+                22
+            ],
+            "choices": [
+                26,
+                17,
+                8,
+                13,
+                22,
+                16
+            ]
+        },
+        {
+            "firstname": "Grenz",
+            "lastname": "Andre",
+            "assignedEvents": [
+                20,
+                12,
+                13,
+                14,
+                5
+            ],
+            "choices": [
+                20,
+                12,
+                13,
+                14,
+                5,
+                4
+            ]
+        },
+        {
+            "firstname": "G\u00fcmez",
+            "lastname": "Koray",
+            "assignedEvents": [
+                8,
+                14,
+                17,
+                3,
+                9
+            ],
+            "choices": [
+                8,
+                14,
+                17,
+                3,
+                9,
+                10
+            ]
+        },
+        {
+            "firstname": "Kafadar",
+            "lastname": "Canan Melek",
+            "assignedEvents": [
+                25,
+                22,
+                20,
+                21,
+                2
+            ],
+            "choices": [
+                25,
+                22,
+                20,
+                21,
+                2,
+                1
+            ]
+        },
+        {
+            "firstname": "Korkut",
+            "lastname": "Pelsin",
+            "assignedEvents": [
+                2,
+                18,
+                15,
+                3,
+                6
+            ],
+            "choices": [
+                2,
+                18,
+                15,
+                3,
+                6,
+                9
+            ]
+        },
+        {
+            "firstname": "Kosciukiewicz",
+            "lastname": "Jan",
+            "assignedEvents": [
+                22,
+                26,
+                19,
+                3,
+                14
+            ],
+            "choices": [
+                22,
+                26,
+                19,
+                3,
+                14,
+                10
+            ]
+        },
+        {
+            "firstname": "Mahrouk",
+            "lastname": "Rania",
+            "assignedEvents": [
+                26,
+                19,
+                16,
+                13,
+                10
+            ],
+            "choices": [
+                26,
+                19,
+                16,
+                13,
+                10,
+                22
+            ]
+        },
+        {
+            "firstname": "Mambor",
+            "lastname": "Celina",
+            "assignedEvents": [
+                3,
+                19,
+                13,
+                2,
+                17
+            ],
+            "choices": [
+                3,
+                19,
+                13,
+                2,
+                17,
+                6
+            ]
+        },
+        {
+            "firstname": "Mang",
+            "lastname": "Domenik",
+            "assignedEvents": [
+                18,
+                19,
+                14,
+                11,
+                20
+            ],
+            "choices": [
+                18,
+                19,
+                14,
+                11,
+                20,
+                17
+            ]
+        },
+        {
+            "firstname": "Okur",
+            "lastname": "Ahmet Semih",
+            "assignedEvents": [
+                13,
+                1,
+                2,
+                9,
+                16
+            ],
+            "choices": [
+                13,
+                1,
+                2,
+                9,
+                16,
+                6
+            ]
+        },
+        {
+            "firstname": "Omar",
+            "lastname": "Aria",
+            "assignedEvents": [
+                26,
+                16,
+                13,
+                17,
+                8
+            ],
+            "choices": [
+                26,
+                16,
+                13,
+                17,
+                8,
+                19
+            ]
+        },
+        {
+            "firstname": "Saad",
+            "lastname": "Iman",
+            "assignedEvents": [
+                9,
+                10,
+                18,
+                21,
+                16
+            ],
+            "choices": [
+                9,
+                10,
+                18,
+                21,
+                16,
+                19
+            ]
+        },
+        {
+            "firstname": "Stengler",
+            "lastname": "Joel-Lucas",
+            "assignedEvents": [
+                18,
+                6,
+                10,
+                9,
+                16
+            ],
+            "choices": [
+                18,
+                6,
+                10,
+                9,
+                16,
+                3
+            ]
+        },
+        {
+            "firstname": "Talbi",
+            "lastname": "Zaid",
+            "assignedEvents": [
+                14,
+                8,
+                13,
+                6,
+                17
+            ],
+            "choices": [
+                14,
+                8,
+                13,
+                6,
+                17,
+                9
+            ]
+        },
+        {
+            "firstname": "Tasdemir",
+            "lastname": "Furkan Emre",
+            "assignedEvents": [
+                19,
+                20,
+                6,
+                21,
+                5
+            ],
+            "choices": [
+                19,
+                20,
+                6,
+                21,
+                5,
+                14
+            ]
+        },
+        {
+            "firstname": "Trac",
+            "lastname": "Ton Ly David",
+            "assignedEvents": [
+                2,
+                1,
+                13,
+                9,
+                10
+            ],
+            "choices": [
+                2,
+                1,
+                13,
+                9,
+                10,
+                3
+            ]
+        },
+        {
+            "firstname": "Brettner-Alangyima",
+            "lastname": "Ann",
+            "assignedEvents": [
+                4,
+                6,
+                7,
+                9,
+                12
+            ],
+            "choices": [
+                4,
+                6,
+                7,
+                9,
+                12,
+                20
+            ]
+        },
+        {
+            "firstname": "Dawd",
+            "lastname": "Jehan Khalaf",
+            "assignedEvents": [
+                19,
+                20,
+                18,
+                14,
+                21
+            ],
+            "choices": [
+                19,
+                20,
+                18,
+                14,
+                21,
+                2
+            ]
+        },
+        {
+            "firstname": "Gro\u00df",
+            "lastname": "Emily",
+            "assignedEvents": [
+                9,
+                19,
+                8,
+                6,
+                10
+            ],
+            "choices": [
+                9,
+                19,
+                8,
+                6,
+                10,
+                24
+            ]
+        },
+        {
+            "firstname": "Kakar",
+            "lastname": "Husna",
+            "assignedEvents": [
+                19,
+                20,
+                18,
+                14,
+                21
+            ],
+            "choices": [
+                19,
+                20,
+                18,
+                14,
+                21,
+                2
+            ]
+        },
+        {
+            "firstname": "Lauffs",
+            "lastname": "Joel",
+            "assignedEvents": [
+                23,
+                13,
+                19,
+                6,
+                22
+            ],
+            "choices": [
+                23,
+                13,
+                19,
+                6,
+                22,
+                4
+            ]
+        },
+        {
+            "firstname": "Matipa",
+            "lastname": "Plamedie",
+            "assignedEvents": [
+                14,
+                6,
+                4,
+                1,
+                5
+            ],
+            "choices": [
+                14,
+                6,
+                4,
+                1,
+                5,
+                16
+            ]
+        },
+        {
+            "firstname": "Muhammadiqboli",
+            "lastname": "Shamsiddin",
+            "assignedEvents": [
+                23,
+                22,
+                14,
+                26,
+                3
+            ],
+            "choices": [
+                23,
+                22,
+                14,
+                26,
+                3,
+                7
+            ]
+        },
+        {
+            "firstname": "Omer",
+            "lastname": "Diler",
+            "assignedEvents": [
+                23,
+                15,
+                26,
+                25,
+                22
+            ],
+            "choices": [
+                23,
+                15,
+                26,
+                25,
+                22,
+                19
+            ]
+        },
+        {
+            "firstname": "Petrov",
+            "lastname": "Vladislav",
+            "assignedEvents": [
+                23,
+                22,
+                24,
+                13,
+                3
+            ],
+            "choices": [
+                23,
+                22,
+                24,
+                13,
+                3,
+                7
+            ]
+        },
+        {
+            "firstname": "Scheen",
+            "lastname": "Michelle",
+            "assignedEvents": [
+                26,
+                8,
+                9,
+                6,
+                10
+            ],
+            "choices": [
+                26,
+                8,
+                9,
+                6,
+                10,
+                16
+            ]
+        },
+        {
+            "firstname": "Schm\u00fccker",
+            "lastname": "Paul",
+            "assignedEvents": [
+                19,
+                2,
+                4,
+                26,
+                22
+            ],
+            "choices": [
+                19,
+                2,
+                4,
+                26,
+                22,
+                23
+            ]
+        },
+        {
+            "firstname": "Schulz",
+            "lastname": "Leonie",
+            "assignedEvents": [
+                10,
+                11,
+                15,
+                26,
+                23
+            ],
+            "choices": [
+                10,
+                11,
+                15,
+                26,
+                23,
+                21
+            ]
+        },
+        {
+            "firstname": "Schwartz",
+            "lastname": "Tim",
+            "assignedEvents": [
+                14,
+                17,
+                10,
+                1,
+                4
+            ],
+            "choices": [
+                14,
+                17,
+                10,
+                1,
+                4,
+                3
+            ]
+        },
+        {
+            "firstname": "Soliman",
+            "lastname": "Ahmed",
+            "assignedEvents": [
+                14,
+                17,
+                10,
+                1,
+                4
+            ],
+            "choices": [
+                14,
+                17,
+                10,
+                1,
+                4,
+                3
+            ]
+        },
+        {
+            "firstname": "Tall",
+            "lastname": "Alassane",
+            "assignedEvents": [
+                19,
+                10,
+                20,
+                21,
+                5
+            ],
+            "choices": [
+                19,
+                10,
+                20,
+                21,
+                5,
+                26
+            ]
+        },
+        {
+            "firstname": "Thier",
+            "lastname": "Clemens",
+            "assignedEvents": [
+                26,
+                19,
+                18,
+                14,
+                23
+            ],
+            "choices": [
+                26,
+                19,
+                18,
+                14,
+                23,
+                10
+            ]
+        },
+        {
+            "firstname": "Tourniaire",
+            "lastname": "Serafina",
+            "assignedEvents": [
+                9,
+                2,
+                7,
+                12,
+                13
+            ],
+            "choices": [
+                9,
+                2,
+                7,
+                12,
+                13,
+                14
+            ]
+        },
+        {
+            "firstname": "Wieczorek",
+            "lastname": "Natan Daniel",
+            "assignedEvents": [
+                23,
+                16,
+                15,
+                11,
+                6
+            ],
+            "choices": [
+                23,
+                16,
+                15,
+                11,
+                6,
+                3
+            ]
+        },
+        {
+            "firstname": "Almoukayed",
+            "lastname": "Ahmad",
+            "assignedEvents": [
+                14,
+                19,
+                26,
+                22,
+                20
+            ],
+            "choices": [
+                14,
+                19,
+                26,
+                22,
+                20,
+                3
+            ]
+        },
+        {
+            "firstname": "Amann",
+            "lastname": "Julian",
+            "assignedEvents": [
+                24,
+                9,
+                13,
+                17,
+                19
+            ],
+            "choices": [
+                24,
+                9,
+                13,
+                17,
+                19,
+                6
+            ]
+        },
+        {
+            "firstname": "Eich",
+            "lastname": "Dominic",
+            "assignedEvents": [
+                19,
+                18,
+                4,
+                16,
+                26
+            ],
+            "choices": [
+                19,
+                18,
+                4,
+                16,
+                26,
+                1
+            ]
+        },
+        {
+            "firstname": "Freialdenhoven",
+            "lastname": "Tim",
+            "assignedEvents": [
+                19,
+                14,
+                10,
+                21,
+                3
+            ],
+            "choices": [
+                19,
+                14,
+                10,
+                21,
+                3,
+                27
+            ]
+        },
+        {
+            "firstname": "Gr\u00fcbler",
+            "lastname": "Jonathan",
+            "assignedEvents": [
+                15,
+                17,
+                4,
+                14,
+                13
+            ],
+            "choices": [
+                15,
+                17,
+                4,
+                14,
+                13,
+                16
+            ]
+        },
+        {
+            "firstname": "G\u00fcnaydin",
+            "lastname": "Viyan",
+            "assignedEvents": [
+                23,
+                26,
+                3,
+                22,
+                18
+            ],
+            "choices": [
+                23,
+                26,
+                3,
+                22,
+                18,
+                25
+            ]
+        },
+        {
+            "firstname": "Kober",
+            "lastname": "Jonathan Lorenz",
+            "assignedEvents": [
+                3,
+                19,
+                23,
+                14,
+                6
+            ],
+            "choices": [
+                3,
+                19,
+                23,
+                14,
+                6,
+                15
+            ]
+        },
+        {
+            "firstname": "Kolokythas",
+            "lastname": "Thomas",
+            "assignedEvents": [
+                26,
+                9,
+                13,
+                3,
+                6
+            ],
+            "choices": [
+                26,
+                9,
+                13,
+                3,
+                6,
+                17
+            ]
+        },
+        {
+            "firstname": "Lewandowska",
+            "lastname": "Matilda",
+            "assignedEvents": [
+                23,
+                26,
+                3,
+                22,
+                18
+            ],
+            "choices": [
+                23,
+                26,
+                3,
+                22,
+                18,
+                25
+            ]
+        },
+        {
+            "firstname": "Maassen",
+            "lastname": "Lino Alexander",
+            "assignedEvents": [
+                19,
+                6,
+                14,
+                18,
+                3
+            ],
+            "choices": [
+                19,
+                6,
+                14,
+                18,
+                3,
+                26
+            ]
+        },
+        {
+            "firstname": "Mei\u00df",
+            "lastname": "Timo",
+            "assignedEvents": [
+                26,
+                23,
+                12,
+                13,
+                6
+            ],
+            "choices": [
+                26,
+                23,
+                12,
+                13,
+                6,
+                1
+            ]
+        },
+        {
+            "firstname": "Salha",
+            "lastname": "Mohammed",
+            "assignedEvents": [
+                9,
+                19,
+                26,
+                18,
+                10
+            ],
+            "choices": [
+                9,
+                19,
+                26,
+                18,
+                10,
+                11
+            ]
+        },
+        {
+            "firstname": "Sari",
+            "lastname": "Atakhan",
+            "assignedEvents": [
+                4,
+                6,
+                19,
+                14,
+                18
+            ],
+            "choices": [
+                4,
+                6,
+                19,
+                14,
+                18,
+                26
+            ]
+        },
+        {
+            "firstname": "Schneider",
+            "lastname": "Robin",
+            "assignedEvents": [
+                1,
+                26,
+                23,
+                12,
+                8
+            ],
+            "choices": [
+                1,
+                26,
+                23,
+                12,
+                8,
+                4
+            ]
+        },
+        {
+            "firstname": "Tutumlu",
+            "lastname": "Tahir",
+            "assignedEvents": [
+                26,
+                9,
+                13,
+                3,
+                6
+            ],
+            "choices": [
+                26,
+                9,
+                13,
+                3,
+                6,
+                17
+            ]
+        }
+    ]
+}

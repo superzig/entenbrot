@@ -1,0 +1,117 @@
+<?php
+
+$events = json_decode(file_get_contents('events.json'), true);
+$rooms = json_decode(file_get_contents('rooms.json'), true);
+$students = json_decode(file_get_contents('students.json'), true);
+$timeslots = ['A', 'B', 'C', 'D', 'E'];
+
+function setRoomCapacities(&$rooms) {
+foreach ($rooms as &$room) {
+switch ($room['name']) {
+case 'Aula':
+$room['capacity'] = 50;
+break;
+case '008':
+$room['capacity'] = 15;
+break;
+default:
+$room['capacity'] = 20;
+break;
+}
+}
+}
+
+function expandEventsAcrossTimeslots($events, $timeslots) {
+$expandedEvents = [];
+foreach ($events as $event) {
+foreach ($timeslots as $timeslot) {
+if ($timeslot >= $event['earliestDate']) {
+$expandedEvents[] = [
+'number' => $event['number'],
+'company' => $event['company'],
+'timeslot' => $timeslot
+];
+}
+}
+}
+return $expandedEvents;
+}
+
+function initializeEventAssignments($expandedEvents, $rooms) {
+$assignments = [];
+foreach ($expandedEvents as $event) {
+foreach ($rooms as $room) {
+$eventKey = $event['number'] . '_' . $event['timeslot'];
+if (!isset($assignments[$eventKey])) {
+$assignments[$eventKey] = [
+'eventNumber' => $event['number'],
+'timeslot' => $event['timeslot'],
+'room' => $room['name'],
+'capacity' => $room['capacity'],
+'assignedStudents' => 0
+];
+break;
+}
+}
+}
+return $assignments;
+}
+
+function assignStudentsToEvents($students, &$eventAssignments, $timeslots) {
+$studentAssignments = [];
+
+foreach ($students as $student) {
+$assignedEvents = array_fill_keys($timeslots, null);
+foreach ($timeslots as $timeslot) {
+foreach (range(1, 6) as $choice) {
+$eventChoiceKey = "choice$choice";
+if (!empty($student[$eventChoiceKey])) {
+foreach ($eventAssignments as $key => &$assignment) {
+if ($assignment['eventNumber'] == $student[$eventChoiceKey] &&
+$assignment['timeslot'] == $timeslot &&
+$assignment['assignedStudents'] < $assignment['capacity'] &&
+!in_array($student[$eventChoiceKey], $assignedEvents)) {
+
+$assignment['assignedStudents']++;
+$assignedEvents[$timeslot] = $assignment['eventNumber'];
+break;
+}
+}
+}
+}
+}
+
+// Ensure each student is assigned to 5 events
+foreach ($assignedEvents as $timeslot => $event) {
+if (is_null($event)) {
+foreach ($eventAssignments as $key => &$assignment) {
+if ($assignment['timeslot'] == $timeslot &&
+$assignment['assignedStudents'] < $assignment['capacity']) {
+
+$assignment['assignedStudents']++;
+$assignedEvents[$timeslot] = $assignment['eventNumber'];
+break;
+}
+}
+}
+}
+
+$studentAssignments[$student['lastname']] = $assignedEvents;
+}
+
+return $studentAssignments;
+}
+
+setRoomCapacities($rooms);
+$expandedEvents = expandEventsAcrossTimeslots($events, $timeslots);
+$eventAssignments = initializeEventAssignments($expandedEvents, $rooms);
+$studentAssignments = assignStudentsToEvents($students, $eventAssignments, $timeslots);
+
+$output = [
+'students' => $studentAssignments,
+'companies' => array_values($eventAssignments),
+];
+
+echo json_encode($output);
+
+?>

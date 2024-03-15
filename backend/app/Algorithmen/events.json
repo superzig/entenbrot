@@ -204,7 +204,7 @@
     "company": "Soziale Arbeit ",
     "specialty": null,
     "participants": 20,
-    "eventMax": 5,
+    "eventMax": 4,
     "earliestDate": "B"
   },
   {
@@ -212,7 +212,7 @@
     "company": "Lehramt Berufskolleg",
     "specialty": null,
     "participants": 20,
-    "eventMax": 5,
+    "eventMax": 3,
     "earliestDate": "C"
   }
 ]

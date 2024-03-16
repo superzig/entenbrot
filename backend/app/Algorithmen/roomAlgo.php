@@ -1,8 +1,8 @@
 <?php
 
 // Daten aus JSON-Dateien einlesen
-$roomsJson = file_get_contents('rooms.json');
-$eventsJson = file_get_contents('events2.json');
+$roomsJson = file_get_contents('data/rooms.json');
+$eventsJson = file_get_contents('results/events2.json');
 
 // In PHP-Arrays umwandeln
 $rooms = json_decode($roomsJson, true);
@@ -28,6 +28,8 @@ foreach ($events as $event) {
         // Raum dem Event zuweisen und aus der Liste verfügbarer Räume entfernen
         $eventRoomAssignments[$event['eventId']]['rooms'][] = [
             'name' => $room['name'],
+            'currentCapacity' => $room['capacity'],
+            'maxCapacity' => $room['capacity']
         ];
         $eventRoomAssignments[$event['eventId']]['totalCapacity'] += $room['capacity'];
 
@@ -37,5 +39,4 @@ foreach ($events as $event) {
 }
 
 // Ergebnis als JSON ausgeben
-header('Content-Type: application/json');
-file_put_contents('roomsWithEvents.json', json_encode($eventRoomAssignments));
+file_put_contents('results/roomsWithEvents.json', json_encode($eventRoomAssignments, JSON_PRETTY_PRINT));

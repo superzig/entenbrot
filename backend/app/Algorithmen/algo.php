@@ -1,7 +1,7 @@
 <?php
 
-$studentsJson = file_get_contents('students.json');
-$eventsJson = file_get_contents('events.json');
+$studentsJson = file_get_contents('data/students.json');
+$eventsJson = file_get_contents('data/events.json');
 
 $students = json_decode($studentsJson, true);
 $originalEvents = json_decode($eventsJson, true);
@@ -83,11 +83,11 @@ $eventsWithRoomCount = array_map(function ($event) {
 $totalRoomsNeeded = array_sum(array_column($eventsWithRoomCount, 'roomsNeeded'));
 
 // Ausgabe der Studenten- und Eventlisten und der Gesamtzahl der benötigten Räume
-file_put_contents('students2.json', json_encode([
+file_put_contents('results/students2.json', json_encode([
     'students' => $studentsEvents,
-]));
+], JSON_PRETTY_PRINT));
 
-file_put_contents('events2.json', json_encode([
+file_put_contents('results/events2.json', json_encode([
     'events' => $eventsWithRoomCount,
-]));
+], JSON_PRETTY_PRINT));
 

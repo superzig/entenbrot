@@ -1,6 +1,5 @@
 <?php
-require_once 'src/autoload.php';
-$faker = Faker\Factory::create();
+
 
 $useFakeData = false;
 

@@ -245,7 +245,7 @@ foreach ($assignment as $studentID => $studentTimeslotsToEventsAssignmentArray) 
 }
 
 // StudentID to timeslot to EventID! 
-$json = json_encode($spaceInEventLeft, JSON_PRETTY_PRINT);
+$json = json_encode($assignment, JSON_PRETTY_PRINT);
 echo ("<br><br>StudentID to timeslot to EventID! : <br><br>");
 echo ($json);
 echo ("<br><br><br><br>");

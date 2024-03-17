@@ -26,31 +26,20 @@ function readExcelFile($filePath)
         die("Fehler beim Öffnen der Datei.");
     }
 
-
+    echo json_encode($data, JSON_PRETTY_PRINT);
     return $data;
 }
 
 /* DATA CREATION END */
-$roomDataRaw = readExcelFile('imports\raumliste.csv');
-$roomData = array();
-foreach ($roomDataRaw as $data) {
-    $roomData[$data["roomID"]] = $data;
+try {
+    $roomData = json_decode(file_get_contents('imports\rooms.json'), JSON_PRETTY_PRINT, 512, JSON_THROW_ON_ERROR);
+    $eventData = json_decode(file_get_contents('imports\events.json'), JSON_PRETTY_PRINT, 512, JSON_THROW_ON_ERROR);
+    $studentData = json_decode(file_get_contents('imports\students.json'), JSON_PRETTY_PRINT, 512, JSON_THROW_ON_ERROR);
+} catch (Exception $e) {
+    echo $e->getMessage();
+    exit;
 }
 
-$eventDataRaw = readExcelFile('imports\veranstaltungsliste.csv');
-$eventData = array();
-foreach ($eventDataRaw as $data) {
-    $eventData[$data["eventID"]] = $data;
-}
-
-$studentDataRaw = readExcelFile('imports\schuelerwahlliste.csv');
-
-$studentData = array();
-$counter = 1;
-foreach ($studentDataRaw as $data) {
-    $studentData[$counter] = $data;
-    $counter++;
-}
 
 //Vorbelegung der Zuweisungsslots (Kann später i wo in einen anderen schritt eingebunden werden.)
 $assignment = array();
@@ -105,19 +94,18 @@ foreach ($assignment as $studentID => $studentTimeslotsToEventsAssignmentArray) 
 }
 
 // StudentID to timeslot to EventID!
-$json = json_encode($assignment, JSON_PRETTY_PRINT);
-echo ("<br><br>StudentID to timeslot to EventID! : <br><br>");
-echo ($json);
-echo ("<br><br><br><br>");
+echo "\n StudentID to timeslot to EventID! : \n";
+echo json_encode($assignment, JSON_PRETTY_PRINT);
+echo "\n";
 
 // RoomID to timeslot to EventID!
-$json = json_encode($eventToRoomAssignment, JSON_PRETTY_PRINT);
-echo ("<br><br>RoomID to timeslot to EventID!  : <br><br>");
-echo ($json);
-echo ("<br><br><br><br>");
-exit();
+//$json = json_encode($eventToRoomAssignment, JSON_PRETTY_PRINT);
+//echo ("<br><br>RoomID to timeslot to EventID!  : <br><br>");
+//echo ($json);
+//echo ("<br><br><br><br>");
+//exit();
 
-// Optimierungsbedarf !
+// TODO: Optimierungsbedarf !
 function getAmountChoices($studentData)
 {
     $amountChoices = array();
@@ -131,12 +119,10 @@ function getAmountChoices($studentData)
                 } else {
                     $amountChoices[$choiceField][$array[$choiceField]] = 1;
                 }
+            } else if (isset($amountChoices[$choiceField]["null"])) {
+                $amountChoices[$choiceField]["null"] += 1;
             } else {
-                if (isset($amountChoices[$choiceField]["null"])) {
-                    $amountChoices[$choiceField]["null"] += 1;
-                } else {
-                    $amountChoices[$choiceField]["null"] = 1;
-                }
+                $amountChoices[$choiceField]["null"] = 1;
             }
         }
     }

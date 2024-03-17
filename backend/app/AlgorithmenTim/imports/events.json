@@ -1,0 +1,218 @@
+{
+    "1": {
+        "eventID": "1",
+        "company": "Zentis",
+        "specialization": "Industriekaufleute",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "2": {
+        "eventID": "2",
+        "company": "Babor Kosmetik ",
+        "specialization": "Industriekaufleute",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "3": {
+        "eventID": "3",
+        "company": "EVA (Stawag, RegioIt, Aseag..)",
+        "specialization": "Industriekaufleute",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "4": {
+        "eventID": "4",
+        "company": "Grnenthal",
+        "specialization": "Industriekaufleute, BWL Plus (Industriekfm. Plus BWL-Studium), Kaufleute fr Bromanagement                                  ",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "5": {
+        "eventID": "5",
+        "company": "RWTH Aachen",
+        "specialization": "Kaufleute fr Bromanagement",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "6": {
+        "eventID": "6",
+        "company": "Aldi ",
+        "specialization": "Einzelhandelskaufleute",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "7": {
+        "eventID": "7",
+        "company": "Bauhaus",
+        "specialization": "Einzelhandelskaufleute, Handelsfachwirte, Duales Studium",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "8": {
+        "eventID": "8",
+        "company": "Sparkasse Aachen ",
+        "specialization": "Bankkaufleute",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "9": {
+        "eventID": "9",
+        "company": "Aachener Bank ",
+        "specialization": "Bankkaufleute",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "10": {
+        "eventID": "10",
+        "company": "Debeka",
+        "specialization": "Kaufleute fr Versicherungen und Finanzen ",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "B"
+    },
+    "11": {
+        "eventID": "11",
+        "company": "Steuerberaterkammer Kln ",
+        "specialization": "Steuerfachangestellte",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "12": {
+        "eventID": "12",
+        "company": "Rechtsanwaltberufe",
+        "specialization": "Rechtsanwaltsfachangestellte",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "13": {
+        "eventID": "13",
+        "company": "Notarberufe",
+        "specialization": "Notarfachangestellte",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "14": {
+        "eventID": "14",
+        "company": "Spedition Hammer",
+        "specialization": "Kaufleute fr Spedition und Lagerlogistik, Kaufleute fr Bromanagement                         ",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "15": {
+        "eventID": "15",
+        "company": "Inform",
+        "specialization": "Kaufmann\/-frau fr Bromanagement ",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "16": {
+        "eventID": "16",
+        "company": "Inform",
+        "specialization": "Duales Studium Wirtschaftsinformatik ",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "17": {
+        "eventID": "17",
+        "company": "StdteRegion Aachen ",
+        "specialization": "Verwaltungsfachangestellte und Duales Studium Bachelor of Laws\/Arts",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "18": {
+        "eventID": "18",
+        "company": "Finanzamt",
+        "specialization": "duales Studium Dipl. Finanzwirt\/-in ",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "19": {
+        "eventID": "19",
+        "company": "Finanzamt ",
+        "specialization": "Ausbildung Finanzwirt\/-in ",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "20": {
+        "eventID": "20",
+        "company": "Justizvollzugsanstalt",
+        "specialization": "Beamter im allgemeinen Vollzugsdienst, Dipl-Verwaltungswirt (FH)",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "21": {
+        "eventID": "21",
+        "company": "Zoll Aachen",
+        "specialization": "Beamter im mittleren und gehobenen Dienst ",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "22": {
+        "eventID": "22",
+        "company": "Polizei",
+        "specialization": "Polizeikommisar*in ",
+        "maxParticipants": "25",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "23": {
+        "eventID": "23",
+        "company": "FH Aachen - Studienberatung",
+        "specialization": "",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "24": {
+        "eventID": "24",
+        "company": "RWTH Aachen - Studienberatung",
+        "specialization": "Hinweis: Studium hier nur mit Abitur mglich",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "25": {
+        "eventID": "25",
+        "company": "Wirtschaftsrecht FH-Aachen",
+        "specialization": "",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "26": {
+        "eventID": "26",
+        "company": "Soziale Arbeit ",
+        "specialization": "",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    },
+    "27": {
+        "eventID": "27",
+        "company": "Lehramt Berufskolleg",
+        "specialization": "",
+        "maxParticipants": "20",
+        "amountEvents": "5",
+        "earliestTimeSlot": "A"
+    }
+}

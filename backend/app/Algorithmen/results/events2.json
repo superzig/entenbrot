@@ -1,0 +1,166 @@
+{
+    "events": [
+        {
+            "eventId": 1,
+            "studentCount": 15,
+            "totalCapacity": 100,
+            "roomsNeeded": 1
+        },
+        {
+            "eventId": 2,
+            "studentCount": 21,
+            "totalCapacity": 100,
+            "roomsNeeded": 2
+        },
+        {
+            "eventId": 3,
+            "studentCount": 35,
+            "totalCapacity": 100,
+            "roomsNeeded": 2
+        },
+        {
+            "eventId": 4,
+            "studentCount": 20,
+            "totalCapacity": 100,
+            "roomsNeeded": 1
+        },
+        {
+            "eventId": 5,
+            "studentCount": 11,
+            "totalCapacity": 100,
+            "roomsNeeded": 1
+        },
+        {
+            "eventId": 6,
+            "studentCount": 45,
+            "totalCapacity": 100,
+            "roomsNeeded": 3
+        },
+        {
+            "eventId": 7,
+            "studentCount": 13,
+            "totalCapacity": 100,
+            "roomsNeeded": 1
+        },
+        {
+            "eventId": 8,
+            "studentCount": 17,
+            "totalCapacity": 100,
+            "roomsNeeded": 1
+        },
+        {
+            "eventId": 9,
+            "studentCount": 30,
+            "totalCapacity": 100,
+            "roomsNeeded": 2
+        },
+        {
+            "eventId": 10,
+            "studentCount": 35,
+            "totalCapacity": 100,
+            "roomsNeeded": 2
+        },
+        {
+            "eventId": 11,
+            "studentCount": 12,
+            "totalCapacity": 100,
+            "roomsNeeded": 1
+        },
+        {
+            "eventId": 12,
+            "studentCount": 15,
+            "totalCapacity": 100,
+            "roomsNeeded": 1
+        },
+        {
+            "eventId": 13,
+            "studentCount": 34,
+            "totalCapacity": 100,
+            "roomsNeeded": 2
+        },
+        {
+            "eventId": 14,
+            "studentCount": 38,
+            "totalCapacity": 100,
+            "roomsNeeded": 2
+        },
+        {
+            "eventId": 15,
+            "studentCount": 23,
+            "totalCapacity": 100,
+            "roomsNeeded": 2
+        },
+        {
+            "eventId": 16,
+            "studentCount": 27,
+            "totalCapacity": 100,
+            "roomsNeeded": 2
+        },
+        {
+            "eventId": 17,
+            "studentCount": 26,
+            "totalCapacity": 100,
+            "roomsNeeded": 2
+        },
+        {
+            "eventId": 18,
+            "studentCount": 56,
+            "totalCapacity": 100,
+            "roomsNeeded": 3
+        },
+        {
+            "eventId": 19,
+            "studentCount": 60,
+            "totalCapacity": 100,
+            "roomsNeeded": 3
+        },
+        {
+            "eventId": 20,
+            "studentCount": 18,
+            "totalCapacity": 100,
+            "roomsNeeded": 1
+        },
+        {
+            "eventId": 21,
+            "studentCount": 14,
+            "totalCapacity": 100,
+            "roomsNeeded": 1
+        },
+        {
+            "eventId": 22,
+            "studentCount": 23,
+            "totalCapacity": 125,
+            "roomsNeeded": 2
+        },
+        {
+            "eventId": 23,
+            "studentCount": 17,
+            "totalCapacity": 100,
+            "roomsNeeded": 1
+        },
+        {
+            "eventId": 24,
+            "studentCount": 7,
+            "totalCapacity": 100,
+            "roomsNeeded": 1
+        },
+        {
+            "eventId": 25,
+            "studentCount": 7,
+            "totalCapacity": 100,
+            "roomsNeeded": 1
+        },
+        {
+            "eventId": 26,
+            "studentCount": 36,
+            "totalCapacity": 80,
+            "roomsNeeded": 2
+        },
+        {
+            "eventId": 27,
+            "studentCount": 10,
+            "totalCapacity": 60,
+            "roomsNeeded": 1
+        }
+    ]
+}

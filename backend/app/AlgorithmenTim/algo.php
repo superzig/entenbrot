@@ -1,146 +1,11 @@
 <?php
 
-
-$useFakeData = false;
-
-/* FAKE DATA CREATION START */
-$specialization = array(
-    "Fachinformatiker für Anwendungsentwicklung",
-    "Fachinformatiker für Systemintegration",
-    "Informationstechnischer Assistent",
-    "IT-Systemelektroniker",
-    "Mediengestalter Digital und Print",
-    "Mathematisch-technischer Softwareentwickler",
-    "IT-Systemkaufmann",
-    "Elektroniker für Informations- und Systemtechnik",
-    "Kaufmann für IT-Systemmanagement",
-    "Fachkraft für Lagerlogistik",
-    "Informatikkaufmann",
-    "IT-Administrator",
-    "Netzwerkadministrator",
-    "Webentwickler",
-    "Anwendungsentwickler",
-    "Datenbankadministrator",
-    "IT-Projektmanager",
-    "IT-Sicherheitsexperte",
-    "Softwaretester",
-    "Wirtschaftsinformatiker"
-);
-
-$timeSlots = array(
-    "A" => "08:45 - 09:30",
-    "B" => "09:50 - 10:35",
-    "C" => "10:35 - 11:20",
-    "D" => "11:40 - 12:25",
-    "E" => "12:25 - 13:10"
-);
-
-function generateClassData($amount)
-{
-    $classes = array();
-    $letters = range('a', 'z');
-    $numbers = range(0, 9);
-
-    for ($i = 0; $i < $amount; $i++) {
-        do {
-            $randomLetters = array_rand($letters, 3);
-            $randomNumbers = array_rand($numbers, 3);
-            $className =  $letters[$randomLetters[0]] . $letters[$randomLetters[1]] . $letters[$randomLetters[2]] . $numbers[$randomNumbers[0]] . $numbers[$randomNumbers[1]] . $numbers[$randomNumbers[2]];
-        } while (isset($classes[$className]));
-
-        $classes[$className] =  $className;
-    }
-    return $classes;
-}
-
-function generateRoomData($amountRooms)
-{
-    $roomData = array();
-    for ($i = 0; $i < $amountRooms; $i++) {
-        do {
-            $firstDigit = mt_rand(0, 3);
-            $roomNumber = $firstDigit . mt_rand(0, 9) . mt_rand(0, 9); // Zufällige 3-stellige Zahl mit erstem Ziffer aus $firstDigit
-        } while (array_key_exists($roomNumber, $roomData)); // Prüfen, ob die Raumnummer bereits existiert
-
-        // Zufällige Zahl in 5er-Schritten zwischen 15 und 45 mit einem Minimum von 15
-        $capacity = mt_rand(3, 9) * 5;
-
-        $roomData[$roomNumber] = array(
-            "room_number" => $roomNumber,
-            "capacity" => $capacity
-        );
-    }
-    return $roomData;
-}
-
-function generateEventData($amount, $timeSlots, $faker, $specialization)
-{
-    $eventData = array();
-
-    for ($i = 1; $i < $amount; $i++) {
-        $eventData[$i]["eventNumber"] = $i;
-        $eventData[$i]["company"] = $faker->company;
-        $eventData[$i]["specialization"] = $specialization[array_rand($specialization)];
-        $eventData[$i]["maxParticipants"] = mt_rand(3, 9) * 5;
-        $eventData[$i]["staringSlot"] = array_rand($timeSlots);
-        $eventData[$i]["amountEvents"] = getAmountEventsBasedOnStartingSlot($eventData[$i]["staringSlot"]);
-    }
-
-    return $eventData;
-}
-
-function getAmountEventsBasedOnStartingSlot($startingSlot)
-{
-    switch ($startingSlot) {
-        case 'A':
-            return mt_rand(1, 5);
-            break;
-        case 'B':
-            return mt_rand(1, 4);
-            break;
-        case 'C':
-            return mt_rand(1, 3);
-            break;
-        case 'D':
-            return mt_rand(1, 2);
-            break;
-        case 'E':
-            return 1;
-            break;
-        default:
-            return null;
-    }
-}
-
-function generateStudentData($amount, $classes, $faker, $events)
-{
-    $studentData = array();
-    for ($i = 1; $i < $amount + 1; $i++) {
-
-
-
-        $studentData[$i]["studentNumber"] = $i;
-        $studentData[$i]["class"] = $classes[array_rand($classes)];
-        $studentData[$i]["lastName"] = $faker->lastname;
-        $studentData[$i]["firstName"] = $faker->firstName;
-
-        $shuffledEventsKeys = array_keys($events);
-        shuffle($shuffledEventsKeys);
-
-        for ($j = 1; $j <= 6; $j++) {
-            $studentData[$i]["choice_" . $j] = mt_rand(1, 9) === 1 ? null : (isset($shuffledEventsKeys[$j - 1]) ? $shuffledEventsKeys[$j - 1] : null);
-        }
-    }
-    return $studentData;
-}
-/* FAKE DATA CREATION END */
-
-/* DATA CREATION START */ 
+/* DATA CREATION START */
 function readExcelFile($filePath)
 {
     $data = [];
 
-    if (($handle = fopen($filePath, "r")) !== false) {
+    if (($handle = fopen($filePath, 'rb')) !== false) {
         // Lese die Überschriften (erste Zeile) und entferne das UTF-8 BOM-Zeichen
         $headers = str_getcsv(str_replace("\xEF\xBB\xBF", '', fgets($handle)), ";");
 
@@ -161,35 +26,30 @@ function readExcelFile($filePath)
         die("Fehler beim Öffnen der Datei.");
     }
 
+
     return $data;
 }
-/* DATA CREATION END */ 
 
-if ($useFakeData) {
-    $classesData = generateClassData(7);
-    $roomData = generateRoomData(15); //Max 400 cause no more numbers are possible room startst with 0 1 2 or 3 ! 
-    $eventData = generateEventData(27, $timeSlots, $faker, $specialization);
-    $studentData =  generateStudentData(135, $classesData, $faker, $eventData);
-} else {
-    $roomDataRaw = readExcelFile('imports\raumliste.csv');
-    $roomData = array();
-    foreach ($roomDataRaw as $data) {
-        $roomData[$data["roomID"]] = $data;
-    }
+/* DATA CREATION END */
+$roomDataRaw = readExcelFile('imports\raumliste.csv');
+$roomData = array();
+foreach ($roomDataRaw as $data) {
+    $roomData[$data["roomID"]] = $data;
+}
 
-    $eventDataRaw = readExcelFile('imports\veranstaltungsliste.csv');
-    $eventData = array();
-    foreach ($eventDataRaw as $data) {
-        $eventData[$data["eventID"]] = $data;
-    }
+$eventDataRaw = readExcelFile('imports\veranstaltungsliste.csv');
+$eventData = array();
+foreach ($eventDataRaw as $data) {
+    $eventData[$data["eventID"]] = $data;
+}
 
-    $studentDataRaw = readExcelFile('imports\schuelerwahlliste.csv');
-    $studentData = array();
-    $counter = 1;
-    foreach ($studentDataRaw as $data) {
-        $studentData[$counter] = $data;
-        $counter++;
-    }
+$studentDataRaw = readExcelFile('imports\schuelerwahlliste.csv');
+
+$studentData = array();
+$counter = 1;
+foreach ($studentDataRaw as $data) {
+    $studentData[$counter] = $data;
+    $counter++;
 }
 
 //Vorbelegung der Zuweisungsslots (Kann später i wo in einen anderen schritt eingebunden werden.)
@@ -244,13 +104,13 @@ foreach ($assignment as $studentID => $studentTimeslotsToEventsAssignmentArray) 
     }
 }
 
-// StudentID to timeslot to EventID! 
+// StudentID to timeslot to EventID!
 $json = json_encode($assignment, JSON_PRETTY_PRINT);
 echo ("<br><br>StudentID to timeslot to EventID! : <br><br>");
 echo ($json);
 echo ("<br><br><br><br>");
 
-// RoomID to timeslot to EventID! 
+// RoomID to timeslot to EventID!
 $json = json_encode($eventToRoomAssignment, JSON_PRETTY_PRINT);
 echo ("<br><br>RoomID to timeslot to EventID!  : <br><br>");
 echo ($json);

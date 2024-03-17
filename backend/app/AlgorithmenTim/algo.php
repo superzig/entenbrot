@@ -1,36 +1,5 @@
 <?php
-
-/* DATA CREATION START */
-function readExcelFile($filePath)
-{
-    $data = [];
-
-    if (($handle = fopen($filePath, 'rb')) !== false) {
-        // Lese die Überschriften (erste Zeile) und entferne das UTF-8 BOM-Zeichen
-        $headers = str_getcsv(str_replace("\xEF\xBB\xBF", '', fgets($handle)), ";");
-
-        // Iteriere über die Daten und erstelle das assoziative Array
-        while (($row = fgetcsv($handle, 1000, ";")) !== false) {
-            $rowData = [];
-            foreach ($headers as $index => $header) {
-                // Entferne nicht druckbare Zeichen
-                $cellValue = filter_var($row[$index], FILTER_UNSAFE_RAW, FILTER_FLAG_STRIP_LOW | FILTER_FLAG_STRIP_HIGH);
-
-                // Standardisiere die Zeichenkodierung und verwende "ä" direkt
-                $rowData[$header] = utf8_encode($cellValue);
-            }
-            $data[] = $rowData;
-        }
-        fclose($handle);
-    } else {
-        die("Fehler beim Öffnen der Datei.");
-    }
-
-    echo json_encode($data, JSON_PRETTY_PRINT);
-    return $data;
-}
-
-/* DATA CREATION END */
+/* READ DUMMY DATA */
 try {
     $roomData = json_decode(file_get_contents('imports\rooms.json'), JSON_PRETTY_PRINT, 512, JSON_THROW_ON_ERROR);
     $eventData = json_decode(file_get_contents('imports\events.json'), JSON_PRETTY_PRINT, 512, JSON_THROW_ON_ERROR);

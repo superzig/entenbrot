@@ -1,15 +1,17 @@
 'use server';
 
-import {promises as fs} from 'fs';
+import { promises as fs } from 'fs';
 import {
     type DataResponse,
     type EntityType,
     eventsSchema,
-    type EventsType, roomsSchema,
-    type RoomsType, studentsSchema,
+    type EventsType,
+    roomsSchema,
+    type RoomsType,
+    studentsSchema,
     type StudentsType,
 } from '~/definitions';
-import {type ZodSchema} from "zod";
+import { type ZodSchema } from 'zod';
 
 // Define a mapping from entity type to corresponding schema
 const schemaMap: Record<EntityType, ZodSchema> = {
@@ -42,37 +44,45 @@ export async function readRoomsTestData(): Promise<RoomsType> {
     return JSON.parse(file) as RoomsType;
 }
 
-export async function transformEntities<T>(entityType: EntityType, formData: FormData): Promise<DataResponse<T>> {
+export async function transformEntities<T>(
+    entityType: EntityType,
+    formData: FormData
+): Promise<DataResponse<T>> {
     try {
         const endpoint = `http://localhost:8000/api/validate/return${entityType}`;
         const response = await fetch(endpoint, {
             method: 'POST',
-            body: formData
+            body: formData,
         });
 
         // Determine the correct schema based on the entity type
         const schema = schemaMap[entityType];
-        const data = await response.json() as T;
+        const data = (await response.json()) as T;
         const validatedData = schema.safeParse(data);
 
         if (!validatedData.success) {
-            console.log("Failed validating:", data, endpoint, validatedData.error.flatten());
+            console.log(
+                'Failed validating:',
+                data,
+                endpoint,
+                validatedData.error.flatten()
+            );
             return {
                 data: [] as T,
                 error: `Das Format der Excel-Datei entspricht nicht den Vorgaben für ${entityType}.`,
             };
         }
-        console.log("succesfully validated", data)
+        console.log('succesfully validated', data);
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         return { data: validatedData.data, error: null };
     } catch (error) {
         let message = null;
-        if (typeof error === "string") {
+        if (typeof error === 'string') {
             message = error.toUpperCase();
         } else if (error instanceof Error) {
             message = error.message;
         }
 
-        return {data: [] as T, error: message};
+        return { data: [] as T, error: message };
     }
 }

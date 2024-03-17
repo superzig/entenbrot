@@ -1,6 +1,6 @@
-import {useEffect, useState} from 'react';
-import {cn} from '~/lib/utils';
-import Dropzone, {type FileError, type FileRejection} from 'react-dropzone';
+import { useEffect, useState } from 'react';
+import { cn } from '~/lib/utils';
+import Dropzone, { type FileError, type FileRejection } from 'react-dropzone';
 
 interface Props {
     onUpload: (file: File) => void;
@@ -34,18 +34,21 @@ const getErrorMessage = (code: string) => {
     }
 };
 
-export function InputFile({onUpload, errorMessage = null}: Props) {
+export function InputFile({ onUpload, errorMessage = null }: Props) {
     const [fileData, setFileData] = useState<FileDataType>({} as FileDataType);
 
     useEffect(() => {
-        setFileData((prevFileData) => ({...prevFileData, error: errorMessage}));
+        setFileData((prevFileData) => ({
+            ...prevFileData,
+            error: errorMessage,
+        }));
     }, [errorMessage]);
 
-    const {file, error} = fileData;
+    const { file, error } = fileData;
 
     const onDrop = (acceptedFiles: File[], fileRejections: FileRejection[]) => {
         acceptedFiles.forEach((file: File) => {
-            setFileData({file: file, error: null});
+            setFileData({ file: file, error: null });
             onUpload(file);
         });
         fileRejections.forEach((fileRejection) => {
@@ -66,8 +69,8 @@ export function InputFile({onUpload, errorMessage = null}: Props) {
             multiple={false}
             autoFocus={true}
         >
-            {({getRootProps, getInputProps}) => (
-                <section {...getRootProps({className: 'dropzone'})}>
+            {({ getRootProps, getInputProps }) => (
+                <section {...getRootProps({ className: 'dropzone' })}>
                     <div className='w-full flex-col'>
                         <div
                             className={cn(
@@ -75,8 +78,8 @@ export function InputFile({onUpload, errorMessage = null}: Props) {
                                 !error && file
                                     ? 'border-green-600'
                                     : error && file
-                                        ? 'border-red-600'
-                                        : 'border-dashed border-gray-300'
+                                      ? 'border-red-600'
+                                      : 'border-dashed border-gray-300'
                             )}
                         >
                             <svg

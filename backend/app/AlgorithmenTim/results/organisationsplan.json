@@ -1,0 +1,392 @@
+{
+    "22": {
+        "company": "Polizei",
+        "timeslots": [
+            {
+                "time": "08:45 - 9:30",
+                "timeSlot": "A",
+                "room": "Aula"
+            },
+            {
+                "time": "09:50 - 10:35",
+                "timeSlot": "B",
+                "room": "Aula"
+            }
+        ]
+    },
+    "1": {
+        "company": "Zentis",
+        "timeslots": [
+            {
+                "time": "10:35 - 11:20",
+                "timeSlot": "C",
+                "room": "Aula"
+            },
+            {
+                "time": "11:40 - 12:25",
+                "timeSlot": "D",
+                "room": "Aula"
+            }
+        ]
+    },
+    "5": {
+        "company": "RWTH Aachen",
+        "timeslots": [
+            {
+                "time": "12:25 - 13:10",
+                "timeSlot": "E",
+                "room": "Aula"
+            }
+        ]
+    },
+    "2": {
+        "company": "Babor Kosmetik",
+        "timeslots": [
+            {
+                "time": "08:45 - 9:30",
+                "timeSlot": "A",
+                "room": 101
+            },
+            {
+                "time": "09:50 - 10:35",
+                "timeSlot": "B",
+                "room": 101
+            }
+        ]
+    },
+    "3": {
+        "company": "EVA (Stawag, RegioIt, Aseag..)",
+        "timeslots": [
+            {
+                "time": "10:35 - 11:20",
+                "timeSlot": "C",
+                "room": 101
+            },
+            {
+                "time": "11:40 - 12:25",
+                "timeSlot": "D",
+                "room": 101
+            },
+            {
+                "time": "12:25 - 13:10",
+                "timeSlot": "E",
+                "room": 101
+            }
+        ]
+    },
+    "4": {
+        "company": "Grnenthal",
+        "timeslots": [
+            {
+                "time": "08:45 - 9:30",
+                "timeSlot": "A",
+                "room": 102
+            },
+            {
+                "time": "09:50 - 10:35",
+                "timeSlot": "B",
+                "room": 102
+            }
+        ]
+    },
+    "6": {
+        "company": "Aldi",
+        "timeslots": [
+            {
+                "time": "10:35 - 11:20",
+                "timeSlot": "C",
+                "room": 102
+            },
+            {
+                "time": "11:40 - 12:25",
+                "timeSlot": "D",
+                "room": 102
+            },
+            {
+                "time": "12:25 - 13:10",
+                "timeSlot": "E",
+                "room": 102
+            }
+        ]
+    },
+    "7": {
+        "company": "Bauhaus",
+        "timeslots": [
+            {
+                "time": "08:45 - 9:30",
+                "timeSlot": "A",
+                "room": 103
+            }
+        ]
+    },
+    "8": {
+        "company": "Sparkasse Aachen",
+        "timeslots": [
+            {
+                "time": "09:50 - 10:35",
+                "timeSlot": "B",
+                "room": 103
+            }
+        ]
+    },
+    "9": {
+        "company": "Aachener Bank",
+        "timeslots": [
+            {
+                "time": "10:35 - 11:20",
+                "timeSlot": "C",
+                "room": 103
+            },
+            {
+                "time": "11:40 - 12:25",
+                "timeSlot": "D",
+                "room": 103
+            }
+        ]
+    },
+    "11": {
+        "company": "Steuerberaterkammer Kln",
+        "timeslots": [
+            {
+                "time": "12:25 - 13:10",
+                "timeSlot": "E",
+                "room": 103
+            }
+        ]
+    },
+    "10": {
+        "company": "Debeka",
+        "timeslots": [
+            {
+                "time": "09:50 - 10:35",
+                "timeSlot": "B",
+                "room": 106
+            },
+            {
+                "time": "10:35 - 11:20",
+                "timeSlot": "C",
+                "room": 106
+            },
+            {
+                "time": "11:40 - 12:25",
+                "timeSlot": "D",
+                "room": 106
+            }
+        ]
+    },
+    "12": {
+        "company": "Rechtsanwaltberufe",
+        "timeslots": [
+            {
+                "time": "08:45 - 9:30",
+                "timeSlot": "A",
+                "room": 106
+            }
+        ]
+    },
+    "20": {
+        "company": "Justizvollzugsanstalt",
+        "timeslots": [
+            {
+                "time": "12:25 - 13:10",
+                "timeSlot": "E",
+                "room": 106
+            }
+        ]
+    },
+    "13": {
+        "company": "Notarberufe",
+        "timeslots": [
+            {
+                "time": "08:45 - 9:30",
+                "timeSlot": "A",
+                "room": 107
+            },
+            {
+                "time": "09:50 - 10:35",
+                "timeSlot": "B",
+                "room": 107
+            }
+        ]
+    },
+    "14": {
+        "company": "Spedition Hammer",
+        "timeslots": [
+            {
+                "time": "10:35 - 11:20",
+                "timeSlot": "C",
+                "room": 107
+            },
+            {
+                "time": "11:40 - 12:25",
+                "timeSlot": "D",
+                "room": 107
+            },
+            {
+                "time": "12:25 - 13:10",
+                "timeSlot": "E",
+                "room": 107
+            }
+        ]
+    },
+    "15": {
+        "company": "Inform",
+        "timeslots": [
+            {
+                "time": "08:45 - 9:30",
+                "timeSlot": "A",
+                "room": 108
+            },
+            {
+                "time": "09:50 - 10:35",
+                "timeSlot": "B",
+                "room": 108
+            }
+        ]
+    },
+    "16": {
+        "company": "Inform",
+        "timeslots": [
+            {
+                "time": "10:35 - 11:20",
+                "timeSlot": "C",
+                "room": 108
+            },
+            {
+                "time": "11:40 - 12:25",
+                "timeSlot": "D",
+                "room": 108
+            }
+        ]
+    },
+    "21": {
+        "company": "Zoll Aachen",
+        "timeslots": [
+            {
+                "time": "12:25 - 13:10",
+                "timeSlot": "E",
+                "room": 108
+            }
+        ]
+    },
+    "17": {
+        "company": "StdteRegion Aachen",
+        "timeslots": [
+            {
+                "time": "08:45 - 9:30",
+                "timeSlot": "A",
+                "room": 109
+            },
+            {
+                "time": "09:50 - 10:35",
+                "timeSlot": "B",
+                "room": 109
+            }
+        ]
+    },
+    "18": {
+        "company": "Finanzamt",
+        "timeslots": [
+            {
+                "time": "10:35 - 11:20",
+                "timeSlot": "C",
+                "room": 109
+            },
+            {
+                "time": "11:40 - 12:25",
+                "timeSlot": "D",
+                "room": 109
+            },
+            {
+                "time": "12:25 - 13:10",
+                "timeSlot": "E",
+                "room": 109
+            }
+        ]
+    },
+    "19": {
+        "company": "Finanzamt",
+        "timeslots": [
+            {
+                "time": "08:45 - 9:30",
+                "timeSlot": "A",
+                "room": 110
+            },
+            {
+                "time": "09:50 - 10:35",
+                "timeSlot": "B",
+                "room": 110
+            },
+            {
+                "time": "10:35 - 11:20",
+                "timeSlot": "C",
+                "room": 110
+            },
+            {
+                "time": "11:40 - 12:25",
+                "timeSlot": "D",
+                "room": 110
+            }
+        ]
+    },
+    "23": {
+        "company": "FH Aachen - Studienberatung",
+        "timeslots": [
+            {
+                "time": "12:25 - 13:10",
+                "timeSlot": "E",
+                "room": 110
+            }
+        ]
+    },
+    "24": {
+        "company": "RWTH Aachen - Studienberatung",
+        "timeslots": [
+            {
+                "time": "08:45 - 9:30",
+                "timeSlot": "A",
+                "room": 111
+            }
+        ]
+    },
+    "25": {
+        "company": "Wirtschaftsrecht FH-Aachen",
+        "timeslots": [
+            {
+                "time": "09:50 - 10:35",
+                "timeSlot": "B",
+                "room": 111
+            }
+        ]
+    },
+    "26": {
+        "company": "Soziale Arbeit",
+        "timeslots": [
+            {
+                "time": "10:35 - 11:20",
+                "timeSlot": "C",
+                "room": 111
+            },
+            {
+                "time": "11:40 - 12:25",
+                "timeSlot": "D",
+                "room": 111
+            },
+            {
+                "time": "12:25 - 13:10",
+                "timeSlot": "E",
+                "room": 111
+            }
+        ]
+    },
+    "27": {
+        "company": "Lehramt Berufskolleg",
+        "timeslots": [
+            {
+                "time": "08:45 - 9:30",
+                "timeSlot": "A",
+                "room": 112
+            }
+        ]
+    }
+}

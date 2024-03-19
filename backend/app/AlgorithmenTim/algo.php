@@ -9,17 +9,17 @@ try {
     exit;
 }
 
-$timeslotToTime = array(
+$timeslotToTime = [
     "A" => "08:45 - 9:30",
-    "B" => "09:50 - 10:35", 
-    "C" => "10:35 - 11:20", 
-    "D" => "11:40 - 12:25", 
-    "E" => "12:25 - 13:10" 
-); 
+    "B" => "09:50 - 10:35",
+    "C" => "10:35 - 11:20",
+    "D" => "11:40 - 12:25",
+    "E" => "12:25 - 13:10",
+];
 
 
 //Vorbelegung der Zuweisungsslots (Kann später i wo in einen anderen schritt eingebunden werden.)
-$assignment = array();
+$assignment = [];
 foreach ($studentData as $key => $array) {
     $assignment[$key]["A"] = null;
     $assignment[$key]["B"] = null;
@@ -30,7 +30,7 @@ foreach ($studentData as $key => $array) {
 
 $amountChoises = getAmountChoices($studentData);
 $eventToRoomAssignment = eventToRoomAssignment($roomData, $eventData, $amountChoises["allChoices"]);
-$amountEventSpace = array();
+$amountEventSpace = [];
 foreach ($eventToRoomAssignment as $roomID => $assignmentArray) {
     foreach ($assignmentArray as $timeslot => $eventID) {
         $roomCapacity = $roomData[$roomID]["capacity"];
@@ -71,8 +71,8 @@ foreach ($assignment as $studentID => $studentTimeslotsToEventsAssignmentArray) 
 }
 
 $organisationsplan = getOrganisationsplan($eventToRoomAssignment, $eventData, $timeslotToTime);
-$anwesenheitsliste = getAnwesenheitsliste($assignment, $studentData, $eventData, $timeslotToTime); 
-$schuelerLaufzettel = getSchuelerLaufzettel($assignment, $timeslotToTime, $studentData, $eventToRoomAssignment, $eventData); 
+$anwesenheitsliste = getAnwesenheitsliste($assignment, $studentData, $eventData, $timeslotToTime);
+$schuelerLaufzettel = getSchuelerLaufzettel($assignment, $timeslotToTime, $studentData, $eventToRoomAssignment, $eventData);
 
 
 echo "\n Organisationsplan! : \n";
@@ -87,34 +87,43 @@ echo "\n Schülerlaufzettel! : \n";
 echo json_encode($schuelerLaufzettel, JSON_PRETTY_PRINT);
 echo "\n";
 
+saveResult($organisationsplan, "organisationsplan");
+saveResult($anwesenheitsliste, "anwesenheitsliste");
+saveResult($schuelerLaufzettel, "schuelerLaufzettel");
+
+function saveResult(array $data, string $filename)
+{
+    $json = json_encode($data, JSON_THROW_ON_ERROR | JSON_PRETTY_PRINT);
+    file_put_contents("results/" . $filename . ".json", $json);
+}
+
 function getSchuelerLaufzettel($assignment, $timeslotToTime, $studentData, $eventToRoomAssignment, $eventData)
 {
-    $result = array(); 
+
+    $result = [];
     foreach ($assignment as $studentID => $timeslotToEvent) {
         foreach ($timeslotToEvent as $timeslot => $eventID) {
-            $result[$studentID]["class"] = $studentData[$studentID]["class"]; 
-            $result[$studentID]["name"] = $studentData[$studentID]["name"]; 
-            $result[$studentID]["firstName"] = $studentData[$studentID]["firstName"]; 
-            $result[$studentID]["laufzettel"][$timeslotToTime[$timeslot]]["raumnummer"] = getRoomFromEventAndTimeslot($eventToRoomAssignment, $eventID, $timeslot);
-            $result[$studentID]["laufzettel"][$timeslotToTime[$timeslot]]["Companyname"] = $eventData[$eventID]["company"]; 
-            $result[$studentID]["laufzettel"][$timeslotToTime[$timeslot]]["specialization"] = $eventData[$eventID]["specialization"];
-            $result[$studentID]["laufzettel"][$timeslotToTime[$timeslot]]["wish"] = checkIfWishWasFromStudent($eventID, $studentData[$studentID]); 
+            $result[$studentID]["class"] = trim($studentData[$studentID]["class"]);
+            $result[$studentID]["lastName"] = trim($studentData[$studentID]["name"]);
+            $result[$studentID]["firstName"] = trim($studentData[$studentID]["firstName"]);
+            $result[$studentID]["assignments"][$timeslotToTime[$timeslot]]["room"] = getRoomFromEventAndTimeslot($eventToRoomAssignment, $eventID, $timeslot);
+            $result[$studentID]["assignments"][$timeslotToTime[$timeslot]]["company"] = trim($eventData[$eventID]["company"]);
+            $result[$studentID]["assignments"][$timeslotToTime[$timeslot]]["specialization"] = trim($eventData[$eventID]["specialization"]);
+            $result[$studentID]["assignments"][$timeslotToTime[$timeslot]]["eventId"] = (string) $eventID;
+            $result[$studentID]["assignments"][$timeslotToTime[$timeslot]]['isWish'] = is_string($eventID);
         }
     }
-    return $result; 
+    return $result;
 }
 
 function checkIfWishWasFromStudent($eventID, $studentData)
 {
-    for ($i = 1; $i <= 6; $i++) 
-    {
-        foreach ($studentData as $fieldname => $choiseID) 
-        {
-            if ("choice_" . $i == $fieldname && $eventID == $choiseID) 
-            {
-                    $underscorePosition  = strpos($fieldname, '_');
-                    $numberPart = substr($fieldname, $underscorePosition + 1);
-                    return $numberPart;
+    for ($i = 1; $i <= 6; $i++) {
+        foreach ($studentData as $fieldname => $choiseID) {
+            if ("choice_" . $i == $fieldname && $eventID == $choiseID) {
+                $underscorePosition = strpos($fieldname, '_');
+                $numberPart = substr($fieldname, $underscorePosition + 1);
+                return $numberPart;
             }
         }
     }
@@ -124,49 +133,52 @@ function getRoomFromEventAndTimeslot($eventToRoomAssignment, $eventID, $timeslot
 {
     foreach ($eventToRoomAssignment as $roomID => $timeslotToEvent) {
         foreach ($timeslotToEvent as $insideTimeslot => $insideEventID) {
-            if($insideTimeslot == $timeslot && $insideEventID == $eventID)
-            {
-                return $roomID; 
-            } 
+            if ($insideTimeslot == $timeslot && $insideEventID == $eventID) {
+                return $roomID;
+            }
         }
     }
 }
 
-function getAnwesenheitsliste( $assignment, $studentData, $eventData, $timeslotToTime){
-    $result = array(); 
+function getAnwesenheitsliste($assignment, $studentData, $eventData, $timeslotToTime)
+{
+    $result = [];
     foreach ($assignment as $studentID => $timeslotToEvent) {
         foreach ($timeslotToEvent as $timeslot => $assignmentEventID) {
 
-                $result[$assignmentEventID]["companyname"] = [trim($eventData[$assignmentEventID]["company"])];
-                $result[$assignmentEventID]["timeslots"][$timeslotToTime[$timeslot]][] = array(
-                    "class" => $studentData[$studentID]["class"], 
-                    "name" => $studentData[$studentID]["name"], 
-                    "firstname" => $studentData[$studentID]["firstName"], 
-
-                ); 
+            $result[$assignmentEventID]["company"] = [trim($eventData[$assignmentEventID]["company"])];
+            $result[$assignmentEventID]["timeslots"][$timeslotToTime[$timeslot]][] = [
+                "class" => $studentData[$studentID]["class"],
+                "lastName" => $studentData[$studentID]["name"],
+                "firstName" => $studentData[$studentID]["firstName"],
+            ];
 
         }
     }
-    return $result; 
+    return $result;
 }
 
 function getOrganisationsplan($eventToRoomAssignment, $eventData, $timeslotToTime)
 {
-    $result = array(); 
+    $result = [];
     foreach ($eventToRoomAssignment as $roomID => $timeslotToEvent) {
         foreach ($timeslotToEvent as $timeslot => $eventID) {
-            $result[$eventID]["Companyname"] = trim($eventData[$eventID]["company"]); 
-            $result[$eventID]["Stunden"][$timeslotToTime[$timeslot]]  = $roomID; 
-           
+            $result[$eventID]["company"] = trim($eventData[$eventID]["company"]);
+            $result[$eventID]["timeslots"][] = [
+                'time' => $timeslotToTime[$timeslot],
+                'timeSlot' => $timeslot,
+                'room' => $roomID,
+            ];
+
         }
     }
-    return $result; 
+    return $result;
 }
 
 // TODO: Optimierungsbedarf !
 function getAmountChoices($studentData)
 {
-    $amountChoices = array();
+    $amountChoices = [];
     for ($i = 1; $i <= 6; $i++) {
         foreach ($studentData as $id => $array) {
             $choiceField = "choice_" . $i;
@@ -187,7 +199,7 @@ function getAmountChoices($studentData)
 
     foreach ($studentData as $array) {
         foreach ($array as $key => $value) {
-            if (substr($key, 0, 7) === "choice_") {
+            if (str_starts_with($key, "choice_")) {
                 if (!empty($value)) {
                     if (!empty($amountChoices["allChoices"][$value])) {
                         $amountChoices["allChoices"][$value] += 1;
@@ -207,7 +219,7 @@ function getAmountChoices($studentData)
     return $amountChoices;
 }
 
-function getAvailableTimeSlots($raumZuweisung, $timeslot, $roomID, $requiredSeats)
+function getAvailableTimeSlots($raumZuweisung, $timeslot, $roomID, $requiredSeats): array
 {
     $availableSlots = [];
     $timeSlots = ['A', 'B', 'C', 'D', 'E'];
@@ -262,7 +274,7 @@ function anzahlAufeinanderFolgendeSlotsFrei($raumZuweisung, $startTimeslot, $roo
 function eventToRoomAssignment($roomData, $eventData, $amountChoisesAll)
 {
 
-    $raumZuweisung = array();
+    $raumZuweisung = [];
     uasort($roomData, "sortByCapacity");
     uasort($eventData, "sortByParticipants");
 

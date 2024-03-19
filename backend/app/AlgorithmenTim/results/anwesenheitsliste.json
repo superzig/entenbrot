@@ -1,0 +1,3668 @@
+{
+    "4": {
+        "company": [
+            "Grnenthal"
+        ],
+        "timeslots": {
+            "08:45 - 9:30": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Bigay",
+                    "firstName": "Ali Eren"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Ntumba Tshikala",
+                    "firstName": "Ruth"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Saltan",
+                    "firstName": "Mustafa"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Haucap",
+                    "firstName": "Andreas"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Gryszko",
+                    "firstName": "Raul"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Sarig",
+                    "firstName": "Nehir Zehra"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Brettner-Alangyima",
+                    "firstName": "Ann"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Matipa",
+                    "firstName": "Plamedie"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Salha",
+                    "firstName": "Mohammed"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Sari",
+                    "firstName": "Atakhan"
+                }
+            ],
+            "09:50 - 10:35": [
+                {
+                    "class": "HH221",
+                    "lastName": "Dah",
+                    "firstName": "Mariama"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Gan",
+                    "firstName": "Jean-Michel"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Kaun",
+                    "firstName": "Maximilian"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Brandt",
+                    "firstName": "Laurin"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Najib",
+                    "firstName": "Rania Katharina"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Urbanke",
+                    "firstName": "Bela Maximilian"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Dirki",
+                    "firstName": "Khalil"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Muhammadiqboli",
+                    "firstName": "Shamsiddin"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Soliman",
+                    "firstName": "Ahmed"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Eich",
+                    "firstName": "Dominic"
+                }
+            ]
+        }
+    },
+    "22": {
+        "company": [
+            "Polizei"
+        ],
+        "timeslots": {
+            "09:50 - 10:35": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Bigay",
+                    "firstName": "Ali Eren"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Kavak",
+                    "firstName": "Hazal"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Saltan",
+                    "firstName": "Mustafa"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Sengz",
+                    "firstName": "Aleyna"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Bcken",
+                    "firstName": "Connor Luca"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Daher",
+                    "firstName": "Haschem"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Dindar",
+                    "firstName": "Tolga"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "luwawu",
+                    "firstName": "Espoir"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Musi",
+                    "firstName": "Chloe"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Sylshabanaj",
+                    "firstName": "Klitjan"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Tchacoura",
+                    "firstName": "Said"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Jpgen",
+                    "firstName": "Joel-Luis"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Rozafshan",
+                    "firstName": "Arman"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Tasdemir",
+                    "firstName": "Furkan Emre"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Lauffs",
+                    "firstName": "Joel"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Wieczorek",
+                    "firstName": "Natan Daniel"
+                }
+            ],
+            "08:45 - 9:30": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Nguyen",
+                    "firstName": "Hai Nam"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Kaya",
+                    "firstName": "Suat"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Arslan",
+                    "firstName": "Ayse Nur"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Benamar",
+                    "firstName": "Rayan"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Bisevac",
+                    "firstName": "Melvin"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Brandt",
+                    "firstName": "Laurin"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Dohri",
+                    "firstName": "Anouar"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "El Sayed",
+                    "firstName": "Jihan"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Kafadar",
+                    "firstName": "Canan Melek"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Kosciukiewicz",
+                    "firstName": "Jan"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Muhammadiqboli",
+                    "firstName": "Shamsiddin"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Petrov",
+                    "firstName": "Vladislav"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Almoukayed",
+                    "firstName": "Ahmad"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Gnaydin",
+                    "firstName": "Viyan"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Lewandowska",
+                    "firstName": "Matilda"
+                }
+            ]
+        }
+    },
+    "6": {
+        "company": [
+            "Aldi"
+        ],
+        "timeslots": {
+            "10:35 - 11:20": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Bigay",
+                    "firstName": "Ali Eren"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Iskender",
+                    "firstName": "Iclal Ece"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Martins",
+                    "firstName": "Ayo"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Saltan",
+                    "firstName": "Mustafa"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Sylshabanaj",
+                    "firstName": "Klitjan"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Hermanns",
+                    "firstName": "Fabian"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Sweiti",
+                    "firstName": "Taha"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Ali",
+                    "firstName": "Lilian"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Ana",
+                    "firstName": "Catalin-Gabriel"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Kisoglu",
+                    "firstName": "Rojin"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Tasdemir",
+                    "firstName": "Furkan Emre"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Brettner-Alangyima",
+                    "firstName": "Ann"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Maassen",
+                    "firstName": "Lino Alexander"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Sari",
+                    "firstName": "Atakhan"
+                }
+            ],
+            "11:40 - 12:25": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Nguyen",
+                    "firstName": "Hai Nam"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Sengz",
+                    "firstName": "Aleyna"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Almuhandez",
+                    "firstName": "Muhieb"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Kaun",
+                    "firstName": "Maximilian"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Moustahfid",
+                    "firstName": "Miranda"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Siebert",
+                    "firstName": "Tutku Cansin"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Tchacoura",
+                    "firstName": "Said"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Ait Oufquir",
+                    "firstName": "Samira"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Bolz",
+                    "firstName": "Deniz"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Jpgen",
+                    "firstName": "Joel-Luis"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Khan",
+                    "firstName": "Rohail-Ahmed"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Adolf",
+                    "firstName": "Angelina"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Arifi",
+                    "firstName": "Annalena"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Erten",
+                    "firstName": "Volkan Burak"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Stengler",
+                    "firstName": "Joel-Lucas"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Talbi",
+                    "firstName": "Zaid"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Gro",
+                    "firstName": "Emily"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Lauffs",
+                    "firstName": "Joel"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Matipa",
+                    "firstName": "Plamedie"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Wieczorek",
+                    "firstName": "Natan Daniel"
+                }
+            ],
+            "12:25 - 13:10": [
+                {
+                    "class": "HH221",
+                    "lastName": "Alikahn",
+                    "firstName": "Malak"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Musi",
+                    "firstName": "Chloe"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Tuncer",
+                    "firstName": "Metehan"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Selimbasic",
+                    "firstName": "Alina"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Ediawe Agunbiade",
+                    "firstName": "Quincy"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Tetik",
+                    "firstName": "Ilyas"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Ademi",
+                    "firstName": "Adonisa"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Korkut",
+                    "firstName": "Pelsin"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Mambor",
+                    "firstName": "Celina"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Okur",
+                    "firstName": "Ahmet Semih"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Scheen",
+                    "firstName": "Michelle"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Tourniaire",
+                    "firstName": "Serafina"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Amann",
+                    "firstName": "Julian"
+                }
+            ]
+        }
+    },
+    "18": {
+        "company": [
+            "Finanzamt"
+        ],
+        "timeslots": {
+            "11:40 - 12:25": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Bigay",
+                    "firstName": "Ali Eren"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Ntumba Tshikala",
+                    "firstName": "Ruth"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Saltan",
+                    "firstName": "Mustafa"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Schott",
+                    "firstName": "Isabell"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Dah",
+                    "firstName": "Mariama"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Dindar",
+                    "firstName": "Tolga"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Krilcic",
+                    "firstName": "Marijana"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Arslan",
+                    "firstName": "Ayse Nur"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Najib",
+                    "firstName": "Rania Katharina"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "El Sayed",
+                    "firstName": "Jihan"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Glazkova",
+                    "firstName": "Oleksandra"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Rumor",
+                    "firstName": "Anton Wilem"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Tchimbalanga",
+                    "firstName": "Clotilde"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Tetik",
+                    "firstName": "Ilyas"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Korkut",
+                    "firstName": "Pelsin"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Saad",
+                    "firstName": "Iman"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Dawd",
+                    "firstName": "Jehan Khalaf"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Kakar",
+                    "firstName": "Husna"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Thier",
+                    "firstName": "Clemens"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Eich",
+                    "firstName": "Dominic"
+                }
+            ],
+            "12:25 - 13:10": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Graf",
+                    "firstName": "Lena"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Iskender",
+                    "firstName": "Iclal Ece"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Martins",
+                    "firstName": "Ayo"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Mohammed",
+                    "firstName": "Zakariah"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Sylshabanaj",
+                    "firstName": "Klitjan"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Bisevac",
+                    "firstName": "Melvin"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Dohri",
+                    "firstName": "Anouar"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Hampeter",
+                    "firstName": "Anna"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Erten",
+                    "firstName": "Volkan Burak"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Gmez",
+                    "firstName": "Koray"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Maassen",
+                    "firstName": "Lino Alexander"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Salha",
+                    "firstName": "Mohammed"
+                }
+            ],
+            "10:35 - 11:20": [
+                {
+                    "class": "HH221",
+                    "lastName": "Bendels",
+                    "firstName": "Lea"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Dah",
+                    "firstName": "Mariama"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Daher",
+                    "firstName": "Haschem"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Demir",
+                    "firstName": "Rojin"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Gan",
+                    "firstName": "Jean-Michel"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Moustahfid",
+                    "firstName": "Miranda"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Siebert",
+                    "firstName": "Tutku Cansin"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Yildirim",
+                    "firstName": "Zilan"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Ait Oufquir",
+                    "firstName": "Samira"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Benamar",
+                    "firstName": "Rayan"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Brandt",
+                    "firstName": "Laurin"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Jpgen",
+                    "firstName": "Joel-Luis"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Koubaa",
+                    "firstName": "Hicham"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Sarig",
+                    "firstName": "Nehir Zehra"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Selimbasic",
+                    "firstName": "Alina"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Malambu",
+                    "firstName": "Bryan"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Mohren",
+                    "firstName": "Tom"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Erol",
+                    "firstName": "Iclal"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Mang",
+                    "firstName": "Domenik"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Stengler",
+                    "firstName": "Joel-Lucas"
+                }
+            ]
+        }
+    },
+    "14": {
+        "company": [
+            "Spedition Hammer"
+        ],
+        "timeslots": {
+            "12:25 - 13:10": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Bigay",
+                    "firstName": "Ali Eren"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Nguyen",
+                    "firstName": "Hai Nam"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Saltan",
+                    "firstName": "Mustafa"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Daher",
+                    "firstName": "Haschem"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Gan",
+                    "firstName": "Jean-Michel"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Ait Oufquir",
+                    "firstName": "Samira"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Jpgen",
+                    "firstName": "Joel-Luis"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Ana",
+                    "firstName": "Catalin-Gabriel"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Malambu",
+                    "firstName": "Bryan"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Arifi",
+                    "firstName": "Annalena"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Gro",
+                    "firstName": "Emily"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Thier",
+                    "firstName": "Clemens"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Sari",
+                    "firstName": "Atakhan"
+                }
+            ],
+            "10:35 - 11:20": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Mohammed",
+                    "firstName": "Zakariah"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Kaun",
+                    "firstName": "Maximilian"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Haucap",
+                    "firstName": "Andreas"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Gryszko",
+                    "firstName": "Raul"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Khan",
+                    "firstName": "Rohail-Ahmed"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Najib",
+                    "firstName": "Rania Katharina"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Urbanke",
+                    "firstName": "Bela Maximilian"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Tetik",
+                    "firstName": "Ilyas"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Grenz",
+                    "firstName": "Andre"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Gmez",
+                    "firstName": "Koray"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Talbi",
+                    "firstName": "Zaid"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Dawd",
+                    "firstName": "Jehan Khalaf"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Kakar",
+                    "firstName": "Husna"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Matipa",
+                    "firstName": "Plamedie"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Muhammadiqboli",
+                    "firstName": "Shamsiddin"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Schwartz",
+                    "firstName": "Tim"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Soliman",
+                    "firstName": "Ahmed"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Almoukayed",
+                    "firstName": "Ahmad"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Freialdenhoven",
+                    "firstName": "Tim"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Grbler",
+                    "firstName": "Jonathan"
+                }
+            ],
+            "11:40 - 12:25": [
+                {
+                    "class": "HH221",
+                    "lastName": "Kaya",
+                    "firstName": "Baris"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Hermanns",
+                    "firstName": "Fabian"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Demir",
+                    "firstName": "Ahmet Hezdar"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Dohri",
+                    "firstName": "Anouar"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Mohren",
+                    "firstName": "Tom"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Erol",
+                    "firstName": "Iclal"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Mang",
+                    "firstName": "Domenik"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Tasdemir",
+                    "firstName": "Furkan Emre"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Tourniaire",
+                    "firstName": "Serafina"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Kober",
+                    "firstName": "Jonathan Lorenz"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Maassen",
+                    "firstName": "Lino Alexander"
+                }
+            ]
+        }
+    },
+    "17": {
+        "company": [
+            "StdteRegion Aachen"
+        ],
+        "timeslots": {
+            "08:45 - 9:30": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Graf",
+                    "firstName": "Lena"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Rausch",
+                    "firstName": "Erik"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Almuhandez",
+                    "firstName": "Muhieb"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Musi",
+                    "firstName": "Chloe"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Tuncer",
+                    "firstName": "Metehan"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Jpgen",
+                    "firstName": "Joel-Luis"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Glazkova",
+                    "firstName": "Oleksandra"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Malambu",
+                    "firstName": "Bryan"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Rumor",
+                    "firstName": "Anton Wilem"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Tchimbalanga",
+                    "firstName": "Clotilde"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Ademi",
+                    "firstName": "Adonisa"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Ezen",
+                    "firstName": "Zilan"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Gmez",
+                    "firstName": "Koray"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Mang",
+                    "firstName": "Domenik"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Schwartz",
+                    "firstName": "Tim"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Soliman",
+                    "firstName": "Ahmed"
+                }
+            ],
+            "09:50 - 10:35": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Schott",
+                    "firstName": "Isabell"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Demir",
+                    "firstName": "Rojin"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Moustahfid",
+                    "firstName": "Miranda"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Siebert",
+                    "firstName": "Tutku Cansin"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Yildirim",
+                    "firstName": "Zilan"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Erol",
+                    "firstName": "Iclal"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Omar",
+                    "firstName": "Aria"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Grbler",
+                    "firstName": "Jonathan"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Kolokythas",
+                    "firstName": "Thomas"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Tutumlu",
+                    "firstName": "Tahir"
+                }
+            ]
+        }
+    },
+    "15": {
+        "company": [
+            "Inform"
+        ],
+        "timeslots": {
+            "09:50 - 10:35": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Graf",
+                    "firstName": "Lena"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Ntumba Tshikala",
+                    "firstName": "Ruth"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Krilcic",
+                    "firstName": "Marijana"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Meuthrath",
+                    "firstName": "Shoshana"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Ana",
+                    "firstName": "Catalin-Gabriel"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Ediawe Agunbiade",
+                    "firstName": "Quincy"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Malambu",
+                    "firstName": "Bryan"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Rumor",
+                    "firstName": "Anton Wilem"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Korkut",
+                    "firstName": "Pelsin"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Brettner-Alangyima",
+                    "firstName": "Ann"
+                }
+            ],
+            "08:45 - 9:30": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Grgen",
+                    "firstName": "Smilla Marie"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Schott",
+                    "firstName": "Isabell"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Hasanic",
+                    "firstName": "Asmir"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Kaun",
+                    "firstName": "Maximilian"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Khan",
+                    "firstName": "Rohail-Ahmed"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Sweiti",
+                    "firstName": "Taha"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Adolf",
+                    "firstName": "Angelina"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Omer",
+                    "firstName": "Diler"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Schulz",
+                    "firstName": "Leonie"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Wieczorek",
+                    "firstName": "Natan Daniel"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Grbler",
+                    "firstName": "Jonathan"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Kober",
+                    "firstName": "Jonathan Lorenz"
+                }
+            ]
+        }
+    },
+    "16": {
+        "company": [
+            "Inform"
+        ],
+        "timeslots": {
+            "10:35 - 11:20": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Graf",
+                    "firstName": "Lena"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Dindar",
+                    "firstName": "Tolga"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Kaya",
+                    "firstName": "Suat"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Krilcic",
+                    "firstName": "Marijana"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Vukelic",
+                    "firstName": "Valentina"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Bolz",
+                    "firstName": "Deniz"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Tchimbalanga",
+                    "firstName": "Clotilde"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Tall",
+                    "firstName": "Alassane"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Wieczorek",
+                    "firstName": "Natan Daniel"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Eich",
+                    "firstName": "Dominic"
+                }
+            ],
+            "11:40 - 12:25": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Iskender",
+                    "firstName": "Iclal Ece"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Martins",
+                    "firstName": "Ayo"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Mohammed",
+                    "firstName": "Zakariah"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Rausch",
+                    "firstName": "Erik"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Alikahn",
+                    "firstName": "Malak"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Tuncer",
+                    "firstName": "Metehan"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Yildirim",
+                    "firstName": "Zilan"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Selimbasic",
+                    "firstName": "Alina"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Ademi",
+                    "firstName": "Adonisa"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Ezen",
+                    "firstName": "Zilan"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Mahrouk",
+                    "firstName": "Rania"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Omar",
+                    "firstName": "Aria"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Grbler",
+                    "firstName": "Jonathan"
+                }
+            ]
+        }
+    },
+    "9": {
+        "company": [
+            "Aachener Bank"
+        ],
+        "timeslots": {
+            "11:40 - 12:25": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Graf",
+                    "firstName": "Lena"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Hasanic",
+                    "firstName": "Asmir"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Kaya",
+                    "firstName": "Suat"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Bisevac",
+                    "firstName": "Melvin"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Rana",
+                    "firstName": "Aisha"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Kisoglu",
+                    "firstName": "Rojin"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Okur",
+                    "firstName": "Ahmet Semih"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Trac",
+                    "firstName": "Ton Ly David"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Brettner-Alangyima",
+                    "firstName": "Ann"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Scheen",
+                    "firstName": "Michelle"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Kolokythas",
+                    "firstName": "Thomas"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Tutumlu",
+                    "firstName": "Tahir"
+                }
+            ],
+            "10:35 - 11:20": [
+                {
+                    "class": "HH221",
+                    "lastName": "Almuhandez",
+                    "firstName": "Muhieb"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Karanlik",
+                    "firstName": "Iskender"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Tchacoura",
+                    "firstName": "Said"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Tuncer",
+                    "firstName": "Metehan"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Bediako",
+                    "firstName": "Edlisa Gymifua"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Demir",
+                    "firstName": "Ahmet Hezdar"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Glazkova",
+                    "firstName": "Oleksandra"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Gcesin",
+                    "firstName": "Ela Nur"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Erten",
+                    "firstName": "Volkan Burak"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Saad",
+                    "firstName": "Iman"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Gro",
+                    "firstName": "Emily"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Tourniaire",
+                    "firstName": "Serafina"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Amann",
+                    "firstName": "Julian"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Salha",
+                    "firstName": "Mohammed"
+                }
+            ]
+        }
+    },
+    "25": {
+        "company": [
+            "Wirtschaftsrecht FH-Aachen"
+        ],
+        "timeslots": {
+            "09:50 - 10:35": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Grgen",
+                    "firstName": "Smilla Marie"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Martins",
+                    "firstName": "Ayo"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Bolz",
+                    "firstName": "Deniz"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Adolf",
+                    "firstName": "Angelina"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "El Sayed",
+                    "firstName": "Jihan"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Kafadar",
+                    "firstName": "Canan Melek"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Matipa",
+                    "firstName": "Plamedie"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Omer",
+                    "firstName": "Diler"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Gnaydin",
+                    "firstName": "Viyan"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Lewandowska",
+                    "firstName": "Matilda"
+                }
+            ]
+        }
+    },
+    "1": {
+        "company": [
+            "Zentis"
+        ],
+        "timeslots": {
+            "10:35 - 11:20": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Grgen",
+                    "firstName": "Smilla Marie"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Sengz",
+                    "firstName": "Aleyna"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Musi",
+                    "firstName": "Chloe"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Adeosun",
+                    "firstName": "Oluwaseyi Kehinde"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Aygn",
+                    "firstName": "Zanya"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Kisoglu",
+                    "firstName": "Hawin"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Kafadar",
+                    "firstName": "Canan Melek"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Okur",
+                    "firstName": "Ahmet Semih"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Trac",
+                    "firstName": "Ton Ly David"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Schneider",
+                    "firstName": "Robin"
+                }
+            ],
+            "11:40 - 12:25": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Kavak",
+                    "firstName": "Hazal"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Bcken",
+                    "firstName": "Connor Luca"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Vancronenburg",
+                    "firstName": "Anna Elena"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Vukelic",
+                    "firstName": "Valentina"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Miho",
+                    "firstName": "Ezdin"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Ali",
+                    "firstName": "Lilian"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Ediawe Agunbiade",
+                    "firstName": "Quincy"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Hampeter",
+                    "firstName": "Anna"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Selim",
+                    "firstName": "Omer"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Mambor",
+                    "firstName": "Celina"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Schwartz",
+                    "firstName": "Tim"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Mei",
+                    "firstName": "Timo"
+                }
+            ]
+        }
+    },
+    "26": {
+        "company": [
+            "Soziale Arbeit"
+        ],
+        "timeslots": {
+            "11:40 - 12:25": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Grgen",
+                    "firstName": "Smilla Marie"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Sylshabanaj",
+                    "firstName": "Klitjan"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Dirki",
+                    "firstName": "Khalil"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Kafadar",
+                    "firstName": "Canan Melek"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Muhammadiqboli",
+                    "firstName": "Shamsiddin"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Schmcker",
+                    "firstName": "Paul"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Schulz",
+                    "firstName": "Leonie"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Tall",
+                    "firstName": "Alassane"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Almoukayed",
+                    "firstName": "Ahmad"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Salha",
+                    "firstName": "Mohammed"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Schneider",
+                    "firstName": "Robin"
+                }
+            ],
+            "10:35 - 11:20": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Karakas",
+                    "firstName": "Berfin"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Hasanic",
+                    "firstName": "Asmir"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Bisevac",
+                    "firstName": "Melvin"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Meuthrath",
+                    "firstName": "Shoshana"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Dohri",
+                    "firstName": "Anouar"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Rozafshan",
+                    "firstName": "Arman"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Selim",
+                    "firstName": "Omer"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Ademi",
+                    "firstName": "Adonisa"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Ezen",
+                    "firstName": "Zilan"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Kosciukiewicz",
+                    "firstName": "Jan"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Mahrouk",
+                    "firstName": "Rania"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Omar",
+                    "firstName": "Aria"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Omer",
+                    "firstName": "Diler"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Scheen",
+                    "firstName": "Michelle"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Thier",
+                    "firstName": "Clemens"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Gnaydin",
+                    "firstName": "Viyan"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Kolokythas",
+                    "firstName": "Thomas"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Lewandowska",
+                    "firstName": "Matilda"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Mei",
+                    "firstName": "Timo"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Tutumlu",
+                    "firstName": "Tahir"
+                }
+            ],
+            "12:25 - 13:10": [
+                {
+                    "class": "HH221",
+                    "lastName": "Almuhandez",
+                    "firstName": "Muhieb"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Dindar",
+                    "firstName": "Tolga"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Kaya",
+                    "firstName": "Suat"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Siebert",
+                    "firstName": "Tutku Cansin"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Arslan",
+                    "firstName": "Ayse Nur"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Brandt",
+                    "firstName": "Laurin"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Hermanns",
+                    "firstName": "Fabian"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Khan",
+                    "firstName": "Rohail-Ahmed"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Urbanke",
+                    "firstName": "Bela Maximilian"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Kisoglu",
+                    "firstName": "Rojin"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Talbi",
+                    "firstName": "Zaid"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Eich",
+                    "firstName": "Dominic"
+                }
+            ]
+        }
+    },
+    "20": {
+        "company": [
+            "Justizvollzugsanstalt"
+        ],
+        "timeslots": {
+            "12:25 - 13:10": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Grgen",
+                    "firstName": "Smilla Marie"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Bendels",
+                    "firstName": "Lea"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Demir",
+                    "firstName": "Rojin"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Moustahfid",
+                    "firstName": "Miranda"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Vukelic",
+                    "firstName": "Valentina"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Meuthrath",
+                    "firstName": "Shoshana"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Sweiti",
+                    "firstName": "Taha"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Kisoglu",
+                    "firstName": "Hawin"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Rozafshan",
+                    "firstName": "Arman"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Grenz",
+                    "firstName": "Andre"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Kafadar",
+                    "firstName": "Canan Melek"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Tasdemir",
+                    "firstName": "Furkan Emre"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Brettner-Alangyima",
+                    "firstName": "Ann"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Dawd",
+                    "firstName": "Jehan Khalaf"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Kakar",
+                    "firstName": "Husna"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Tall",
+                    "firstName": "Alassane"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Almoukayed",
+                    "firstName": "Ahmad"
+                }
+            ]
+        }
+    },
+    "2": {
+        "company": [
+            "Babor Kosmetik"
+        ],
+        "timeslots": {
+            "08:45 - 9:30": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Iskender",
+                    "firstName": "Iclal Ece"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Karakas",
+                    "firstName": "Berfin"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Sengz",
+                    "firstName": "Aleyna"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Hermanns",
+                    "firstName": "Fabian"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Rana",
+                    "firstName": "Aisha"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Adeosun",
+                    "firstName": "Oluwaseyi Kehinde"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Ali",
+                    "firstName": "Lilian"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Dirki",
+                    "firstName": "Khalil"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Kisoglu",
+                    "firstName": "Rojin"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Erol",
+                    "firstName": "Iclal"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Korkut",
+                    "firstName": "Pelsin"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Trac",
+                    "firstName": "Ton Ly David"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Tourniaire",
+                    "firstName": "Serafina"
+                }
+            ],
+            "09:50 - 10:35": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Nguyen",
+                    "firstName": "Hai Nam"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Bendels",
+                    "firstName": "Lea"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Selimbasic",
+                    "firstName": "Alina"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Hampeter",
+                    "firstName": "Anna"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Kisoglu",
+                    "firstName": "Rojin"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Kosciukiewicz",
+                    "firstName": "Jan"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Okur",
+                    "firstName": "Ahmet Semih"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Dawd",
+                    "firstName": "Jehan Khalaf"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Kakar",
+                    "firstName": "Husna"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Schmcker",
+                    "firstName": "Paul"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Sari",
+                    "firstName": "Atakhan"
+                }
+            ]
+        }
+    },
+    "10": {
+        "company": [
+            "Debeka"
+        ],
+        "timeslots": {
+            "09:50 - 10:35": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Iskender",
+                    "firstName": "Iclal Ece"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Rausch",
+                    "firstName": "Erik"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Alikahn",
+                    "firstName": "Malak"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Hasanic",
+                    "firstName": "Asmir"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Kaya",
+                    "firstName": "Suat"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Vukelic",
+                    "firstName": "Valentina"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Benamar",
+                    "firstName": "Rayan"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Ali",
+                    "firstName": "Lilian"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Aygn",
+                    "firstName": "Zanya"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Bediako",
+                    "firstName": "Edlisa Gymifua"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Demir",
+                    "firstName": "Ahmet Hezdar"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Gcesin",
+                    "firstName": "Ela Nur"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Selim",
+                    "firstName": "Omer"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Tchimbalanga",
+                    "firstName": "Clotilde"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Tetik",
+                    "firstName": "Ilyas"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Saad",
+                    "firstName": "Iman"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Stengler",
+                    "firstName": "Joel-Lucas"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Schulz",
+                    "firstName": "Leonie"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Schwartz",
+                    "firstName": "Tim"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Tall",
+                    "firstName": "Alassane"
+                }
+            ],
+            "11:40 - 12:25": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Karakas",
+                    "firstName": "Berfin"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Bendels",
+                    "firstName": "Lea"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Demir",
+                    "firstName": "Rojin"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Karanlik",
+                    "firstName": "Iskender"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "luwawu",
+                    "firstName": "Espoir"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Meuthrath",
+                    "firstName": "Shoshana"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Sarig",
+                    "firstName": "Nehir Zehra"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Urbanke",
+                    "firstName": "Bela Maximilian"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Adeosun",
+                    "firstName": "Oluwaseyi Kehinde"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Petrov",
+                    "firstName": "Vladislav"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Soliman",
+                    "firstName": "Ahmed"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Freialdenhoven",
+                    "firstName": "Tim"
+                }
+            ],
+            "10:35 - 11:20": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Kavak",
+                    "firstName": "Hazal"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Bcken",
+                    "firstName": "Connor Luca"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "luwawu",
+                    "firstName": "Espoir"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Vancronenburg",
+                    "firstName": "Anna Elena"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Arslan",
+                    "firstName": "Ayse Nur"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Dirki",
+                    "firstName": "Khalil"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Schmcker",
+                    "firstName": "Paul"
+                }
+            ]
+        }
+    },
+    "13": {
+        "company": [
+            "Notarberufe"
+        ],
+        "timeslots": {
+            "09:50 - 10:35": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Karakas",
+                    "firstName": "Berfin"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Mohammed",
+                    "firstName": "Zakariah"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Kaya",
+                    "firstName": "Baris"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Ait Oufquir",
+                    "firstName": "Samira"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Haucap",
+                    "firstName": "Andreas"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Gryszko",
+                    "firstName": "Raul"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Miho",
+                    "firstName": "Ezdin"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Mohren",
+                    "firstName": "Tom"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Erten",
+                    "firstName": "Volkan Burak"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Grenz",
+                    "firstName": "Andre"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Trac",
+                    "firstName": "Ton Ly David"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Petrov",
+                    "firstName": "Vladislav"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Tourniaire",
+                    "firstName": "Serafina"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Amann",
+                    "firstName": "Julian"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Mei",
+                    "firstName": "Timo"
+                }
+            ],
+            "08:45 - 9:30": [
+                {
+                    "class": "HH221",
+                    "lastName": "Daher",
+                    "firstName": "Haschem"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Gan",
+                    "firstName": "Jean-Michel"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Aygn",
+                    "firstName": "Zanya"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Bediako",
+                    "firstName": "Edlisa Gymifua"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Gcesin",
+                    "firstName": "Ela Nur"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Mahrouk",
+                    "firstName": "Rania"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Mambor",
+                    "firstName": "Celina"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Okur",
+                    "firstName": "Ahmet Semih"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Omar",
+                    "firstName": "Aria"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Talbi",
+                    "firstName": "Zaid"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Lauffs",
+                    "firstName": "Joel"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Kolokythas",
+                    "firstName": "Thomas"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Tutumlu",
+                    "firstName": "Tahir"
+                }
+            ]
+        }
+    },
+    "23": {
+        "company": [
+            "FH Aachen - Studienberatung"
+        ],
+        "timeslots": {
+            "12:25 - 13:10": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Karakas",
+                    "firstName": "Berfin"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Ntumba Tshikala",
+                    "firstName": "Ruth"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Sengz",
+                    "firstName": "Aleyna"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Krilcic",
+                    "firstName": "Marijana"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Adeosun",
+                    "firstName": "Oluwaseyi Kehinde"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Lauffs",
+                    "firstName": "Joel"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Muhammadiqboli",
+                    "firstName": "Shamsiddin"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Omer",
+                    "firstName": "Diler"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Petrov",
+                    "firstName": "Vladislav"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Schmcker",
+                    "firstName": "Paul"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Wieczorek",
+                    "firstName": "Natan Daniel"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Gnaydin",
+                    "firstName": "Viyan"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Kober",
+                    "firstName": "Jonathan Lorenz"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Lewandowska",
+                    "firstName": "Matilda"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Mei",
+                    "firstName": "Timo"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Schneider",
+                    "firstName": "Robin"
+                }
+            ]
+        }
+    },
+    "7": {
+        "company": [
+            "Bauhaus"
+        ],
+        "timeslots": {
+            "08:45 - 9:30": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Kavak",
+                    "firstName": "Hazal"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Mohammed",
+                    "firstName": "Zakariah"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Karanlik",
+                    "firstName": "Iskender"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Kaya",
+                    "firstName": "Baris"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Meuthrath",
+                    "firstName": "Shoshana"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Demir",
+                    "firstName": "Ahmet Hezdar"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Mohren",
+                    "firstName": "Tom"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Rozafshan",
+                    "firstName": "Arman"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Stengler",
+                    "firstName": "Joel-Lucas"
+                }
+            ]
+        }
+    },
+    "5": {
+        "company": [
+            "RWTH Aachen"
+        ],
+        "timeslots": {
+            "12:25 - 13:10": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Kavak",
+                    "firstName": "Hazal"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Schott",
+                    "firstName": "Isabell"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Kaya",
+                    "firstName": "Baris"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "luwawu",
+                    "firstName": "Espoir"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Vancronenburg",
+                    "firstName": "Anna Elena"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Haucap",
+                    "firstName": "Andreas"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Gryszko",
+                    "firstName": "Raul"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Koubaa",
+                    "firstName": "Hicham"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Miho",
+                    "firstName": "Ezdin"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Adolf",
+                    "firstName": "Angelina"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Mohren",
+                    "firstName": "Tom"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Mahrouk",
+                    "firstName": "Rania"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Matipa",
+                    "firstName": "Plamedie"
+                }
+            ]
+        }
+    },
+    "24": {
+        "company": [
+            "RWTH Aachen - Studienberatung"
+        ],
+        "timeslots": {
+            "08:45 - 9:30": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Martins",
+                    "firstName": "Ayo"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Alikahn",
+                    "firstName": "Malak"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Krilcic",
+                    "firstName": "Marijana"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Sylshabanaj",
+                    "firstName": "Klitjan"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Bolz",
+                    "firstName": "Deniz"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Selim",
+                    "firstName": "Omer"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Gro",
+                    "firstName": "Emily"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Thier",
+                    "firstName": "Clemens"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Amann",
+                    "firstName": "Julian"
+                }
+            ]
+        }
+    },
+    "3": {
+        "company": [
+            "EVA (Stawag, RegioIt, Aseag..)"
+        ],
+        "timeslots": {
+            "10:35 - 11:20": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Nguyen",
+                    "firstName": "Hai Nam"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Ntumba Tshikala",
+                    "firstName": "Ruth"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Rausch",
+                    "firstName": "Erik"
+                },
+                {
+                    "class": "ASS221",
+                    "lastName": "Schott",
+                    "firstName": "Isabell"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Kaya",
+                    "firstName": "Baris"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Rana",
+                    "firstName": "Aisha"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Adolf",
+                    "firstName": "Angelina"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Ediawe Agunbiade",
+                    "firstName": "Quincy"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Hampeter",
+                    "firstName": "Anna"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Arifi",
+                    "firstName": "Annalena"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Korkut",
+                    "firstName": "Pelsin"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Mambor",
+                    "firstName": "Celina"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Petrov",
+                    "firstName": "Vladislav"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Kober",
+                    "firstName": "Jonathan Lorenz"
+                }
+            ],
+            "11:40 - 12:25": [
+                {
+                    "class": "HH221",
+                    "lastName": "Daher",
+                    "firstName": "Haschem"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Gan",
+                    "firstName": "Jean-Michel"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Musi",
+                    "firstName": "Chloe"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Koubaa",
+                    "firstName": "Hicham"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Sweiti",
+                    "firstName": "Taha"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Ana",
+                    "firstName": "Catalin-Gabriel"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Bediako",
+                    "firstName": "Edlisa Gymifua"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Gcesin",
+                    "firstName": "Ela Nur"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Kisoglu",
+                    "firstName": "Hawin"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Rozafshan",
+                    "firstName": "Arman"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Gmez",
+                    "firstName": "Koray"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Gnaydin",
+                    "firstName": "Viyan"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Lewandowska",
+                    "firstName": "Matilda"
+                }
+            ],
+            "12:25 - 13:10": [
+                {
+                    "class": "HH221",
+                    "lastName": "Karanlik",
+                    "firstName": "Iskender"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Kaun",
+                    "firstName": "Maximilian"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Najib",
+                    "firstName": "Rania Katharina"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Dirki",
+                    "firstName": "Khalil"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Rumor",
+                    "firstName": "Anton Wilem"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Kosciukiewicz",
+                    "firstName": "Jan"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Omar",
+                    "firstName": "Aria"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Stengler",
+                    "firstName": "Joel-Lucas"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Trac",
+                    "firstName": "Ton Ly David"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Schwartz",
+                    "firstName": "Tim"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Soliman",
+                    "firstName": "Ahmed"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Kolokythas",
+                    "firstName": "Thomas"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Tutumlu",
+                    "firstName": "Tahir"
+                }
+            ]
+        }
+    },
+    "11": {
+        "company": [
+            "Steuerberaterkammer Kln"
+        ],
+        "timeslots": {
+            "12:25 - 13:10": [
+                {
+                    "class": "ASS221",
+                    "lastName": "Rausch",
+                    "firstName": "Erik"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Hasanic",
+                    "firstName": "Asmir"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Benamar",
+                    "firstName": "Rayan"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Bolz",
+                    "firstName": "Deniz"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Ali",
+                    "firstName": "Lilian"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Aygn",
+                    "firstName": "Zanya"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Bediako",
+                    "firstName": "Edlisa Gymifua"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Demir",
+                    "firstName": "Ahmet Hezdar"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Gcesin",
+                    "firstName": "Ela Nur"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Selim",
+                    "firstName": "Omer"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Tchimbalanga",
+                    "firstName": "Clotilde"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Mang",
+                    "firstName": "Domenik"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Schulz",
+                    "firstName": "Leonie"
+                }
+            ]
+        }
+    },
+    "19": {
+        "company": [
+            "Finanzamt"
+        ],
+        "timeslots": {
+            "10:35 - 11:20": [
+                {
+                    "class": "HH221",
+                    "lastName": "Alikahn",
+                    "firstName": "Malak"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Miho",
+                    "firstName": "Ezdin"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "El Sayed",
+                    "firstName": "Jihan"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Rumor",
+                    "firstName": "Anton Wilem"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Lauffs",
+                    "firstName": "Joel"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Schulz",
+                    "firstName": "Leonie"
+                }
+            ],
+            "08:45 - 9:30": [
+                {
+                    "class": "HH221",
+                    "lastName": "Bendels",
+                    "firstName": "Lea"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Bcken",
+                    "firstName": "Connor Luca"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Demir",
+                    "firstName": "Rojin"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Dindar",
+                    "firstName": "Tolga"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Moustahfid",
+                    "firstName": "Miranda"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Siebert",
+                    "firstName": "Tutku Cansin"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Tchacoura",
+                    "firstName": "Said"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Vukelic",
+                    "firstName": "Valentina"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Yildirim",
+                    "firstName": "Zilan"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Ait Oufquir",
+                    "firstName": "Samira"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Najib",
+                    "firstName": "Rania Katharina"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Selimbasic",
+                    "firstName": "Alina"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Ediawe Agunbiade",
+                    "firstName": "Quincy"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Erten",
+                    "firstName": "Volkan Burak"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Tasdemir",
+                    "firstName": "Furkan Emre"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Dawd",
+                    "firstName": "Jehan Khalaf"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Kakar",
+                    "firstName": "Husna"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Schmcker",
+                    "firstName": "Paul"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Tall",
+                    "firstName": "Alassane"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Eich",
+                    "firstName": "Dominic"
+                }
+            ],
+            "09:50 - 10:35": [
+                {
+                    "class": "HH221",
+                    "lastName": "Karanlik",
+                    "firstName": "Iskender"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Tuncer",
+                    "firstName": "Metehan"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Arslan",
+                    "firstName": "Ayse Nur"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Bisevac",
+                    "firstName": "Melvin"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Koubaa",
+                    "firstName": "Hicham"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Sarig",
+                    "firstName": "Nehir Zehra"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Sweiti",
+                    "firstName": "Taha"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Adeosun",
+                    "firstName": "Oluwaseyi Kehinde"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Glazkova",
+                    "firstName": "Oleksandra"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Kisoglu",
+                    "firstName": "Hawin"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Mahrouk",
+                    "firstName": "Rania"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Mambor",
+                    "firstName": "Celina"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Mang",
+                    "firstName": "Domenik"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Gro",
+                    "firstName": "Emily"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Thier",
+                    "firstName": "Clemens"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Almoukayed",
+                    "firstName": "Ahmad"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Freialdenhoven",
+                    "firstName": "Tim"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Kober",
+                    "firstName": "Jonathan Lorenz"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Maassen",
+                    "firstName": "Lino Alexander"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Salha",
+                    "firstName": "Mohammed"
+                }
+            ],
+            "11:40 - 12:25": [
+                {
+                    "class": "HH222",
+                    "lastName": "Benamar",
+                    "firstName": "Rayan"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Brandt",
+                    "firstName": "Laurin"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Haucap",
+                    "firstName": "Andreas"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Gryszko",
+                    "firstName": "Raul"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Aygn",
+                    "firstName": "Zanya"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Malambu",
+                    "firstName": "Bryan"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Grenz",
+                    "firstName": "Andre"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Kosciukiewicz",
+                    "firstName": "Jan"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Omer",
+                    "firstName": "Diler"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Amann",
+                    "firstName": "Julian"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Sari",
+                    "firstName": "Atakhan"
+                }
+            ]
+        }
+    },
+    "8": {
+        "company": [
+            "Sparkasse Aachen"
+        ],
+        "timeslots": {
+            "09:50 - 10:35": [
+                {
+                    "class": "HH221",
+                    "lastName": "Almuhandez",
+                    "firstName": "Muhieb"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Vancronenburg",
+                    "firstName": "Anna Elena"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Hermanns",
+                    "firstName": "Fabian"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Khan",
+                    "firstName": "Rohail-Ahmed"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Rana",
+                    "firstName": "Aisha"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Dohri",
+                    "firstName": "Anouar"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Ademi",
+                    "firstName": "Adonisa"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Arifi",
+                    "firstName": "Annalena"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Ezen",
+                    "firstName": "Zilan"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Gmez",
+                    "firstName": "Koray"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Talbi",
+                    "firstName": "Zaid"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Scheen",
+                    "firstName": "Michelle"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Schneider",
+                    "firstName": "Robin"
+                }
+            ]
+        }
+    },
+    "21": {
+        "company": [
+            "Zoll Aachen"
+        ],
+        "timeslots": {
+            "12:25 - 13:10": [
+                {
+                    "class": "HH221",
+                    "lastName": "Bcken",
+                    "firstName": "Connor Luca"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Dah",
+                    "firstName": "Mariama"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Tchacoura",
+                    "firstName": "Said"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Yildirim",
+                    "firstName": "Zilan"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Rana",
+                    "firstName": "Aisha"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Sarig",
+                    "firstName": "Nehir Zehra"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "El Sayed",
+                    "firstName": "Jihan"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Glazkova",
+                    "firstName": "Oleksandra"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Erol",
+                    "firstName": "Iclal"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Ezen",
+                    "firstName": "Zilan"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Saad",
+                    "firstName": "Iman"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Freialdenhoven",
+                    "firstName": "Tim"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Grbler",
+                    "firstName": "Jonathan"
+                }
+            ]
+        }
+    },
+    "27": {
+        "company": [
+            "Lehramt Berufskolleg"
+        ],
+        "timeslots": {
+            "08:45 - 9:30": [
+                {
+                    "class": "HH221",
+                    "lastName": "Dah",
+                    "firstName": "Mariama"
+                },
+                {
+                    "class": "HH221",
+                    "lastName": "Vancronenburg",
+                    "firstName": "Anna Elena"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Urbanke",
+                    "firstName": "Bela Maximilian"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Ana",
+                    "firstName": "Catalin-Gabriel"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Hampeter",
+                    "firstName": "Anna"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Kisoglu",
+                    "firstName": "Hawin"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Saad",
+                    "firstName": "Iman"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Freialdenhoven",
+                    "firstName": "Tim"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Maassen",
+                    "firstName": "Lino Alexander"
+                }
+            ]
+        }
+    },
+    "12": {
+        "company": [
+            "Rechtsanwaltberufe"
+        ],
+        "timeslots": {
+            "08:45 - 9:30": [
+                {
+                    "class": "HH221",
+                    "lastName": "luwawu",
+                    "firstName": "Espoir"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Koubaa",
+                    "firstName": "Hicham"
+                },
+                {
+                    "class": "HH222",
+                    "lastName": "Miho",
+                    "firstName": "Ezdin"
+                },
+                {
+                    "class": "HH223",
+                    "lastName": "Tetik",
+                    "firstName": "Ilyas"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Arifi",
+                    "firstName": "Annalena"
+                },
+                {
+                    "class": "HH224",
+                    "lastName": "Grenz",
+                    "firstName": "Andre"
+                },
+                {
+                    "class": "WG221",
+                    "lastName": "Scheen",
+                    "firstName": "Michelle"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Mei",
+                    "firstName": "Timo"
+                },
+                {
+                    "class": "WG222",
+                    "lastName": "Schneider",
+                    "firstName": "Robin"
+                }
+            ]
+        }
+    }
+}

@@ -1,11 +1,16 @@
 'use client';
-import {InputFile} from '~/app/_components/ui/fileInput';
-import {useState} from 'react';
-import {type DataResponse, eventSchema, type EventType, excelEventKeyMap} from '~/definitions';
-import {Button} from '~/app/_components/ui/button';
+import { InputFile } from '~/app/_components/ui/fileInput';
+import { useState } from 'react';
+import {
+    type DataResponse,
+    eventSchema,
+    type EventType,
+    excelEventKeyMap,
+} from '~/definitions';
+import { Button } from '~/app/_components/ui/button';
 import EventsTable from '~/app/_components/ui/EventsTable';
-import {useRouter} from 'next/navigation';
-import {readExcelFile} from "~/lib/utils";
+import { useRouter } from 'next/navigation';
+import { readExcelFile } from '~/lib/utils';
 
 export default function Page() {
     const [data, setData] = useState<DataResponse<EventType>>({

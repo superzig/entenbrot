@@ -1,11 +1,16 @@
 'use client';
-import {InputFile} from '~/app/_components/ui/fileInput';
-import {useState} from 'react';
-import {type DataResponse, excelRoomKeyMap, roomSchema, type RoomType} from '~/definitions';
-import {Button} from '~/app/_components/ui/button';
+import { InputFile } from '~/app/_components/ui/fileInput';
+import { useState } from 'react';
+import {
+    type DataResponse,
+    excelRoomKeyMap,
+    roomSchema,
+    type RoomType,
+} from '~/definitions';
+import { Button } from '~/app/_components/ui/button';
 import RoomsTable from '~/app/_components/ui/RoomsTable';
-import {useRouter} from 'next/navigation';
-import {readExcelFile} from "~/lib/utils";
+import { useRouter } from 'next/navigation';
+import { readExcelFile } from '~/lib/utils';
 
 export default function Page() {
     const [data, setData] = useState<DataResponse<RoomType>>({

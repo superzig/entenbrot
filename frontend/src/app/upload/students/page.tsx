@@ -1,10 +1,15 @@
 'use client';
-import {InputFile} from '~/app/_components/ui/fileInput';
-import {useState} from 'react';
-import {type DataResponse, excelStudentKeyMap, studentSchema, type StudentType} from '~/definitions';
-import {Button} from '~/app/_components/ui/button';
+import { InputFile } from '~/app/_components/ui/fileInput';
+import { useState } from 'react';
+import {
+    type DataResponse,
+    excelStudentKeyMap,
+    studentSchema,
+    type StudentType,
+} from '~/definitions';
+import { Button } from '~/app/_components/ui/button';
 import StudentsTable from '~/app/_components/ui/StudentsTable';
-import {readExcelFile} from "~/lib/utils";
+import { readExcelFile } from '~/lib/utils';
 
 export default function Page() {
     const [data, setData] = useState<DataResponse<StudentType>>({
@@ -14,7 +19,11 @@ export default function Page() {
     const { data: students, error } = data;
 
     const onUpload = async (file: File) => {
-        const data = await readExcelFile(file, studentSchema, excelStudentKeyMap);
+        const data = await readExcelFile(
+            file,
+            studentSchema,
+            excelStudentKeyMap
+        );
         setData(data);
     };
 

@@ -5,15 +5,17 @@ import {
     CardFooter,
     CardHeader,
     CardTitle,
-} from "~/app/_components/ui/card"
+} from '~/app/_components/ui/card';
 const SuccessInformation = () => {
     return (
-        <div className="flex flex-center gap-3 text-center text-gray-300 flex-row justify-center items-center">
+        <div className='flex-center flex flex-row items-center justify-center gap-3 text-center text-gray-300'>
             <Card>
                 <CardHeader>
-                    <CardTitle className="text-lg font-semibold">Wünsche</CardTitle>
+                    <CardTitle className='text-lg font-semibold'>
+                        Wünsche
+                    </CardTitle>
                 </CardHeader>
-                <CardContent className="text-gray-700 text-md">
+                <CardContent className='text-md text-gray-700'>
                     <p>2132</p>
                 </CardContent>
                 <CardFooter>
@@ -34,6 +36,6 @@ const SuccessInformation = () => {
             </Card>
         </div>
     );
-}
+};
 
 export default SuccessInformation;

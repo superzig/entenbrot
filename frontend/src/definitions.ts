@@ -1,4 +1,4 @@
-import {z} from 'zod';
+import { z } from 'zod';
 
 export type EntityType = 'Companies' | 'Students' | 'Rooms';
 
@@ -34,7 +34,7 @@ export const excelStudentKeyMap: Record<number, string> = {
     6: 'choice4',
     7: 'choice5',
     8: 'choice6',
-}
+};
 
 export const studentsSchema = z.array(studentSchema);
 export type StudentType = z.infer<typeof studentSchema>;
@@ -65,8 +65,7 @@ export const excelEventKeyMap: Record<number, string> = {
     3: 'participants',
     4: 'eventMax',
     5: 'earliestDate',
-}
-
+};
 
 /*
  ############################
@@ -74,7 +73,7 @@ export const excelEventKeyMap: Record<number, string> = {
  ############################
  */
 export const roomSchema = z.object({
-    name: z.union([z.string(), z.number().transform(n => n.toString())]),
+    name: z.union([z.string(), z.number().transform((n) => n.toString())]),
     capacity: z
         .number()
         .nullable()
@@ -84,9 +83,8 @@ export const roomSchema = z.object({
 export const excelRoomKeyMap: Record<number, string> = {
     0: 'name',
     1: 'capacity',
-}
+};
 
 export type RoomType = z.infer<typeof roomSchema>;
 export const roomsSchema = z.array(roomSchema);
 export type RoomsType = z.infer<typeof roomsSchema>;
-

@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ExportCsvController;
-use App\Http\Controllers\ValidateController;
+use App\Http\Controllers\DataController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,12 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('/validate')->group(function () {
-    Route::get('/update1', [ValidateController::class, 'index'])->name('validate.update.index');
+Route::prefix('/data')->group(function () {
+    Route::get('/update1', [DataController::class, 'index'])->name('data.update.index');
     Route::get('/export', [ExportCsvController::class, 'index'])->name('export');
     Route::get('/export', [ExportCsvController::class, 'export'])->name('export.post');
-    Route::get('/algo', [ValidateController::class, 'algoConfig'])->name('algoConfig');
-    Route::post('/returnCompanies', [ValidateController::class, 'returnCompanies'])->name('validate.returnCompanies');
-    Route::post('/returnStudents', [ValidateController::class, 'returnStudents'])->name('validate.returnStudents');
-    Route::post('/returnRooms', [ValidateController::class, 'returnRooms'])->name('validate.returnRooms');
+    Route::get('/algo', [DataController::class, 'algoConfig'])->name('algoConfig');
+    Route::post('/serializeCompanies', [DataController::class, 'serializeCompaniesAction'])->name('data.serializeCompanies');
+    Route::post('/serializeStudents', [DataController::class, 'serializeStudentsAction'])->name('data.serializeStudents');
+    Route::post('/serializeRooms', [DataController::class, 'serializeRoomsAction'])->name('data.serializeRooms');
+    Route::post('/algorithmen', [DataController::class, 'algorithmAction'])->name('data.algorithmen');
+    Route::get('/algorithmen', [DataController::class, 'listAction'])->name('data.algorithmen_list');
+    Route::delete('/algorithmen/{cacheKey}', [DataController::class, 'deleteAction'])->name('data.algorithmen_delete');
+    Route::get('/algorithmen/{cacheKey}', [DataController::class, 'viewAction'])->name('data.algorithmen_view');
 });

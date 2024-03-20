@@ -36,6 +36,12 @@ return [
             'throw' => false,
         ],
 
+        'algorithm' => [
+            'driver' => 'local',
+            'root' => storage_path('app/algorithm'),
+        ],
+
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

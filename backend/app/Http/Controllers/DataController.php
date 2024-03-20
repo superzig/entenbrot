@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\AlgorithmService;
 use Faker\Factory;
-use Faker\Generator;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Storage;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
-use Faker\Generator as Faker;
-class ValidateController extends BaseController
+
+class DataController extends BaseController
 {
+    protected AlgorithmService$algorithmService;
+   public function __construct(AlgorithmService $algorithmService)
+   {
+       $this->algorithmService = $algorithmService;
+   }
 
-    public function index(): \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
-    {
-        return view('test');
-    }
-
-    public function returnCompanies(): JsonResponse
+    public function serializeCompaniesAction(): JsonResponse
     {
         $reader = new Xlsx();
         $spreadsheet = $reader->load(request()->file->path());
@@ -38,7 +39,7 @@ class ValidateController extends BaseController
         return new JsonResponse($data);
     }
 
-    public function returnStudents(): JsonResponse
+    public function serializeStudentsAction(): JsonResponse
     {
         $reader = new Xlsx();
         $spreadsheet = $reader->load(request()->file->path());
@@ -63,7 +64,7 @@ class ValidateController extends BaseController
         return new JsonResponse($data);
     }
 
-    public function returnRooms(): JsonResponse
+    public function serializeRoomsAction(): JsonResponse
     {
         $reader = new Xlsx();
         $spreadsheet = $reader->load(request()->file->path());
@@ -80,8 +81,54 @@ class ValidateController extends BaseController
         return new JsonResponse($data);
     }
 
+    /**
+     * @throws \JsonException
+     */
+    public function algorithmAction(): JsonResponse
+    {
+        try {
+            $events = Storage::json('events.json');
+            $students = Storage::json('students.json');
+            $rooms = Storage::json('rooms.json');
+            $cacheKey = $this->algorithmService->generateUniqueHash($events, $students, $rooms);
+
+            $result = $this->algorithmService->run($students, $rooms, $events, $cacheKey);
+            return new JsonResponse($result, ($result['isError'] ? 500 : 200));
+        } catch (\Exception $e) {
+            return new JsonResponse(['isError' => true, 'message' => $e->getMessage(), 'data' => [], 'cachedTime' => null, 'cacheKey' => null], 500);
+        }
+    }
+
+    public function listAction(): JsonResponse
+    {
+        $result = $this->algorithmService->retrieveFullCache();
+
+        return new JsonResponse($result);
+    }
+
+    /**
+     */
+    public function deleteAction($cacheKey): JsonResponse
+    {
+        $success = $this->algorithmService->deleteCache($cacheKey);
+        return new JsonResponse(['isError' => !$success, 'message' => $success ? 'Successfully deleted' : 'Cache not found'], ($success ? 200 : 404));
+    }
+
+    /**
+     */
+    public function viewAction($cacheKey): JsonResponse
+    {
+        $result = $this->algorithmService->getCachedData($cacheKey);
+
+        if (!$result) {
+            return new JsonResponse(['isError' => true, 'message' => 'Cache not found', 'data' => [], 'cachedTime' => null, 'cacheKey' => null], 404);
+        }
+        return new JsonResponse($result);
+    }
+
 
     function generateClassData($amount)
+    : array
     {
         $classes = array();
         $letters = range('a', 'z');
@@ -100,6 +147,7 @@ class ValidateController extends BaseController
     }
 
     function generateRoomData($amountRooms)
+    : array
     {
         $roomData = array();
         for ($i = 0; $i < $amountRooms; $i++) {
@@ -120,6 +168,7 @@ class ValidateController extends BaseController
     }
 
     function generateEventData($amount, $timeSlots, $faker, $specialization)
+    : array
     {
         $eventData = array();
 
@@ -135,30 +184,30 @@ class ValidateController extends BaseController
         return $eventData;
     }
 
+    /**
+     * @throws RandomException
+     */
     function getAmountEventsBasedOnStartingSlot($startingSlot)
+    : ?int
     {
         switch ($startingSlot) {
             case 'A':
-                return mt_rand(1, 5);
-                break;
+                return random_int(1, 5);
             case 'B':
-                return mt_rand(1, 4);
-                break;
+                return random_int(1, 4);
             case 'C':
-                return mt_rand(1, 3);
-                break;
+                return random_int(1, 3);
             case 'D':
-                return mt_rand(1, 2);
-                break;
+                return random_int(1, 2);
             case 'E':
                 return 1;
-                break;
             default:
                 return null;
         }
     }
 
-    function generateStudentData($amount, $classes, $faker, $events)
+    public function generateStudentData($amount, $classes, $faker, $events)
+    : array
     {
         $studentData = array();
         for ($i = 1; $i < $amount + 1; $i++) {
@@ -182,6 +231,7 @@ class ValidateController extends BaseController
 
 
     function getAmountChoices($studentData)
+    : array
     {
         $amountChoices = array();
         for ($i = 1; $i <= 6; $i++) {
@@ -215,6 +265,7 @@ class ValidateController extends BaseController
     }
 
     function getAmountEventSpaces($eventData)
+    : array
     {
         $amountEventSpaces = array();
         foreach ($eventData as $eventNumber => $array) {

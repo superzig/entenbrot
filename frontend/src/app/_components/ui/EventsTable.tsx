@@ -38,18 +38,18 @@ const EventsTable = ({ events }: Props) => {
                 {events.map((event, index) => (
                     <TableRow key={index}>
                         <TableCell className='font-medium'>
-                            {event.number}
+                            {event.eventId}
                         </TableCell>
                         <TableCell>{event.company}</TableCell>
-                        <TableCell>{event.specialty}</TableCell>
+                        <TableCell>{event.specialization}</TableCell>
                         <TableCell className='text-right'>
-                            {event.participants}
+                            {event.maxParticipants}
                         </TableCell>
                         <TableCell className='text-right'>
-                            {event.eventMax}
+                            {event.amountEvents}
                         </TableCell>
                         <TableCell className='text-right'>
-                            {event.earliestDate}
+                            {event.earliestTimeSlot}
                         </TableCell>
                     </TableRow>
                 ))}

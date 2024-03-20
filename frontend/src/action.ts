@@ -1,0 +1,31 @@
+"use server"
+
+// write me an api call using fetch to the endpoint '/api/data/algorithmen' with the method 'POST' and the body containing the data from the argument
+export async function runAlgorithmen(formData: FormData) {
+
+    const studentsData = formData.get('students');
+    const roomsData = formData.get('rooms');
+    const eventsData = formData.get('events');
+
+    try {
+        const response =  await fetch('http://localhost:8000/api/data/algorithmen', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({students: studentsData, rooms: roomsData, events: eventsData}),
+        });
+        const data = await response.json();
+        return { data: data, error: null };
+    } catch (error) {
+        let message = null;
+        if (typeof error === "string") {
+            message = error.toUpperCase();
+        } else if (error instanceof Error) {
+            message = error.message;
+        }
+
+        return {data: [], error: message};
+    }
+
+}

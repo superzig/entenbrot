@@ -5,17 +5,19 @@ namespace App\Http\Controllers;
 use App\Services\AlgorithmService;
 use Faker\Factory;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Storage;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 
 class DataController extends BaseController
 {
-    protected AlgorithmService$algorithmService;
-   public function __construct(AlgorithmService $algorithmService)
-   {
-       $this->algorithmService = $algorithmService;
-   }
+    protected AlgorithmService $algorithmService;
+
+    public function __construct(AlgorithmService $algorithmService)
+    {
+        $this->algorithmService = $algorithmService;
+    }
 
     public function serializeCompaniesAction(): JsonResponse
     {
@@ -84,12 +86,19 @@ class DataController extends BaseController
     /**
      * @throws \JsonException
      */
-    public function algorithmAction(): JsonResponse
+    public function algorithmAction(Request $request): JsonResponse
     {
         try {
-            $events = Storage::json('events.json');
-            $students = Storage::json('students.json');
-            $rooms = Storage::json('rooms.json');
+            $studentsData = $request->input('students');
+            $roomsData = $request->input('rooms');
+            $eventsData = $request->input('events');
+
+            if (!$studentsData || !$roomsData || !$eventsData) {
+                return new JsonResponse(['isError' => true, 'message' => 'Missing data', 'data' => [], 'cachedTime' => null, 'cacheKey' => null], 400);
+            }
+            $students = json_decode($studentsData, true, 512, JSON_THROW_ON_ERROR);
+            $rooms = json_decode($roomsData, true, 512, JSON_THROW_ON_ERROR);
+            $events = json_decode($eventsData, true, 512, JSON_THROW_ON_ERROR);
             $cacheKey = $this->algorithmService->generateUniqueHash($events, $students, $rooms);
 
             $result = $this->algorithmService->run($students, $rooms, $events, $cacheKey);
@@ -127,10 +136,9 @@ class DataController extends BaseController
     }
 
 
-    function generateClassData($amount)
-    : array
+    function generateClassData($amount): array
     {
-        $classes = array();
+        $classes = [];
         $letters = range('a', 'z');
         $numbers = range(0, 9);
 
@@ -146,10 +154,9 @@ class DataController extends BaseController
         return $classes;
     }
 
-    function generateRoomData($amountRooms)
-    : array
+    function generateRoomData($amountRooms): array
     {
-        $roomData = array();
+        $roomData = [];
         for ($i = 0; $i < $amountRooms; $i++) {
             do {
                 $firstDigit = mt_rand(0, 3);
@@ -159,18 +166,17 @@ class DataController extends BaseController
             // Zufällige Zahl in 5er-Schritten zwischen 15 und 45 mit einem Minimum von 15
             $capacity = mt_rand(3, 9) * 5;
 
-            $roomData[$roomNumber] = array(
+            $roomData[$roomNumber] = [
                 "room_number" => $roomNumber,
-                "capacity" => $capacity
-            );
+                "capacity" => $capacity,
+            ];
         }
         return $roomData;
     }
 
-    function generateEventData($amount, $timeSlots, $faker, $specialization)
-    : array
+    function generateEventData($amount, $timeSlots, $faker, $specialization): array
     {
-        $eventData = array();
+        $eventData = [];
 
         for ($i = 1; $i < $amount; $i++) {
             $eventData[$i]["eventNumber"] = $i;
@@ -187,8 +193,7 @@ class DataController extends BaseController
     /**
      * @throws RandomException
      */
-    function getAmountEventsBasedOnStartingSlot($startingSlot)
-    : ?int
+    function getAmountEventsBasedOnStartingSlot($startingSlot): ?int
     {
         switch ($startingSlot) {
             case 'A':
@@ -206,10 +211,9 @@ class DataController extends BaseController
         }
     }
 
-    public function generateStudentData($amount, $classes, $faker, $events)
-    : array
+    public function generateStudentData($amount, $classes, $faker, $events): array
     {
-        $studentData = array();
+        $studentData = [];
         for ($i = 1; $i < $amount + 1; $i++) {
 
 
@@ -230,10 +234,9 @@ class DataController extends BaseController
     }
 
 
-    function getAmountChoices($studentData)
-    : array
+    function getAmountChoices($studentData): array
     {
-        $amountChoices = array();
+        $amountChoices = [];
         for ($i = 1; $i <= 6; $i++) {
             foreach ($studentData as $id => $array) {
                 $choiceField = "choice_" . $i;
@@ -264,10 +267,9 @@ class DataController extends BaseController
         return $amountChoices;
     }
 
-    function getAmountEventSpaces($eventData)
-    : array
+    function getAmountEventSpaces($eventData): array
     {
-        $amountEventSpaces = array();
+        $amountEventSpaces = [];
         foreach ($eventData as $eventNumber => $array) {
             $amountEventSpaces[$eventNumber] = $array["maxAmountStudentsPerEvent"] * $array["amountEvents"];
         }
@@ -276,7 +278,7 @@ class DataController extends BaseController
 
     function algoConfig()
     {
-        $specialization = array(
+        $specialization = [
             "Fachinformatiker für Anwendungsentwicklung",
             "Fachinformatiker für Systemintegration",
             "Informationstechnischer Assistent",
@@ -296,16 +298,16 @@ class DataController extends BaseController
             "IT-Projektmanager",
             "IT-Sicherheitsexperte",
             "Softwaretester",
-            "Wirtschaftsinformatiker"
-        );
+            "Wirtschaftsinformatiker",
+        ];
 
-        $timeSlots = array(
+        $timeSlots = [
             "A" => "08:45 - 09:30",
             "B" => "09:50 - 10:35",
             "C" => "10:35 - 11:20",
             "D" => "11:40 - 12:25",
-            "E" => "12:25 - 13:10"
-        );
+            "E" => "12:25 - 13:10",
+        ];
 
         $faker = Factory::create();
         $classesData = $this->generateClassData(7);

@@ -10,8 +10,15 @@ import {
 import { Button } from '~/app/_components/ui/button';
 import StudentsTable from '~/app/_components/ui/StudentsTable';
 import { readExcelFile } from '~/lib/utils';
+import useDataStore from "~/app/hooks/useDataStore";
+import {useRouter} from "next/navigation";
+import {runAlgorithmen} from "~/action";
+import {toast} from "~/app/_components/ui/use-toast";
 
 export default function Page() {
+
+    const router = useRouter();
+    const [objects, addJson, clearStore] = useDataStore((state) => [state.objects, state.addJson, state.clearStore]);
     const [data, setData] = useState<DataResponse<StudentType>>({
         data: [],
         error: null,
@@ -25,12 +32,32 @@ export default function Page() {
             excelStudentKeyMap
         );
         setData(data);
+
+        if (!data.error) {
+            addJson('students', data.data);
+        }
     };
 
-    const handleNavigation = () => {
-        if (students.length > 0 && students) {
-            alert('finished steps');
+    const handleNavigation = async () => {
+
+        if (!objects.students || !objects.rooms || !objects.events) {
+            toast({
+                title: "Ein Fehler ist aufgetreten",
+                description: "Bitte laden Sie erneut alle Dateien hoch.",
+                variant: "destructive",
+            })
+            clearStore();
+            router.push('/upload/rooms');
         }
+        console.log(objects);
+        const formdata = new FormData();
+        formdata.append('students', JSON.stringify(objects.students));
+        formdata.append('rooms', JSON.stringify(objects.rooms));
+        formdata.append('events', JSON.stringify(objects.events));
+
+        const result = await runAlgorithmen(formdata)
+        console.log(result);
+        return;
     };
 
     return (

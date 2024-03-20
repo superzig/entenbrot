@@ -37,8 +37,8 @@ const StudentsTable = ({ students }: Props) => {
                         <TableCell className='font-medium'>
                             {student.class}
                         </TableCell>
-                        <TableCell>{student.firstname}</TableCell>
-                        <TableCell>{student.lastname}</TableCell>
+                        <TableCell>{student.firstName}</TableCell>
+                        <TableCell>{student.lastName}</TableCell>
                         <TableCell className='text-right'>
                             {student.choice1}
                         </TableCell>

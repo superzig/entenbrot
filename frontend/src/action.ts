@@ -27,5 +27,23 @@ export async function runAlgorithmen(formData: FormData) {
 
         return {data: [], error: message};
     }
+}
 
+export async function getAlgorithmenData(cacheKey: string) {
+    try {
+        const response =  await fetch('http://localhost:8000/api/data/algorithmen/'+ cacheKey, {
+            method: 'GET',
+        });
+        const data = await response.json();
+        return { data: data, error: null };
+    } catch (error) {
+        let message = null;
+        if (typeof error === "string") {
+            message = error.toUpperCase();
+        } else if (error instanceof Error) {
+            message = error.message;
+        }
+
+        return {data: [], error: message};
+    }
 }

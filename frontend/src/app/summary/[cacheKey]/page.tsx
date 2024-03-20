@@ -1,15 +1,27 @@
+"use client"
 import MaxWidthWrapper from '~/app/_components/ui/MaxWidthWrapper';
 import SuccessScore from '~/app/_components/ui/successScore';
-import {
-    Tabs,
-    TabsContent,
-    TabsList,
-    TabsTrigger,
-} from '~/app/_components/ui/tabs';
-import { Button } from '~/app/_components/ui/button';
+import {Tabs, TabsContent, TabsList, TabsTrigger,} from '~/app/_components/ui/tabs';
+import {Button} from '~/app/_components/ui/button';
 import EventsTable from '~/app/_components/ui/EventsTable';
+import {useEffect, useState} from "react";
+import {getAlgorithmenData} from "~/action";
+import AttendanceTable from "~/app/_components/ui/AttendanceTable";
 
-const Page = () => {
+const Page = ({ params }: { params: { cacheKey: string } }) => {
+    const cacheKey = params.cacheKey;
+
+    const [response, setResponse] = useState<{data:[]|null, error: string|null}>({data: [], error: null})
+
+    useEffect( () => {
+        if (!cacheKey) {
+            return;
+        }
+        getAlgorithmenData(cacheKey)
+            .then((result) => setResponse(result))
+            .catch(() => setResponse({data: [], error: "Ein unerwarteter Fehler ist aufgefallen."}))
+    }, [cacheKey]);
+
     return (
         <MaxWidthWrapper className='mb-5 mt-10'>
             <div className='flex h-screen flex-col items-center'>
@@ -38,7 +50,8 @@ const Page = () => {
                             <EventsTable events={[]} />
                         </TabsContent>
                         <TabsContent value='students_presence'>
-                            <EventsTable events={[]} />
+                            {attendanceList ? (<AttendanceTable attendanceData={attendanceList} />) : 'Keine Daten gefunden.'}
+
                         </TabsContent>
                         <TabsContent value='events_rooms'>
                             <EventsTable events={[]} />

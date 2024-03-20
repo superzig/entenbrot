@@ -268,7 +268,7 @@ class AlgorithmService
         foreach ($assignment as $studentID => $timeslotToEvent) {
             foreach ($timeslotToEvent as $timeslot => $assignmentEventID) {
 
-                $result[$assignmentEventID]["company"] = [trim($eventData[$assignmentEventID]["company"])];
+                $result[$assignmentEventID]["company"] = trim($eventData[$assignmentEventID]["company"]);
                 $result[$assignmentEventID]["timeslots"][$this->getTimeToTimeslot($timeslot)][] = [
                     "class"     => $studentData[$studentID]["class"],
                     "lastName"  => $studentData[$studentID]["lastName"],

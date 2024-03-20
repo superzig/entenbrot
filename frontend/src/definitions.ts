@@ -104,3 +104,16 @@ interface AlgorithmenData {
     organizationalPlan: object;
     studentSheet: object;
 }
+
+interface Student {
+    class: string;
+    lastName: string;
+    firstName: string;
+}
+
+type Timeslots = Record<string, Student[]>;
+
+export interface attendanceData {
+    company: string;
+    timeslots: Timeslots;
+}

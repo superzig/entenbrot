@@ -1,6 +1,5 @@
 import MaxWidthWrapper from "~/app/_components/ui/MaxWidthWrapper";
 import SuccessScore from "~/app/_components/ui/successScore";
-import SuccessInformation from "~/app/_components/ui/successInformation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/app/_components/ui/tabs"
 import {Button} from "~/app/_components/ui/button";
 import EventsTable from "~/app/_components/ui/EventsTable";

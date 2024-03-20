@@ -30,9 +30,9 @@ const SuccessScore = ({score, maxScore}: Props) => {
       <>
           <div className="flex justify-center flex-col items-center">
               <div className="flex justify-center items-center">
-                  <Image src={laurelWreath} alt="Laurel Wreath" className="w-[55px]"/>
+                  <Image src={laurelWreath as string} alt="Laurel Wreath" className="w-[55px]"/>
                   <h1 className="text-5xl font-bold text-gray-700 mx-3">{score}</h1>
-                  <Image src={laurelWreath} alt="Laurel Wreath" className="w-[55px] transform -scale-x-100"/>
+                  <Image src={laurelWreath as string} alt="Laurel Wreath" className="w-[55px] transform -scale-x-100"/>
               </div>
               <p className="text-gray-400">{scoreLabel}</p>
               <h2 className="mt-5 text-lg font-semibold">Erfolgsquote von {percentageScore}% </h2>

@@ -1,14 +1,14 @@
 'use client';
-import { InputFile } from '~/app/_components/ui/fileInput';
-import { useState } from 'react';
-import { type DataResponse, type EventsType } from '~/definitions';
-import { Button } from '~/app/_components/ui/button';
+import {InputFile} from '~/app/_components/ui/fileInput';
+import {useState} from 'react';
+import {type DataResponse, eventSchema, type EventType, excelEventKeyMap} from '~/definitions';
+import {Button} from '~/app/_components/ui/button';
 import EventsTable from '~/app/_components/ui/EventsTable';
-import { useRouter } from 'next/navigation';
-import { transformEntities } from '~/actions';
+import {useRouter} from 'next/navigation';
+import {readExcelFile} from "~/lib/utils";
 
 export default function Page() {
-    const [data, setData] = useState<DataResponse<EventsType>>({
+    const [data, setData] = useState<DataResponse<EventType>>({
         data: [],
         error: null,
     });
@@ -16,9 +16,7 @@ export default function Page() {
     const router = useRouter();
 
     const onUpload = async (file: File) => {
-        const formData = new FormData();
-        formData.append('file', file, file.name);
-        const data = await transformEntities<EventsType>('Companies', formData);
+        const data = await readExcelFile(file, eventSchema, excelEventKeyMap);
         setData(data);
     };
 

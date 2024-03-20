@@ -1,14 +1,14 @@
 'use client';
-import { InputFile } from '~/app/_components/ui/fileInput';
-import { useState } from 'react';
-import { transformEntities } from '~/actions';
-import { type DataResponse, type RoomsType } from '~/definitions';
-import { Button } from '~/app/_components/ui/button';
+import {InputFile} from '~/app/_components/ui/fileInput';
+import {useState} from 'react';
+import {type DataResponse, excelRoomKeyMap, roomSchema, type RoomType} from '~/definitions';
+import {Button} from '~/app/_components/ui/button';
 import RoomsTable from '~/app/_components/ui/RoomsTable';
-import { useRouter } from 'next/navigation';
+import {useRouter} from 'next/navigation';
+import {readExcelFile} from "~/lib/utils";
 
 export default function Page() {
-    const [data, setData] = useState<DataResponse<RoomsType>>({
+    const [data, setData] = useState<DataResponse<RoomType>>({
         data: [],
         error: null,
     });
@@ -16,9 +16,7 @@ export default function Page() {
     const router = useRouter();
 
     const onUpload = async (file: File) => {
-        const formData = new FormData();
-        formData.append('file', file, file.name);
-        const data = await transformEntities<RoomsType>('Rooms', formData);
+        const data = await readExcelFile(file, roomSchema, excelRoomKeyMap);
         setData(data);
     };
 

@@ -1,26 +1,20 @@
 'use client';
-import { InputFile } from '~/app/_components/ui/fileInput';
-import { useState } from 'react';
-import { transformEntities } from '~/actions';
-import { type DataResponse, type StudentsType } from '~/definitions';
-import { Button } from '~/app/_components/ui/button';
+import {InputFile} from '~/app/_components/ui/fileInput';
+import {useState} from 'react';
+import {type DataResponse, excelStudentKeyMap, studentSchema, type StudentType} from '~/definitions';
+import {Button} from '~/app/_components/ui/button';
 import StudentsTable from '~/app/_components/ui/StudentsTable';
+import {readExcelFile} from "~/lib/utils";
 
 export default function Page() {
-    const [data, setData] = useState<DataResponse<StudentsType>>({
+    const [data, setData] = useState<DataResponse<StudentType>>({
         data: [],
         error: null,
     });
     const { data: students, error } = data;
 
     const onUpload = async (file: File) => {
-        const formData = new FormData();
-        formData.append('file', file, file.name);
-        const data = await transformEntities<StudentsType>(
-            'Students',
-            formData
-        );
-        console.log(data)
+        const data = await readExcelFile(file, studentSchema, excelStudentKeyMap);
         setData(data);
     };
 

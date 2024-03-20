@@ -14,8 +14,7 @@ class AlgorithmService
 
     private const MAX_CACHE_DURATION = 60 * 60 * 24 * 7; // 1 week
 
-    public function getTimesToTimeslots()
-    : array
+    public function getTimesToTimeslots(): array
     {
         return [
             "A" => "08:45 - 9:30",
@@ -26,8 +25,7 @@ class AlgorithmService
         ];
     }
 
-    public function getTimeToTimeslot(string $timeslot)
-    : ?string
+    public function getTimeToTimeslot(string $timeslot): ?string
     {
         $timeslotToTime = $this->getTimesToTimeslots();
         return $timeslotToTime[$timeslot] ?? null;
@@ -36,17 +34,16 @@ class AlgorithmService
     /**
      * @throws \JsonException
      */
-    public function run(array $studentData, array $roomData, array $eventData, ?string $cacheKey = null)
-    : array
+    public function run(array $studentData, array $roomData, array $eventData, ?string $cacheKey = null): array
     {
         try {
             // TODO: ENABLE CACHING AGAIN AFTER TESTING
-            /*
-            $cachedResult = $this->getCachedData($cacheKey);
-            if ($cachedResult) {
-                return $cachedResult;
-            }
-            */
+     
+            // $cachedResult = $this->getCachedData($cacheKey);
+            // if ($cachedResult) {
+            //     return $cachedResult;
+            // }
+  
 
             $studentData = $this->mapIdAsKey($studentData, 'students');
             $roomData = $this->mapIdAsKey($roomData, 'rooms');
@@ -108,6 +105,10 @@ class AlgorithmService
             $anwesenheitsliste = $this->getAnwesenheitsliste($assignment, $studentData, $eventData);
             $schuelerLaufzettel = $this->getSchuelerLaufzettel($assignment, $studentData, $eventToRoomAssignment, $eventData);
 
+
+
+
+
             $isError = false;
             if ($cacheKey) {
                 ['isError' => $isError, 'cacheKey' => $cacheKey] = $this->store($organisationsplan, $anwesenheitsliste, $schuelerLaufzettel, $cacheKey);
@@ -152,8 +153,7 @@ class AlgorithmService
         return $result;
     }
 
-    public function getCachedData(string $cacheKey)
-    : ?array
+    public function getCachedData(string $cacheKey): ?array
     {
         if (!Storage::disk('algorithm')->exists($cacheKey)) {
             return null;
@@ -162,8 +162,7 @@ class AlgorithmService
         return $this->getCachedFilesData($cacheKey);
     }
 
-    private function getErrorMessage(\Exception $e)
-    : string
+    private function getErrorMessage(\Exception $e): string
     {
         if (!App::environment('local')) {
             return 'Ein unerwarteter Fehler ist aufgetreten';
@@ -174,8 +173,7 @@ class AlgorithmService
     /**
      * @throws \JsonException
      */
-    public function generateUniqueHash(array $fileData1, array $fileData2, array $fileData3)
-    : string
+    public function generateUniqueHash(array $fileData1, array $fileData2, array $fileData3): string
     {
         $jsonData1 = json_encode($fileData1, JSON_THROW_ON_ERROR);
         $jsonData2 = json_encode($fileData2, JSON_THROW_ON_ERROR);
@@ -184,8 +182,7 @@ class AlgorithmService
         return hash('sha256', $jsonData1 . $jsonData2 . $jsonData3);
     }
 
-    protected function store(array $organisationsplan, array $anwesenheitsliste, array $schuelerLaufzettel, string $cacheKey)
-    : array
+    protected function store(array $organisationsplan, array $anwesenheitsliste, array $schuelerLaufzettel, string $cacheKey): array
     {
         $currentTime = time();
         $storedFiles = [
@@ -199,8 +196,8 @@ class AlgorithmService
         ];
 
         $storedSuccessfully = count(array_filter($storedFiles, static function (bool $storedSuccessfully) {
-                return !$storedSuccessfully;
-            })) === 0;
+            return !$storedSuccessfully;
+        })) === 0;
 
         return [
             'isError'  => !$storedSuccessfully,
@@ -210,8 +207,7 @@ class AlgorithmService
 
     /**
      */
-    private function storageResult(array $data, string $filename, string $cacheKey)
-    : bool
+    private function storageResult(array $data, string $filename, string $cacheKey): bool
     {
         try {
             $json = json_encode($data, JSON_THROW_ON_ERROR | JSON_PRETTY_PRINT);
@@ -222,8 +218,7 @@ class AlgorithmService
 
             $file = "$cacheKey/$filename.json";
             return Storage::disk('algorithm')->put($file, $json);
-        } catch
-        (\Exception $e) {
+        } catch (\Exception $e) {
             return false;
         }
     }
@@ -242,14 +237,28 @@ class AlgorithmService
                 $result[$studentID]["assignments"][$timePeriod]["company"] = trim($eventData[$eventID]["company"]);
                 $result[$studentID]["assignments"][$timePeriod]["specialization"] = trim($eventData[$eventID]["specialization"]);
                 $result[$studentID]["assignments"][$timePeriod]["eventId"] = (string)$eventID;
-                $result[$studentID]["assignments"][$timePeriod]['isWish'] = is_string($eventID);
+                $result[$studentID]["assignments"][$timePeriod]['isWish'] = $this->checkIfWishWasFromStudent($studentID, $eventID, $studentData); 
             }
         }
         return $result;
     }
 
-    protected
-    function getRoomFromEventAndTimeslot($eventToRoomAssignment, $eventID, $timeslot)
+    protected function checkIfWishWasFromStudent(string $studentID, string $eventID, array $studentData)
+    {
+        for ($i = 1; $i <= 6; $i++) 
+        {
+            foreach ($studentData[$studentID] as $fieldname => $choiseEventID) 
+            {
+                if ("choice".$i == $fieldname && $eventID == $choiseEventID) 
+                {
+                    return $i; 
+                }
+            }
+        }
+   
+    }
+
+    protected function getRoomFromEventAndTimeslot($eventToRoomAssignment, $eventID, $timeslot)
     {
         foreach ($eventToRoomAssignment as $roomID => $timeslotToEvent) {
             foreach ($timeslotToEvent as $insideTimeslot => $insideEventID) {
@@ -260,9 +269,7 @@ class AlgorithmService
         }
     }
 
-    protected
-    function getAnwesenheitsliste(array $assignment, array $studentData, array $eventData)
-    : array
+    protected function getAnwesenheitsliste(array $assignment, array $studentData, array $eventData): array
     {
         $result = [];
         foreach ($assignment as $studentID => $timeslotToEvent) {
@@ -274,15 +281,13 @@ class AlgorithmService
                     "lastName"  => $studentData[$studentID]["lastName"],
                     "firstName" => $studentData[$studentID]["firstName"],
                 ];
-
             }
         }
         return $result;
     }
 
     protected
-    function getOrganisationsplan(array $eventToRoomAssignment, array $eventData)
-    : array
+    function getOrganisationsplan(array $eventToRoomAssignment, array $eventData): array
     {
         $result = [];
         foreach ($eventToRoomAssignment as $roomID => $timeslotToEvent) {
@@ -293,15 +298,13 @@ class AlgorithmService
                     'timeSlot' => $timeslot,
                     'room'     => $roomID,
                 ];
-
             }
         }
         return $result;
     }
 
-// TODO: Optimierungsbedarf !
-    protected
-    function getAmountChoices($studentData)
+    // TODO: Optimierungsbedarf !
+    protected function getAmountChoices($studentData)
     {
         $amountChoices = [];
         for ($i = 1; $i <= 6; $i++) {
@@ -344,9 +347,7 @@ class AlgorithmService
         return $amountChoices;
     }
 
-    protected
-    function getAvailableTimeSlots($raumZuweisung, $timeslot, $roomID, $requiredSeats)
-    : array
+    protected function getAvailableTimeSlots($raumZuweisung, $timeslot, $roomID, $requiredSeats): array
     {
         $availableSlots = [];
         $timeSlots = ['A', 'B', 'C', 'D', 'E'];
@@ -376,8 +377,7 @@ class AlgorithmService
         return $availableSlots;
     }
 
-    protected
-    function anzahlAufeinanderFolgendeSlotsFrei($raumZuweisung, $startTimeslot, $roomID)
+    protected function anzahlAufeinanderFolgendeSlotsFrei($raumZuweisung, $startTimeslot, $roomID)
     {
         $maxConsecutive = 0;
         $currentConsecutive = 0;
@@ -399,9 +399,7 @@ class AlgorithmService
         return $maxConsecutive;
     }
 
-    protected
-    function eventToRoomAssignment($roomData, $eventData, $amountChoisesAll)
-    : array
+    protected function eventToRoomAssignment($roomData, $eventData, $amountChoisesAll): array
     {
 
         $raumZuweisung = [];
@@ -439,9 +437,8 @@ class AlgorithmService
         return $raumZuweisung;
     }
 
-//This function is searching the event with the most avalible places for the given timeslot which is not alrady inside the student assignment.
-    protected
-    function findEventWithMostSpaceLeft($spaceInEventLeft, $timeslot, $studentTimeslotsToEventsAssignmentArray)
+    //This function is searching the event with the most avalible places for the given timeslot which is not alrady inside the student assignment.
+    protected function findEventWithMostSpaceLeft($spaceInEventLeft, $timeslot, $studentTimeslotsToEventsAssignmentArray)
     {
         $maxSpaceLeft = null;
         $eventWithMostSpaceLeft = null;
@@ -477,8 +474,7 @@ class AlgorithmService
         return $data;
     }
 
-    public function deleteCache(string $cacheKey)
-    : bool
+    public function deleteCache(string $cacheKey): bool
     {
         if (!Storage::exists("algorithm/$cacheKey")) {
             return false;
@@ -491,8 +487,7 @@ class AlgorithmService
      *
      * @return array|null
      */
-    private function getCachedFilesData(string $cacheKey)
-    : ?array
+    private function getCachedFilesData(string $cacheKey): ?array
     {
         $files = Storage::files("algorithm/$cacheKey");
 
@@ -521,5 +516,4 @@ class AlgorithmService
             'data'       => $data,
         ];
     }
-
 }

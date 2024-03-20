@@ -73,7 +73,7 @@ export const excelEventKeyMap: Record<number, string> = {
  ############################
  */
 export const roomSchema = z.object({
-    name: z.union([z.string(), z.number().transform((n) => n.toString())]),
+    roomID: z.union([z.string(), z.number().transform((n) => n.toString())]),
     capacity: z
         .number()
         .nullable()
@@ -81,10 +81,26 @@ export const roomSchema = z.object({
 });
 
 export const excelRoomKeyMap: Record<number, string> = {
-    0: 'name',
+    0: 'roomID',
     1: 'capacity',
 };
 
 export type RoomType = z.infer<typeof roomSchema>;
 export const roomsSchema = z.array(roomSchema);
 export type RoomsType = z.infer<typeof roomsSchema>;
+
+interface AlgorithmenResponse {
+    data: {
+        cacheKey: string|null;
+        isError: boolean;
+        cachedTime: number|null;
+        data: AlgorithmenData|null;
+    }
+    error: string | null;
+}
+
+interface AlgorithmenData {
+    attendanceList: object;
+    organizationalPlan: object;
+    studentSheet: object;
+}

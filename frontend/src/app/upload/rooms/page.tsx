@@ -11,8 +11,11 @@ import { Button } from '~/app/_components/ui/button';
 import RoomsTable from '~/app/_components/ui/RoomsTable';
 import { useRouter } from 'next/navigation';
 import { readExcelFile } from '~/lib/utils';
+import useDataStore from "~/app/hooks/useDataStore";
 
 export default function Page() {
+
+    const addJson = useDataStore((state) => state.addJson);
     const [data, setData] = useState<DataResponse<RoomType>>({
         data: [],
         error: null,
@@ -22,7 +25,13 @@ export default function Page() {
 
     const onUpload = async (file: File) => {
         const data = await readExcelFile(file, roomSchema, excelRoomKeyMap);
+        console.log(data);
+
         setData(data);
+
+        if (!data.error) {
+            addJson('rooms', data.data);
+        }
     };
 
     const handleNavigation = () => {

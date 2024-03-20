@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Services\AlgorithmService;
 use Faker\Factory;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Storage;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
@@ -84,12 +85,19 @@ class DataController extends BaseController
     /**
      * @throws \JsonException
      */
-    public function algorithmAction(): JsonResponse
+    public function algorithmAction(Request $request): JsonResponse
     {
         try {
-            $events = Storage::json('events.json');
-            $students = Storage::json('students.json');
-            $rooms = Storage::json('rooms.json');
+            $studentsData = $request->input('students');
+            $roomsData = $request->input('rooms');
+            $eventsData = $request->input('events');
+
+            if (!$studentsData || !$roomsData || !$eventsData) {
+                return new JsonResponse(['isError' => true, 'message' => 'Missing data', 'data' => [], 'cachedTime' => null, 'cacheKey' => null], 400);
+            }
+            $students = json_decode($studentsData, true, 512, JSON_THROW_ON_ERROR);
+            $rooms = json_decode($roomsData, true, 512, JSON_THROW_ON_ERROR);
+            $events = json_decode($eventsData, true, 512, JSON_THROW_ON_ERROR);
             $cacheKey = $this->algorithmService->generateUniqueHash($events, $students, $rooms);
 
             $result = $this->algorithmService->run($students, $rooms, $events, $cacheKey);

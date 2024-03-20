@@ -28,7 +28,7 @@ const RoomsTable = ({ rooms }: Props) => {
                 {rooms.map((room, index) => (
                     <TableRow key={index}>
                         <TableCell className='font-medium'>
-                            {room.name}
+                            {room.roomID}
                         </TableCell>
                         <TableCell className='text-right'>
                             {room.capacity}

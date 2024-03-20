@@ -11,8 +11,11 @@ import { Button } from '~/app/_components/ui/button';
 import EventsTable from '~/app/_components/ui/EventsTable';
 import { useRouter } from 'next/navigation';
 import { readExcelFile } from '~/lib/utils';
+import useDataStore from "~/app/hooks/useDataStore";
 
 export default function Page() {
+
+    const addJson = useDataStore((state) => state.addJson);
     const [data, setData] = useState<DataResponse<EventType>>({
         data: [],
         error: null,
@@ -23,6 +26,10 @@ export default function Page() {
     const onUpload = async (file: File) => {
         const data = await readExcelFile(file, eventSchema, excelEventKeyMap);
         setData(data);
+
+        if (!data.error) {
+            addJson('events', data.data);
+        }
     };
 
     const handleNavigation = () => {

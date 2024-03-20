@@ -40,11 +40,17 @@ class AlgorithmService
     : array
     {
         try {
+            // TODO: ENABLE CACHING AGAIN AFTER TESTING
+            /*
             $cachedResult = $this->getCachedData($cacheKey);
-
             if ($cachedResult) {
                 return $cachedResult;
             }
+            */
+
+            $studentData = $this->mapIdAsKey($studentData, 'students');
+            $roomData = $this->mapIdAsKey($roomData, 'rooms');
+            $eventData = $this->mapIdAsKey($eventData, 'events');
 
             //Vorbelegung der Zuweisungsslots (Kann später i wo in einen anderen schritt eingebunden werden.)
             $assignment = [];
@@ -71,9 +77,9 @@ class AlgorithmService
             for ($i = 1; $i <= 6; $i++) {
                 foreach ($studentData as $studentID => $studentDataArray) {
                     foreach ($studentDataArray as $studentDataArrayField => $eventID) {
-                        if ($studentDataArrayField === "choice_" . $i) {
-                            if ($studentDataArray["choice_" . $i] != null) {
-                                foreach ($spaceInEventLeft[$studentDataArray["choice_" . $i]] as $roomID => $eventAssignmentArray) {
+                        if ($studentDataArrayField === "choice" . $i) {
+                            if ($studentDataArray["choice" . $i] != null) {
+                                foreach ($spaceInEventLeft[$studentDataArray["choice" . $i]] as $roomID => $eventAssignmentArray) {
                                     foreach ($eventAssignmentArray as $timeslot => $capacity) {
                                         if ($capacity > 0 && !isset($assignment[$studentID][$timeslot])) {
                                             $assignment[$studentID][$timeslot] = $eventID;
@@ -126,6 +132,24 @@ class AlgorithmService
                 'data'       => [],
             ];
         }
+    }
+
+    private function mapIdAsKey(array $array, string $type): array
+    {
+        $result = [];
+        foreach ($array as $key => $value) {
+            switch ($type) {
+                case 'events':
+                    $result[$value['eventId']] = $value;
+                    break;
+                case 'rooms':
+                    $result[$value['roomId']] = $value;
+                    break;
+                default:
+                    $result[$key] = $value;
+            }
+        }
+        return $result;
     }
 
     public function getCachedData(string $cacheKey)
@@ -212,7 +236,7 @@ class AlgorithmService
             foreach ($timeslotToEvent as $timeslot => $eventID) {
                 $timePeriod = $this->getTimeToTimeslot($timeslot);
                 $result[$studentID]["class"] = trim($studentData[$studentID]["class"]);
-                $result[$studentID]["lastName"] = trim($studentData[$studentID]["name"]);
+                $result[$studentID]["lastName"] = trim($studentData[$studentID]["lastName"]);
                 $result[$studentID]["firstName"] = trim($studentData[$studentID]["firstName"]);
                 $result[$studentID]["assignments"][$timePeriod]["room"] = $this->getRoomFromEventAndTimeslot($eventToRoomAssignment, $eventID, $timeslot);
                 $result[$studentID]["assignments"][$timePeriod]["company"] = trim($eventData[$eventID]["company"]);
@@ -247,7 +271,7 @@ class AlgorithmService
                 $result[$assignmentEventID]["company"] = [trim($eventData[$assignmentEventID]["company"])];
                 $result[$assignmentEventID]["timeslots"][$this->getTimeToTimeslot($timeslot)][] = [
                     "class"     => $studentData[$studentID]["class"],
-                    "lastName"  => $studentData[$studentID]["name"],
+                    "lastName"  => $studentData[$studentID]["lastName"],
                     "firstName" => $studentData[$studentID]["firstName"],
                 ];
 
@@ -282,7 +306,7 @@ class AlgorithmService
         $amountChoices = [];
         for ($i = 1; $i <= 6; $i++) {
             foreach ($studentData as $id => $array) {
-                $choiceField = "choice_" . $i;
+                $choiceField = "choice" . $i;
 
                 if (!empty($array[$choiceField])) {
                     if (isset($amountChoices[$choiceField][$array[$choiceField]])) {
@@ -300,7 +324,7 @@ class AlgorithmService
 
         foreach ($studentData as $array) {
             foreach ($array as $key => $value) {
-                if (str_starts_with($key, "choice_")) {
+                if (str_starts_with($key, "choice")) {
                     if (!empty($value)) {
                         if (!empty($amountChoices["allChoices"][$value])) {
                             $amountChoices["allChoices"][$value] += 1;

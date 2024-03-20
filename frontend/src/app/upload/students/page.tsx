@@ -49,7 +49,7 @@ export default function Page() {
             clearStore();
             router.push('/upload/rooms');
         }
-
+        console.log(objects);
         const formdata = new FormData();
         formdata.append('students', JSON.stringify(objects.students));
         formdata.append('rooms', JSON.stringify(objects.rooms));

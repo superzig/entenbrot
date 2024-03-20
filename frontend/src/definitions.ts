@@ -14,8 +14,8 @@ export interface DataResponse<T> {
  */
 export const studentSchema = z.object({
     class: z.string(),
-    firstname: z.string(),
-    lastname: z.string(),
+    firstName: z.string(),
+    lastName: z.string(),
     choice1: z.number().optional().nullable(),
     choice2: z.number().optional().nullable(),
     choice3: z.number().optional().nullable(),
@@ -26,8 +26,8 @@ export const studentSchema = z.object({
 
 export const excelStudentKeyMap: Record<number, string> = {
     0: 'class',
-    1: 'firstname',
-    2: 'lastname',
+    1: 'lastName',
+    2: 'firstName',
     3: 'choice1',
     4: 'choice2',
     5: 'choice3',
@@ -46,12 +46,12 @@ export type StudentsType = z.infer<typeof studentsSchema>;
  ############################
  */
 export const eventSchema = z.object({
-    number: z.number(),
+    eventId: z.number(),
     company: z.string(),
-    specialty: z.string().nullable(),
-    participants: z.number(),
-    eventMax: z.number(),
-    earliestDate: z.string(),
+    specialization: z.string().nullable(),
+    maxParticipants: z.number(),
+    amountEvents: z.number(),
+    earliestTimeSlot: z.string(),
     // Add any additional fields here if necessary
 });
 export const eventsSchema = z.array(eventSchema);
@@ -59,12 +59,12 @@ export type EventType = z.infer<typeof eventSchema>;
 export type EventsType = z.infer<typeof eventsSchema>;
 
 export const excelEventKeyMap: Record<number, string> = {
-    0: 'number',
+    0: 'eventId',
     1: 'company',
-    2: 'specialty',
-    3: 'participants',
-    4: 'eventMax',
-    5: 'earliestDate',
+    2: 'specialization',
+    3: 'maxParticipants',
+    4: 'amountEvents',
+    5: 'earliestTimeSlot',
 };
 
 /*
@@ -73,7 +73,7 @@ export const excelEventKeyMap: Record<number, string> = {
  ############################
  */
 export const roomSchema = z.object({
-    roomID: z.union([z.string(), z.number().transform((n) => n.toString())]),
+    roomId: z.union([z.string(), z.number().transform((n) => n.toString())]),
     capacity: z
         .number()
         .nullable()
@@ -81,7 +81,7 @@ export const roomSchema = z.object({
 });
 
 export const excelRoomKeyMap: Record<number, string> = {
-    0: 'roomID',
+    0: 'roomId',
     1: 'capacity',
 };
 

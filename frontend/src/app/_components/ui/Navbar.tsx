@@ -1,4 +1,4 @@
-import MaxWidthWrapper from '~/app/_components/ui/MaxWidthWrapper';
+ import MaxWidthWrapper from '~/app/_components/ui/MaxWidthWrapper';
 import Link from 'next/link';
 import Image from 'next/image';
 import logoImage from '../../../../public/logo.png';
@@ -10,13 +10,13 @@ const Navbar = () => {
                 <div className='flex h-14 items-center justify-between border-b border-gray-200'>
                     <div className='flex  justify-start gap-x-2'>
                         <Image
-                            alt='Events Image'
+                            alt='Logo Image'
                             src={logoImage}
                             quality={100}
                             style={{
                                 width: '30px',
                             }}
-                            className='pointer-events-none bg-contain md:hidden'
+                            className='pointer-events-none bg-contain'
                         />
                         <Link href='/' className='z-40 flex font-semibold'>
                             <span>Entenbrot.</span>

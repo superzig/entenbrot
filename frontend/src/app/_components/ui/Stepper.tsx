@@ -2,6 +2,7 @@
 import { usePathname } from 'next/navigation';
 import React from 'react';
 import { cn } from '~/lib/utils';
+import Link from "next/link";
 
 const steps = [
     {
@@ -30,10 +31,10 @@ const StepperComponent = () => {
     const pathname = usePathname();
     const activeStep = getActiveStep(pathname);
     const maxStepNumber = getMaxStepNumber();
-
+    // get me the active step object from the steps array base on pathname)
     return (
         <ol className='flex w-full items-center text-center text-sm font-medium text-gray-500 dark:text-gray-400 sm:text-base'>
-            {steps.map(({ number, label }) => {
+            {steps.map(({ number, label, urlMatch }) => {
                 const isActive = activeStep >= number;
                 const isCompleted = activeStep > number;
                 const hasNextStep = maxStepNumber > number;
@@ -68,7 +69,7 @@ const StepperComponent = () => {
                             ) : (
                                 <span className='me-2'>{number}</span>
                             )}
-                            {label}
+                            {isCompleted ? (<Link href={`/upload/${urlMatch}`}>{label}</Link>) : label  }
                         </span>
                     </li>
                 );

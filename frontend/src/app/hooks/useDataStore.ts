@@ -1,10 +1,11 @@
 import {create} from 'zustand';
+import {type EventsType, type RoomsType, type StudentsType} from "~/definitions";
 
 interface JsonStoreState {
     objects: {
-        students: object | null;
-        rooms: object | null;
-        events: object | null;
+        students: StudentsType | null;
+        rooms: RoomsType | null;
+        events: EventsType | null;
     };
     addJson: (pageKey: 'students' | 'rooms' | 'events', json: object) => void;
     clearStore: () => void;

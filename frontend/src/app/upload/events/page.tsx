@@ -15,9 +15,9 @@ import useDataStore from "~/app/hooks/useDataStore";
 
 export default function Page() {
 
-    const addJson = useDataStore((state) => state.addJson);
+    const [cachedEvents, addJson] = useDataStore((state) => [state.objects.events, state.addJson]);
     const [data, setData] = useState<DataResponse<EventType>>({
-        data: [],
+        data: cachedEvents ?? [],
         error: null,
     });
     const { data: events, error } = data;

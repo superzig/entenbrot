@@ -13,14 +13,14 @@ import { readExcelFile } from '~/lib/utils';
 import useDataStore from "~/app/hooks/useDataStore";
 import {useRouter} from "next/navigation";
 import {runAlgorithmen} from "~/action";
-import {toast} from "~/app/_components/ui/use-toast";
+import {toast, useToast} from "~/app/_components/ui/use-toast";
 
 export default function Page() {
 
     const router = useRouter();
     const [objects, addJson, clearStore] = useDataStore((state) => [state.objects, state.addJson, state.clearStore]);
     const [data, setData] = useState<DataResponse<StudentType>>({
-        data: [],
+        data: objects.students ?? [],
         error: null,
     });
     const { data: students, error } = data;
@@ -38,16 +38,20 @@ export default function Page() {
         }
     };
 
+    const redirectToFileUpload = (error?: string|null) => {
+        toast({
+            title: "Ein Fehler ist aufgetreten",
+            description: error ?? "Bitte laden Sie erneut alle Dateien hoch.",
+            variant: "destructive",
+        })
+        clearStore();
+        router.push('/upload/rooms');
+    }
+
     const handleNavigation = async () => {
 
         if (!objects.students || !objects.rooms || !objects.events) {
-            toast({
-                title: "Ein Fehler ist aufgetreten",
-                description: "Bitte laden Sie erneut alle Dateien hoch.",
-                variant: "destructive",
-            })
-            clearStore();
-            router.push('/upload/rooms');
+            redirectToFileUpload();
         }
         console.log(objects);
         const formdata = new FormData();
@@ -55,9 +59,13 @@ export default function Page() {
         formdata.append('rooms', JSON.stringify(objects.rooms));
         formdata.append('events', JSON.stringify(objects.events));
 
-        const result = await runAlgorithmen(formdata)
-        console.log(result);
-        return;
+        const {data, error} = await runAlgorithmen(formdata)
+        if (error) {
+            redirectToFileUpload(error);
+
+        }
+
+        router.push('/summary/'+data.cacheKey);
     };
 
     return (

@@ -15,9 +15,9 @@ import useDataStore from "~/app/hooks/useDataStore";
 
 export default function Page() {
 
-    const addJson = useDataStore((state) => state.addJson);
+    const [cachedRooms, addJson] = useDataStore((state) => [state.objects.rooms, state.addJson]);
     const [data, setData] = useState<DataResponse<RoomType>>({
-        data: [],
+        data: cachedRooms ?? [],
         error: null,
     });
     const { data: rooms, error } = data;

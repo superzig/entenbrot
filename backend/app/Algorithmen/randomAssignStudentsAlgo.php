@@ -22,10 +22,6 @@ foreach ($students as &$student) {
         $rooms = &$roomsData['rooms'];
 
         $availableRooms = array_filter($rooms, function ($room) use ($freeTimeSlots, $eventIndex, $usedEvents) {
-            if ($room['name'] == '008-E') {
-                echo "currentCap: ". $room['currentCapacity'] . "\n";
-                echo "is avaible room: " . ($room['currentCapacity'] > 0 && in_array(substr($room['name'], -1), $freeTimeSlots) && !in_array($eventIndex, $usedEvents)) . "\n";
-            };
             return $room['currentCapacity'] > 0 && in_array(substr($room['name'], -1), $freeTimeSlots) && !in_array($eventIndex, $usedEvents) ;
         });
 

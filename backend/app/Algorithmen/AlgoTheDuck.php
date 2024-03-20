@@ -55,27 +55,27 @@ foreach ($students as &$student) {
 
 $studentsEvents = array_map(function ($student) {
     return [
-        'firstname' => $student['firstname'],
-        'lastname' => $student['lastname'],
+        'firstname'      => $student['firstname'],
+        'lastname'       => $student['lastname'],
         'assignedEvents' => $student['assignedEvents'],
-        'choices' => [
+        'choices'        => [
             $student['choice1'],
             $student['choice2'],
             $student['choice3'],
             $student['choice4'],
             $student['choice5'],
             $student['choice6'],
-        ]
+        ],
     ];
 }, $students);
 
 $eventsWithRoomCount = array_map(function ($event) {
     $roomsNeeded = ceil(count($event['assignedStudents']) / 20);
     return [
-        'eventId' => $event['number'],
-        'studentCount' => count($event['assignedStudents']),
+        'eventId'       => $event['number'],
+        'studentCount'  => count($event['assignedStudents']),
         'totalCapacity' => $event['totalCapacity'],
-        'roomsNeeded' => $roomsNeeded
+        'roomsNeeded'   => $roomsNeeded,
     ];
 }, $expandedEvents);
 
@@ -106,9 +106,9 @@ $eventRoomAssignments = [];
 foreach ($events as $event) {
     $roomsNeeded = $event['roomsNeeded'];
     $eventRoomAssignments[$event['eventId']] = [
-        'rooms' => [],
+        'rooms'         => [],
         'totalStudents' => $event['studentCount'],
-        'totalCapacity' => 0
+        'totalCapacity' => 0,
     ];
 
     foreach ($rooms as $key => $room) {
@@ -118,9 +118,9 @@ foreach ($events as $event) {
 
         // Raum dem Event zuweisen und aus der Liste verfügbarer Räume entfernen
         $eventRoomAssignments[$event['eventId']]['rooms'][] = [
-            'name' => $room['name'],
+            'name'            => $room['name'],
             'currentCapacity' => $room['capacity'],
-            'maxCapacity' => $room['capacity']
+            'maxCapacity'     => $room['capacity'],
         ];
         $eventRoomAssignments[$event['eventId']]['totalCapacity'] += $room['capacity'];
 
@@ -150,7 +150,6 @@ foreach ($students as &$student) {
                 // Find a suitable room based on the last letter
                 foreach ($roomEvent['rooms'] as &$room) {
                     if ($room['currentCapacity'] == 0) {
-                        echo "The current room is full. \n";
                         continue;
                     }
                     $lastLetter = substr($room['name'], -1);
@@ -188,8 +187,7 @@ foreach ($students as &$student) {
     }
     $unassignedRooms = $student['unAssignedRoom'];
 
-    foreach ($unassignedRooms as $eventIndex => $unassignedRoomValue)
-    {
+    foreach ($unassignedRooms as $eventIndex => $unassignedRoomValue) {
         if (isset($roomsWithEvents[$eventIndex])) {
             $event = &$roomsWithEvents[$eventIndex];
             foreach ($event['rooms'] as &$room) {
@@ -214,7 +212,7 @@ foreach ($students as &$student) {
                         // array deconstruction to get the values
                         [$eventAvailableTimeSlot, $eventRoomValue] = $foundPossibleRoom;
                         // we can use this timeslot and update the currentCapacity of the room
-                        $student['assignedRoom'][(string) $eventIndex] = $eventRoomValue;
+                        $student['assignedRoom'][(string)$eventIndex] = $eventRoomValue;
                         $room['currentCapacity'] = $room['currentCapacity'] - 1;
                         $student['unAssignedRoom'] = array_diff($student['unAssignedRoom'], [$unassignedRoomValue]);
                         $foundPossibleRoom = [];
@@ -253,11 +251,7 @@ foreach ($students as &$student) {
         $rooms = &$roomsData['rooms'];
 
         $availableRooms = array_filter($rooms, function ($room) use ($freeTimeSlots, $eventIndex, $usedEvents) {
-            if ($room['name'] == '008-E') {
-                echo "currentCap: ". $room['currentCapacity'] . "\n";
-                echo "is avaible room: " . ($room['currentCapacity'] > 0 && in_array(substr($room['name'], -1), $freeTimeSlots) && !in_array($eventIndex, $usedEvents)) . "\n";
-            };
-            return $room['currentCapacity'] > 0 && in_array(substr($room['name'], -1), $freeTimeSlots) && !in_array($eventIndex, $usedEvents) ;
+            return $room['currentCapacity'] > 0 && in_array(substr($room['name'], -1), $freeTimeSlots) && !in_array($eventIndex, $usedEvents);
         });
 
         if (count($availableRooms) > 0) {
@@ -268,8 +262,8 @@ foreach ($students as &$student) {
             $roomIndex = array_search($room, $rooms);
             $referencedRoom = &$roomsData['rooms'][$roomIndex];
             $referencedRoom['currentCapacity'] = $referencedRoom['currentCapacity'] - 1;
-            echo "assigned room: " . $room['name'] . " for student " . $student['firstname'] . " " . $student['lastname'] . "\n";
-            echo "current capacity: " . $referencedRoom['currentCapacity'] . "\n";
+            // echo "assigned room: " . $room['name'] . " for student " . $student['firstname'] . " " . $student['lastname'] . "\n";
+            // echo "current capacity: " . $referencedRoom['currentCapacity'] . "\n";
             continue;
         }
 
@@ -296,14 +290,18 @@ file_put_contents('results/roomsWithEvents.json', json_encode($roomsWithEvents, 
 
 $endTime = microtime(true);
 
-$difference =  $endTime - $startTime;
+$difference = $endTime - $startTime;
 
 echo "The script took " . $difference . " seconds to run";
 
 echo "Testing results of algorithm... \n";
 
+/* #########
+ * # TESTING
+ * #########
+ */
 
-$studentsTest =  json_decode(file_get_contents('results/students.json'), true);
+$studentsTest = json_decode(file_get_contents('results/students.json'), true);
 $rooms = json_decode(file_get_contents('data/rooms.json'), true);
 $assignedRooms = [];
 foreach ($studentsTest as $studentTest) {
@@ -329,17 +327,49 @@ foreach ($studentsTest as $studentTest) {
 
         $assignedRooms[$room][] = [
             'firstname' => $studentTest['firstname'],
-            'lastname' => $studentTest['lastname'],
+            'lastname'  => $studentTest['lastname'],
         ];
     }
 }
+
+unset($roomsWithEvent, $originalEvents);
+$roomsWithEvent = json_decode(file_get_contents('results/roomsWithEvents.json'), true);
+$originalEvents = json_decode(file_get_contents('data/events.json'), true);
 
 // check if the assignedRooms count is not greater than the "capacity" in the $rooms array based on the "name" key
 foreach ($assignedRooms as $room => $data) {
     $maxCapacity = $rooms[array_search($room, array_column($rooms, 'name'))]['capacity'];
     if ($data['count'] > $maxCapacity) {
-        echo "Room " . $room . " has " . $data['count'] . " students but the capacity is $maxCapacity \n";
+        echo "[!!!] Room " . $room . " has " . $data['count'] . " students but the capacity is $maxCapacity \n";
+    }
+
+    foreach ($roomsWithEvent as $eventIndex => $roomWithEvent) {
+        if (!isset($roomWithEvent['rooms'])) {
+            continue;
+        }
+        $foundRoom = array_filter($roomWithEvent['rooms'], static function ($roomObject) use ($room) {
+            return $roomObject['name'] === $room;
+        });
+
+        if (current($foundRoom)) {
+
+            $originalEvent = array_filter($originalEvents, static function ($originalEvent) use ($eventIndex) {
+                return $originalEvent['number'] == $eventIndex;
+            });
+
+            if (!current($originalEvent)) {
+                break;
+            }
+            $originalEvent = current($originalEvent);
+            $maxParticipants = $originalEvent['participants'];
+
+            if ($maxCapacity > $maxParticipants) {
+                echo "[!!!] Room " . $room . " has " . $data['count'] . " students but the event $eventIndex has an max of $maxParticipants participants \n";
+            }
+            break;
+        }
     }
 }
+
 
 file_put_contents("results/test_assignedRooms.json", json_encode($assignedRooms, JSON_PRETTY_PRINT));

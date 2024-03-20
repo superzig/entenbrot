@@ -9,7 +9,7 @@ $foundPossibleRoom = [];
 //    foreach ($roomsWithEvent['rooms'] as $room) {
 //        if ($room['name'] == '101-C') {
 //            echo "found room 101-C \n";
-//            echo "current capacity: " . $room['currentCapacity'] . "\n";
+//            echo "poscurrent capacity: " . $room['currentCapacity'] . "\n";
 //        }
 //    }
 //

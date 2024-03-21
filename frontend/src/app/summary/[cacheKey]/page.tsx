@@ -3,13 +3,13 @@ import MaxWidthWrapper from '~/app/_components/ui/MaxWidthWrapper';
 import SuccessScore from '~/app/_components/ui/successScore';
 import {Tabs, TabsContent, TabsList, TabsTrigger,} from '~/app/_components/ui/tabs';
 import {Button} from '~/app/_components/ui/button';
-import EventsTable from '~/app/_components/ui/EventsTable';
 import {useEffect, useState} from "react";
 import {getAlgorithmenData} from "~/action";
-import AttendanceTable from "~/app/_components/ui/AttendanceTable";
 import {toast} from "~/app/_components/ui/use-toast";
 import {useRouter} from "next/navigation";
 import {type AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import logoImage from '../../../../public/logo.png';
+import LoaderContainer from "~/app/_components/ui/LoaderContainer";
 
 const redirectToHome = (router: AppRouterInstance, message: string|null = null ) => {
     toast({
@@ -38,7 +38,7 @@ const Page = ({ params }: { params: { cacheKey: string } }) => {
     }
 
     if (response.data.length === 0) {
-        return ("Loading...");
+        return (<LoaderContainer />);
     }
 
     const responseData = response.data;
@@ -52,7 +52,7 @@ const Page = ({ params }: { params: { cacheKey: string } }) => {
     if (!attendanceList || !organizationalPlan || !score || !studentSheet) {
         redirectToHome(router, "Es wurden keine Daten gefunden.");
     }
-    console.log(score)
+
     return (
         <MaxWidthWrapper className='mb-5 mt-10'>
             <div className='flex h-screen flex-col items-center'>

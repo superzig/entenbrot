@@ -28,3 +28,8 @@ Route::prefix('/data')->group(function () {
     Route::get('/TIM', [DataController::class, 'algorithmAction'])->name('data.algorithmen');
 
 });
+
+Route::prefix('/download')->group(function () {
+    Route::get("/presenceList", [ExportCsvController::class, 'generatePresenceList'])->name('export.generatePresenceList');
+    Route::get("/runningLog", [ExportCsvController::class, 'generateRunningLog'])->name('export.runningLog');
+});

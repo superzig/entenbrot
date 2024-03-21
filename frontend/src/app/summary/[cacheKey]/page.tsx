@@ -8,8 +8,11 @@ import {getAlgorithmenData} from "~/action";
 import {toast} from "~/app/_components/ui/use-toast";
 import {useRouter} from "next/navigation";
 import {type AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import logoImage from '../../../../public/logo.png';
 import LoaderContainer from "~/app/_components/ui/LoaderContainer";
+import RoomsPlanTable from "~/app/_components/ui/RoomsPlanTable";
+import AttendancePlanTable from "~/app/_components/ui/AttendancePlanTable";
+import RoutingPlanTable from "~/app/_components/ui/RoutingPlanTable";
+import {AttendancePlanType} from "~/definitions";
 
 const redirectToHome = (router: AppRouterInstance, message: string|null = null ) => {
     toast({
@@ -63,7 +66,7 @@ const Page = ({ params }: { params: { cacheKey: string } }) => {
 
                 <div className='my-10'>
                     <Tabs
-                        defaultValue='students'
+                        defaultValue='events_rooms'
                         className='flex flex-col justify-center'
                     >
                         <TabsList>
@@ -78,11 +81,13 @@ const Page = ({ params }: { params: { cacheKey: string } }) => {
                             </TabsTrigger>
                         </TabsList>
                         <TabsContent value='students'>
+                            <RoutingPlanTable routingPlan={studentSheet} />
                         </TabsContent>
                         <TabsContent value='students_presence'>
-
+                            <AttendancePlanTable attendancePlan={attendanceList} />
                         </TabsContent>
                         <TabsContent value='events_rooms'>
+                            <RoomsPlanTable roomsPlan={organizationalPlan} />
                         </TabsContent>
                     </Tabs>
                 </div>

@@ -117,3 +117,48 @@ export interface attendanceData {
     company: string;
     timeslots: Timeslots;
 }
+
+interface TimeslotRoomType {
+    room: string;
+    time: string;
+    timeSlot: string;
+}
+
+export type roomsPlanType = Record<string, {
+        company: string;
+    specialization: string;
+        timeslots: TimeslotRoomType[];
+    }>;
+
+interface Person {
+    class: string;
+    lastName: string;
+    firstName: string;
+}
+
+type Timeslot = Record<string, Person[]>;
+
+interface CompanyData {
+    company: string;
+    specialization: string;
+    timeslots: Timeslot;
+}
+
+export type AttendancePlanType = Record<string, CompanyData>;
+
+
+interface AssignmentDetails {
+    room: number | string;
+    company: string;
+    specialization: string;
+    eventId: string;
+    isWish: number;
+}
+
+type Assignments = Record<string, AssignmentDetails>;
+
+interface RoutingPlanStudent extends Person {
+    assignments: Assignments;
+}
+
+export type RoutingPlanType = RoutingPlanStudent[];

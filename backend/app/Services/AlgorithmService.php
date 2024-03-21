@@ -110,7 +110,7 @@ class AlgorithmService
 
             $isError = false;
             if ($cacheKey) {
-                ['isError' => $isError, 'cacheKey' => $cacheKey] = $this->store($erfuellungsScore, $organisationsplan, $studentData, $schuelerLaufzettel, $cacheKey);
+                ['isError' => $isError, 'cacheKey' => $cacheKey] = $this->store($erfuellungsScore, $organisationsplan, $anwesenheitsliste, $schuelerLaufzettel, $cacheKey);
             }
 
             return [
@@ -345,6 +345,7 @@ class AlgorithmService
             foreach ($timeslotToEvent as $timeslot => $assignmentEventID) {
 
                 $result[$assignmentEventID]["company"] = trim($eventData[$assignmentEventID]["company"]);
+                $result[$assignmentEventID]["specialization"] = trim($eventData[$assignmentEventID]["specialization"]);
                 $result[$assignmentEventID]["timeslots"][$this->getTimeToTimeslot($timeslot)][] = [
                     "class"     => $studentData[$studentID]["class"],
                     "lastName"  => $studentData[$studentID]["lastName"],
@@ -362,6 +363,7 @@ class AlgorithmService
         foreach ($eventToRoomAssignment as $roomID => $timeslotToEvent) {
             foreach ($timeslotToEvent as $timeslot => $eventID) {
                 $result[$eventID]["company"] = trim($eventData[$eventID]["company"]);
+                $result[$eventID]["specialization"] = trim($eventData[$eventID]["specialization"]);
                 $result[$eventID]["timeslots"][] = [
                     'time'     => $this->getTimeToTimeslot($timeslot),
                     'timeSlot' => $timeslot,

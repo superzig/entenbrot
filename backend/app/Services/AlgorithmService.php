@@ -39,10 +39,10 @@ class AlgorithmService
         try {
             // TODO: ENABLE CACHING AGAIN AFTER TESTING
 
-            // $cachedResult = $this->getCachedData($cacheKey);
-            // if ($cachedResult) {
-            //     return $cachedResult;
-            // }
+             $cachedResult = $this->getCachedData($cacheKey);
+             if ($cachedResult) {
+                 return $cachedResult;
+             }
 
 
             $studentData = $this->mapIdAsKey($studentData, 'students');
@@ -104,14 +104,13 @@ class AlgorithmService
             $organisationsplan = $this->getOrganisationsplan($eventToRoomAssignment, $eventData);
             $anwesenheitsliste = $this->getAnwesenheitsliste($assignment, $studentData, $eventData);
             $schuelerLaufzettel = $this->getSchuelerLaufzettel($assignment, $studentData, $eventToRoomAssignment, $eventData);
-
             $erfuellungsScore = $this->getErfuellungsScore($studentData, $schuelerLaufzettel);
 
 
 
             $isError = false;
             if ($cacheKey) {
-                ['isError' => $isError, 'cacheKey' => $cacheKey] = $this->store($erfuellungsScore, $studentData, $schuelerLaufzettel, $cacheKey);
+                ['isError' => $isError, 'cacheKey' => $cacheKey] = $this->store($erfuellungsScore, $organisationsplan, $studentData, $schuelerLaufzettel, $cacheKey);
             }
 
             return [
@@ -119,9 +118,10 @@ class AlgorithmService
                 'isError'    => $isError,
                 'cachedTime' => null,
                 'data'       => [
-                    'erfuellungsscore' => $erfuellungsScore,
-                    // 'schuelerLaufzettel'     => $schuelerLaufzettel,
-                    'studentData' => $studentData,
+                    'score' => $erfuellungsScore,
+                    'organizationalPlan' => $organisationsplan,
+                    'attendanceList'     => $anwesenheitsliste,
+                    'studentSheet'       => $schuelerLaufzettel,
                 ],
             ];
         } catch (\Exception $e) {
@@ -137,40 +137,41 @@ class AlgorithmService
 
     private function getErfuellungsScore($studentData, $schuelerLaufzettel)
     {
-        $totalReachablePoints = null;
         $maxReachablePoints = null;
+        $totalReachablePoints = null;
         $reachedPoints = null;
-        foreach ($studentData as $studentID => $studentDataArray) {
-            if (!empty($studentDataArray["choice1"])) {
-                $maxReachablePoints += 6;
+        foreach ($studentData as $student) {
+            if (!empty($student["choice1"])) {
+                $totalReachablePoints += 6;
             }
-            if (!empty($studentDataArray["choice2"])) {
-                $maxReachablePoints += 5;
+            if (!empty($student["choice2"])) {
+                $totalReachablePoints += 5;
             }
-            if (!empty($studentDataArray["choice3"])) {
-                $maxReachablePoints += 4;
+            if (!empty($student["choice3"])) {
+                $totalReachablePoints += 4;
             }
-            if (!empty($studentDataArray["choice4"])) {
-                $maxReachablePoints += 3;
+            if (!empty($student["choice4"])) {
+                $totalReachablePoints += 3;
             }
-            if (!empty($studentDataArray["choice5"])) {
-                $maxReachablePoints += 2;
+            if (!empty($student["choice5"])) {
+                $totalReachablePoints += 2;
             }
 
+            // Check if the student has a 6th choice and if one of the previous choices is empty
             if (
-                !empty($studentDataArray["choice6"]) && empty($studentDataArray["choice5"])
-                || !empty($studentDataArray["choice6"]) && empty($studentDataArray["choice4"])
-                || !empty($studentDataArray["choice6"]) && empty($studentDataArray["choice3"])
-                || !empty($studentDataArray["choice6"]) && empty($studentDataArray["choice2"])
-                || !empty($studentDataArray["choice6"]) && empty($studentDataArray["choice1"])
+                (!empty($studentDataArray["choice6"]) && empty($studentDataArray["choice5"]))
+                || (!empty($studentDataArray["choice6"]) && empty($studentDataArray["choice4"]))
+                || (!empty($studentDataArray["choice6"]) && empty($studentDataArray["choice3"]))
+                || (!empty($studentDataArray["choice6"]) && empty($studentDataArray["choice2"]))
+                || (!empty($studentDataArray["choice6"]) && empty($studentDataArray["choice1"]))
             ) {
-                $maxReachablePoints += 1;
+                ++$totalReachablePoints;
             }
         }
 
-        foreach ($schuelerLaufzettel as $studentID => $studenData) {
-            $totalReachablePoints += 20;
-            foreach ($studenData["assignments"] as $timeslotData) {
+        foreach ($schuelerLaufzettel as $student) {
+            $maxReachablePoints += 20;
+            foreach ($student["assignments"] as $timeslotData) {
 
                 if (isset($timeslotData["isWish"])) {
                     switch ($timeslotData["isWish"]) {
@@ -190,13 +191,18 @@ class AlgorithmService
                             $reachedPoints += 2;
                             break;
                         case 6:
-                            $reachedPoints += 1;
+                            ++$reachedPoints;
                             break;
                     }
                 }
             }
         }
-        return $result = array("einfach" => round($reachedPoints / $totalReachablePoints, 4) * 100, "wirklich" => round($reachedPoints / $maxReachablePoints, 4) * 100);
+
+        return [
+            'reachPoints' => $reachedPoints,
+            'maxReachablePoints' => $maxReachablePoints,
+            'totalReachablePoints' => $totalReachablePoints,
+        ];
     }
 
 
@@ -248,7 +254,7 @@ class AlgorithmService
         return hash('sha256', $jsonData1 . $jsonData2 . $jsonData3);
     }
 
-    protected function store(array $organisationsplan, array $anwesenheitsliste, array $schuelerLaufzettel, string $cacheKey): array
+    protected function store(array $erfuellungscore, array $organisationsplan, array $anwesenheitsliste, array $schuelerLaufzettel, string $cacheKey): array
     {
         $currentTime = time();
         $storedFiles = [
@@ -256,6 +262,7 @@ class AlgorithmService
                 'cachedTime'    => $currentTime,
                 'maxCachedTime' => $currentTime + self::MAX_CACHE_DURATION,
             ], "metadata", $cacheKey),
+            $this->storageResult($erfuellungscore, "score", $cacheKey),
             $this->storageResult($organisationsplan, "organizationalPlan", $cacheKey),
             $this->storageResult($anwesenheitsliste, "attendanceList", $cacheKey),
             $this->storageResult($schuelerLaufzettel, "studentSheet", $cacheKey),

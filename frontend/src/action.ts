@@ -35,6 +35,11 @@ export async function getAlgorithmenData(cacheKey: string) {
             method: 'GET',
         });
         const data = await response.json();
+
+        if (response.status !== 200 || data.isError) {
+            return { data: [], error: data.message ?? "Ein unerwarteter Fehler ist aufgetreten." };
+        }
+
         return { data: data, error: null };
     } catch (error) {
         let message = null;

@@ -199,7 +199,7 @@ class AlgorithmService
         }
 
         return [
-            'reachPoints' => $reachedPoints,
+            'reachedPoints' => $reachedPoints,
             'maxReachablePoints' => $maxReachablePoints,
             'totalReachablePoints' => $totalReachablePoints,
         ];

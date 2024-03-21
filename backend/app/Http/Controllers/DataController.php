@@ -25,16 +25,11 @@ class DataController extends BaseController
     public function algorithmAction(Request $request): JsonResponse
     {
         try {
-            $studentsData = $request->input('students');
-            $roomsData = $request->input('rooms');
-            $eventsData = $request->input('events');
+            [$students, $rooms, $events] = $this->getRequestData($request);
 
-            if (!$studentsData || !$roomsData || !$eventsData) {
+            if (!$students || !$rooms || !$events) {
                 return new JsonResponse(['isError' => true, 'message' => 'Missing data', 'data' => [], 'cachedTime' => null, 'cacheKey' => null], 400);
             }
-            $students = json_decode($studentsData, true, 512, JSON_THROW_ON_ERROR);
-            $rooms = json_decode($roomsData, true, 512, JSON_THROW_ON_ERROR);
-            $events = json_decode($eventsData, true, 512, JSON_THROW_ON_ERROR);
             $cacheKey = $this->algorithmService->generateUniqueHash($events, $students, $rooms);
 
             $result = $this->algorithmService->run($students, $rooms, $events, $cacheKey);
@@ -42,6 +37,29 @@ class DataController extends BaseController
         } catch (\Exception $e) {
             return new JsonResponse(['isError' => true, 'message' => $e->getMessage(), 'data' => [], 'cachedTime' => null, 'cacheKey' => null], 500);
         }
+    }
+
+    private function getRequestData($request)
+    {
+        if ($request->has('staticData')) {
+            $students = Storage::json('students.json');
+            $rooms = Storage::json('rooms.json');
+            $events = Storage::json('events.json');
+        } else {
+            $studentsData = $request->input('students');
+            $roomsData = $request->input('rooms');
+            $eventsData = $request->input('events');
+            if (!$studentsData || !$roomsData || !$eventsData) {
+                return [null, null, null];
+            }
+            $students = json_decode($studentsData, true, 512, JSON_THROW_ON_ERROR);
+            $rooms = json_decode($roomsData, true, 512, JSON_THROW_ON_ERROR);
+            $events = json_decode($eventsData, true, 512, JSON_THROW_ON_ERROR);
+        }
+
+
+
+        return [$students, $rooms, $events];
     }
 
     public function listAction(): JsonResponse

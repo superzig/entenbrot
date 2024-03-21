@@ -21,7 +21,7 @@ Route::prefix('/data')->group(function () {
     Route::get('/export', [ExportCsvController::class, 'export'])->name('export.post');
     Route::get('/algo', [DataController::class, 'algoConfig'])->name('algoConfig');
     Route::post('/algorithmen', [DataController::class, 'algorithmAction'])->name('data.algorithmen');
-    Route::get('/algorithmen', [DataController::class, 'listAction'])->name('data.algorithmen_list');
+    Route::get('/algorithmen', [DataController::class, 'algorithmAction'])->name('data.algorithmen_list');
     Route::delete('/algorithmen/{cacheKey}', [DataController::class, 'deleteAction'])->name('data.algorithmen_delete');
     Route::get('/algorithmen/{cacheKey}', [DataController::class, 'viewAction'])->name('data.algorithmen_view');
 

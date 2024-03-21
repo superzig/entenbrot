@@ -1,0 +1,58 @@
+{
+    "008": {
+        "roomId": "008",
+        "capacity": "15"
+    },
+    "101": {
+        "roomId": "101",
+        "capacity": "20"
+    },
+    "102": {
+        "roomId": "102",
+        "capacity": "20"
+    },
+    "103": {
+        "roomId": "103",
+        "capacity": "20"
+    },
+    "106": {
+        "roomId": "106",
+        "capacity": "20"
+    },
+    "107": {
+        "roomId": "107",
+        "capacity": "20"
+    },
+    "108": {
+        "roomId": "108",
+        "capacity": "20"
+    },
+    "109": {
+        "roomId": "109",
+        "capacity": "20"
+    },
+    "110": {
+        "roomId": "110",
+        "capacity": "20"
+    },
+    "111": {
+        "roomId": "111",
+        "capacity": "20"
+    },
+    "112": {
+        "roomId": "112",
+        "capacity": "20"
+    },
+    "113": {
+        "roomId": "113",
+        "capacity": "20"
+    },
+    "Aula": {
+        "roomId": "Aula",
+        "capacity": "50"
+    },
+    "209": {
+        "roomId": "209",
+        "capacity": "20"
+    }
+}

@@ -47,14 +47,11 @@ const Page = ({ params }: { params: { cacheKey: string } }) => {
                             </TabsTrigger>
                         </TabsList>
                         <TabsContent value='students'>
-                            <EventsTable events={[]} />
                         </TabsContent>
                         <TabsContent value='students_presence'>
-                            {attendanceList ? (<AttendanceTable attendanceData={attendanceList} />) : 'Keine Daten gefunden.'}
 
                         </TabsContent>
                         <TabsContent value='events_rooms'>
-                            <EventsTable events={[]} />
                         </TabsContent>
                     </Tabs>
                 </div>

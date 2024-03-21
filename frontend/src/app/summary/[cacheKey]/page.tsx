@@ -66,7 +66,7 @@ const Page = ({ params }: { params: { cacheKey: string } }) => {
 
                 <div className='my-10'>
                     <Tabs
-                        defaultValue='events_rooms'
+                        defaultValue='students'
                         className='flex flex-col justify-center'
                     >
                         <TabsList>

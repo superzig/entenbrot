@@ -20,6 +20,7 @@ Route::prefix('/validate')->group(function () {
     Route::get('/export', [ExportCsvController::class, 'index'])->name('export');
     Route::get('/export', [ExportCsvController::class, 'export'])->name('export.post');
     Route::get('/algo', [ValidateController::class, 'algoConfig'])->name('algoConfig');
+    Route::get('/returnPresenceList', [ExportCsvController::class, 'generatePresenceList'])->name('export.generatePresenceList');
     Route::post('/returnCompanies', [ValidateController::class, 'returnCompanies'])->name('validate.returnCompanies');
     Route::post('/returnStudents', [ValidateController::class, 'returnStudents'])->name('validate.returnStudents');
     Route::post('/returnRooms', [ValidateController::class, 'returnRooms'])->name('validate.returnRooms');

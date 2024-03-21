@@ -38,12 +38,12 @@ class AlgorithmService
     {
         try {
             // TODO: ENABLE CACHING AGAIN AFTER TESTING
-     
+
             // $cachedResult = $this->getCachedData($cacheKey);
             // if ($cachedResult) {
             //     return $cachedResult;
             // }
-  
+
 
             $studentData = $this->mapIdAsKey($studentData, 'students');
             $roomData = $this->mapIdAsKey($roomData, 'rooms');
@@ -105,13 +105,13 @@ class AlgorithmService
             $anwesenheitsliste = $this->getAnwesenheitsliste($assignment, $studentData, $eventData);
             $schuelerLaufzettel = $this->getSchuelerLaufzettel($assignment, $studentData, $eventToRoomAssignment, $eventData);
 
-
+            $erfuellungsScore = $this->getErfuellungsScore($studentData, $schuelerLaufzettel);
 
 
 
             $isError = false;
             if ($cacheKey) {
-                ['isError' => $isError, 'cacheKey' => $cacheKey] = $this->store($organisationsplan, $anwesenheitsliste, $schuelerLaufzettel, $cacheKey);
+                ['isError' => $isError, 'cacheKey' => $cacheKey] = $this->store($erfuellungsScore, $studentData, $schuelerLaufzettel, $cacheKey);
             }
 
             return [
@@ -119,9 +119,9 @@ class AlgorithmService
                 'isError'    => $isError,
                 'cachedTime' => null,
                 'data'       => [
-                    'organizationalPlan' => $organisationsplan,
-                    'attendanceList'     => $anwesenheitsliste,
-                    'studentSheet'       => $schuelerLaufzettel,
+                    'erfuellungsscore' => $erfuellungsScore,
+                    // 'schuelerLaufzettel'     => $schuelerLaufzettel,
+                    'studentData' => $studentData,
                 ],
             ];
         } catch (\Exception $e) {
@@ -134,6 +134,72 @@ class AlgorithmService
             ];
         }
     }
+
+    private function getErfuellungsScore($studentData, $schuelerLaufzettel)
+    {
+        $totalReachablePoints = null;
+        $maxReachablePoints = null;
+        $reachedPoints = null;
+        foreach ($studentData as $studentID => $studentDataArray) {
+            if (!empty($studentDataArray["choice1"])) {
+                $maxReachablePoints += 6;
+            }
+            if (!empty($studentDataArray["choice2"])) {
+                $maxReachablePoints += 5;
+            }
+            if (!empty($studentDataArray["choice3"])) {
+                $maxReachablePoints += 4;
+            }
+            if (!empty($studentDataArray["choice4"])) {
+                $maxReachablePoints += 3;
+            }
+            if (!empty($studentDataArray["choice5"])) {
+                $maxReachablePoints += 2;
+            }
+
+            if (
+                !empty($studentDataArray["choice6"]) && empty($studentDataArray["choice5"])
+                || !empty($studentDataArray["choice6"]) && empty($studentDataArray["choice4"])
+                || !empty($studentDataArray["choice6"]) && empty($studentDataArray["choice3"])
+                || !empty($studentDataArray["choice6"]) && empty($studentDataArray["choice2"])
+                || !empty($studentDataArray["choice6"]) && empty($studentDataArray["choice1"])
+            ) {
+                $maxReachablePoints += 1;
+            }
+        }
+
+        foreach ($schuelerLaufzettel as $studentID => $studenData) {
+            $totalReachablePoints += 20;
+            foreach ($studenData["assignments"] as $timeslotData) {
+
+                if (isset($timeslotData["isWish"])) {
+                    switch ($timeslotData["isWish"]) {
+                        case 1:
+                            $reachedPoints += 6;
+                            break;
+                        case 2:
+                            $reachedPoints += 5;
+                            break;
+                        case 3:
+                            $reachedPoints += 4;
+                            break;
+                        case 4:
+                            $reachedPoints += 3;
+                            break;
+                        case 5:
+                            $reachedPoints += 2;
+                            break;
+                        case 6:
+                            $reachedPoints += 1;
+                            break;
+                    }
+                }
+            }
+        }
+        return $result = array("einfach" => round($reachedPoints / $totalReachablePoints, 4) * 100, "wirklich" => round($reachedPoints / $maxReachablePoints, 4) * 100);
+    }
+
+
 
     private function mapIdAsKey(array $array, string $type): array
     {
@@ -237,7 +303,7 @@ class AlgorithmService
                 $result[$studentID]["assignments"][$timePeriod]["company"] = trim($eventData[$eventID]["company"]);
                 $result[$studentID]["assignments"][$timePeriod]["specialization"] = trim($eventData[$eventID]["specialization"]);
                 $result[$studentID]["assignments"][$timePeriod]["eventId"] = (string)$eventID;
-                $result[$studentID]["assignments"][$timePeriod]['isWish'] = $this->checkIfWishWasFromStudent($studentID, $eventID, $studentData); 
+                $result[$studentID]["assignments"][$timePeriod]['isWish'] = $this->checkIfWishWasFromStudent($studentID, $eventID, $studentData);
             }
         }
         return $result;
@@ -245,17 +311,13 @@ class AlgorithmService
 
     protected function checkIfWishWasFromStudent(string $studentID, string $eventID, array $studentData)
     {
-        for ($i = 1; $i <= 6; $i++) 
-        {
-            foreach ($studentData[$studentID] as $fieldname => $choiseEventID) 
-            {
-                if ("choice".$i == $fieldname && $eventID == $choiseEventID) 
-                {
-                    return $i; 
+        for ($i = 1; $i <= 6; $i++) {
+            foreach ($studentData[$studentID] as $fieldname => $choiseEventID) {
+                if ("choice" . $i == $fieldname && $eventID == $choiseEventID) {
+                    return $i;
                 }
             }
         }
-   
     }
 
     protected function getRoomFromEventAndTimeslot($eventToRoomAssignment, $eventID, $timeslot)

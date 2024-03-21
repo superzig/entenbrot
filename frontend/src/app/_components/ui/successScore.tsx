@@ -1,12 +1,6 @@
 import Image from 'next/image';
 import laurelWreath from '../../../../public/noun-laurel-wreath.svg';
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "~/app/_components/ui/tabs";
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "~/app/_components/ui/accordion"
 
 interface Props {
     currentScore: number;

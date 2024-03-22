@@ -13,7 +13,7 @@ import RoomsPlanTable from "~/app/_components/ui/RoomsPlanTable";
 import AttendancePlanTable from "~/app/_components/ui/AttendancePlanTable";
 import RoutingPlanTable from "~/app/_components/ui/RoutingPlanTable";
 
-const redirectToHome = (router: AppRouterInstance, message: string | null = null) => {
+export const redirectToHome = (router: AppRouterInstance, message: string | null = null) => {
     toast({
         title: "Ein Fehler ist aufgetreten",
         description: message ?? "Bitte laden Sie erneut alle Dateien hoch.",

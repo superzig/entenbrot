@@ -156,6 +156,11 @@ class ExportCsvController extends BaseController
             $zip = new ZipArchive;
             if ($zip->open(public_path($zipFile), ZipArchive::CREATE) === true) {
                 // Add files to the zip file
+                if ($this->addCachedDocuments($cacheKey, $zip)) {
+                    $zip->close();
+                    return response()->download(public_path($zipFile))->deleteFileAfterSend(true);
+                }
+
                 $this->addDocuments($cacheKey, $zip);
                 $zip->close();
                 return response()->download(public_path($zipFile))->deleteFileAfterSend(true);
@@ -166,6 +171,34 @@ class ExportCsvController extends BaseController
         }
 
         return new JsonResponse(['isError' => true, 'message' => 'Error creating zip file', 'data' => [], 'cachedTime' => null, 'cacheKey' => null], 500);
+    }
+
+    private function addCachedDocuments(string $cacheKey, ZipArchive $zip): bool
+    {
+        $dirs = Storage::directories("csv/$cacheKey");
+
+        foreach ($dirs as $directory) {
+            $baseNameDir = pathinfo($directory, PATHINFO_BASENAME);
+            $files = Storage::files($directory);
+            foreach ($files as $file) {
+                switch ($baseNameDir) {
+                    case 'attendance':
+                        $zip->addEmptyDir(self::DIR_ATTENDANCE);
+                        $zip->addFile(storage_path("app/$file"), self::DIR_ATTENDANCE."/".basename($file));
+                        break;
+                    case 'runs':
+                        $zip->addEmptyDir(self::DIR_RUNS);
+                        $zip->addFile(storage_path("app/$file"), self::DIR_RUNS."/".basename($file));
+                        break;
+                    case 'rooms':
+                        $zip->addEmptyDir(self::DIR_ROOMS);
+                        $zip->addFile(storage_path("app/$file"), self::DIR_ROOMS."/".basename($file));
+                        break;
+                }
+            }
+        }
+
+        return $zip->numFiles > 1;
     }
 
     private function getErrorMessage(Exception $e): string

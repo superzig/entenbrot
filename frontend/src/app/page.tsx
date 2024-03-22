@@ -18,6 +18,7 @@ export default async function Home() {
                             style={{
                                 width: '500px',
                             }}
+                            priority={true}
                             className='pointer-events-none hidden bg-contain md:block'
                         />
                     </div>

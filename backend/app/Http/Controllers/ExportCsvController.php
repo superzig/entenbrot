@@ -157,8 +157,9 @@ class ExportCsvController extends BaseController
                             $this->generateRunningLog($data, $zip);
                             break;
                         case 'organizationPlan':
-                            $zip->addEmptyDir('organizationPlan');
-
+                            $zip->addEmptyDir('Raumplan');
+                            $data = Storage::json($file);
+                            $this->generateCompanyRoomList($data, $zip);
                             break;
                     }
                 }
@@ -169,6 +170,30 @@ class ExportCsvController extends BaseController
         }
 
         return new JsonResponse(['isError' => true, 'message' => 'Error creating zip file', 'data' => [], 'cachedTime' => null, 'cacheKey' => null], 500);
+    }
+
+    /**
+     * Generiert CSV-Dateien für jedes Unternehmen basierend auf den angegebenen JSON-Daten und packt sie in eine ZIP-Datei.
+     *
+     * @param array $data
+     * @param ZipArchive $zip
+     * @return void
+     */
+    public function generateCompanyRoomList(array $data, ZipArchive $zip): void
+    {
+        foreach ($data as $companyId => $company) {
+            $companyName = $company['company'];
+            $csvFileName = "$companyName-timeslots.csv";
+            $csvContent = "Time;Time Slot;Room\n";
+            foreach ($company['timeslots'] as $timeslot) {
+                $time = $timeslot['time'];
+                $timeSlot = $timeslot['timeSlot'];
+                $room = $timeslot['room'];
+                $csvContent .= "$time;$timeSlot;$room\n";
+            }
+            Storage::disk('local')->put($csvFileName, $csvContent);
+            $zip->addFile(storage_path('app/'.$csvFileName), "Raumplan/$csvFileName");
+        }
     }
 }
 

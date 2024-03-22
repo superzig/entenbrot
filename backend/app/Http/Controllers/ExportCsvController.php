@@ -87,10 +87,13 @@ class ExportCsvController extends BaseController
     {
         foreach ($data as $companyId => $companyData) {
             $companyName = $companyData['company'];
+            $specialization = $companyData['specialization'];
+            $companyName = preg_replace('/\W/', '_', $companyName);
+            $specialization = preg_replace('/\W/', '_', $specialization);
             $timeslots = $companyData['timeslots'];
 
             foreach ($timeslots as $timeslot => $attendees) {
-                $csvFileName = "$companyName-$timeslot.csv";
+                $csvFileName = "$companyName-$specialization-$timeslot.csv";
                 $csvContent = "Last Name,First Name,Anwesend\n";
                 foreach ($attendees as $attendee) {
                     $csvContent .= "{$attendee['lastName']};{$attendee['firstName']};;\n";
@@ -138,9 +141,8 @@ class ExportCsvController extends BaseController
         }
 
         $files = Storage::files("algorithm/$cacheKey");
-        $zipFile = 'download.zip'; // Name of the final zip file
+        $zipFile = 'Entenbrot-Dokumente.zip'; // Name of the final zip file
         $zip = new ZipArchive;
-
         if ($zip->open(public_path($zipFile), ZipArchive::CREATE) === true) {
             // Add files to the zip file
             foreach ($files as $file) {
@@ -156,7 +158,7 @@ class ExportCsvController extends BaseController
                             $data = Storage::json($file);
                             $this->generateRunningLog($data, $zip);
                             break;
-                        case 'organizationPlan':
+                        case 'organizationalPlan':
                             $zip->addEmptyDir('Raumplan');
                             $data = Storage::json($file);
                             $this->generateCompanyRoomList($data, $zip);

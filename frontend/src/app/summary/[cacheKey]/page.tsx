@@ -70,7 +70,7 @@ const Page = ({params}: { params: { cacheKey: string } }) => {
                     // Create a link and set the URL as the link's href
                     const link = document.createElement('a');
                     link.href = window.URL.createObjectURL(blob);
-                    link.download = 'download.zip'; // The default name for your downloaded file
+                    link.download = 'Entenbrot-Dokumente.zip'; // The default name for your downloaded file
 
                     // Append the link to the body, click it, and then remove it
                     document.body.appendChild(link);

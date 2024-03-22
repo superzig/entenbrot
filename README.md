@@ -11,6 +11,19 @@ Die Software anstand in Rahmen eines Schulprojekts.
 - [André F.](https://github.com/itsandremov)
 - Tim
 
+## Requirements
+
+#### Backend
+
+- PHP 8.1 oder höher
+- ext-zip
+- composer
+
+#### Frontend
+
+- node ^21.7.1
+- npm ^10.2.3
+
 ## Installation
     
 Dieses Projekt besteht aus zwei Hauptkomponenten: dem Backend, das mit Laravel entwickelt wurde, und dem Frontend, das mit Next.js erstellt wurde. Hier ist eine schrittweise Anleitung, um beide Teile des Projekts einzurichten und auszuführen.

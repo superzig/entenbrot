@@ -17,7 +17,7 @@ class AlgorithmService
     public function getTimesToTimeslots(): array
     {
         return [
-            "A" => "08:45 - 9:30",
+            "A" => "08:45 - 09:30",
             "B" => "09:50 - 10:35",
             "C" => "10:35 - 11:20",
             "D" => "11:40 - 12:25",

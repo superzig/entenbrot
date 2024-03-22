@@ -20,62 +20,6 @@ class ExportCsvController extends BaseController
         $this->algorithmService = $algorithmService;
     }
 
-    public function index()
-    : \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
-    {
-        return view('test');
-    }
-
-    /**
-     * Exports data to a CSV file and initiates its download.
-     *
-     * @throws Exception If an error occurs during the CSV file creation or download process.
-     */
-    public function export()
-    : void
-    {
-        $dataColumn = [
-            0 => '',
-            1 => '8:00',
-            2 => '8:45',
-            3 => '9:50',
-        ];
-
-        $dataRow = [
-            '101' => [
-                101, 'Polizei', 'Babor', 'Soptim',
-            ],
-            '102' => [
-                102, 'Nobis', 'Sparkasse', 'Babor',
-            ],
-            '103' => [
-                103, 'Aix', 'BMW', 'Zoll',
-            ],
-        ];
-
-
-        if ($tmp = tempnam(sys_get_temp_dir(), "export.")) {
-            if ($fh = fopen($tmp, "w")) {
-                fputs($fh, chr(239) . chr(187) . chr(191));
-                //csv heading names
-                fputcsv($fh, [strval($dataColumn[0]), strval($dataColumn[1]), strval($dataColumn[2]), strval($dataColumn[3])], ";", "\"");
-
-                //csv column names
-                foreach ($dataRow as $row) {
-                    fputcsv($fh, [strval($dataColumn[0]) => strval($row[0]), strval($dataColumn[1]) => strval($row[1]), strval($dataColumn[2]) => strval($row[2]), strval($dataColumn[3]) => strval($row[3]),], ";", "\"");
-                }
-
-                fclose($fh);
-                header("Content-Type: text/csv;charset=utf-8");
-                header("Content-Disposition: attachment; filename=\"export-" . date("Y-m-d-H-i") . ".csv\"");
-                readfile($tmp);
-                unlink($tmp);
-
-                exit();
-            }
-        }
-    }
-
     /**
      * Generiert eine CSV-Anwesenheitsliste basierend auf den bereitgestellten Daten und stellt sie zum Download bereit.
      *
@@ -85,15 +29,14 @@ class ExportCsvController extends BaseController
      */
     private function generatePresenceList(array $data, ZipArchive $zip)
     {
+        $timeslotsNumbers = array_flip($this->algorithmService->getTimesToTimeslots());
         foreach ($data as $companyId => $companyData) {
             $companyName = $companyData['company'];
-            $specialization = $companyData['specialization'];
-            $companyName = preg_replace('/\W/', '_', $companyName);
-            $specialization = preg_replace('/\W/', '_', $specialization);
             $timeslots = $companyData['timeslots'];
 
             foreach ($timeslots as $timeslot => $attendees) {
-                $csvFileName = "$companyName-$specialization-$timeslot.csv";
+                $slotNumber = $timeslotsNumbers[$timeslot] ?? $timeslot;
+                $csvFileName = self::convertToFileName("$companyName-$slotNumber.csv", );
                 $csvContent = "Last Name,First Name,Anwesend\n";
                 foreach ($attendees as $attendee) {
                     $csvContent .= "{$attendee['lastName']};{$attendee['firstName']};;\n";
@@ -102,6 +45,31 @@ class ExportCsvController extends BaseController
                 $zip->addFile(storage_path('app/'.$csvFileName), "Anwesenheiten/$csvFileName");
             }
         }
+    }
+
+    private static function convertToFileName(string $file, string $defaultName = 'file.csv'): string
+    {
+        $replacements = [
+            'ä' => 'ae',
+            'Ä' => 'Ae',
+            'ö' => 'oe',
+            'Ö' => 'Oe',
+            'ü' => 'ue',
+            'Ü' => 'Ue',
+            'ß' => 'ss',
+        ];
+
+        foreach ($replacements as $search => $replace) {
+            $file = str_replace($search, $replace, $file);
+        }
+
+        $file = preg_replace('/[^a-zA-Z0-9-_.]/u', '_', $file ?? '');
+        $file = preg_replace('/_{2,}/', '_', $file ?? '');
+
+        if (empty($file)) {
+            return random_int(0, 10).$defaultName;
+        }
+        return trim($file, '_');
     }
 
     /**
@@ -120,7 +88,7 @@ class ExportCsvController extends BaseController
             $firstName = $student['firstName'];
             $assignments = $student['assignments'];
 
-            $csvFileName = "$firstName-$lastName.csv";
+            $csvFileName = self::convertToFileName("$firstName-$lastName.csv");
             $csvContent = "Time Slot;Room;Company;Specialization;\n";
             foreach ($assignments as $timeSlot => $assignment) {
                 $room = $assignment['room'];
@@ -140,38 +108,47 @@ class ExportCsvController extends BaseController
             return new JsonResponse(['isError' => true, 'message' => 'No cache key provided', 'data' => [], 'cachedTime' => null, 'cacheKey' => null], 400);
         }
 
-        $files = Storage::files("algorithm/$cacheKey");
-        $zipFile = 'Entenbrot-Dokumente.zip'; // Name of the final zip file
-        $zip = new ZipArchive;
-        if ($zip->open(public_path($zipFile), ZipArchive::CREATE) === true) {
-            // Add files to the zip file
-            foreach ($files as $file) {
-                if (Storage::exists($file)) {
-                    switch (pathinfo($file, PATHINFO_FILENAME)) {
-                        case 'attendanceList':
-                            $zip->addEmptyDir('Anwesenheiten');
-                            $data = Storage::json($file);
-                            $this->generatePresenceList($data, $zip);
-                            break;
-                        case 'studentSheet':
-                            $zip->addEmptyDir('Laufzettel');
-                            $data = Storage::json($file);
-                            $this->generateRunningLog($data, $zip);
-                            break;
-                        case 'organizationalPlan':
-                            $zip->addEmptyDir('Raumplan');
-                            $data = Storage::json($file);
-                            $this->generateCompanyRoomList($data, $zip);
-                            break;
+        try {
+            $files = Storage::files("algorithm/$cacheKey");
+            $zipFile = 'Entenbrot-Dokumente.zip'; // Name of the final zip file
+            $zip = new ZipArchive;
+            if ($zip->open(public_path($zipFile), ZipArchive::CREATE) === true) {
+                // Add files to the zip file
+                foreach ($files as $file) {
+                    if (Storage::exists($file)) {
+                        switch (pathinfo($file, PATHINFO_FILENAME)) {
+                            case 'attendanceList':
+                                $zip->addEmptyDir('Anwesenheiten');
+                                $data = Storage::json($file);
+                                $this->generatePresenceList($data, $zip);
+                                break;
+                            case 'studentSheet':
+                                $zip->addEmptyDir('Laufzettel');
+                                $data = Storage::json($file);
+                                $this->generateRunningLog($data, $zip);
+                                break;
+                            case 'organizationalPlan':
+                                $zip->addEmptyDir('Raumplan');
+                                $data = Storage::json($file);
+                                $this->generateCompanyRoomList($data, $zip);
+                                break;
+                        }
                     }
                 }
-            }
-            $zip->close();
-            return response()->download(public_path($zipFile))->deleteFileAfterSend(true);
+                $zip->close();
+                return response()->download(public_path($zipFile))->deleteFileAfterSend(true);
 
+            }
+        } catch (Exception $e) {
+            return new JsonResponse(['isError' => true, 'message' => $this->getErrorMessage($e) , 'data' => [], 'cachedTime' => null, 'cacheKey' => null], 500);
         }
 
         return new JsonResponse(['isError' => true, 'message' => 'Error creating zip file', 'data' => [], 'cachedTime' => null, 'cacheKey' => null], 500);
+    }
+
+    private function getErrorMessage(Exception $e): string
+    {
+        return $e->getMessage()." in ".$e->getFile()." on line ".$e->getLine();
     }
 
     /**
@@ -185,7 +162,7 @@ class ExportCsvController extends BaseController
     {
         foreach ($data as $companyId => $company) {
             $companyName = $company['company'];
-            $csvFileName = "$companyName-timeslots.csv";
+            $csvFileName = self::convertToFileName("$companyName-timeslots.csv");
             $csvContent = "Time;Time Slot;Room\n";
             foreach ($company['timeslots'] as $timeslot) {
                 $time = $timeslot['time'];

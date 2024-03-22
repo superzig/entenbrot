@@ -77,9 +77,10 @@ const Page = ({params}: { params: { cacheKey: string } }) => {
                     link.click();
                     link.remove();
                 } else {
+                    const data = await response.json();
                     toast({
                         title: "Ein Fehler ist aufgetreten",
-                        description: "Herunterladen der Dokumente ist fehlgeschlagen.",
+                        description: data?.message ?? "Herunterladen der Dokumente ist fehlgeschlagen.",
                         variant: "destructive",
                     });
                 }

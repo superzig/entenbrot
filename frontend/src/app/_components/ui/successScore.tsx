@@ -71,7 +71,7 @@ const SuccessScore = ({ currentScore, totalScore, maxScore }: Props) => {
                                     Erfolgsquote erklärt
                                 </p>
                                 <p>
-                                    Die Erfolgsquote zeigt den Prozentsatz der Schüler, die gemäß ihren Wünschen
+                                    Die Erfolgsquote zeigt den Prozentsatz der Schüler, die gemäß Ihren Wünschen
                                     platziert wurden.
                                     Die Wünsche werden mit Punkten absteigend (6 bis 1) bewertet, wobei 20 Punkte das
                                     Maximum sind. Die
@@ -105,7 +105,7 @@ const SuccessScore = ({ currentScore, totalScore, maxScore }: Props) => {
                                     Erfolgsquote erklärt
                                 </p>
                                 <p>
-                                    Die Erfolgsquote zeigt den Prozentsatz der Schüler, die gemäß ihren Wünschen
+                                    Die Erfolgsquote zeigt den Prozentsatz der Schüler, die gemäß Ihren Wünschen
                                     platziert wurden.
                                     Die Wünsche werden mit Punkten absteigend (6 bis 1) bewertet, wobei 20 Punkte das
                                     Maximum sind. Die

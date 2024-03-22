@@ -1,8 +1,16 @@
-import {roomsPlanType} from "~/definitions";
-import {Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow} from "~/app/_components/ui/table";
+import { roomsPlanType } from '~/definitions';
+import {
+    Table,
+    TableBody,
+    TableCaption,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+} from '~/app/_components/ui/table';
 
 interface Props {
-    roomsPlan: roomsPlanType
+    roomsPlan: roomsPlanType;
 }
 const RoomsPlanTable = ({ roomsPlan }: Props) => {
     return (
@@ -15,9 +23,7 @@ const RoomsPlanTable = ({ roomsPlan }: Props) => {
                     <TableHead className='w-[100px]'>Firma</TableHead>
                     <TableHead>Raum</TableHead>
                     <TableHead>Zeitfenster</TableHead>
-                    <TableHead className='text-right'>
-                        Zeitslot
-                    </TableHead>
+                    <TableHead className='text-right'>Zeitslot</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
@@ -29,17 +35,22 @@ const RoomsPlanTable = ({ roomsPlan }: Props) => {
                     return companyData.timeslots.map((slotData, index) => (
                         <TableRow key={`${key}-${index}`}>
                             <TableCell className='font-medium'>
-                                {index === 0 ? (companyData.company+` (${companyData.specialization})`) : ''}
+                                {index === 0
+                                    ? companyData.company +
+                                      ` (${companyData.specialization})`
+                                    : ''}
                             </TableCell>
                             <TableCell>{slotData.room}</TableCell>
                             <TableCell>{slotData.time}</TableCell>
-                            <TableCell className='text-right'>{slotData.timeSlot}</TableCell>
+                            <TableCell className='text-right'>
+                                {slotData.timeSlot}
+                            </TableCell>
                         </TableRow>
                     ));
                 })}
             </TableBody>
         </Table>
-    )
-}
+    );
+};
 
 export default RoomsPlanTable;

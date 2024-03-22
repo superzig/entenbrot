@@ -2,7 +2,7 @@
 import { usePathname } from 'next/navigation';
 import React from 'react';
 import { cn } from '~/lib/utils';
-import Link from "next/link";
+import Link from 'next/link';
 
 const steps = [
     {
@@ -69,7 +69,13 @@ const StepperComponent = () => {
                             ) : (
                                 <span className='me-2'>{number}</span>
                             )}
-                            {isCompleted ? (<Link href={`/upload/${urlMatch}`}>{label}</Link>) : label  }
+                            {isCompleted ? (
+                                <Link href={`/upload/${urlMatch}`}>
+                                    {label}
+                                </Link>
+                            ) : (
+                                label
+                            )}
                         </span>
                     </li>
                 );

@@ -10,15 +10,18 @@ import {
 import { Button } from '~/app/_components/ui/button';
 import StudentsTable from '~/app/_components/ui/StudentsTable';
 import { readExcelFile } from '~/lib/utils';
-import useDataStore from "~/app/hooks/useDataStore";
-import {useRouter} from "next/navigation";
-import {runAlgorithmen} from "~/action";
-import {toast, useToast} from "~/app/_components/ui/use-toast";
+import useDataStore from '~/app/hooks/useDataStore';
+import { useRouter } from 'next/navigation';
+import { runAlgorithmen } from '~/action';
+import { toast, useToast } from '~/app/_components/ui/use-toast';
 
 export default function Page() {
-
     const router = useRouter();
-    const [objects, addJson, clearStore] = useDataStore((state) => [state.objects, state.addJson, state.clearStore]);
+    const [objects, addJson, clearStore] = useDataStore((state) => [
+        state.objects,
+        state.addJson,
+        state.clearStore,
+    ]);
     const [data, setData] = useState<DataResponse<StudentType>>({
         data: objects.students ?? [],
         error: null,
@@ -38,18 +41,17 @@ export default function Page() {
         }
     };
 
-    const redirectToFileUpload = (error?: string|null) => {
+    const redirectToFileUpload = (error?: string | null) => {
         toast({
-            title: "Ein Fehler ist aufgetreten",
-            description: error ?? "Bitte laden Sie erneut alle Dateien hoch.",
-            variant: "destructive",
-        })
+            title: 'Ein Fehler ist aufgetreten',
+            description: error ?? 'Bitte laden Sie erneut alle Dateien hoch.',
+            variant: 'destructive',
+        });
         clearStore();
         router.push('/upload/rooms');
-    }
+    };
 
     const handleNavigation = async () => {
-
         if (!objects.students || !objects.rooms || !objects.events) {
             redirectToFileUpload();
         }
@@ -59,13 +61,12 @@ export default function Page() {
         formdata.append('rooms', JSON.stringify(objects.rooms));
         formdata.append('events', JSON.stringify(objects.events));
 
-        const {data, error} = await runAlgorithmen(formdata)
+        const { data, error } = await runAlgorithmen(formdata);
         if (error) {
             redirectToFileUpload(error);
-
         }
 
-        router.push('/summary/'+data.cacheKey);
+        router.push('/summary/' + data.cacheKey);
     };
 
     return (

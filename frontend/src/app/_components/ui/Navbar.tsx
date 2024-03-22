@@ -1,9 +1,9 @@
- import MaxWidthWrapper from '~/app/_components/ui/MaxWidthWrapper';
+import MaxWidthWrapper from '~/app/_components/ui/MaxWidthWrapper';
 import Link from 'next/link';
 import Image from 'next/image';
 import logoImage from '../../../../public/logo.png';
- import {buttonVariants} from "~/app/_components/ui/button";
- import {ArrowRight} from "lucide-react";
+import { buttonVariants } from '~/app/_components/ui/button';
+import { ArrowRight } from 'lucide-react';
 
 const Navbar = () => {
     return (
@@ -28,7 +28,7 @@ const Navbar = () => {
                         {/* Navbar links */}
                         <Link
                             className={buttonVariants({
-                                variant: 'link'
+                                variant: 'link',
                             })}
                             href='/list'
                         >

@@ -91,11 +91,11 @@ export type RoomsType = z.infer<typeof roomsSchema>;
 
 interface AlgorithmenResponse {
     data: {
-        cacheKey: string|null;
+        cacheKey: string | null;
         isError: boolean;
-        cachedTime: number|null;
-        data: AlgorithmenData|null;
-    }
+        cachedTime: number | null;
+        data: AlgorithmenData | null;
+    };
     error: string | null;
 }
 
@@ -124,11 +124,14 @@ interface TimeslotRoomType {
     timeSlot: string;
 }
 
-export type roomsPlanType = Record<string, {
+export type roomsPlanType = Record<
+    string,
+    {
         company: string;
-    specialization: string;
+        specialization: string;
         timeslots: TimeslotRoomType[];
-    }>;
+    }
+>;
 
 interface Person {
     class: string;
@@ -145,7 +148,6 @@ interface CompanyData {
 }
 
 export type AttendancePlanType = Record<string, CompanyData>;
-
 
 interface AssignmentDetails {
     room: number | string;

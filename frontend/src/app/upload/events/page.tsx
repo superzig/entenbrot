@@ -11,11 +11,13 @@ import { Button } from '~/app/_components/ui/button';
 import EventsTable from '~/app/_components/ui/EventsTable';
 import { useRouter } from 'next/navigation';
 import { readExcelFile } from '~/lib/utils';
-import useDataStore from "~/app/hooks/useDataStore";
+import useDataStore from '~/app/hooks/useDataStore';
 
 export default function Page() {
-
-    const [cachedEvents, addJson] = useDataStore((state) => [state.objects.events, state.addJson]);
+    const [cachedEvents, addJson] = useDataStore((state) => [
+        state.objects.events,
+        state.addJson,
+    ]);
     const [data, setData] = useState<DataResponse<EventType>>({
         data: cachedEvents ?? [],
         error: null,

@@ -11,11 +11,13 @@ import { Button } from '~/app/_components/ui/button';
 import RoomsTable from '~/app/_components/ui/RoomsTable';
 import { useRouter } from 'next/navigation';
 import { readExcelFile } from '~/lib/utils';
-import useDataStore from "~/app/hooks/useDataStore";
+import useDataStore from '~/app/hooks/useDataStore';
 
 export default function Page() {
-
-    const [cachedRooms, addJson] = useDataStore((state) => [state.objects.rooms, state.addJson]);
+    const [cachedRooms, addJson] = useDataStore((state) => [
+        state.objects.rooms,
+        state.addJson,
+    ]);
     const [data, setData] = useState<DataResponse<RoomType>>({
         data: cachedRooms ?? [],
         error: null,

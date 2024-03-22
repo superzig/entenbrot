@@ -550,7 +550,14 @@ class AlgorithmService
         if (!Storage::exists("algorithm/$cacheKey")) {
             return false;
         }
-        return Storage::disk('algorithm')->deleteDirectory($cacheKey);
+
+        $results = [
+            Storage::disk('algorithm')->deleteDirectory($cacheKey),
+            Storage::disk('csv')->deleteDirectory($cacheKey),
+        ];
+        return array_filter($results, static function (bool $result) {
+            return !$result;
+        }) === [];
     }
 
     /**

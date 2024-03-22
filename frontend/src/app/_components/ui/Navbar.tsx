@@ -2,6 +2,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import logoImage from '../../../../public/logo.png';
+ import {buttonVariants} from "~/app/_components/ui/button";
+ import {ArrowRight} from "lucide-react";
 
 const Navbar = () => {
     return (
@@ -22,8 +24,16 @@ const Navbar = () => {
                             <span>Entenbrot.</span>
                         </Link>
                     </div>
-                    <div className='hidden items-center space-x-4 sm:flex'>
-                        <>{/* Navbar links */}</>
+                    <div className='items-center space-x-4'>
+                        {/* Navbar links */}
+                        <Link
+                            className={buttonVariants({
+                                variant: 'link'
+                            })}
+                            href='/list'
+                        >
+                            Vorherige Durchläufe
+                        </Link>
                     </div>
                 </div>
             </MaxWidthWrapper>

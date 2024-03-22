@@ -2,13 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\AlgorithmService;
 use Exception;
+use http\Env\Request;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Storage;
 use ZipArchive;
 
 class ExportCsvController extends BaseController
 {
+
+    protected AlgorithmService $algorithmService;
+
+    public function __construct(AlgorithmService $algorithmService)
+    {
+        $this->algorithmService = $algorithmService;
+    }
 
     public function index(): \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
     {
@@ -245,6 +255,33 @@ class ExportCsvController extends BaseController
         } catch (\Exception $e) {
             echo "Error: " . $e->getMessage();
         }
+    }
+
+
+    public function downloadDocuments($cacheKey)
+    {
+        if (!$cacheKey) {
+            return new JsonResponse(['isError' => true, 'message' => 'No cache key provided', 'data' => [], 'cachedTime' => null, 'cacheKey' => null], 400);
+        }
+
+        $files = Storage::files("algorithm/$cacheKey");
+        $zipFile = 'download.zip'; // Name of the final zip file
+        $zip = new ZipArchive;
+
+        if ($zip->open(public_path($zipFile), ZipArchive::CREATE) === TRUE) {
+            // Add files to the zip file
+            foreach($files as $file) {
+                if (Storage::exists($file)) {
+                    $zip->addFile(storage_path('app/' . $file), basename($file));
+                }
+            }
+
+            $zip->close();
+        }
+
+
+        return response()->download(public_path($zipFile))->deleteFileAfterSend(true);
+
     }
 
 

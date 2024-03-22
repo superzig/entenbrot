@@ -32,4 +32,5 @@ Route::prefix('/data')->group(function () {
 Route::prefix('/download')->group(function () {
     Route::get("/presenceList", [ExportCsvController::class, 'generatePresenceList'])->name('export.generatePresenceList');
     Route::get("/runningLog", [ExportCsvController::class, 'generateRunningLog'])->name('export.runningLog');
+    Route::get("/documents/{cacheKey}", [ExportCsvController::class, 'downloadDocuments'])->name('export.documents');
 });

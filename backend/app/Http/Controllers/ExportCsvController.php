@@ -168,31 +168,30 @@ class ExportCsvController extends BaseController
                 $room = $assignment['room'];
                 $company = $assignment['company'];
                 $specialization = $assignment['specialization'];
-                $eventId = $assignment['eventId'];
-                $isWish = $assignment['isWish'];
-
                 $csvContent .= "$timeSlot;$room;$company;$specialization;\n";
             }
+            file_put_contents($csvFileName, $csvContent);
+            $zip->addFile($csvFileName);
 
-        $zip->close();
+            $zip->close();
 
-        // Download the ZIP file
-        header("Content-type: application/zip");
-        header("Content-Disposition: attachment; filename=$zipFileName");
-        header("Pragma: no-cache");
-        header("Expires: 0");
-        readfile("$zipFileName");
-        // Clean up the generated CSV files
-        foreach ($studentsData as $student) {
-            $lastName = $student['lastName'];
-            $firstName = $student['firstName'];
-            $csvFileName = "$lastName-$firstName-assignments.csv";
-            unlink($csvFileName);
+            // Download the ZIP file
+            header("Content-type: application/zip");
+            header("Content-Disposition: attachment; filename=$zipFileName");
+            header("Pragma: no-cache");
+            header("Expires: 0");
+            readfile("$zipFileName");
+            // Clean up the generated CSV files
+            foreach ($studentsData as $student) {
+                $lastName = $student['lastName'];
+                $firstName = $student['firstName'];
+                $csvFileName = "$lastName-$firstName-assignments.csv";
+                unlink($csvFileName);
+            }
+            // Delete the zip file
+            unlink($zipFileName);
         }
-        // Delete the zip file
-        unlink($zipFileName);
     }
-
 
     public function downloadDocuments($cacheKey)
     {

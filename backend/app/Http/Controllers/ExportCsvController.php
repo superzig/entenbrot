@@ -22,7 +22,8 @@ class ExportCsvController extends BaseController
         $this->algorithmService = $algorithmService;
     }
 
-    public function index(): \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
+    public function index()
+    : \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
     {
         return view('test');
     }
@@ -32,7 +33,8 @@ class ExportCsvController extends BaseController
      *
      * @throws Exception If an error occurs during the CSV file creation or download process.
      */
-    public function export(): void
+    public function export()
+    : void
     {
         $dataColumn = [
             0 => '',
@@ -62,7 +64,7 @@ class ExportCsvController extends BaseController
 
                 //csv column names
                 foreach ($dataRow as $row) {
-                    fputcsv($fh, [strval($dataColumn[0]) => strval($row[0]), strval($dataColumn[1]) => strval($row[1]), strval($dataColumn[2]) => strval($row[2]),  strval($dataColumn[3]) => strval($row[3]),], ";", "\"");
+                    fputcsv($fh, [strval($dataColumn[0]) => strval($row[0]), strval($dataColumn[1]) => strval($row[1]), strval($dataColumn[2]) => strval($row[2]), strval($dataColumn[3]) => strval($row[3]),], ";", "\"");
                 }
 
                 fclose($fh);
@@ -83,7 +85,8 @@ class ExportCsvController extends BaseController
      *
      * @throws Exception Wenn das Schreiben in die CSV-Datei fehlschlägt.
      */
-    public function generatePresenceList(string $cacheKey): StreamedResponse|null
+    public function generatePresenceList(string $cacheKey)
+    : StreamedResponse|null
     {
         // $algoService = new AlgorithmService(); // Diese Zeile entfernen
         // Überprüfe, ob Daten im Cache vorhanden sind
@@ -96,7 +99,7 @@ class ExportCsvController extends BaseController
 
         $zip = new ZipArchive();
         $zipFileName = 'output.zip';
-        if ($zip->open($zipFileName, ZipArchive::CREATE) !== TRUE) {
+        if ($zip->open($zipFileName, ZipArchive::CREATE) !== true) {
             exit("Cannot open $zipFileName");
         }
 
@@ -110,6 +113,7 @@ class ExportCsvController extends BaseController
                 foreach ($attendees as $attendee) {
                     $csvContent .= "{$attendee['lastName']};{$attendee['firstName']};;\n";
                 }
+                Storage::st
                 file_put_contents($csvFileName, $csvContent);
                 $zip->addFile($csvFileName);
             }
@@ -138,12 +142,13 @@ class ExportCsvController extends BaseController
     /**
      * Generates a CSV running log based on the provided name and an array of room numbers and dates.
      *
-     * @param string $name The name for the running log entry.
-     * @param array $runningData An array containing room numbers and dates for the running log entry.
+     * @param string $name        The name for the running log entry.
+     * @param array  $runningData An array containing room numbers and dates for the running log entry.
      *
      * @throws Exception If writing to the CSV file fails.
      */
-    public function generateRunningLog(string $cacheKey): void
+    public function generateRunningLog(string $cacheKey)
+    : void
     {
         if (empty($this->algorithmService->getCachedData($cacheKey))) {
             return;
@@ -153,7 +158,7 @@ class ExportCsvController extends BaseController
         $studentsData = Storage::json("algorithm/{$cacheKey}/studentSheet.json");
         $zip = new ZipArchive();
         $zipFileName = 'output.zip';
-        if ($zip->open($zipFileName, ZipArchive::CREATE) !== TRUE) {
+        if ($zip->open($zipFileName, ZipArchive::CREATE) !== true) {
             exit("Cannot open $zipFileName");
         }
 
@@ -174,52 +179,54 @@ class ExportCsvController extends BaseController
                 $csvContent .= "$timeSlot;$room;$company;$specialization;\n";
             }
 
-        $zip->close();
+            $zip->close();
 
-        // Download the ZIP file
-        header("Content-type: application/zip");
-        header("Content-Disposition: attachment; filename=$zipFileName");
-        header("Pragma: no-cache");
-        header("Expires: 0");
-        readfile("$zipFileName");
-        // Clean up the generated CSV files
-        foreach ($studentsData as $student) {
-            $lastName = $student['lastName'];
-            $firstName = $student['firstName'];
-            $csvFileName = "$lastName-$firstName-assignments.csv";
-            unlink($csvFileName);
+            // Download the ZIP file
+            header("Content-type: application/zip");
+            header("Content-Disposition: attachment; filename=$zipFileName");
+            header("Pragma: no-cache");
+            header("Expires: 0");
+            readfile("$zipFileName");
+            // Clean up the generated CSV files
+            foreach ($studentsData as $student) {
+                $lastName = $student['lastName'];
+                $firstName = $student['firstName'];
+                $csvFileName = "$lastName-$firstName-assignments.csv";
+                unlink($csvFileName);
+            }
+            // Delete the zip file
+            unlink($zipFileName);
         }
-        // Delete the zip file
-        unlink($zipFileName);
     }
 
 
-    public function downloadDocuments($cacheKey)
-    {
-        if (!$cacheKey) {
-            return new JsonResponse(['isError' => true, 'message' => 'No cache key provided', 'data' => [], 'cachedTime' => null, 'cacheKey' => null], 400);
-        }
-
-        $files = Storage::files("algorithm/$cacheKey");
-        $zipFile = 'download.zip'; // Name of the final zip file
-        $zip = new ZipArchive;
-
-        if ($zip->open(public_path($zipFile), ZipArchive::CREATE) === TRUE) {
-            // Add files to the zip file
-            foreach($files as $file) {
-                if (Storage::exists($file)) {
-                    $zip->addFile(storage_path('app/' . $file), basename($file));
-                }
+        public
+        function downloadDocuments($cacheKey)
+        {
+            if (!$cacheKey) {
+                return new JsonResponse(['isError' => true, 'message' => 'No cache key provided', 'data' => [], 'cachedTime' => null, 'cacheKey' => null], 400);
             }
 
-            $zip->close();
+            $files = Storage::files("algorithm/$cacheKey");
+            $zipFile = 'download.zip'; // Name of the final zip file
+            $zip = new ZipArchive;
+
+            if ($zip->open(public_path($zipFile), ZipArchive::CREATE) === true) {
+                // Add files to the zip file
+                foreach ($files as $file) {
+                    if (Storage::exists($file)) {
+                        $zip->addFile(storage_path('app/' . $file), basename($file));
+                    }
+                }
+
+                $zip->close();
+            }
+
+
+            return response()->download(public_path($zipFile))->deleteFileAfterSend(true);
+
         }
 
 
-        return response()->download(public_path($zipFile))->deleteFileAfterSend(true);
-
     }
-
-
-}
 

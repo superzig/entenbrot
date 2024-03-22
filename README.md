@@ -106,6 +106,9 @@ Um das Frontend für die Produktion zu bauen und zu starten, führen Sie die fol
    npm start
    ```
 
+> Für Image-Optimization kann das Package `sharp` verwendet werden. Dafür muss das Package installiert werden und die `sharp`-Option in der `next.config.js` aktiviert werden.
+> `npm i sharp` und in der `next.config.js`: `images: { sharp: true }`
+
 Nach diesen Schritten sollte Ihr Next.js-Frontend für die Produktion bereit sein und standardmäßig unter `http://localhost:3000` laufen, sofern Sie keinen anderen Port konfiguriert haben.
 
 ## Fertig!

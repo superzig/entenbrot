@@ -2,7 +2,7 @@
 const config = {
     parser: '@typescript-eslint/parser',
     parserOptions: {
-        project: true,
+        project: true
     },
     plugins: ['@typescript-eslint'],
     extends: [

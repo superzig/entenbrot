@@ -4,12 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Services\AlgorithmService;
 use Exception;
-use http\Env\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\StreamedResponse;
-use Illuminate\Support\Facades\Storage;
 use ZipArchive;
 
 class ExportCsvController extends BaseController
@@ -85,24 +83,8 @@ class ExportCsvController extends BaseController
      *
      * @throws Exception Wenn das Schreiben in die CSV-Datei fehlschlägt.
      */
-    public function generatePresenceList(string $cacheKey)
-    : StreamedResponse|null
+    private function generatePresenceList(array $data, ZipArchive $zip)
     {
-        // $algoService = new AlgorithmService(); // Diese Zeile entfernen
-        // Überprüfe, ob Daten im Cache vorhanden sind
-        if (empty($this->algorithmService->getCachedData($cacheKey))) {
-            return;
-        }
-
-        // Laden der Anwesenheitsliste aus dem Storage
-        $data = Storage::json("algorithm/{$cacheKey}/attendanceList.json");
-
-        $zip = new ZipArchive();
-        $zipFileName = 'output.zip';
-        if ($zip->open($zipFileName, ZipArchive::CREATE) !== true) {
-            exit("Cannot open $zipFileName");
-        }
-
         foreach ($data as $companyId => $companyData) {
             $companyName = $companyData['company'];
             $timeslots = $companyData['timeslots'];
@@ -113,30 +95,10 @@ class ExportCsvController extends BaseController
                 foreach ($attendees as $attendee) {
                     $csvContent .= "{$attendee['lastName']};{$attendee['firstName']};;\n";
                 }
-                Storage::st
-                file_put_contents($csvFileName, $csvContent);
-                $zip->addFile($csvFileName);
+                Storage::disk('local')->put($csvFileName, $csvContent);
+                $zip->addFile(storage_path('app/'.$csvFileName), "Anwesenheiten/$csvFileName");
             }
         }
-
-        $zip->close();
-
-        // Download the ZIP file
-        header("Content-type: application/zip");
-        header("Content-Disposition: attachment; filename=$zipFileName");
-        header("Pragma: no-cache");
-        header("Expires: 0");
-        readfile("$zipFileName");
-        // Clean up the generated CSV files
-        foreach ($data as $companyId => $companyData) {
-            $timeslots = $companyData['timeslots'];
-            foreach ($timeslots as $timeslot => $attendees) {
-                $csvFileName = "$companyName-$timeslot.csv";
-                unlink($csvFileName);
-            }
-        }
-        // Delete the zip file
-        unlink($zipFileName);
     }
 
     /**
@@ -147,86 +109,66 @@ class ExportCsvController extends BaseController
      *
      * @throws Exception If writing to the CSV file fails.
      */
-    public function generateRunningLog(string $cacheKey)
-    : void
+    public function generateRunningLog(array $studentsData, ZipArchive $zip)
     {
-        if (empty($this->algorithmService->getCachedData($cacheKey))) {
-            return;
-        }
-
-        // Laden der Anwesenheitsliste aus dem Storage
-        $studentsData = Storage::json("algorithm/{$cacheKey}/studentSheet.json");
-        $zip = new ZipArchive();
-        $zipFileName = 'output.zip';
-        if ($zip->open($zipFileName, ZipArchive::CREATE) !== true) {
-            exit("Cannot open $zipFileName");
-        }
 
         foreach ($studentsData as $student) {
             $lastName = $student['lastName'];
             $firstName = $student['firstName'];
             $assignments = $student['assignments'];
 
-            $csvFileName = "$lastName-$firstName-assignments.csv";
+            $csvFileName = "$firstName-$lastName.csv";
             $csvContent = "Time Slot;Room;Company;Specialization;\n";
             foreach ($assignments as $timeSlot => $assignment) {
                 $room = $assignment['room'];
                 $company = $assignment['company'];
                 $specialization = $assignment['specialization'];
-                $eventId = $assignment['eventId'];
-                $isWish = $assignment['isWish'];
-
                 $csvContent .= "$timeSlot;$room;$company;$specialization;\n";
             }
-
-            $zip->close();
-
-            // Download the ZIP file
-            header("Content-type: application/zip");
-            header("Content-Disposition: attachment; filename=$zipFileName");
-            header("Pragma: no-cache");
-            header("Expires: 0");
-            readfile("$zipFileName");
-            // Clean up the generated CSV files
-            foreach ($studentsData as $student) {
-                $lastName = $student['lastName'];
-                $firstName = $student['firstName'];
-                $csvFileName = "$lastName-$firstName-assignments.csv";
-                unlink($csvFileName);
-            }
-            // Delete the zip file
-            unlink($zipFileName);
+            Storage::disk('local')->put($csvFileName, $csvContent);
+            $zip->addFile(storage_path('app/'.$csvFileName), "Laufzettel/$csvFileName");
         }
     }
 
 
-        public
-        function downloadDocuments($cacheKey)
-        {
-            if (!$cacheKey) {
-                return new JsonResponse(['isError' => true, 'message' => 'No cache key provided', 'data' => [], 'cachedTime' => null, 'cacheKey' => null], 400);
-            }
+    public function downloadDocuments($cacheKey)
+    {
+        if (!$cacheKey) {
+            return new JsonResponse(['isError' => true, 'message' => 'No cache key provided', 'data' => [], 'cachedTime' => null, 'cacheKey' => null], 400);
+        }
 
-            $files = Storage::files("algorithm/$cacheKey");
-            $zipFile = 'download.zip'; // Name of the final zip file
-            $zip = new ZipArchive;
+        $files = Storage::files("algorithm/$cacheKey");
+        $zipFile = 'download.zip'; // Name of the final zip file
+        $zip = new ZipArchive;
 
-            if ($zip->open(public_path($zipFile), ZipArchive::CREATE) === true) {
-                // Add files to the zip file
-                foreach ($files as $file) {
-                    if (Storage::exists($file)) {
-                        $zip->addFile(storage_path('app/' . $file), basename($file));
+        if ($zip->open(public_path($zipFile), ZipArchive::CREATE) === true) {
+            // Add files to the zip file
+            foreach ($files as $file) {
+                if (Storage::exists($file)) {
+                    switch (pathinfo($file, PATHINFO_FILENAME)) {
+                        case 'attendanceList':
+                            $zip->addEmptyDir('Anwesenheiten');
+                            $data = Storage::json($file);
+                            $this->generatePresenceList($data, $zip);
+                            break;
+                        case 'studentSheet':
+                            $zip->addEmptyDir('Laufzettel');
+                            $data = Storage::json($file);
+                            $this->generateRunningLog($data, $zip);
+                            break;
+                        case 'organizationPlan':
+                            $zip->addEmptyDir('organizationPlan');
+
+                            break;
                     }
                 }
-
-                $zip->close();
             }
-
-
+            $zip->close();
             return response()->download(public_path($zipFile))->deleteFileAfterSend(true);
 
         }
 
-
+        return new JsonResponse(['isError' => true, 'message' => 'Error creating zip file', 'data' => [], 'cachedTime' => null, 'cacheKey' => null], 500);
     }
+}
 

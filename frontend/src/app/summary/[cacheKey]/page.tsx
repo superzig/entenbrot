@@ -45,7 +45,6 @@ const Page = ({ params }: { params: { cacheKey: string } }) => {
     }
 
     const responseData = response.data;
-
     const {isError, cachedTime, data} = responseData;
     if (data.length === 0 || isError) {
         redirectToHome(router, "Es wurden keine Daten gefunden.");
@@ -54,6 +53,7 @@ const Page = ({ params }: { params: { cacheKey: string } }) => {
 
     if (!attendanceList || !organizationalPlan || !score || !studentSheet) {
         redirectToHome(router, "Es wurden keine Daten gefunden.");
+        return;
     }
 
     return (

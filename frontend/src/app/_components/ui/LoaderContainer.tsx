@@ -12,12 +12,13 @@ const LoaderContainer = () => {
                         src={logoImage}
                         quality={100}
                         style={{
-                            width: '60px',
+                            width: '300px',
                         }}
-                        className='pointer-events-none hidden bg-contain md:block'
+                        priority={true}
+                        className='pointer-events-none hidden bg-contain md:block mx-auto'
                     />
                 </div>
-                <h1 className="text-2xl text-bold text-gray-700 mt-1 mb-4">
+                <h1 className="text-2xl text-bold mt-1 mb-4">
                     Warte kurz, während wir die Ente füttern...
                 </h1>
                 <Loader2 className="animate-spin text-gray-300 mx-auto mt-3" size={20}/>

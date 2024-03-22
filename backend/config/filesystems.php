@@ -41,6 +41,11 @@ return [
             'root' => storage_path('app/algorithm'),
         ],
 
+        'csv' => [
+            'driver' => 'local',
+            'root' => storage_path('app/csv'),
+        ],
+
 
         'public' => [
             'driver' => 'local',

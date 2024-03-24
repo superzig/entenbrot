@@ -3,13 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Services\AlgorithmService;
+use App\Services\ErrorService;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Storage;
-use Symfony\Component\HttpFoundation\StreamedResponse;
+use Random\RandomException;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use ZipArchive;
 
+/**
+ * Class ExportCsvController
+ * @package App\Http\Controllers
+ *
+ * This controller is responsible for handling requests related to exporting data to CSV files
+ */
 class ExportCsvController extends BaseController
 {
 
@@ -52,17 +60,43 @@ class ExportCsvController extends BaseController
         }
     }
 
+    /**
+     * Speichert den Inhalt einer CSV-Datei im CSV-Speicher.
+     *
+     * @param string $cacheKey
+     * @param string $fileName
+     * @param string $content
+     *
+     * @return void
+     */
     private static function saveCsvFile(string $cacheKey, string $fileName, string $content): void
     {
         $file = "$cacheKey/$fileName";
         Storage::disk('csv')->put($file, $content);
     }
 
+    /**
+     * Gibt den Pfad zur CSV-Datei zurück.
+     *
+     * @param string $cacheKey
+     * @param string $fileName
+     *
+     * @return string
+     */
     private static function getCsvPath(string $cacheKey, string $fileName): string
     {
         return storage_path("app/csv/$cacheKey/$fileName");
     }
 
+    /**
+     * Konvertiert den Dateinamen in einen gültigen Dateinamen.
+     *
+     * @param string $file
+     * @param string $defaultName
+     *
+     * @return string
+     * @throws \Random\RandomException
+     */
     private static function convertToFileName(string $file, string $defaultName = 'file.csv'): string
     {
         $replacements = [
@@ -119,11 +153,15 @@ class ExportCsvController extends BaseController
     }
 
     /**
-     * Generiert CSV-Dateien für jedes Unternehmen basierend auf den angegebenen JSON-Daten und packt sie in eine ZIP-Datei.
+     * Generiert CSV-Dateien für jedes Unternehmen basierend auf den angegebenen JSON-Daten und packt sie in eine
+     * ZIP-Datei.
      *
-     * @param array $data
+     * @param array      $data
      * @param ZipArchive $zip
+     * @param string     $cacheKey
+     *
      * @return void
+     * @throws RandomException
      */
     public function generateCompanyRoomList(array $data, ZipArchive $zip, string $cacheKey): void
     {
@@ -145,7 +183,16 @@ class ExportCsvController extends BaseController
     }
 
 
+    /**
+     * Generates a ZIP file containing all CSV files based on the provided cache key and returns it for download.
+     * If the cache key is not provided, a 400 error will be returned.
+     *
+     * @param $cacheKey
+     *
+     * @return JsonResponse|BinaryFileResponse
+     */
     public function downloadDocuments($cacheKey)
+    : BinaryFileResponse|JsonResponse
     {
         if (!$cacheKey) {
             return new JsonResponse(['isError' => true, 'message' => 'No cache key provided', 'data' => [], 'cachedTime' => null, 'cacheKey' => null], 400);
@@ -167,12 +214,20 @@ class ExportCsvController extends BaseController
 
             }
         } catch (Exception $e) {
-            return new JsonResponse(['isError' => true, 'message' => $this->getErrorMessage($e) , 'data' => [], 'cachedTime' => null, 'cacheKey' => null], 500);
+            return new JsonResponse(['isError' => true, 'message' => ErrorService::getErrorMessage($e) , 'data' => [], 'cachedTime' => null, 'cacheKey' => null], 500);
         }
 
         return new JsonResponse(['isError' => true, 'message' => 'Error creating zip file', 'data' => [], 'cachedTime' => null, 'cacheKey' => null], 500);
     }
 
+    /**
+     * Adds the cached documents to the ZIP file.
+     *
+     * @param string     $cacheKey
+     * @param ZipArchive $zip
+     *
+     * @return bool
+     */
     private function addCachedDocuments(string $cacheKey, ZipArchive $zip): bool
     {
         $dirs = Storage::directories("csv/$cacheKey");
@@ -201,18 +256,14 @@ class ExportCsvController extends BaseController
         return $zip->numFiles > 1;
     }
 
-    private function getErrorMessage(Exception $e): string
-    {
-        return $e->getMessage()." in ".$e->getFile()." on line ".$e->getLine();
-    }
-
-
-
     /**
-     * @param $cacheKey
+     * Adds the documents to the ZIP file.
+     *
+     * @param string     $cacheKey
      * @param ZipArchive $zip
+     *
      * @return void
-     * @throws Exception
+     * @throws RandomException
      */
     public function addDocuments(string $cacheKey, ZipArchive $zip): void
     {

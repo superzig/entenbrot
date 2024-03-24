@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
+ * Data routes
+ */
 Route::prefix('/data')->group(function () {
     Route::post('/algorithmen', [DataController::class, 'algorithmAction'])->name('data.algorithmen');
     Route::get('/algorithmen', [DataController::class, 'listAction'])->name('data.algorithmen_list');
@@ -22,6 +25,9 @@ Route::prefix('/data')->group(function () {
     Route::get('/algorithmen/{cacheKey}', [DataController::class, 'viewAction'])->name('data.algorithmen_view');
 });
 
+/*
+ * Export routes
+ */
 Route::prefix('/download')->group(function () {
     Route::get("/documents/{cacheKey}", [ExportCsvController::class, 'downloadDocuments'])->name('export.documents');
 });

@@ -2,18 +2,31 @@
 
 namespace App\Services;
 
-use Illuminate\Support\Facades\App;
+use Exception;
 use Illuminate\Support\Facades\Storage;
+use JsonException;
 
 /**
  * Class AlgorithmService
+ * @package App\Services
  *
+ * This service is responsible for running the algorithm and handling the caching of the results
  */
 class AlgorithmService
 {
 
-    private const MAX_CACHE_DURATION = 60 * 60 * 24 * 7; // 1 week
+    /**
+     * Maximum cache duration in seconds
+     * default: 60 * 60 * 24 * 7 (1 week)
+     */
+    private const MAX_CACHE_DURATION = 60 * 60 * 24 * 7;
 
+
+    /**
+     * Returns the mapping of timeslots to times
+     *
+     * @return string[]
+     */
     public function getTimesToTimeslots(): array
     {
         return [
@@ -25,6 +38,13 @@ class AlgorithmService
         ];
     }
 
+    /**
+     * Returns the time for a given timeslot
+     *
+     * @param string $timeslot
+     *
+     * @return string|null
+     */
     public function getTimeToTimeslot(string $timeslot): ?string
     {
         $timeslotToTime = $this->getTimesToTimeslots();
@@ -32,13 +52,18 @@ class AlgorithmService
     }
 
     /**
-     * @throws \JsonException
+     * Runs the algorithm with the provided data
+     *
+     * @param array       $studentData
+     * @param array       $roomData
+     * @param array       $eventData
+     * @param string|null $cacheKey (optional) - if provided, the result will be cached
+     *
+     * @return array
      */
     public function run(array $studentData, array $roomData, array $eventData, ?string $cacheKey = null): array
     {
         try {
-            // TODO: ENABLE CACHING AGAIN AFTER TESTING
-
              $cachedResult = $this->getCachedData($cacheKey);
              if ($cachedResult) {
                  return $cachedResult;
@@ -124,17 +149,26 @@ class AlgorithmService
                     'studentSheet'       => $schuelerLaufzettel,
                 ],
             ];
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return [
                 'cacheKey'   => null,
                 'isError'    => true,
                 'cachedTime' => null,
-                'error'      => $this->getErrorMessage($e),
+                'error'      => ErrorService::getErrorMessage($e),
                 'data'       => [],
             ];
         }
     }
 
+
+    /**
+     * Calculates the fulfillment score of the students based on their choices and the assigned events
+     *
+     * @param $studentData
+     * @param $schuelerLaufzettel
+     *
+     * @return int[]|null[]
+     */
     private function getErfuellungsScore($studentData, $schuelerLaufzettel)
     {
         $maxReachablePoints = null;
@@ -205,8 +239,17 @@ class AlgorithmService
         ];
     }
 
-
-
+    /**
+     * Maps the id of the array as key
+     * If the type is 'events' or 'rooms', the key will be the eventId or roomId
+     * Otherwise the key will be the index of the array
+     * This is used to access the data more easily
+     *
+     * @param array  $array
+     * @param string $type
+     *
+     * @return array
+     */
     private function mapIdAsKey(array $array, string $type): array
     {
         $result = [];
@@ -225,6 +268,14 @@ class AlgorithmService
         return $result;
     }
 
+    /**
+     * Returns the cached data if it exists
+     * Otherwise returns null
+     *
+     * @param string $cacheKey
+     *
+     * @return array|null
+     */
     public function getCachedData(string $cacheKey): ?array
     {
         if (!Storage::disk('algorithm')->exists($cacheKey)) {
@@ -234,16 +285,11 @@ class AlgorithmService
         return $this->getCachedFilesData($cacheKey);
     }
 
-    private function getErrorMessage(\Exception $e): string
-    {
-        if (!App::environment('local')) {
-            return 'Ein unerwarteter Fehler ist aufgetreten';
-        }
-        return sprintf("Ein Fehler ist aufgetreten: %s in der Datei %s in Zeile %s", $e->getMessage(), $e->getFile(), $e->getLine());
-    }
-
     /**
-     * @throws \JsonException
+     * Generates a unique hash based on the provided data
+     * This hash is used as the cache key
+     *
+     * @throws JsonException
      */
     public function generateUniqueHash(array $fileData1, array $fileData2, array $fileData3): string
     {
@@ -254,6 +300,18 @@ class AlgorithmService
         return hash('sha256', $jsonData1 . $jsonData2 . $jsonData3);
     }
 
+
+    /**
+     * Stores the results in the cache
+     *
+     * @param array  $erfuellungscore
+     * @param array  $organisationsplan
+     * @param array  $anwesenheitsliste
+     * @param array  $schuelerLaufzettel
+     * @param string $cacheKey
+     *
+     * @return array
+     */
     protected function store(array $erfuellungscore, array $organisationsplan, array $anwesenheitsliste, array $schuelerLaufzettel, string $cacheKey): array
     {
         $currentTime = time();
@@ -279,6 +337,13 @@ class AlgorithmService
     }
 
     /**
+     * Stores the result in the cache
+     *
+     * @param array  $data
+     * @param string $filename
+     * @param string $cacheKey
+     *
+     * @return bool
      */
     private function storageResult(array $data, string $filename, string $cacheKey): bool
     {
@@ -291,11 +356,22 @@ class AlgorithmService
 
             $file = "$cacheKey/$filename.json";
             return Storage::disk('algorithm')->put($file, $json);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return false;
         }
     }
 
+
+    /**
+     * Returns the running log of the students
+     *
+     * @param array $assignment
+     * @param array $studentData
+     * @param array $eventToRoomAssignment
+     * @param array $eventData
+     *
+     * @return array
+     */
     protected function getSchuelerLaufzettel(array $assignment, array $studentData, array $eventToRoomAssignment, array $eventData)
     {
 
@@ -316,6 +392,17 @@ class AlgorithmService
         return $result;
     }
 
+    /**
+     * Checks if the wish was from the student
+     * If the wish was from the student, the choice number will be returned
+     * Otherwise null will be returned
+     *
+     * @param string $studentID
+     * @param string $eventID
+     * @param array  $studentData
+     *
+     * @return int
+     */
     protected function checkIfWishWasFromStudent(string $studentID, string $eventID, array $studentData)
     {
         for ($i = 1; $i <= 6; $i++) {
@@ -325,8 +412,19 @@ class AlgorithmService
                 }
             }
         }
+        return null;
     }
 
+    /**
+     * Returns the room from the event and timeslot
+     * If the room is not found, null will be returned
+     *
+     * @param $eventToRoomAssignment
+     * @param $eventID
+     * @param $timeslot
+     *
+     * @return int|string|void
+     */
     protected function getRoomFromEventAndTimeslot($eventToRoomAssignment, $eventID, $timeslot)
     {
         foreach ($eventToRoomAssignment as $roomID => $timeslotToEvent) {
@@ -338,6 +436,15 @@ class AlgorithmService
         }
     }
 
+    /**
+     * Returns the attendance list of the students
+     *
+     * @param array $assignment
+     * @param array $studentData
+     * @param array $eventData
+     *
+     * @return array
+     */
     protected function getAnwesenheitsliste(array $assignment, array $studentData, array $eventData): array
     {
         $result = [];
@@ -356,8 +463,15 @@ class AlgorithmService
         return $result;
     }
 
-    protected
-    function getOrganisationsplan(array $eventToRoomAssignment, array $eventData): array
+    /**
+     * Returns the organizational plan of the events
+     *
+     * @param array $eventToRoomAssignment
+     * @param array $eventData
+     *
+     * @return array
+     */
+    protected function getOrganisationsplan(array $eventToRoomAssignment, array $eventData): array
     {
         $result = [];
         foreach ($eventToRoomAssignment as $roomID => $timeslotToEvent) {
@@ -374,50 +488,63 @@ class AlgorithmService
         return $result;
     }
 
-    // TODO: Optimierungsbedarf !
+    /**
+     * Returns the amount of choices for each event
+     * @param $studentData
+     *
+     * @return array
+     */
     protected function getAmountChoices($studentData)
+    : array
     {
         $amountChoices = [];
-        for ($i = 1; $i <= 6; $i++) {
-            foreach ($studentData as $id => $array) {
-                $choiceField = "choice" . $i;
 
-                if (!empty($array[$choiceField])) {
-                    if (isset($amountChoices[$choiceField][$array[$choiceField]])) {
-                        $amountChoices[$choiceField][$array[$choiceField]] += 1;
-                    } else {
-                        $amountChoices[$choiceField][$array[$choiceField]] = 1;
+        // Initialize 'allChoices' key to handle empty values and prepare for counting
+        $amountChoices['allChoices'] = ['null' => 0];
+
+        foreach ($studentData as $id => $student) {
+            for ($i = 1; $i <= 6; $i++) {
+                $choiceField = "choice$i";
+                $choiceValue = $student[$choiceField] ?? 'null'; // Use null coalescing operator for simplicity
+
+                // Increment the choice count for this specific choice
+                if (!isset($amountChoices[$choiceField][$choiceValue])) {
+                    $amountChoices[$choiceField][$choiceValue] = 0; // Initialize if not set
+                }
+                ++$amountChoices[$choiceField][$choiceValue];
+
+                // Increment the total choice count if not null, or increment 'null' count otherwise
+                if ($choiceValue !== 'null') {
+                    if (!isset($amountChoices['allChoices'][$choiceValue])) {
+                        $amountChoices['allChoices'][$choiceValue] = 0; // Initialize if not set
                     }
-                } else if (isset($amountChoices[$choiceField]["null"])) {
-                    $amountChoices[$choiceField]["null"] += 1;
+                    ++$amountChoices['allChoices'][$choiceValue];
                 } else {
-                    $amountChoices[$choiceField]["null"] = 1;
+                    ++$amountChoices['allChoices']['null'];
                 }
             }
         }
 
-        foreach ($studentData as $array) {
-            foreach ($array as $key => $value) {
-                if (str_starts_with($key, "choice")) {
-                    if (!empty($value)) {
-                        if (!empty($amountChoices["allChoices"][$value])) {
-                            $amountChoices["allChoices"][$value] += 1;
-                        } else {
-                            $amountChoices["allChoices"][$value] = 1;
-                        }
-                    } else {
-                        if (isset($amountChoices["allChoices"]["null"])) {
-                            $amountChoices["allChoices"]["null"] += 1;
-                        } else {
-                            $amountChoices["allChoices"]["null"] = 1;
-                        }
-                    }
-                }
-            }
+        // If there were no null 'allChoices', remove the 'null' key to clean up
+        if ($amountChoices['allChoices']['null'] === 0) {
+            unset($amountChoices['allChoices']['null']);
         }
+
         return $amountChoices;
     }
 
+    /**
+     * Returns the available timeslots for the given room and timeslot
+     * If the required amount of seats is not available, an empty array will be returned
+     * Otherwise the available timeslots will be returned
+     *
+     * @param $raumZuweisung
+     * @param $timeslot
+     * @param $roomID
+     * @param $requiredSeats
+     *
+     * @return array
+     */
     protected function getAvailableTimeSlots($raumZuweisung, $timeslot, $roomID, $requiredSeats): array
     {
         $availableSlots = [];
@@ -448,6 +575,15 @@ class AlgorithmService
         return $availableSlots;
     }
 
+    /**
+     * Returns the number of consecutive slots available
+     *
+     * @param $raumZuweisung
+     * @param $startTimeslot
+     * @param $roomID
+     *
+     * @return int|mixed
+     */
     protected function anzahlAufeinanderFolgendeSlotsFrei($raumZuweisung, $startTimeslot, $roomID)
     {
         $maxConsecutive = 0;
@@ -470,6 +606,15 @@ class AlgorithmService
         return $maxConsecutive;
     }
 
+    /**
+     * Returns the room assignment for the events
+     *
+     * @param $roomData
+     * @param $eventData
+     * @param $amountChoisesAll
+     *
+     * @return array
+     */
     protected function eventToRoomAssignment($roomData, $eventData, $amountChoisesAll): array
     {
 
@@ -508,8 +653,17 @@ class AlgorithmService
         return $raumZuweisung;
     }
 
-    //This function is searching the event with the most avalible places for the given timeslot which is not alrady inside the student assignment.
+    /**
+     * Returns the event with the most space left
+     *
+     * @param $spaceInEventLeft
+     * @param $timeslot
+     * @param $studentTimeslotsToEventsAssignmentArray
+     *
+     * @return int|string|null
+     */
     protected function findEventWithMostSpaceLeft($spaceInEventLeft, $timeslot, $studentTimeslotsToEventsAssignmentArray)
+    : int|string|null
     {
         $maxSpaceLeft = null;
         $eventWithMostSpaceLeft = null;
@@ -532,7 +686,14 @@ class AlgorithmService
     }
 
 
+    /**
+     * Retrieves all cached data
+     * If no cache is found, an empty array will be returned
+     *
+     * @return array
+     */
     public function retrieveFullCache()
+    : array
     {
         $cacheDirectories = Storage::directories('algorithm');
 
@@ -545,6 +706,14 @@ class AlgorithmService
         return $data;
     }
 
+    /**
+     * Deletes the cache by cacheKey
+     * Returns true if the cache was deleted successfully
+     *
+     * @param string $cacheKey
+     *
+     * @return bool
+     */
     public function deleteCache(string $cacheKey): bool
     {
         if (!Storage::exists("algorithm/$cacheKey")) {
@@ -561,6 +730,9 @@ class AlgorithmService
     }
 
     /**
+     * Returns the cached data by cacheKey
+     * If no cache is found, null will be returned
+     *
      * @param string $cacheKey
      *
      * @return array|null

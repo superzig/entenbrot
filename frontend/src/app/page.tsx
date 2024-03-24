@@ -1,11 +1,52 @@
+"use client";
 import MaxWidthWrapper from '~/app/_components/ui/MaxWidthWrapper';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { buttonVariants } from '~/app/_components/ui/button';
 import Image from 'next/image';
 import logoImage from '../../public/logo.png';
+import {toast} from "~/app/_components/ui/use-toast";
+import {useEffect} from "react";
 
-export default async function Home() {
+const checkOldCache = () => {
+    try {
+        void fetch('http://localhost:8000/api/data/checkCache', {
+            method: 'GET',
+        }).then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error('Ein Fehler ist aufgetreten');
+        })
+            .then((data) => {
+                if (data.success) {
+                    toast({
+                        title: 'Vorherige Auswertungen',
+                        description: data.message || 'Der Cache wurde erfolgreich gelöscht',
+                    });
+                }
+            }).catch((error) => {
+                toast({
+                    title: 'Fehler bei der Cache-Überprüfung',
+                    description: error?.message || 'Ein Fehler ist aufgetreten',
+                    variant: 'destructive'
+                })
+            });
+    } catch (error) {
+        toast({
+            title: 'Fehler bei der Cache-Überprüfung',
+            description: error?.message || 'Ein Fehler ist aufgetreten',
+            ariant: 'destructive'
+        })
+    }
+}
+
+export default function Home() {
+
+    useEffect(() => {
+        checkOldCache();
+    }, []);
+
     return (
         <>
             <MaxWidthWrapper className='mb-12 mt-10 flex flex-col sm:mt-20'>

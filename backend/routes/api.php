@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
  * Data routes
  */
 Route::prefix('/data')->group(function () {
+    Route::get('/checkCache', [DataController::class, 'removeOldCacheAction'])->name('data.checkCache');
     Route::post('/algorithmen', [DataController::class, 'algorithmAction'])->name('data.algorithmen');
     Route::get('/algorithmen', [DataController::class, 'listAction'])->name('data.algorithmen_list');
     Route::delete('/algorithmen/{cacheKey}', [DataController::class, 'deleteAction'])->name('data.algorithmen_delete');

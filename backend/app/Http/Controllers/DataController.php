@@ -94,6 +94,20 @@ class DataController extends BaseController
         return new JsonResponse($result);
     }
 
+    /**
+     * Remove old cache
+     * @return JsonResponse
+     */
+    public function removeOldCacheAction(): JsonResponse
+    {
+        $hasRemovedCache = $this->algorithmService->removeOldCache();
+
+        if (!$hasRemovedCache) {
+            return new JsonResponse(['success' => false, 'message' => 'Keine Auswertungen wurden entfernt.'], 200);
+        }
+        return new JsonResponse(['success' => true, 'message' => 'Alte Auswertungen wurden erfolgreich entfernt.'], 200);
+    }
+
 
     /**
      *  Get data from request and return it as array of students, rooms and events

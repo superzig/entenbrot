@@ -766,4 +766,36 @@ class AlgorithmService
             'data'       => $data,
         ];
     }
+
+    /**
+     * Removes old cache directories
+     * If the maxCachedTime is less than the current time, the cache will be removed
+     */
+    public function removeOldCache(): bool
+    {
+        $cacheDirectories = Storage::directories('algorithm');
+        $currentTime = time();
+        $removedOneCache = false;
+        foreach ($cacheDirectories as $cacheDirectory) {
+            $baseCachedDirectory = pathinfo($cacheDirectory, PATHINFO_BASENAME);
+            $metadataPath = "algorithm/$baseCachedDirectory/metadata.json";
+
+            if (!Storage::exists($metadataPath)) {
+                continue;
+            }
+            $metadata = Storage::json($metadataPath);
+
+            if ($metadata['maxCachedTime'] < $currentTime) {
+                Storage::disk('algorithm')->deleteDirectory($baseCachedDirectory);
+                $csvDirectory = "csv/$baseCachedDirectory";
+
+                if (Storage::exists($csvDirectory)) {
+                    Storage::disk('csv')->deleteDirectory($baseCachedDirectory);
+                }
+                $removedOneCache = true;
+            }
+        }
+
+        return $removedOneCache;
+    }
 }

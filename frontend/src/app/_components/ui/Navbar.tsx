@@ -31,7 +31,7 @@ const Navbar = () => {
                             })}
                             href='/list'
                         >
-                            Vorherige Auswertungen
+                            Gespeicherte Auswertungen
                         </Link>
                     </div>
                 </div>

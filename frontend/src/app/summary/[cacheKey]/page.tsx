@@ -17,6 +17,7 @@ import LoaderContainer from '~/app/_components/ui/LoaderContainer';
 import RoomsPlanTable from '~/app/_components/ui/RoomsPlanTable';
 import AttendancePlanTable from '~/app/_components/ui/AttendancePlanTable';
 import RoutingPlanTable from '~/app/_components/ui/RoutingPlanTable';
+import {downloadDocuments} from "~/lib/utils";
 
 export const redirectToHome = (
     router: AppRouterInstance,
@@ -71,51 +72,6 @@ const Page = ({ params }: { params: { cacheKey: string } }) => {
         return;
     }
 
-    const downloadDocuments = async () => {
-        try {
-            const response = await fetch(
-                `http://localhost:8000/api/download/documents/${cacheKey}`,
-                {
-                    method: 'GET',
-                }
-            );
-
-            console.log(response);
-
-            if (response.status === 200) {
-                // Get the file as a blob
-                const blob = await response.blob();
-
-                // Create a link and set the URL as the link's href
-                const link = document.createElement('a');
-                link.href = window.URL.createObjectURL(blob);
-                link.download = 'Entenbrot-Dokumente.zip'; // The default name for your downloaded file
-
-                // Append the link to the body, click it, and then remove it
-                document.body.appendChild(link);
-                link.click();
-                link.remove();
-            } else {
-                const data = await response.json();
-                toast({
-                    title: 'Ein Fehler ist aufgetreten',
-                    description:
-                        data?.message ??
-                        'Herunterladen der Dokumente ist fehlgeschlagen.',
-                    variant: 'destructive',
-                });
-            }
-        } catch (error) {
-            const message =
-                error instanceof Error ? error.message : (error as string);
-            toast({
-                title: 'Ein Fehler ist aufgetreten',
-                description: message,
-                variant: 'destructive',
-            });
-        }
-    };
-
     return (
         <MaxWidthWrapper className='mb-5 mt-10'>
             <div className='flex h-screen flex-col items-center'>
@@ -126,15 +82,12 @@ const Page = ({ params }: { params: { cacheKey: string } }) => {
                         maxScore={score.maxReachablePoints}
                     />
                 </div>
-                <Button onClick={downloadDocuments}>
+                <Button onClick={() => downloadDocuments(cacheKey)}>
                     Dokumente herunterladen
                 </Button>
 
                 <div className='my-10'>
-                    <Tabs
-                        defaultValue='students'
-                        className='flex flex-col justify-center'
-                    >
+                    <Tabs defaultValue='students'>
                         <TabsList>
                             <TabsTrigger value='students'>
                                 Laufzettel

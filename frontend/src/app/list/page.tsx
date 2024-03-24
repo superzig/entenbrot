@@ -18,6 +18,7 @@ import { useRouter } from 'next/navigation';
 import { ArrowRight, Check } from 'lucide-react';
 import Link from 'next/link';
 import { Button, buttonVariants } from '~/app/_components/ui/button';
+import {downloadDocuments} from "~/lib/utils";
 
 const getFormattedDate = (unixTimestamp: number) => {
     const date = new Date(unixTimestamp * 1000);
@@ -106,7 +107,7 @@ const ListView = () => {
             <div className='mb-10'>
                 <h1 className='text-3xl font-bold md:text-5xl'>
                     Gespeicherte{' '}
-                    <span className='text-blue-500'>Durchläufe</span>{' '}
+                    <span className='text-blue-500'>Auswertungen</span>{' '}
                 </h1>
                 <p className='mt-5 max-w-prose text-zinc-700 sm:text-lg'>
                     Entenbrot speichert die vorherigen Berechnungen des
@@ -115,7 +116,7 @@ const ListView = () => {
                 </p>
             </div>
             <Table>
-                <TableCaption>Eine Auflistung aller Durchläufe.</TableCaption>
+                <TableCaption>Eine Liste aller Auswertungen. Auswertungen, die älter als eine Woche sind, werden automatisch gelöscht.</TableCaption>
                 <TableHeader>
                     <TableRow>
                         <TableHead>Auswertung</TableHead>
@@ -148,6 +149,12 @@ const ListView = () => {
                                         >
                                             Auswertung
                                         </Link>
+                                        <Button
+                                            onClick={() => downloadDocuments(algoData.cacheKey)}
+                                            variant='outline'
+                                        >
+                                            Herunterladen
+                                        </Button>
                                         <Button
                                             onClick={() =>
                                                 removeAlgoData(

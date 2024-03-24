@@ -97,7 +97,7 @@ export default function Page() {
                         disabled={students.length == 0 || !students}
                         onClick={handleNavigation}
                     >
-                        Weiter zur Übersicht
+                        Auswertung starten
                     </Button>
                 </div>
                 <StudentsTable students={students} />

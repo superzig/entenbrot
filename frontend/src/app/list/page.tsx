@@ -118,6 +118,7 @@ const ListView = () => {
                 <TableCaption>Eine Auflistung aller Durchläufe.</TableCaption>
                 <TableHeader>
                     <TableRow>
+                        <TableHead>Auswertung</TableHead>
                         <TableHead>Cache-Key</TableHead>
                         <TableHead>Bis wann</TableHead>
                         <TableHead>Aktionen</TableHead>
@@ -128,7 +129,10 @@ const ListView = () => {
                         const algoData = response.data[key];
                         return (
                             <TableRow key={`${key}-${index}`}>
-                                <TableCell className='font-medium'>
+                                <TableCell>
+                                    #{index + 1}
+                                </TableCell>
+                                <TableCell>
                                     {algoData.cacheKey}
                                 </TableCell>
                                 <TableCell>

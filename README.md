@@ -1,3 +1,5 @@
+<img src="frontend/public/logo.png" alt="logo" width="200"/>
+
 # Entenbrot
 
 Entenbrot ermöglicht die einfache Zuordnung von Schülern zu Veranstaltungen. Dokumente hochladen und direkt starten.

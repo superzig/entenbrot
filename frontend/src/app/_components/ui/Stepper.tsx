@@ -44,7 +44,7 @@ const StepperComponent = () => {
                         key={number}
                         className={cn(
                             'flex items-center',
-                            isActive ? 'text-blue-600 dark:text-blue-500' : '',
+                            isActive ? 'text-primary dark:text-primary' : '',
                             hasNextStep
                                 ? isCompleted
                                     ? 'after:border-blue-600 dark:after:border-blue-500'

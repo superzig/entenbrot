@@ -1,23 +1,13 @@
 'use client';
-import {
-    Table,
-    TableBody,
-    TableCaption,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-} from '~/app/_components/ui/table';
+import {Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow,} from '~/app/_components/ui/table';
 import MaxWidthWrapper from '~/app/_components/ui/MaxWidthWrapper';
-import { useEffect, useState } from 'react';
-import { getAllAlgorithmenData } from '~/action';
-import LoaderContainer from '~/app/_components/ui/LoaderContainer';
-import { redirectToHome } from '~/app/summary/[cacheKey]/page';
-import { toast } from '~/app/_components/ui/use-toast';
-import { useRouter } from 'next/navigation';
-import { ArrowRight, Check } from 'lucide-react';
+import {useEffect, useState} from 'react';
+import {getAllAlgorithmenData} from '~/action';
+import {toast} from '~/app/_components/ui/use-toast';
+import {useRouter} from 'next/navigation';
+import {ArrowRight, Files} from 'lucide-react';
 import Link from 'next/link';
-import { Button, buttonVariants } from '~/app/_components/ui/button';
+import {Button, buttonVariants} from '~/app/_components/ui/button';
 import {downloadDocuments} from "~/lib/utils";
 
 const getFormattedDate = (unixTimestamp: number) => {
@@ -107,7 +97,7 @@ const ListView = () => {
             <div className='mb-10'>
                 <h1 className='text-3xl font-bold md:text-5xl'>
                     Gespeicherte{' '}
-                    <span className='text-blue-500'>Auswertungen</span>{' '}
+                    <span className='text-primary'>Auswertungen</span>{' '}
                 </h1>
                 <p className='mt-5 max-w-prose text-zinc-700 sm:text-lg'>
                     Entenbrot speichert die vorherigen Berechnungen des
@@ -147,12 +137,14 @@ const ListView = () => {
                                                 '/summary/' + algoData.cacheKey
                                             }
                                         >
-                                            Auswertung
+                                            Auswertung{' '}
+                                            <ArrowRight className='ml-2 h-5 w-5'/>
                                         </Link>
                                         <Button
                                             onClick={() => downloadDocuments(algoData.cacheKey)}
                                             variant='outline'
                                         >
+                                            <Files className="mr-2"/>{' '}
                                             Herunterladen
                                         </Button>
                                         <Button

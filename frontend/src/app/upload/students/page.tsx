@@ -79,7 +79,7 @@ export default function Page() {
                         </p>
                     </div>
                     <h1 className='text-5xl font-bold md:text-6xl lg:text-7xl'>
-                        <span className='text-blue-500'>Schülerliste</span>{' '}
+                        <span className='text-primary'>Schülerliste</span>{' '}
                         hochladen
                     </h1>
                     <p className='mt-5 max-w-prose text-zinc-700 sm:text-lg'>

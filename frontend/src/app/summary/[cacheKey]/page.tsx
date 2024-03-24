@@ -18,6 +18,7 @@ import RoomsPlanTable from '~/app/_components/ui/RoomsPlanTable';
 import AttendancePlanTable from '~/app/_components/ui/AttendancePlanTable';
 import RoutingPlanTable from '~/app/_components/ui/RoutingPlanTable';
 import {downloadDocuments} from "~/lib/utils";
+import { Files } from 'lucide-react';
 
 export const redirectToHome = (
     router: AppRouterInstance,
@@ -83,11 +84,12 @@ const Page = ({ params }: { params: { cacheKey: string } }) => {
                     />
                 </div>
                 <Button onClick={() => downloadDocuments(cacheKey)}>
-                    Dokumente herunterladen
+                    <Files className="mr-2"/>{' '}
+                     Herunterladen
                 </Button>
 
                 <div className='my-10'>
-                    <Tabs defaultValue='students'>
+                    <Tabs defaultValue='students' className="flex flex-col justify-center">
                         <TabsList>
                             <TabsTrigger value='students'>
                                 Laufzettel

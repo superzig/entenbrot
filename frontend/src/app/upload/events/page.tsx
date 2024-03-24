@@ -50,7 +50,7 @@ export default function Page() {
                         </p>
                     </div>
                     <h1 className='text-4xl font-bold md:text-6xl lg:text-7xl'>
-                        <span className='text-blue-500'>
+                        <span className='text-primary'>
                             Veranstaltungsliste
                         </span>{' '}
                         hochladen

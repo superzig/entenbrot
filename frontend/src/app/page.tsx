@@ -77,7 +77,7 @@ export default function Home() {
                         </h1>
                         <h1 className='text-4xl font-bold md:text-6xl'>
                             Ein{' '}
-                            <span className='text-blue-500'>Algorithmus</span>,
+                            <span className='text-primary'>Algorithmus</span>,
                             der passt!
                         </h1>
                         <p className='mt-7 text-gray-700 sm:text-lg'>
@@ -153,7 +153,7 @@ export default function Home() {
                         <li className="md:flex-1">
                             <div
                                 className="flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4">
-                                <span className="text-sm font-medium text-blue-600">Schritt 1</span>
+                                <span className="text-sm font-medium text-primary">Schritt 1</span>
                                 <span className="text-xl font-semibold">Deine Excel Dateien hochladen</span>
                                 <span className="mt-2 text-zinc-700">
                                     Wir verarbeiten deine Dateien und machen sie für dich bereit.
@@ -163,7 +163,7 @@ export default function Home() {
                         <li className="md:flex-1">
                             <div
                                 className="flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4">
-                                <span className="text-sm font-medium text-blue-600">Schritt 2</span>
+                                <span className="text-sm font-medium text-primary">Schritt 2</span>
                                 <span className="text-xl font-semibold">Auswertung starten</span>
                                 <span className="mt-2 text-zinc-700">
                                     Unsere Ente erstellt blitzschnell eine Auswertung für Sie.
@@ -173,7 +173,7 @@ export default function Home() {
                         <li className="md:flex-1">
                             <div
                                 className="flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4">
-                                <span className="text-sm font-medium text-blue-600">Schritt 3</span>
+                                <span className="text-sm font-medium text-primary">Schritt 3</span>
                                 <span className="text-xl font-semibold">Dokumente herunterladen</span>
                                 <span className="mt-2 text-zinc-700">
                                     Laufzettel, Anwesenheitsliste und Veranstaltungen lassen sich bequem herunterladen.

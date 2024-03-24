@@ -6,6 +6,8 @@ Entenbrot ermöglicht die einfache Zuordnung von Schülern zu Veranstaltungen. D
 
 Die Software anstand in Rahmen eines Schulprojekts.
 
+<img src="frontend/public/landing-page-preview.png" alt="landing page preview"/>
+
 ## Entwickler
 
 - [Justin J.](https://github.com/ZyklopRT)

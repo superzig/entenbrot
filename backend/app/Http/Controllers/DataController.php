@@ -73,6 +73,7 @@ class DataController extends BaseController
     public function deleteAction($cacheKey): JsonResponse
     {
         $success = $this->algorithmService->deleteCache($cacheKey);
+
         return new JsonResponse(['isError' => !$success, 'message' => $success ? 'Successfully deleted' : 'Cache not found'], ($success ? 200 : 404));
     }
 

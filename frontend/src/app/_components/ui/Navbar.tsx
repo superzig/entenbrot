@@ -2,7 +2,7 @@ import MaxWidthWrapper from '~/app/_components/ui/MaxWidthWrapper';
 import Link from 'next/link';
 import Image from 'next/image';
 import logoImage from '../../../../public/logo.png';
-import {buttonVariants} from '~/app/_components/ui/button';
+import NavLinks from "~/app/_components/ui/NavLinks";
 
 const Navbar = () => {
     return (
@@ -23,16 +23,9 @@ const Navbar = () => {
                             <span>Entenbrot.</span>
                         </Link>
                     </div>
-                    <div className='items-center space-x-4'>
+                    <div className='items-center flex flex-row space-x-4'>
                         {/* Navbar links */}
-                        <Link
-                            className={buttonVariants({
-                                variant: 'link',
-                            })}
-                            href='/list'
-                        >
-                            Gespeicherte Auswertungen
-                        </Link>
+                        <NavLinks />
                     </div>
                 </div>
             </MaxWidthWrapper>

@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\ExportCsvController;
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\ExportCsvController;
 use Illuminate\Support\Facades\Route;
 
 /*

@@ -2,9 +2,9 @@
 import {Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow,} from '~/app/_components/ui/table';
 import MaxWidthWrapper from '~/app/_components/ui/MaxWidthWrapper';
 import {useEffect, useState} from 'react';
-import {getAllAlgorithmenData} from '~/action';
+import {deleteAlgorithmenData, getAllAlgorithmenData} from '~/action';
 import {toast} from '~/app/_components/ui/use-toast';
-import {useRouter} from 'next/navigation';
+import {redirect, useRouter} from 'next/navigation';
 import {ArrowRight, Files} from 'lucide-react';
 import Link from 'next/link';
 import {Button, buttonVariants} from '~/app/_components/ui/button';
@@ -24,51 +24,38 @@ const getFormattedDate = (unixTimestamp: number) => {
         hour12: false,
     };
 
-    return new Intl.DateTimeFormat('de-DE', options).format(date);
+    return new Intl.DateTimeFormat('de-DE', options).format(date) + " Uhr";
 };
 
-const removeAlgoData = (cacheKey: string) => {
-    try {
-        fetch('http://localhost:8000/api/data/algorithmen/' + cacheKey, {
-            method: 'DELETE',
-        })
-            .then((response) => {
-                if (response.ok) {
-                    toast({
-                        title: 'Daten erfolgreich gelöscht',
-                        description: 'Die Daten wurden erfolgreich gelöscht.',
-                    });
-                    return;
-                }
-                throw new Error();
-            })
-            .catch((error) => {
-                toast({
-                    title: 'Ein Fehler ist aufgetreten',
-                    description:
-                        error instanceof Error
-                            ? error.message
-                            : 'Ein unerwarteter Fehler ist aufgetreten.',
-                    variant: 'destructive',
-                });
-            });
-    } catch (error) {
-        toast({
-            title: 'Ein Fehler ist aufgetreten',
-            description:
-                error instanceof Error
-                    ? error.message
-                    : 'Ein unerwarteter Fehler ist aufgetreten.',
-            variant: 'destructive',
-        });
-    }
-};
+const showErrorMessage = (error: string) => {
+    toast({
+        title: 'Ein Fehler ist aufgetreten',
+        description: error,
+        variant: 'destructive',
+    });
+}
 const ListView = () => {
     const [response, setResponse] = useState<{
         data: [];
         error: string | null;
     }>({ data: [], error: null });
     const router = useRouter();
+
+    const removeAlgoData = (cacheKey: string) => {
+        deleteAlgorithmenData(cacheKey)
+            .then(({error}) => {
+                console.log("error", error)
+                if (error == null) {
+                    window.location.reload();
+                    return;
+                }
+
+                showErrorMessage(error);
+            })
+            .catch((error: string) => {
+                showErrorMessage(error);
+            });
+    };
 
     useEffect(() => {
         getAllAlgorithmenData()
@@ -80,8 +67,6 @@ const ListView = () => {
                 })
             );
     }, []);
-
-    console.log(response);
 
     if (response.error) {
         toast({
@@ -118,6 +103,10 @@ const ListView = () => {
                 <TableBody>
                     {Object.keys(response.data).map((key, index) => {
                         const algoData = response.data[key];
+
+                        if (!algoData) {
+                            return null;
+                        }
                         return (
                             <TableRow key={`${key}-${index}`}>
                                 <TableCell>
@@ -148,11 +137,7 @@ const ListView = () => {
                                             Herunterladen
                                         </Button>
                                         <Button
-                                            onClick={() =>
-                                                removeAlgoData(
-                                                    algoData.cacheKey
-                                                )
-                                            }
+                                            onClick={() =>  removeAlgoData(algoData.cacheKey)}
                                             variant='destructive'
                                         >
                                             Löschen

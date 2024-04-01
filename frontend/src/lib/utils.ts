@@ -1,8 +1,8 @@
-import { type ClassValue, clsx } from 'clsx';
-import { twMerge } from 'tailwind-merge';
+import {type ClassValue, clsx} from 'clsx';
+import {twMerge} from 'tailwind-merge';
 import readXlsxFile from 'read-excel-file';
-import { type z, type ZodObject, type ZodRawShape, type ZodTypeAny } from 'zod';
-import { type DataResponse } from '~/definitions';
+import {type z, type ZodObject, type ZodRawShape, type ZodTypeAny} from 'zod';
+import {type DataResponse} from '~/definitions';
 import {toast} from "~/app/_components/ui/use-toast";
 
 export function cn(...inputs: ClassValue[]) {
@@ -106,4 +106,16 @@ export const downloadDocuments = async (cacheKey: string) => {
             variant: 'destructive',
         });
     }
+};
+
+export const downloadDocumentation = () => {
+
+    const link = document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+    link.download = 'Entenbrot-Dokumentation.zip'; // The default name for your downloaded file
+
+    // Append the link to the body, click it, and then remove it
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
 };

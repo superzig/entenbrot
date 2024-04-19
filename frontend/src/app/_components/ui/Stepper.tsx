@@ -47,7 +47,7 @@ const StepperComponent = () => {
                             isActive ? 'text-primary dark:text-primary' : '',
                             hasNextStep
                                 ? isCompleted
-                                    ? 'after:border-blue-600 dark:after:border-blue-500'
+                                    ? 'after:border-primary dark:after:border-primary'
                                     : 'after:border-gray-200 dark:after:border-gray-700'
                                 : '',
                             hasNextStep

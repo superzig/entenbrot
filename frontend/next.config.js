@@ -12,6 +12,8 @@ const config = {
     typescript: {
         ignoreBuildErrors: true,
     },
+    output: "standalone",
+    staticPageGenerationTimeout: 300,
 };
 
 export default config;

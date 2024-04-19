@@ -28,10 +28,38 @@ Die Software anstand in Rahmen eines Schulprojekts.
 - node ^21.7.1
 - npm ^10.2.3
 
+> Alternativ kann Docker benutzt werden.
+
 ## Installation
     
 Dieses Projekt besteht aus zwei Hauptkomponenten: dem Backend, das mit Laravel entwickelt wurde, und dem Frontend, das mit Next.js erstellt wurde. Hier ist eine schrittweise Anleitung, um beide Teile des Projekts einzurichten und auszuführen.
 
+## Schnelle und einfache Installation
+
+Zur schnellen Installation kann Docker verwendet werden. Dafür muss Docker installiert sein. 
+
+> Schauen Sie bitte dafür in die Docker docs: https://docs.docker.com/engine/install/
+
+1. Bauen des Containers
+
+   ```bash
+   docker compose build
+   ```
+
+2. Starten des Containers
+   ```bash
+   docker compose up -d
+   ```
+
+3. Schlüssel generieren
+
+   Öffnen Sie das Backend unter http://localhost:8000 und drücken Sie auf "Schlüssel generieren"
+
+Die Anwendung sollte nun unter `localhost:3000` erreichbar sein. 
+> Beachten Sie, dass unser Docker für Produktion gedacht ist und aufgrund der Containisierung etwas langsamer läuft. 
+   
+
+## Installation ohne Docker
 ## Backend-Einrichtung (Laravel)
 
 Um das Laravel-Backend einzurichten, folgen Sie diesen Schritten:
@@ -59,6 +87,8 @@ Um das Laravel-Backend einzurichten, folgen Sie diesen Schritten:
    ```bash
    php artisan key:generate
    ```
+
+   > Falls ein Schlüssel bereits erfolgreich generiert wurden ist oder die Version bspw. `{"Laravel":"10.48.3"}` sichtbar ist, kann dieser Schritt übersprungen werden.
 
 5. Starten Sie den Laravel-Entwicklungsserver:
 

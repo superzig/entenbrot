@@ -10,7 +10,7 @@ export async function runAlgorithmen(formData: FormData) {
 
     try {
         const response = await fetch(
-            'http://localhost:8000/api/data/algorithmen',
+            'http://backend:80/api/data/algorithmen',
             {
                 method: 'POST',
                 headers: {
@@ -40,7 +40,7 @@ export async function runAlgorithmen(formData: FormData) {
 export async function getAlgorithmenData(cacheKey: string) {
     try {
         const response = await fetch(
-            'http://localhost:8000/api/data/algorithmen/' + cacheKey,
+            'http://backend:80/api/data/algorithmen/' + cacheKey,
             {
                 method: 'GET',
             }
@@ -71,7 +71,7 @@ export async function getAlgorithmenData(cacheKey: string) {
 export async function getAllAlgorithmenData() {
     try {
         const response = await fetch(
-            'http://localhost:8000/api/data/algorithmen',
+            'http://backend:80/api/data/algorithmen',
             {
                 method: 'GET',
             }
@@ -101,7 +101,7 @@ export async function getAllAlgorithmenData() {
 export async function deleteAlgorithmenData(cacheKey: string) {
     try {
         const response = await fetch(
-            'http://localhost:8000/api/data/algorithmen/' + cacheKey,
+            'http://backend:80/api/data/algorithmen/' + cacheKey,
             {
                 method: 'DELETE',
             }

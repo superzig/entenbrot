@@ -54,6 +54,7 @@ Zur schnellen Installation kann Docker verwendet werden. Dafür muss Docker inst
 3. Schlüssel generieren
 
    Öffnen Sie das Backend unter http://localhost:8000 und drücken Sie auf "Schlüssel generieren"
+      > Falls ein Schlüssel bereits erfolgreich generiert wurden ist oder die Version bspw. `{"Laravel":"10.48.3"}` sichtbar ist, kann dieser Schritt übersprungen werden.
 
 Die Anwendung sollte nun unter `localhost:3000` erreichbar sein. 
 > Beachten Sie, dass unser Docker für Produktion gedacht ist und aufgrund der Containisierung etwas langsamer läuft. 
@@ -87,8 +88,6 @@ Um das Laravel-Backend einzurichten, folgen Sie diesen Schritten:
    ```bash
    php artisan key:generate
    ```
-
-   > Falls ein Schlüssel bereits erfolgreich generiert wurden ist oder die Version bspw. `{"Laravel":"10.48.3"}` sichtbar ist, kann dieser Schritt übersprungen werden.
 
 5. Starten Sie den Laravel-Entwicklungsserver:
 

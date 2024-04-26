@@ -7,7 +7,7 @@ WORKDIR /app
 COPY . /app
 
 # Install Composer dependencies
-RUN composer install --no-interaction
+RUN composer install
 
 # Copy the example environment file and generate the key
 COPY .env.example /app/.env

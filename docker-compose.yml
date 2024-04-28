@@ -6,8 +6,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
-    volumes:
-      - shared_data:/app/share
 
   backend:
     build:

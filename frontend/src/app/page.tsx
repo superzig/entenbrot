@@ -2,18 +2,17 @@
 import MaxWidthWrapper from '~/app/_components/ui/MaxWidthWrapper';
 import Link from 'next/link';
 import {ArrowRight, Files} from 'lucide-react';
-import {Button, buttonVariants} from '~/app/_components/ui/button';
+import {buttonVariants} from '~/app/_components/ui/button';
 import Image from 'next/image';
 import logoImage from '../../public/logo.png';
 import scorePreviewImage from '../../public/success-score-preview.png';
 import cachedResultsPreviewImage from '../../public/cached-results-preview.png';
 import {toast} from "~/app/_components/ui/use-toast";
 import {useEffect} from "react";
-import {downloadDocuments} from "~/lib/utils";
 
 const checkOldCache = () => {
     try {
-        void fetch('http://localhost:8000/api/data/checkCache', {
+        void fetch(process.env.NEXT_PUBLIC_BACKEND_OUT_URL+'/api/data/checkCache', {
             method: 'GET',
         }).then((response) => {
             if (response.ok) {
